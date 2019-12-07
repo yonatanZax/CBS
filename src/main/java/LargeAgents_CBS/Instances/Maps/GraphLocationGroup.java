@@ -214,8 +214,10 @@ public class GraphLocationGroup implements I_Location {
 
         // all cells are equals
         return true;
-
     }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.getAllCells());
+    }
 }
