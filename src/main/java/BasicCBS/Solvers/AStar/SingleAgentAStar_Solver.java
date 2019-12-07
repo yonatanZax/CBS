@@ -31,20 +31,20 @@ public class SingleAgentAStar_Solver extends A_Solver {
 
     public boolean agentsStayAtGoal = true;
 
-    private ConstraintSet constraints;
-    private AStarHeuristic heuristicFunction;
-    private I_OpenList<AStarState> openList;
-    private Set<AStarState> closed;
-    private Agent agent;
-    private I_Map map;
-    private SingleAgentPlan existingPlan;
-    private Solution existingSolution;
+    protected ConstraintSet constraints;
+    protected AStarHeuristic heuristicFunction;
+    protected I_OpenList<AStarState> openList;
+    protected Set<AStarState> closed;
+    protected Agent agent;
+    protected I_Map map;
+    protected SingleAgentPlan existingPlan;
+    protected Solution existingSolution;
     /**
      * Not real-world time. The problem's start time.
      */
-    private int problemStartTime;
-    private int expandedNodes;
-    private int generatedNodes;
+    protected int problemStartTime;
+    protected int expandedNodes;
+    protected int generatedNodes;
 
     public SingleAgentAStar_Solver() {
         super.DEFAULT_TIMEOUT = SingleAgentAStar_Solver.DEFAULT_TIMEOUT;

@@ -11,6 +11,12 @@ public class Coordinate_2D_LargeAgent implements I_Coordinate {
         this.coordinates = coordinates;
     }
 
+    public Coordinate_2D_LargeAgent(Coordinate_2D coordinate_2D){
+        this.coordinates = new Coordinate_2D[][]{{coordinate_2D}};
+    }
+
+
+
     public int getHeight(){
         return this.coordinates.length;
     }

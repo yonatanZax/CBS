@@ -40,6 +40,10 @@ public class GraphLocationGroup implements I_Location {
         this.addCellsToInnerOuter();
     }
 
+    public GraphLocationGroup(I_Coordinate coordinate_2D_largeAgents, I_Map map){
+        this( ((Coordinate_2D_LargeAgent)coordinate_2D_largeAgents).getCoordinates(), map);
+    }
+
     public GraphLocationGroup(GraphMapVertex_LargeAgents[][] mapCells) {
         this.mapCells = mapCells;
         this.addCellsToInnerOuter();

@@ -7,9 +7,11 @@ import BasicCBS.Instances.Maps.Enum_MapCellType;
 import BasicCBS.Instances.Maps.I_Location;
 import BasicCBS.Instances.Maps.I_Map;
 import GraphMapPackage.GraphMapVertex;
+import GraphMapPackage.GraphMapVertex_LargeAgents;
 import GraphMapPackage.MapFactory;
 import LargeAgents_CBS.Instances.LargeAgent;
 import LargeAgents_CBS.Instances.Maps.Coordinate_2D_LargeAgent;
+import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
 import LargeAgents_CBS.Solvers.LowLevel.DistanceTableHeuristic_LargeAgents;
 import org.junit.Assert;
 import org.junit.Test;
@@ -33,16 +35,16 @@ public class DistanceTableHeuristic_LargeAgentsTest {
     I_Map map = MapFactory.newSimple4Connected2D_GraphMap_LargeAgents(map_2D_H);
 
     /*   = Equals Maps =    */
-    private boolean equalsAllAgentMap(Map<Agent, Map<I_Coordinate, Integer>> expectedValues, Map<Agent, Map<I_Coordinate, Integer>> actualValues) {
+    private boolean equalsAllAgentMap(Map<Agent, Map<I_Location, Integer>> expectedValues, Map<Agent, Map<I_Location, Integer>> actualValues) {
 
         if (expectedValues.size() != actualValues.size()) {
             return false;
         }
-        for (Map.Entry<Agent, Map<I_Coordinate, Integer>> agentMapEntry : expectedValues.entrySet()) {
+        for (Map.Entry<Agent, Map<I_Location, Integer>> agentMapEntry : expectedValues.entrySet()) {
 
             Agent agent = agentMapEntry.getKey();
-            Map<I_Coordinate, Integer> expectedCellMap = expectedValues.get(agent);
-            Map<I_Coordinate, Integer> actualCellMap = actualValues.get(agent);
+            Map<I_Location, Integer> expectedCellMap = expectedValues.get(agent);
+            Map<I_Location, Integer> actualCellMap = actualValues.get(agent);
 
             if (!this.equalsAllCellMap(expectedCellMap, actualCellMap)) {
                 return false;
@@ -51,15 +53,15 @@ public class DistanceTableHeuristic_LargeAgentsTest {
         return true;
     }
 
-    private boolean equalsAllCellMap(Map<I_Coordinate, Integer> expectedCellMap, Map<I_Coordinate, Integer> actualCellMap) {
+    private boolean equalsAllCellMap(Map<I_Location, Integer> expectedCellMap, Map<I_Location, Integer> actualCellMap) {
         if (expectedCellMap.size() != actualCellMap.size()) {
             return false;
         }
-        for (Map.Entry<I_Coordinate, Integer> MapCellEntry : expectedCellMap.entrySet()) {
+        for (Map.Entry<I_Location, Integer> MapCellEntry : expectedCellMap.entrySet()) {
 
-            I_Coordinate coordinate = MapCellEntry.getKey();
-            int expectedDistance = expectedCellMap.get(coordinate);
-            int actualDistance = actualCellMap.get(coordinate);
+            I_Location location = MapCellEntry.getKey();
+            int expectedDistance = expectedCellMap.get(location);
+            int actualDistance = actualCellMap.get(location);
 
             if (expectedDistance != actualDistance) {
                 return false;
@@ -75,23 +77,23 @@ public class DistanceTableHeuristic_LargeAgentsTest {
         Coordinate_2D coordinate_2D_2 = new Coordinate_2D(0, 1);
         Coordinate_2D coordinate_2D_3 = new Coordinate_2D(1, 0);
         Coordinate_2D coordinate_2D_4 = new Coordinate_2D(1, 1);
-        Coordinate_2D[][] source= new Coordinate_2D[2][2];
-        source[0][0]=coordinate_2D_1;
-        source[0][1]=coordinate_2D_2;
-        source[1][0]=coordinate_2D_3;
-        source[1][1]=coordinate_2D_4;
-        Coordinate_2D_LargeAgent sourceLargeAgent=new Coordinate_2D_LargeAgent(source);
+        Coordinate_2D[][] source = new Coordinate_2D[2][2];
+        source[0][0] = coordinate_2D_1;
+        source[0][1] = coordinate_2D_2;
+        source[1][0] = coordinate_2D_3;
+        source[1][1] = coordinate_2D_4;
+        Coordinate_2D_LargeAgent sourceLargeAgent = new Coordinate_2D_LargeAgent(source);
 
         Coordinate_2D coordinate_2D_5 = new Coordinate_2D(2, 2);
         Coordinate_2D coordinate_2D_6 = new Coordinate_2D(2, 3);
         Coordinate_2D coordinate_2D_7 = new Coordinate_2D(3, 2);
         Coordinate_2D coordinate_2D_8 = new Coordinate_2D(3, 3);
-        Coordinate_2D[][] target= new Coordinate_2D[2][2];
-        target[0][0]=coordinate_2D_5;
-        target[0][1]=coordinate_2D_6;
-        target[1][0]=coordinate_2D_7;
-        target[1][1]=coordinate_2D_8;
-        Coordinate_2D_LargeAgent targetLargeAgent=new Coordinate_2D_LargeAgent(target);
+        Coordinate_2D[][] target = new Coordinate_2D[2][2];
+        target[0][0] = coordinate_2D_5;
+        target[0][1] = coordinate_2D_6;
+        target[1][0] = coordinate_2D_7;
+        target[1][1] = coordinate_2D_8;
+        Coordinate_2D_LargeAgent targetLargeAgent = new Coordinate_2D_LargeAgent(target);
 
         // Agent 1:
         //            X0  X1  X2  X3
@@ -126,35 +128,35 @@ public class DistanceTableHeuristic_LargeAgentsTest {
         Coordinate_2D neighbor5_3 = new Coordinate_2D(1, 0);
         Coordinate_2D neighbor5_4 = new Coordinate_2D(1, 1);
 
-        Coordinate_2D[][] neighbor1=new Coordinate_2D[2][2];
-        neighbor1[0][0]= neighbor1_1;
-        neighbor1[0][1]= neighbor1_2;
-        neighbor1[1][0]= neighbor1_3;
-        neighbor1[1][1]= neighbor1_4;
+        Coordinate_2D[][] neighbor1 = new Coordinate_2D[2][2];
+        neighbor1[0][0] = neighbor1_1;
+        neighbor1[0][1] = neighbor1_2;
+        neighbor1[1][0] = neighbor1_3;
+        neighbor1[1][1] = neighbor1_4;
 
-        Coordinate_2D[][] neighbor2=new Coordinate_2D[2][2];
-        neighbor2[0][0]= neighbor2_1;
-        neighbor2[0][1]= neighbor2_2;
-        neighbor2[1][0]= neighbor2_3;
-        neighbor2[1][1]= neighbor2_4;
+        Coordinate_2D[][] neighbor2 = new Coordinate_2D[2][2];
+        neighbor2[0][0] = neighbor2_1;
+        neighbor2[0][1] = neighbor2_2;
+        neighbor2[1][0] = neighbor2_3;
+        neighbor2[1][1] = neighbor2_4;
 
-        Coordinate_2D[][] neighbor3=new Coordinate_2D[2][2];
-        neighbor3[0][0]= neighbor3_1;
-        neighbor3[0][1]= neighbor3_2;
-        neighbor3[1][0]= neighbor3_3;
-        neighbor3[1][1]= neighbor3_4;
+        Coordinate_2D[][] neighbor3 = new Coordinate_2D[2][2];
+        neighbor3[0][0] = neighbor3_1;
+        neighbor3[0][1] = neighbor3_2;
+        neighbor3[1][0] = neighbor3_3;
+        neighbor3[1][1] = neighbor3_4;
 
-        Coordinate_2D[][] neighbor4=new Coordinate_2D[2][2];
-        neighbor4[0][0]= neighbor4_1;
-        neighbor4[0][1]= neighbor4_2;
-        neighbor4[1][0]= neighbor4_3;
-        neighbor4[1][1]= neighbor4_4;
+        Coordinate_2D[][] neighbor4 = new Coordinate_2D[2][2];
+        neighbor4[0][0] = neighbor4_1;
+        neighbor4[0][1] = neighbor4_2;
+        neighbor4[1][0] = neighbor4_3;
+        neighbor4[1][1] = neighbor4_4;
 
-        Coordinate_2D[][] neighbor5=new Coordinate_2D[2][2];
-        neighbor5[0][0]= neighbor5_1;
-        neighbor5[0][1]= neighbor5_2;
-        neighbor5[1][0]= neighbor5_3;
-        neighbor5[1][1]= neighbor5_4;
+        Coordinate_2D[][] neighbor5 = new Coordinate_2D[2][2];
+        neighbor5[0][0] = neighbor5_1;
+        neighbor5[0][1] = neighbor5_2;
+        neighbor5[1][0] = neighbor5_3;
+        neighbor5[1][1] = neighbor5_4;
 
         HashMap<I_Coordinate, I_Location> hashMap = new HashMap<>();
 
@@ -163,34 +165,27 @@ public class DistanceTableHeuristic_LargeAgentsTest {
 
         /*      = Expected values =     */
 
-        Map<Agent, Map<I_Coordinate, Integer>> expected = new HashMap<>();
-        Map<I_Coordinate, Integer> insideMap = new HashMap<>();
+        Map<Agent, Map<I_Location, Integer>> expected = new HashMap<>();
+        Map<I_Location, Integer> insideMap = new HashMap<>();
 
-        Coordinate_2D_LargeAgent neighbor1Large= new Coordinate_2D_LargeAgent(neighbor1);
-        Coordinate_2D_LargeAgent neighbor2Large= new Coordinate_2D_LargeAgent(neighbor2);
-        Coordinate_2D_LargeAgent neighbor3Large= new Coordinate_2D_LargeAgent(neighbor3);
-        Coordinate_2D_LargeAgent neighbor4Large= new Coordinate_2D_LargeAgent(neighbor4);
-        Coordinate_2D_LargeAgent neighbor5Large= new Coordinate_2D_LargeAgent(neighbor5);
+        I_Location neighbor1Large = new GraphLocationGroup(neighbor1, map);
+        I_Location neighbor2Large = new GraphLocationGroup(neighbor2, map);
+        I_Location neighbor3Large = new GraphLocationGroup(neighbor3, map);
+        I_Location neighbor4Large = new GraphLocationGroup(neighbor4, map);
+        I_Location neighbor5Large = new GraphLocationGroup(neighbor5, map);
 
-        insideMap.put(neighbor1Large,3);
-        insideMap.put(neighbor2Large,2);
-        insideMap.put(neighbor3Large,1);
-        insideMap.put(neighbor4Large,0);
-        insideMap.put(neighbor5Large,4);
+        insideMap.put(neighbor1Large, 3);
+        insideMap.put(neighbor2Large, 2);
+        insideMap.put(neighbor3Large, 1);
+        insideMap.put(neighbor4Large, 0);
+        insideMap.put(neighbor5Large, 4);
 
         expected.put(agent_1, insideMap);
 
         /*  = Test actual values =  */
         DistanceTableHeuristic_LargeAgents distanceTableAStarHeuristic = new DistanceTableHeuristic_LargeAgents(list, map);
-        Map<Agent, Map<I_Location, Integer>> map=distanceTableAStarHeuristic.getDistanceDictionaries();
+        Map<Agent, Map<I_Location, Integer>> locationMap = distanceTableAStarHeuristic.getDistanceDictionaries();
 
-        Map<Agent,Map<I_Coordinate,Integer>> mapOfCoordinates=new HashMap<>();
-
-        for (Map.Entry<Agent, Map<I_Location, Integer>>agentMapEntry : map.entrySet()) {
-            HashMap<I_Coordinate,Integer> convertToCoordinate=new HashMap<>();
-            convertToCoordinate.put(((GraphMapVertex)agentMapEntry.getValue()).getCoordinate(),(agentMapEntry.getValue().get(agentMapEntry)));
-            mapOfCoordinates.put(agentMapEntry.getKey(),convertToCoordinate);
-        }
-        Assert.assertTrue(equalsAllAgentMap(expected, mapOfCoordinates));
+        Assert.assertTrue(equalsAllAgentMap(expected, locationMap));
     }
 }
