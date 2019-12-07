@@ -269,7 +269,7 @@ public class AStar_LargeAgentsTest {
         Agent agent2 = testInstance2.agents.get(0);
 
         Solution solved0 = aStar_largeAgents.solve(testInstance0, new RunParameters());
-        assertEquals(1, solved0.getPlanFor(agent0).size());
+        assertEquals(2, solved0.getPlanFor(agent0).size());
 
 
         Solution solved1 = aStar_largeAgents.solve(testInstance1, new RunParameters());
