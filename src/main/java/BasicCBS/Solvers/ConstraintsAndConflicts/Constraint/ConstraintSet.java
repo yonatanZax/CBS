@@ -171,16 +171,14 @@ public class ConstraintSet{
     public int rejectsEventually(Move finalMove){
         int firstRejectionTime = Integer.MAX_VALUE;
         // traverses the entire data structure. expensive.
-        for (ConstraintWrapper cw :
-                constraints.keySet()) {
+        for (ConstraintWrapper cw : constraints.keySet()) {
             //found constraint for this location, sometime in the future. Should be rare.
             if(cw.time > finalMove.timeNow && cw.location.equals(finalMove.currLocation)){
-                for (Constraint constraint :
-                        cw.relevantConstraints) {
+                for (Constraint constraint : cw.relevantConstraints) {
                     // make an artificial "stay" move for the relevant time.
                     // In practice, this should happen very rarely, so not very expensive.
-                    if(constraint.rejects(new Move(finalMove.agent, cw.time, finalMove.currLocation, finalMove.currLocation))
-                            && cw.time < firstRejectionTime){
+                    Move move = new Move(finalMove.agent, cw.time, finalMove.currLocation, finalMove.currLocation);
+                    if(constraint.rejects(move) && cw.time < firstRejectionTime){
                         firstRejectionTime = cw.time;
                     }
                 }
