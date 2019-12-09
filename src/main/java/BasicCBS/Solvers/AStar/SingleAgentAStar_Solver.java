@@ -26,8 +26,8 @@ public class SingleAgentAStar_Solver extends A_Solver {
      */
     protected static final long DEFAULT_TIMEOUT = 3 * 1000;
     protected static final int DEFAULT_PROBLEM_START_TIME = 0;
-    private static final Comparator<AStarState> stateFComparator = Comparator.comparing(AStarState::getF);
-    private static final Comparator<AStarState> stateGComparator = Comparator.comparing(AStarState::getG);
+    protected static final Comparator<AStarState> stateFComparator = Comparator.comparing(AStarState::getF);
+    protected static final Comparator<AStarState> stateGComparator = Comparator.comparing(AStarState::getG);
 
     public boolean agentsStayAtGoal = true;
 
@@ -197,7 +197,7 @@ public class SingleAgentAStar_Solver extends A_Solver {
         return !openList.isEmpty();
     }
 
-    private boolean isGoalState(AStarState state) {
+    protected boolean isGoalState(AStarState state) {
         return state.move.currLocation.getCoordinate().equals(agent.target);
     }
 
@@ -228,11 +228,11 @@ public class SingleAgentAStar_Solver extends A_Solver {
     /*  = inner classes =  */
 
     public class AStarState implements Comparable<AStarState>{
-
-        private Move move;
-        private AStarState prev;
-        private int g;
-        private float h;
+        // todo - protected
+        protected Move move;
+        protected AStarState prev;
+        protected int g;
+        protected float h;
 
         public AStarState(Move move, AStarState prevState, int g) {
             this.move = move;
@@ -295,7 +295,8 @@ public class SingleAgentAStar_Solver extends A_Solver {
             }
         }
 
-        private void keepTheStateWithMinG(AStarState newState, AStarState existingState) {
+        // todo - protected
+        protected void keepTheStateWithMinG(AStarState newState, AStarState existingState) {
             openList.keepOne(existingState, newState, stateGComparator);
 //            boolean shouldSwap = newState.g < existingState.g;
 //            if(shouldSwap){

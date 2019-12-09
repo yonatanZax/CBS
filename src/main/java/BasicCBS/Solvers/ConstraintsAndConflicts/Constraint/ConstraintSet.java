@@ -17,8 +17,9 @@ public class ConstraintSet{
     /**
      * Basically a dictionary from [time,location] to agents who can't go there at that time, and locations from which
      * they can't go there at that time.
+     // todo - protected
      */
-    private final Map<ConstraintWrapper, ConstraintWrapper> constraints = new HashMap<>();
+    protected final Map<ConstraintWrapper, ConstraintWrapper> constraints = new HashMap<>();
 
     public ConstraintSet() {
     }
@@ -261,11 +262,12 @@ public class ConstraintSet{
 
     /**
      * replaces the constraint with a simple wrapper that is quick to find in a set.
+     // todo - protected
      */
-    private static class ConstraintWrapper{
-        private I_Location location;
-        private int time;
-        private Set<Constraint> relevantConstraints;
+    protected static class ConstraintWrapper{
+        public I_Location location;
+        public int time;
+        public Set<Constraint> relevantConstraints;
 
         public ConstraintWrapper(I_Location location, int time) {
             this.location = location;
@@ -335,6 +337,7 @@ public class ConstraintSet{
             }
             return false;
         }
+
 
         public boolean accepts(Move move){
             return !this.rejects(move);

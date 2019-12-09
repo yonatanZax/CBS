@@ -31,6 +31,7 @@ public class TimeLocation {
 
     @Override
     public int hashCode() {
-        return Objects.hash(time, location);
+        int hashcode = time * location.hashCode();
+        return hashcode;
     }
 }

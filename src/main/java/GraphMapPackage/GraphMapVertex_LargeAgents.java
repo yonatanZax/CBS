@@ -69,4 +69,17 @@ public class GraphMapVertex_LargeAgents extends GraphMapVertex {
         return result;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof GraphMapVertex_LargeAgents)) return false;
+        GraphMapVertex_LargeAgents that = (GraphMapVertex_LargeAgents) o;
+        return Objects.equals(neighbors, that.neighbors);
+    }
+
+    @Override
+    public int hashCode() {
+        int hashcode = super.coordinate.hashCode();
+        return hashcode;
+    }
 }
