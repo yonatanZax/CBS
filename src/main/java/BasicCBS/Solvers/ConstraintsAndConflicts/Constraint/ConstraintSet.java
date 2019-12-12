@@ -17,8 +17,9 @@ public class ConstraintSet{
     /**
      * Basically a dictionary from [time,location] to agents who can't go there at that time, and locations from which
      * they can't go there at that time.
+     // todo - protected
      */
-    private final Map<ConstraintWrapper, ConstraintWrapper> constraints = new HashMap<>();
+    protected final Map<ConstraintWrapper, ConstraintWrapper> constraints = new HashMap<>();
 
     public ConstraintSet() {
     }
@@ -171,16 +172,14 @@ public class ConstraintSet{
     public int rejectsEventually(Move finalMove){
         int firstRejectionTime = Integer.MAX_VALUE;
         // traverses the entire data structure. expensive.
-        for (ConstraintWrapper cw :
-                constraints.keySet()) {
+        for (ConstraintWrapper cw : constraints.keySet()) {
             //found constraint for this location, sometime in the future. Should be rare.
             if(cw.time > finalMove.timeNow && cw.location.equals(finalMove.currLocation)){
-                for (Constraint constraint :
-                        cw.relevantConstraints) {
+                for (Constraint constraint : cw.relevantConstraints) {
                     // make an artificial "stay" move for the relevant time.
                     // In practice, this should happen very rarely, so not very expensive.
-                    if(constraint.rejects(new Move(finalMove.agent, cw.time, finalMove.currLocation, finalMove.currLocation))
-                            && cw.time < firstRejectionTime){
+                    Move move = new Move(finalMove.agent, cw.time, finalMove.currLocation, finalMove.currLocation);
+                    if(constraint.rejects(move) && cw.time < firstRejectionTime){
                         firstRejectionTime = cw.time;
                     }
                 }
@@ -263,11 +262,12 @@ public class ConstraintSet{
 
     /**
      * replaces the constraint with a simple wrapper that is quick to find in a set.
+     // todo - protected
      */
-    private static class ConstraintWrapper{
-        private I_Location location;
-        private int time;
-        private Set<Constraint> relevantConstraints;
+    protected static class ConstraintWrapper{
+        public I_Location location;
+        public int time;
+        public Set<Constraint> relevantConstraints;
 
         public ConstraintWrapper(I_Location location, int time) {
             this.location = location;
@@ -337,6 +337,7 @@ public class ConstraintSet{
             }
             return false;
         }
+
 
         public boolean accepts(Move move){
             return !this.rejects(move);

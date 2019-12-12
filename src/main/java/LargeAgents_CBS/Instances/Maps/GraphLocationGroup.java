@@ -40,6 +40,10 @@ public class GraphLocationGroup implements I_Location {
         this.addCellsToInnerOuter();
     }
 
+    public GraphLocationGroup(I_Coordinate coordinate_2D_largeAgents, I_Map map){
+        this( ((Coordinate_2D_LargeAgent)coordinate_2D_largeAgents).getCoordinates(), map);
+    }
+
     public GraphLocationGroup(GraphMapVertex_LargeAgents[][] mapCells) {
         this.mapCells = mapCells;
         this.addCellsToInnerOuter();
@@ -214,8 +218,21 @@ public class GraphLocationGroup implements I_Location {
 
         // all cells are equals
         return true;
+    }
 
+    @Override
+    public int hashCode() {
+        int hashCode = 1;
+        for (GraphMapVertex_LargeAgents e : this.getAllCells())
+            hashCode = 31 * hashCode + (e == null ? 0 : e.hashCode());
+        return hashCode;
     }
 
 
+    @Override
+    public String toString() {
+        return "GraphLocationGroup{" +
+                this.getCoordinate().toString() +
+                '}';
+    }
 }

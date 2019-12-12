@@ -23,7 +23,7 @@ public class GraphMap implements I_Map {
      * @param allGraphCells a {@link HashMap} containing all cells in the graph.
      */
     // todo - protected
-    protected GraphMap(HashMap<I_Coordinate, ? extends GraphMapVertex> allGraphCells) {
+    GraphMap(HashMap<I_Coordinate, ? extends GraphMapVertex> allGraphCells) {
         this.allGraphCells = allGraphCells;
     }
 
