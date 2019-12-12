@@ -85,9 +85,11 @@ public class AStar_LargeAgents extends SingleAgentAStar_Solver {
                 Move groupCurrentMove = currentState.getMove();
                 if(agentsStayAtGoal && firstRejectionAtGoalTime < groupCurrentMove.timeNow) {
                     // do the expensive update/check
+                    int rejectionTimeValue = -1;
                     for (Move currentCellMove : this.getAllCellsMoves(groupCurrentMove)) {
-                        firstRejectionAtGoalTime = Math.max(firstRejectionAtGoalTime,constraints.rejectsEventually(currentCellMove));
+                        rejectionTimeValue = Math.max(rejectionTimeValue,constraints.rejectsEventually(currentCellMove));
                     }
+                    firstRejectionAtGoalTime = rejectionTimeValue;
                 }
 
                 if(firstRejectionAtGoalTime == -1){ // no rejections

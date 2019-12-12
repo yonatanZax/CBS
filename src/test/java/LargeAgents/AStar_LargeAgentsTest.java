@@ -139,7 +139,7 @@ public class AStar_LargeAgentsTest {
         Agent agent = testInstance.agents.get(0);
 
         //constraint
-        Constraint vertexConstraint = new Constraint(null, 1, null, cell32Circle);
+        Constraint vertexConstraint = new Constraint(null, 1, null, mapCircle.getMapCell(new Coordinate_2D(3,2)));
         ConstraintSet constraints = new ConstraintSet();
         constraints.add(vertexConstraint);
         RunParameters parameters = new RunParameters(constraints);
@@ -267,6 +267,7 @@ public class AStar_LargeAgentsTest {
         MAPF_Instance testInstance1 = instanceEmpty1;
         Agent agent1 = testInstance1.agents.get(0);
 
+
         MAPF_Instance testInstance2 = instanceEmpty2;
         Agent agent2 = testInstance2.agents.get(0);
 
@@ -329,6 +330,7 @@ public class AStar_LargeAgentsTest {
 
     @Test
     void accountsForMultipleConstraintsAfterReachingGoal2() {
+
         // now with an expected plan
 
         MAPF_Instance testInstance = instanceCircle2;
