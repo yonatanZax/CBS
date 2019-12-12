@@ -222,6 +222,17 @@ public class GraphLocationGroup implements I_Location {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.getAllCells());
+        int hashCode = 1;
+        for (GraphMapVertex_LargeAgents e : this.getAllCells())
+            hashCode = 31 * hashCode + (e == null ? 0 : e.hashCode());
+        return hashCode;
+    }
+
+
+    @Override
+    public String toString() {
+        return "GraphLocationGroup{" +
+                this.getCoordinate().toString() +
+                '}';
     }
 }

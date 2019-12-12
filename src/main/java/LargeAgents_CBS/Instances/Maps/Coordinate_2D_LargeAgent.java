@@ -3,6 +3,8 @@ package LargeAgents_CBS.Instances.Maps;
 import BasicCBS.Instances.Maps.Coordinates.Coordinate_2D;
 import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
 
+import java.util.Arrays;
+
 public class Coordinate_2D_LargeAgent implements I_Coordinate {
 
     private Coordinate_2D[][] coordinates;
@@ -63,5 +65,14 @@ public class Coordinate_2D_LargeAgent implements I_Coordinate {
         }
 
         return true;
+    }
+
+    @Override
+    public String toString() {
+        String result = "";
+        for (Coordinate_2D[] coordinate : this.coordinates) {
+            result +=  Arrays.toString(coordinate);
+        }
+        return result;
     }
 }
