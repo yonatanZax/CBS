@@ -12,6 +12,8 @@ import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.Constraint;
 import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.ConstraintSet;
 import GraphMapPackage.MapFactory;
 import LargeAgents_CBS.Instances.LargeAgent;
+import LargeAgents_CBS.Instances.Maps.Coordinate_2D_LargeAgent;
+import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
 import LargeAgents_CBS.Solvers.LowLevel.AStar_LargeAgents;
 import org.junit.jupiter.api.Test;
 
@@ -59,31 +61,31 @@ public class AStar_LargeAgentsTest {
     };
     private I_Map mapWithPocket = MapFactory.newSimple4Connected2D_GraphMap_LargeAgents(map_2D_withPocket);
 
-    private I_Coordinate coor12 = new Coordinate_2D(1,2);
-    private I_Coordinate coor13 = new Coordinate_2D(1,3);
-    private I_Coordinate coor14 = new Coordinate_2D(1,4);
-    private I_Coordinate coor22 = new Coordinate_2D(2,2);
-    private I_Coordinate coor24 = new Coordinate_2D(2,4);
-    private I_Coordinate coor32 = new Coordinate_2D(3,2);
-    private I_Coordinate coor33 = new Coordinate_2D(3,3);
-    private I_Coordinate coor34 = new Coordinate_2D(3,4);
+    private I_Coordinate coor12 = new Coordinate_2D_LargeAgent(new Coordinate_2D(1,2));
+    private I_Coordinate coor13 = new Coordinate_2D_LargeAgent(new Coordinate_2D(1,3));
+    private I_Coordinate coor14 = new Coordinate_2D_LargeAgent(new Coordinate_2D(1,4));
+    private I_Coordinate coor22 = new Coordinate_2D_LargeAgent(new Coordinate_2D(2,2));
+    private I_Coordinate coor24 = new Coordinate_2D_LargeAgent(new Coordinate_2D(2,4));
+    private I_Coordinate coor32 = new Coordinate_2D_LargeAgent(new Coordinate_2D(3,2));
+    private I_Coordinate coor33 = new Coordinate_2D_LargeAgent(new Coordinate_2D(3,3));
+    private I_Coordinate coor34 = new Coordinate_2D_LargeAgent(new Coordinate_2D(3,4));
 
-    private I_Coordinate coor11 = new Coordinate_2D(1,1);
-    private I_Coordinate coor43 = new Coordinate_2D(4,3);
-    private I_Coordinate coor53 = new Coordinate_2D(5,3);
-    private I_Coordinate coor05 = new Coordinate_2D(0,5);
+    private I_Coordinate coor11 = new Coordinate_2D_LargeAgent(new Coordinate_2D(1,1));
+    private I_Coordinate coor43 = new Coordinate_2D_LargeAgent(new Coordinate_2D(4,3));
+    private I_Coordinate coor53 = new Coordinate_2D_LargeAgent(new Coordinate_2D(5,3));
+    private I_Coordinate coor05 = new Coordinate_2D_LargeAgent(new Coordinate_2D(0,5));
 
-    private I_Coordinate coor04 = new Coordinate_2D(0,4);
-    private I_Coordinate coor00 = new Coordinate_2D(0,0);
+    private I_Coordinate coor04 = new Coordinate_2D_LargeAgent(new Coordinate_2D(0,4));
+    private I_Coordinate coor00 = new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0));
 
-    private I_Location cell12Circle = mapCircle.getMapCell(coor12);
-    private I_Location cell13Circle = mapCircle.getMapCell(coor13);
-    private I_Location cell14Circle = mapCircle.getMapCell(coor14);
-    private I_Location cell22Circle = mapCircle.getMapCell(coor22);
-    private I_Location cell24Circle = mapCircle.getMapCell(coor24);
-    private I_Location cell32Circle = mapCircle.getMapCell(coor32);
-    private I_Location cell33Circle = mapCircle.getMapCell(coor33);
-    private I_Location cell34Circle = mapCircle.getMapCell(coor34);
+    private I_Location cell12Circle = new GraphLocationGroup(coor12,mapCircle);
+    private I_Location cell13Circle = new GraphLocationGroup(coor13,mapCircle);
+    private I_Location cell14Circle = new GraphLocationGroup(coor14,mapCircle);
+    private I_Location cell22Circle = new GraphLocationGroup(coor22,mapCircle);
+    private I_Location cell24Circle = new GraphLocationGroup(coor24,mapCircle);
+    private I_Location cell32Circle = new GraphLocationGroup(coor32,mapCircle);
+    private I_Location cell33Circle = new GraphLocationGroup(coor33,mapCircle);
+    private I_Location cell34Circle = new GraphLocationGroup(coor34,mapCircle);
 
     private I_Location cell11 = mapCircle.getMapCell(coor11);
     private I_Location cell43 = mapCircle.getMapCell(coor43);
@@ -93,14 +95,14 @@ public class AStar_LargeAgentsTest {
     private I_Location cell04 = mapCircle.getMapCell(coor04);
     private I_Location cell00 = mapCircle.getMapCell(coor00);
 
-    private LargeAgent agent33to12 = new LargeAgent(new Agent(0, coor33, coor12));
-    private LargeAgent agent12to33 = new LargeAgent(new Agent(1, coor12, coor33));
-    private LargeAgent agent53to05 = new LargeAgent(new Agent(0, coor53, coor05));
-    private LargeAgent agent43to11 = new LargeAgent(new Agent(0, coor43, coor11));
-    private LargeAgent agent04to00 = new LargeAgent(new Agent(0, coor04, coor00));
+    private LargeAgent agent33to12 = new LargeAgent(0, coor33, coor12);
+    private LargeAgent agent12to33 = new LargeAgent(1, coor12, coor33);
+    private LargeAgent agent53to05 = new LargeAgent(0, coor53, coor05);
+    private LargeAgent agent43to11 = new LargeAgent(0, coor43, coor11);
+    private LargeAgent agent04to00 = new LargeAgent(0, coor04, coor00);
 
 
-    private LargeAgent agent00to11 = new LargeAgent(new Agent(0, coor00, coor11));
+    private LargeAgent agent00to11 = new LargeAgent(0, coor00, coor11);
 
     private MAPF_Instance instanceEmpty_SmallMap = new MAPF_Instance("instanceEmpty_SmallMap", mapEmpty_smallMap, new Agent[]{agent00to11});
     private MAPF_Instance instanceEmpty1 = new MAPF_Instance("instanceEmpty", mapEmpty, new Agent[]{agent53to05});
@@ -269,7 +271,7 @@ public class AStar_LargeAgentsTest {
         Agent agent2 = testInstance2.agents.get(0);
 
         Solution solved0 = aStar_largeAgents.solve(testInstance0, new RunParameters());
-        assertEquals(1, solved0.getPlanFor(agent0).size());
+        assertEquals(2, solved0.getPlanFor(agent0).size());
 
 
         Solution solved1 = aStar_largeAgents.solve(testInstance1, new RunParameters());
@@ -294,7 +296,8 @@ public class AStar_LargeAgentsTest {
     void accountsForConstraintAfterReachingGoal() {
         MAPF_Instance testInstance = instanceEmpty1;
         Agent agent = testInstance.agents.get(0);
-        Constraint constraintAtTimeAfterReachingGoal = new Constraint(agent,9, null, instanceEmpty1.map.getMapCell(coor05));
+        I_Location location_05 = new GraphLocationGroup(coor05, mapEmpty);
+        Constraint constraintAtTimeAfterReachingGoal = new Constraint(agent,9, null, location_05);
         ConstraintSet constraints = new ConstraintSet();
         constraints.add(constraintAtTimeAfterReachingGoal);
         RunParameters runParameters = new RunParameters(constraints);
@@ -309,9 +312,9 @@ public class AStar_LargeAgentsTest {
     void accountsForMultipleConstraintsAfterReachingGoal() {
         MAPF_Instance testInstance = instanceEmpty1;
         Agent agent = testInstance.agents.get(0);
-        Constraint constraintAtTimeAfterReachingGoal1 = new Constraint(agent,9, null, instanceEmpty1.map.getMapCell(coor05));
-        Constraint constraintAtTimeAfterReachingGoal2 = new Constraint(agent,13, null, instanceEmpty1.map.getMapCell(coor05));
-        Constraint constraintAtTimeAfterReachingGoal3 = new Constraint(agent,14, null, instanceEmpty1.map.getMapCell(coor05));
+        Constraint constraintAtTimeAfterReachingGoal1 = new Constraint(agent,9, null, new GraphLocationGroup(coor05, mapEmpty));
+        Constraint constraintAtTimeAfterReachingGoal2 = new Constraint(agent,13, null,new GraphLocationGroup(coor05, mapEmpty));
+        Constraint constraintAtTimeAfterReachingGoal3 = new Constraint(agent,14, null,new GraphLocationGroup(coor05, mapEmpty));
         ConstraintSet constraints = new ConstraintSet();
         constraints.add(constraintAtTimeAfterReachingGoal1);
         constraints.add(constraintAtTimeAfterReachingGoal2);

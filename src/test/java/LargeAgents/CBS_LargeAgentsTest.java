@@ -95,10 +95,6 @@ public class CBS_LargeAgentsTest {
     private LargeAgent agent00to10 = new LargeAgent(new Agent(5, coor00, coor10));
     private LargeAgent agent10to00 = new LargeAgent(new Agent(6, coor10, coor00));
 
-    InstanceBuilder_BGU builder = new InstanceBuilder_BGU();
-    InstanceManager im = new InstanceManager(IO_Manager.buildPath( new String[]{   IO_Manager.testResources_Directory,"Instances"}),
-            new InstanceBuilder_BGU(), new InstanceProperties(new MapDimensions(new int[]{6,6}),0f,new int[]{1}));
-
     private MAPF_Instance instanceEmpty1 = new MAPF_Instance("instanceEmpty", mapEmpty,
             new Agent[]{agent33to12, agent12to33, agent53to05, agent43to11, agent04to54, agent00to10, agent10to00});
     private MAPF_Instance instanceCircle1 = new MAPF_Instance("instanceCircle1", mapCircle, new Agent[]{agent33to12, agent12to33});
