@@ -13,7 +13,8 @@ import java.util.*;
 public class ConflictManager implements I_ConflictManager {
 
     /*  = Data structures =   */
-    private final Set<A_Conflict> allConflicts; // Keeps all conflicts
+    // todo - protected
+    protected final Set<A_Conflict> allConflicts; // Keeps all conflicts
 
     /**
      * TimeLocationTables mapping:
