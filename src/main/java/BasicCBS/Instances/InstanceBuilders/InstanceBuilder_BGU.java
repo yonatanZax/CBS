@@ -19,11 +19,11 @@ public class InstanceBuilder_BGU implements I_InstanceBuilder {
 
     public static final MapDimensions.Enum_mapOrientation MAP_ORIENTATION = MapDimensions.Enum_mapOrientation.Y_HORIZONTAL_X_VERTICAL;
 
-    private final String INDICATOR_AGENTS = "Agents:";
-    private final String SEPARATOR_AGENTS = ",";
-    private final String INDICATOR_MAP = "Grid:";
-    private final String SEPARATOR_DIMENSIONS = ",";
-    private final String SEPARATOR_MAP = "";
+    protected final String INDICATOR_AGENTS = "Agents:";
+    protected final String SEPARATOR_AGENTS = ",";
+    protected final String INDICATOR_MAP = "Grid:";
+    protected final String SEPARATOR_DIMENSIONS = ",";
+    protected final String SEPARATOR_MAP = "";
 
     private final Stack<MAPF_Instance> instanceStack = new Stack<>();
 
@@ -32,10 +32,10 @@ public class InstanceBuilder_BGU implements I_InstanceBuilder {
 
 
     /*  =  Agent line Indexing =   */
-    private final int INDEX_AGENT_SOURCE_XVALUE = 3;
-    private final int INDEX_AGENT_SOURCE_YVALUE = 4;
-    private final int INDEX_AGENT_TARGET_XVALUE = 1;
-    private final int INDEX_AGENT_TARGET_YVALUE = 2;
+    protected final int INDEX_AGENT_SOURCE_XVALUE = 3;
+    protected final int INDEX_AGENT_SOURCE_YVALUE = 4;
+    protected final int INDEX_AGENT_TARGET_XVALUE = 1;
+    protected final int INDEX_AGENT_TARGET_YVALUE = 2;
 
 
     /*      =Cell Types=   */
@@ -49,9 +49,9 @@ public class InstanceBuilder_BGU implements I_InstanceBuilder {
 
 
     /*  =Default Values=    */
-    private final int defaultNumOfDimensions = 2;
-    private final MapDimensions defaultDimensions = new MapDimensions();
-    private final int[] defaultNumOfAgents = new int[0];
+    protected final int defaultNumOfDimensions = 2;
+    protected final MapDimensions defaultDimensions = new MapDimensions();
+    protected final int[] defaultNumOfAgents = new int[0];
 
 
 
@@ -185,8 +185,8 @@ public class InstanceBuilder_BGU implements I_InstanceBuilder {
 
 
     /***  =Build Agents=  ***/
-
-    private Agent buildSingleAgent(int dimensions, String line){
+    // todo - protected
+    protected Agent buildSingleAgent(int dimensions, String line){
 
         String[] agentLine = line.split(this.SEPARATOR_AGENTS);
 

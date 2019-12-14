@@ -10,6 +10,7 @@ import Environment.Metrics.S_Metrics;
 import BasicCBS.Solvers.CBS.CBS_Solver;
 import BasicCBS.Solvers.RunParameters;
 import BasicCBS.Solvers.Solution;
+import LargeAgents_CBS.Environment_LargeAgents.RunManager_LargeAgents;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -38,13 +39,15 @@ public class Main {
     public static void main(String[] args) {
         if(verifyOutputPath()){
             // will solve a single instance and print the solution
-            solveOneInstanceExample();
+//            solveOneInstanceExample();
             // will solve multiple instances and print a simple report for each instance
-            runMultipleExperimentsExample();
+//            runMultipleExperimentsExample();
             // will solve a set of instances. These instances have known optimal solution costs (found at
             // src\test\resources\TestingBenchmark\Results.csv), and so can be used as a benchmark.
-            runTestingBenchmarkExperiment();
+//            runTestingBenchmarkExperiment();
             // all examples will also produce a report in CSV format, and save it to resultsOutputDir (see above)
+
+            runLargeAgentBenchmark();
         }
     }
 
@@ -88,6 +91,12 @@ public class Main {
         RunManagerSimpleExample runManagerSimpleExample = new RunManagerSimpleExample();
         runManagerSimpleExample.runAllExperiments();
 
+        outputResults();
+    }
+
+    public static void runLargeAgentBenchmark(){
+        A_RunManager largeAgentRunManager = new RunManager_LargeAgents();
+        largeAgentRunManager.runAllExperiments();
         outputResults();
     }
 

@@ -80,7 +80,8 @@ public interface I_InstanceBuilder {
                 if( mapAsCellType_2D == null){
                     return null; // Error while building the map
                 }
-                return MapFactory.newSimple4Connected2D_GraphMap(mapAsCellType_2D);
+                // todo - newSimple4Connected2D_GraphMap_LargeAgents
+                return MapFactory.newSimple4Connected2D_GraphMap_LargeAgents(mapAsCellType_2D);
 
             case 3:
                 Character[][][] mapAsCharacters_3d = new Character[][][]{};

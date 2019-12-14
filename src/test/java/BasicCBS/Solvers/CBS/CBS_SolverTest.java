@@ -26,7 +26,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CBS_SolverTest {
+public class CBS_SolverTest {
 
     private final Enum_MapCellType e = Enum_MapCellType.EMPTY;
     private final Enum_MapCellType w = Enum_MapCellType.WALL;
@@ -280,7 +280,7 @@ class CBS_SolverTest {
 
     }
 
-    private Map<String, Map<String, String>> readResultsCSV(String pathToCsv) throws IOException {
+    public static Map<String, Map<String, String>> readResultsCSV(String pathToCsv) throws IOException {
         Map<String, Map<String, String>> result  = new HashMap<>();
         BufferedReader csvReader = new BufferedReader(new FileReader(pathToCsv));
 
