@@ -76,7 +76,8 @@ public class MapFactory {
         //generate all cells
         for (int xIndex = 0; xIndex < xAxis_length; xIndex++) {
             for (int yIndex = 0; yIndex < yAxis_length; yIndex++) {
-                if (rectangle_2D_Map[xIndex][yIndex] == Enum_MapCellType.EMPTY) {
+                // todo - changed from Empty to not Wall
+                if (rectangle_2D_Map[xIndex][yIndex] != Enum_MapCellType.WALL) {
                     cells[xIndex][yIndex] = new GraphMapVertex_LargeAgents(rectangle_2D_Map[xIndex][yIndex], new Coordinate_2D(xIndex, yIndex));
                 }
             }

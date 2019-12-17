@@ -143,25 +143,17 @@ public class GraphLocationGroup implements I_Location {
     @Override
     public boolean isNeighbor(I_Location other) {
 
-        if (!(other instanceof GraphLocationGroup)){
-            return false; // checks that I_Location is GraphLocationGroup
-        }
-
+        if (!(other instanceof GraphLocationGroup)){ return false; /* checks that I_Location is GraphLocationGroup */ }
         List<I_Location> myNeighbors = this.getNeighbors();
-        if( myNeighbors == null ){
-            return false;
-        }
+        if( myNeighbors == null ){ return false; }
 
         return myNeighbors.contains(other);
-
-        // imp - Check if another location is a neighbor of this group
     }
 
 
+
     public Enum_direction getNeighborDirection(I_Location other){
-        if(!(other instanceof GraphLocationGroup) || ! isNeighbor(other)){
-            return null;
-        }
+        if(!(other instanceof GraphLocationGroup) || ! isNeighbor(other)){ return null; }
 
         List<GraphMapVertex_LargeAgents> groupCells = this.getAllCells();
         List<GraphMapVertex_LargeAgents> otherCells = ((GraphLocationGroup) other).getAllCells();
@@ -180,12 +172,8 @@ public class GraphLocationGroup implements I_Location {
                 expectedNeighborCount--;
             }
 
-            if( expectedNeighborCount == 0 ){
-                return direction;
-            }
-
+            if( expectedNeighborCount == 0 ){ return direction; }
         }
-
         return null;
     }
 
@@ -199,17 +187,12 @@ public class GraphLocationGroup implements I_Location {
 
     @Override
     public boolean equals(Object other){
-        if( !(other instanceof GraphLocationGroup)){
-            return false;
-        }
+        if( !(other instanceof GraphLocationGroup)){ return false; }
 
         GraphMapVertex_LargeAgents[][] myCells = this.mapCells;
         GraphMapVertex_LargeAgents[][] otherCells = ((GraphLocationGroup) other).mapCells;
 
-        if( myCells == null || otherCells == null || myCells.length != otherCells.length){
-            return false;
-        }
-
+        if( myCells == null || otherCells == null || myCells.length != otherCells.length){ return false; }
 
         for (int i = 0; i < myCells.length; i++)
             for (int j = 0; j < myCells[i].length; j++)
@@ -219,6 +202,28 @@ public class GraphLocationGroup implements I_Location {
         // all cells are equals
         return true;
     }
+
+
+
+    @Override
+    public boolean intersectsWith(I_Location other) {
+
+        if( !(other instanceof GraphLocationGroup)){ return true; }
+
+        GraphMapVertex_LargeAgents[][] myCells = this.mapCells;
+        GraphMapVertex_LargeAgents[][] otherCells = ((GraphLocationGroup) other).mapCells;
+
+        if( myCells == null || otherCells == null){ return true; }
+
+        for (int xValue = 0; xValue < Math.min(myCells.length, otherCells.length); xValue++)
+            for (int yValue = 0; yValue < Math.min(myCells[xValue].length, otherCells[xValue].length); yValue++)
+                if( myCells[xValue][yValue] == otherCells[xValue][yValue] )
+                    return true;
+
+        return false; // No intersection
+    }
+
+
 
     @Override
     public int hashCode() {
@@ -232,7 +237,6 @@ public class GraphLocationGroup implements I_Location {
     @Override
     public String toString() {
         return "GraphLocationGroup{" +
-                this.getCoordinate().toString() +
-                '}';
+                this.getCoordinate().toString() + '}';
     }
 }

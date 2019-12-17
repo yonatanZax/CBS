@@ -83,14 +83,13 @@ public class GraphMapVertex implements I_Location {
         return result;
     }
 
+
     @Override
     public String toString() {
         return "GraphMapCell{" +
-                "coordinate=" + coordinate +
-                '}';
+                "coordinate=" + coordinate + '}';
     }
 
-    // todo - add equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -98,6 +97,12 @@ public class GraphMapVertex implements I_Location {
         GraphMapVertex that = (GraphMapVertex) o;
         return cellType == that.cellType &&
                 Objects.equals(coordinate, that.coordinate);
+    }
+
+
+    @Override
+    public boolean intersectsWith(I_Location other) {
+        return equals(other);
     }
 
     @Override
