@@ -18,7 +18,7 @@ import GraphMapPackage.MapFactory;
 import LargeAgents_CBS.Instances.LargeAgent;
 import LargeAgents_CBS.Instances.Maps.Coordinate_2D_LargeAgent;
 import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
-import LargeAgents_CBS.Solvers.HighLevel.ConflictManager_LargeAgents;
+import LargeAgents_CBS.Solvers.HighLevel.ConflictManager_Shapes;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -44,7 +44,7 @@ public class ConflictManager_LargeAgentsTest {
     @Test
     public void goalConflict(){
 
-        ConflictManager conflictAvoidanceTable = new ConflictManager_LargeAgents(new MinTimeConflictSelectionStrategy());
+        ConflictManager conflictAvoidanceTable = new ConflictManager_Shapes(new MinTimeConflictSelectionStrategy());
 
 
 
@@ -104,7 +104,7 @@ public class ConflictManager_LargeAgentsTest {
     @Test
     public void swappingConflict2CellMap(){
 
-        ConflictManager conflictAvoidanceTable = new ConflictManager_LargeAgents(new MinTimeConflictSelectionStrategy());
+        ConflictManager conflictAvoidanceTable = new ConflictManager_Shapes(new MinTimeConflictSelectionStrategy());
 
 
 
@@ -157,7 +157,7 @@ public class ConflictManager_LargeAgentsTest {
     @Test
     public void TwoAgentsWith4VertexConflicts_graphH() {
 
-        ConflictManager_LargeAgents conflictAvoidanceTable = new ConflictManager_LargeAgents(new MinTimeConflictSelectionStrategy());
+        ConflictManager_Shapes conflictAvoidanceTable = new ConflictManager_Shapes(new MinTimeConflictSelectionStrategy());
 
 
         /*  = Add a1 Plan =
@@ -211,7 +211,7 @@ public class ConflictManager_LargeAgentsTest {
 
 
         /*      = Copy constructor =      */
-        ConflictManager_LargeAgents copiedTable = new ConflictManager_LargeAgents(conflictAvoidanceTable);
+        ConflictManager_Shapes copiedTable = new ConflictManager_Shapes(conflictAvoidanceTable);
         Assert.assertTrue(RemovableConflictAvoidance.equalsAllConflicts(conflictAvoidanceTable.getAllConflicts(), copiedTable.getAllConflicts()));
         Assert.assertTrue(TimeLocationTables.equalsTimeLocations(conflictAvoidanceTable.timeLocationTables.timeLocation_Agents,copiedTable.timeLocationTables.timeLocation_Agents));
         System.out.println("TwoAgentsWith4VertexConflicts_graphH: Done - Copy Constructor");
@@ -300,7 +300,7 @@ public class ConflictManager_LargeAgentsTest {
     @Test
     public void TwoAgentsWith1SwappingConflict_graphH() {
 
-        ConflictManager_LargeAgents conflictAvoidanceTable = new ConflictManager_LargeAgents(new MinTimeConflictSelectionStrategy());
+        ConflictManager_Shapes conflictAvoidanceTable = new ConflictManager_Shapes(new MinTimeConflictSelectionStrategy());
 
 
         /*  = Add a1 Plan =
@@ -355,7 +355,7 @@ public class ConflictManager_LargeAgentsTest {
 
 
         /*      = Copy constructor =      */
-        ConflictManager_LargeAgents copiedTable = new ConflictManager_LargeAgents(conflictAvoidanceTable);
+        ConflictManager_Shapes copiedTable = new ConflictManager_Shapes(conflictAvoidanceTable);
         Assert.assertTrue(RemovableConflictAvoidance.equalsAllConflicts(conflictAvoidanceTable.getAllConflicts(), copiedTable.getAllConflicts()));
         Assert.assertTrue(TimeLocationTables.equalsTimeLocations(conflictAvoidanceTable.timeLocationTables.timeLocation_Agents,copiedTable.timeLocationTables.timeLocation_Agents));
         System.out.println("TwoAgentsWith1SwappingConflict_graphH: Done - Copy Constructor");

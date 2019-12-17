@@ -1,16 +1,12 @@
 package LargeAgents;
 
 import BasicCBS.Instances.Agent;
-import BasicCBS.Instances.InstanceBuilders.InstanceBuilder_BGU;
 import BasicCBS.Instances.InstanceManager;
-import BasicCBS.Instances.InstanceProperties;
 import BasicCBS.Instances.MAPF_Instance;
 import BasicCBS.Instances.Maps.Coordinates.Coordinate_2D;
 import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
 import BasicCBS.Instances.Maps.Enum_MapCellType;
 import BasicCBS.Instances.Maps.I_Map;
-import BasicCBS.Instances.Maps.MapDimensions;
-import BasicCBS.Solvers.CBS.CBS_Solver;
 import BasicCBS.Solvers.CBS.CBS_SolverTest;
 import BasicCBS.Solvers.I_Solver;
 import BasicCBS.Solvers.RunParameters;
@@ -21,7 +17,7 @@ import Environment.Metrics.S_Metrics;
 import GraphMapPackage.MapFactory;
 import LargeAgents_CBS.Instances.InstanceBuilder_BGU_LA;
 import LargeAgents_CBS.Instances.LargeAgent;
-import LargeAgents_CBS.Solvers.HighLevel.CBS_LargeAgents;
+import LargeAgents_CBS.Solvers.HighLevel.CBS_Shapes;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -111,7 +107,7 @@ public class CBS_LargeAgentsTest {
     private MAPF_Instance instanceCircle2 = new MAPF_Instance("instanceCircle1", mapCircle, new Agent[]{agent12to33, agent33to12});
     private MAPF_Instance instanceUnsolvable = new MAPF_Instance("instanceUnsolvable", mapWithPocket, new Agent[]{agent00to10, agent10to00});
 
-    I_Solver cbsSolver_lageAgents = new CBS_LargeAgents();
+    I_Solver cbsSolver_lageAgents = new CBS_Shapes();
 
 
     void validate(Solution solution, int numAgents, int optimalSOC, int optimalMakespan){
@@ -177,7 +173,7 @@ public class CBS_LargeAgentsTest {
     void TestingBenchmark(){
         boolean useAsserts = true;
 
-        I_Solver solver = new CBS_LargeAgents();
+        I_Solver solver = new CBS_Shapes();
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.testResources_Directory,
                 "TestingBenchmark"});
         InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_BGU_LA());

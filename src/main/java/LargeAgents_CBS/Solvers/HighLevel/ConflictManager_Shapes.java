@@ -12,15 +12,15 @@ import GraphMapPackage.GraphMapVertex_LargeAgents;
 
 import java.util.Set;
 
-public class ConflictManager_LargeAgents extends ConflictManager {
+public class ConflictManager_Shapes extends ConflictManager {
 
 
 
-    public ConflictManager_LargeAgents(ConflictSelectionStrategy conflictSelectionStrategy){
+    public ConflictManager_Shapes(ConflictSelectionStrategy conflictSelectionStrategy){
         super(conflictSelectionStrategy);
     }
 
-    public ConflictManager_LargeAgents(ConflictManager_LargeAgents other){
+    public ConflictManager_Shapes(ConflictManager_Shapes other){
         super(other);
     }
 

@@ -1,16 +1,14 @@
 package LargeAgents_CBS.Environment_LargeAgents;
 
-import BasicCBS.Instances.InstanceBuilders.InstanceBuilder_BGU;
 import BasicCBS.Instances.InstanceManager;
 import BasicCBS.Instances.InstanceProperties;
 import BasicCBS.Instances.Maps.MapDimensions;
-import BasicCBS.Solvers.CBS.CBS_Solver;
 import Environment.A_RunManager;
 import Environment.Experiment;
 import Environment.IO_Package.IO_Manager;
 import LargeAgents_CBS.Instances.InstanceBuilder_BGU_LA;
 import LargeAgents_CBS.Instances.InstanceBuilder_Shapes;
-import LargeAgents_CBS.Solvers.HighLevel.CBS_LargeAgents;
+import LargeAgents_CBS.Solvers.HighLevel.CBS_Shapes;
 
 public class RunManager_LargeAgents extends A_RunManager {
 
@@ -25,7 +23,7 @@ public class RunManager_LargeAgents extends A_RunManager {
     @Override
     protected void setSolvers() {
 //        super.solvers.add(new CBS_Solver());
-        super.solvers.add(new CBS_LargeAgents());
+        super.solvers.add(new CBS_Shapes());
     }
 
     /*  = Set Experiments =  */
