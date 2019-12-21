@@ -66,7 +66,6 @@ public class ConflictManager_Shapes extends ConflictManager {
     @Override
     protected void manageGoalLocationFromPlan(int goalTime, SingleAgentPlan singleAgentPlan) {
 
-        // Imp - change location to Group
         GraphLocationGroup goalGroupLocation = (GraphLocationGroup) singleAgentPlan.moveAt(goalTime).currLocation;
         for (GraphMapVertex_LargeAgents mapCellLocation: goalGroupLocation.getAllCells()) {
             TimeLocation goalCellTimeLocation = new TimeLocation(goalTime, mapCellLocation);
@@ -127,11 +126,7 @@ public class ConflictManager_Shapes extends ConflictManager {
                         this.allConflicts.add(swappingConflict_addedAgentSecond);
                     }
                 }
-
             }
-
-
         }
     }
-
 }

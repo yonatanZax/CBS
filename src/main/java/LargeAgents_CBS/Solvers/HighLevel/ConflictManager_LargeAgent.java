@@ -12,11 +12,15 @@ import BasicCBS.Solvers.SingleAgentPlan;
 import GraphMapPackage.GraphMapVertex_LargeAgents;
 import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class ConflictManager_LargeAgent extends ConflictManager_Shapes {
 
+
+    private Map<GraphMapVertex_LargeAgents,Set<AgentAtGoal>> intersectingWithCellAtGoal = new HashMap<>();
 
     public ConflictManager_LargeAgent(ConflictSelectionStrategy conflictSelectionStrategy) {
         super(conflictSelectionStrategy);
@@ -37,21 +41,39 @@ public class ConflictManager_LargeAgent extends ConflictManager_Shapes {
 
 
     @Override
+    protected void manageGoalLocationFromPlan(int goalTime, SingleAgentPlan singleAgentPlan) {
+
+        GraphLocationGroup goalLocation = (GraphLocationGroup) singleAgentPlan.moveAt(goalTime).currLocation;
+
+        TimeLocation goalTimeLocation = new TimeLocation(goalTime, goalLocation);
+
+        /*  = Check if this agentAtGoal conflicts with other agents =   */
+        this.checkAddSwappingConflicts(goalTime, singleAgentPlan);
+        this.checkAddVertexConflictsWithGoal(goalTimeLocation, singleAgentPlan);
+
+
+        /*  = Add goal timeLocation =  */
+        for (GraphMapVertex_LargeAgents cell : goalLocation.getAllCells()) {
+            this.intersectingWithCellAtGoal.computeIfAbsent(cell, k-> new HashSet<>());
+            this.intersectingWithCellAtGoal.get(cell).add(new AgentAtGoal(singleAgentPlan.agent, goalTime));
+        }
+    }
+
+
+    @Override
     protected void checkAddConflictsByTimeLocation(TimeLocation timeLocation, SingleAgentPlan singleAgentPlan) {
 
         Set<Agent> agentsAtTimeLocation = new HashSet<>();
         Set<AgentAtGoal> agentsAtGoal = new HashSet<>();
 
-        Move move = this.agent_plan.get(singleAgentPlan.agent).moveAt(timeLocation.time + 1);
+        Move move = this.agent_plan.get(singleAgentPlan.agent).moveAt(timeLocation.time);
         if( move == null){return;}
-        GraphLocationGroup agentLocation = (GraphLocationGroup) move.prevLocation;
+        GraphLocationGroup agentLocation = (GraphLocationGroup) move.currLocation;
         for (I_Location cellLocation : (agentLocation.getAllCells())) {
             Set<Agent> agentSet = this.timeLocationTables.getAgentsAtTimeLocation(new TimeLocation(timeLocation.time, cellLocation));
             if(agentSet != null)
                 agentsAtTimeLocation.addAll(agentSet);
-            AgentAtGoal agentAtGoal = this.timeLocationTables.getAgentAtGoalTime(timeLocation.location);
-            if( agentAtGoal != null)
-                agentsAtGoal.add(agentAtGoal);
+            agentsAtGoal = this.intersectingWithCellAtGoal.get(cellLocation) == null ? new HashSet<>() : this.intersectingWithCellAtGoal.get(cellLocation) ;
         }
         this.addVertexConflicts(timeLocation, singleAgentPlan.agent, agentsAtTimeLocation);
 
@@ -61,7 +83,6 @@ public class ConflictManager_LargeAgent extends ConflictManager_Shapes {
             if( agentAtGoal != null ){
                 if ( timeLocation.time >= agentAtGoal.time ){
                     // Adds a Vertex conflict if time at location is greater than another agent time at goal
-                    // blocking - add this
                     this.addVertexConflicts(timeLocation, singleAgentPlan.agent, new HashSet<>(){{add(agentAtGoal.agent);}});
                 }
             }
@@ -81,7 +102,8 @@ public class ConflictManager_LargeAgent extends ConflictManager_Shapes {
         for (Agent agentConflictsWith : agentsAtTimeLocation) {
             if( agentConflictsWith.equals(agent) ){ continue; /* Self Conflict */ }
 
-            Move currAgentMove = this.agent_plan.get(agent).moveAt(timeLocation.time);
+            int agentEndTime = this.agent_plan.get(agent).getEndTime();
+            Move currAgentMove = this.agent_plan.get(agent).moveAt(Math.min(timeLocation.time, agentEndTime));
             GraphLocationGroup currentAgentLocation = (GraphLocationGroup) currAgentMove.currLocation;
             Move otherAgentMove = this.agent_plan.get(agentConflictsWith).moveAt(timeLocation.time);
             GraphLocationGroup otherAgentLocation = (GraphLocationGroup) otherAgentMove.currLocation;
@@ -142,22 +164,36 @@ public class ConflictManager_LargeAgent extends ConflictManager_Shapes {
     }
 
 
+
+
+    @Override
     protected void checkAddVertexConflictsWithGoal(TimeLocation timeLocation, SingleAgentPlan singleAgentPlan){
 
-        I_Location location = timeLocation.location;
+        GraphLocationGroup groupLocation = (GraphLocationGroup) timeLocation.location;
+        Set<GraphMapVertex_LargeAgents> allCells = groupLocation.getAllCells();
+        Set<Integer> timeList = new HashSet<>();
         // A Set of time that at least one agent is occupying
-        Set<Integer> timeList = this.timeLocationTables.getTimeListAtLocation(location);
+        for (GraphMapVertex_LargeAgents locationCell : allCells) {
+            Set timeOfCell = this.timeLocationTables.getTimeListAtLocation(locationCell);
+            if( timeOfCell != null ){
+                timeList.addAll(timeOfCell);
+            }
+        }
 
-        if(timeList == null){ return; /* There are no agents at timeLocation */ }
+
+        if(timeList.isEmpty()){ return; /* There are no agents at timeLocation */ }
 
         // Check if other plans are using this location after the agent arrived at goal
         for (int time : timeList) {
             if( time > timeLocation.time){
-                Set<Agent> agentsAtTimeLocation = this.timeLocationTables.timeLocation_Agents.get(new TimeLocation(time,location));
+
+                Set<Agent> agentsAtTimeLocation = new HashSet<>();
+                for (GraphMapVertex_LargeAgents cellLocation : allCells) {
+                     agentsAtTimeLocation.addAll(this.timeLocationTables.timeLocation_Agents.get(new TimeLocation(time,cellLocation)));
+                }
 
                 // Adds if agent != agentAtTimeLocation
-                // blocking - add this
-                this.addVertexConflicts(new TimeLocation(time, location), singleAgentPlan.agent, agentsAtTimeLocation);
+                this.addVertexConflicts(new TimeLocation(time, groupLocation), singleAgentPlan.agent, agentsAtTimeLocation);
             }
         }
     }
