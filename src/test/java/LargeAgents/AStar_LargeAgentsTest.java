@@ -15,12 +15,12 @@ import LargeAgents_CBS.Instances.LargeAgent;
 import LargeAgents_CBS.Instances.Maps.Coordinate_2D_LargeAgent;
 import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
 import LargeAgents_CBS.Solvers.LowLevel.AStar_LargeAgents;
-import LargeAgents_CBS.Solvers.LowLevel.AStar_Shapes;
 import org.junit.jupiter.api.Test;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AStar_LargeAgentsTest {
+public class AStar_LargeAgentsTest {
 
 
     private final Enum_MapCellType e = Enum_MapCellType.EMPTY;

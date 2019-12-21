@@ -29,8 +29,9 @@ public class RunManager_LargeAgents extends A_RunManager {
     /*  = Set Experiments =  */
     @Override
     protected void setExperiments() {
+        this.addExperiment_Lak503d();
         this.addExperiment_CleanMap_20_20();
-        this.addAllInstancesExperiment();
+//        this.addAllInstancesExperiment();
     }
 
 
@@ -57,6 +58,23 @@ public class RunManager_LargeAgents extends A_RunManager {
     private void addAllInstancesExperiment(){
         InstanceManager instanceManager = new InstanceManager( this.pathToBenchmark, new InstanceBuilder_BGU_LA());
         this.experiments.add(new Experiment("All Instances in Test Benchmark", instanceManager));
+    }
+
+
+    private void addExperiment_Lak503d(){
+        /*  =   Set Path   =*/
+        String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
+                                                            "Instances\\\\LargeAgents_J"});
+
+        /*  =   Set Properties   =  */
+        InstanceProperties properties = new InstanceProperties(new MapDimensions(194,194), -1, new int[]{20});
+
+        /*  =   Set Instance Manager   =  */
+        InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_Shapes(), properties);
+
+        /*  =   Add new experiment   =  */
+        Experiment gridExperiment = new Experiment("Experiment_Lak503d", instanceManager);
+        this.experiments.add(gridExperiment);
     }
 
 

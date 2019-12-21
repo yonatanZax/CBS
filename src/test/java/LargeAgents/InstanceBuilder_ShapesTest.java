@@ -51,4 +51,22 @@ public class InstanceBuilder_ShapesTest {
         MAPF_Instance nextInstance = this.instanceBuilder_shapes.getNextExistingInstance();
         Assert.assertNotNull(nextInstance);
     }
+
+
+    @Test
+    /*  Must create the instance properly   */
+    public void prepareInstance_lak503d(){
+
+        String instanceName = "Instances\\LargeAgents_J\\lak503d";
+        String expectedMapPath = IO_Manager.buildPath(new String[]{IO_Manager.testResources_Directory, instanceName + InstanceBuilder_MovingAI.FILE_TYPE_MAP});
+        String expectedScenarioPath = IO_Manager.buildPath(new String[]{IO_Manager.testResources_Directory, instanceName + InstanceBuilder_MovingAI.FILE_TYPE_MAP + InstanceBuilder_MovingAI.FILE_TYPE_SCENARIO});
+        InstanceManager.Moving_AI_Path expectedPath = new InstanceManager.Moving_AI_Path(expectedMapPath,expectedScenarioPath);
+
+        InstanceProperties properties = new InstanceProperties();
+        this.instanceBuilder_shapes.prepareInstances("lak503d", expectedPath, properties);
+
+        // Check that instance was created successfully and added to the list
+        MAPF_Instance nextInstance = this.instanceBuilder_shapes.getNextExistingInstance();
+        Assert.assertNotNull(nextInstance);
+    }
 }
