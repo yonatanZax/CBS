@@ -230,7 +230,8 @@ public class ConflictManager implements I_ConflictManager {
         */
         for (Agent agentMovingToPrevPosition : agentsMovingToPrevLocations) {
             if( agentMovingToPrevPosition.equals(singleAgentPlan.agent) ){ continue; /* Self Conflict */ }
-            if ( this.agent_plan.get(agentMovingToPrevPosition).moveAt(time).prevLocation.equals(nextLocation)){
+            // todo - change to intersectWith
+            if ( this.agent_plan.get(agentMovingToPrevPosition).moveAt(time).prevLocation.intersectsWith(nextLocation)){
 
                 // Create two conflicts
                 SwappingConflict swappingConflict_addedAgentFirst = new SwappingConflict(   singleAgentPlan.agent,
@@ -260,8 +261,9 @@ public class ConflictManager implements I_ConflictManager {
      * @param timeLocation - {@inheritDoc}
      * @param agent - {@inheritDoc}
      * @param agentsAtTimeLocation - {@inheritDoc}
+     // todo - protected
      */
-    private void addVertexConflicts(TimeLocation timeLocation, Agent agent, Set<Agent> agentsAtTimeLocation) {
+    protected void addVertexConflicts(TimeLocation timeLocation, Agent agent, Set<Agent> agentsAtTimeLocation) {
 
         if( agentsAtTimeLocation == null ){ return; }
 

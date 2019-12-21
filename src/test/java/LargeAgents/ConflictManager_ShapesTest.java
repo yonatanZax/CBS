@@ -1,23 +1,31 @@
-package BasicCBS.Solvers.ConstraintsAndConflicts;
+package LargeAgents;
 
 import BasicCBS.Instances.Agent;
-import BasicCBS.Instances.Maps.*;
 import BasicCBS.Instances.Maps.Coordinates.Coordinate_2D;
+import BasicCBS.Instances.Maps.Enum_MapCellType;
+import BasicCBS.Instances.Maps.I_Map;
+import BasicCBS.Solvers.ConstraintsAndConflicts.A_Conflict;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.ConflictManager;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.RemovableConflictAvoidance;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.TimeLocation;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.TimeLocationTables;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.MinTimeConflictSelectionStrategy;
-import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.RemovableConflictManager;
+import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagerTest;
+import BasicCBS.Solvers.ConstraintsAndConflicts.SwappingConflict;
+import BasicCBS.Solvers.ConstraintsAndConflicts.VertexConflict;
 import BasicCBS.Solvers.Move;
 import BasicCBS.Solvers.SingleAgentPlan;
 import GraphMapPackage.MapFactory;
+import LargeAgents_CBS.Instances.LargeAgent;
+import LargeAgents_CBS.Instances.Maps.Coordinate_2D_LargeAgent;
+import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
+import LargeAgents_CBS.Solvers.HighLevel.ConflictManager_Shapes;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.*;
 
-public class ConflictManagerTest {
+public class ConflictManager_ShapesTest {
 
     private final Enum_MapCellType e = Enum_MapCellType.EMPTY;
     private final Enum_MapCellType w = Enum_MapCellType.WALL;
@@ -26,15 +34,10 @@ public class ConflictManagerTest {
             { e, e, e, e},
             { e, w, w, e},
     };
-    private I_Map mapH = MapFactory.newSimple4Connected2D_GraphMap(map_2D_H);
+    private I_Map mapH = MapFactory.newSimple4Connected2D_GraphMap_LargeAgents(map_2D_H);
 
     private Enum_MapCellType[][] twoCellMap = new Enum_MapCellType[][]{{e,e}};
-    private I_Map mapTwoCells = MapFactory.newSimple4Connected2D_GraphMap(twoCellMap);
-
-
-
-
-
+    private I_Map mapTwoCells = MapFactory.newSimple4Connected2D_GraphMap_LargeAgents(twoCellMap);
 
 
 
@@ -42,7 +45,7 @@ public class ConflictManagerTest {
     @Test
     public void goalConflict(){
 
-        ConflictManager conflictAvoidanceTable = new ConflictManager(new MinTimeConflictSelectionStrategy());
+        ConflictManager conflictAvoidanceTable = new ConflictManager_Shapes(new MinTimeConflictSelectionStrategy());
 
 
 
@@ -51,14 +54,14 @@ public class ConflictManagerTest {
             S = Start
             G = Goal
         */
-        Agent a1 = new Agent(1,new Coordinate_2D(0,0),new Coordinate_2D(0,1));
+        Agent a1 = new LargeAgent(new Agent(1,new Coordinate_2D(0,0),new Coordinate_2D(0,1)));
         SingleAgentPlan a1_plan;
         ArrayList<Move> a1_moves = new ArrayList<>();
-        a1_moves.add(new Move(a1,1, this.mapTwoCells.getMapCell(new Coordinate_2D(0,0)), this.mapTwoCells.getMapCell(new Coordinate_2D(0,0))));
-        a1_moves.add(new Move(a1,2, this.mapTwoCells.getMapCell(new Coordinate_2D(0,0)), this.mapTwoCells.getMapCell(new Coordinate_2D(0,0))));
-        a1_moves.add(new Move(a1,3, this.mapTwoCells.getMapCell(new Coordinate_2D(0,0)), this.mapTwoCells.getMapCell(new Coordinate_2D(0,0))));
-        a1_moves.add(new Move(a1,4, this.mapTwoCells.getMapCell(new Coordinate_2D(0,0)), this.mapTwoCells.getMapCell(new Coordinate_2D(0,0))));
-        a1_moves.add(new Move(a1,5, this.mapTwoCells.getMapCell(new Coordinate_2D(0,0)), this.mapTwoCells.getMapCell(new Coordinate_2D(0,1))));
+        a1_moves.add(new Move(a1,1, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapTwoCells), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapTwoCells)));
+        a1_moves.add(new Move(a1,2, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapTwoCells), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapTwoCells)));
+        a1_moves.add(new Move(a1,3, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapTwoCells), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapTwoCells)));
+        a1_moves.add(new Move(a1,4, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapTwoCells), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapTwoCells)));
+        a1_moves.add(new Move(a1,5, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapTwoCells), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,1)),mapTwoCells)));
 
         a1_plan = new SingleAgentPlan(a1,a1_moves);
         conflictAvoidanceTable.addPlan(a1_plan);
@@ -72,10 +75,10 @@ public class ConflictManagerTest {
             S = Start
             G = Goal
         */
-        Agent a2 = new Agent(2,new Coordinate_2D(0,1),new Coordinate_2D(0,1));
+        Agent a2 = new LargeAgent(new Agent(2,new Coordinate_2D(0,1),new Coordinate_2D(0,1)));
         SingleAgentPlan a2_plan;
         ArrayList<Move> a2_moves = new ArrayList<>();
-        a2_moves.add(new Move(a2,1, this.mapTwoCells.getMapCell(new Coordinate_2D(0,1)), mapTwoCells.getMapCell(new Coordinate_2D(0,1))));
+        a2_moves.add(new Move(a2,1, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,1)),mapTwoCells), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,1)),mapTwoCells)));
 
 
         a2_plan = new SingleAgentPlan(a2,a2_moves);
@@ -102,7 +105,7 @@ public class ConflictManagerTest {
     @Test
     public void swappingConflict2CellMap(){
 
-        ConflictManager conflictAvoidanceTable = new ConflictManager(new MinTimeConflictSelectionStrategy());
+        ConflictManager conflictAvoidanceTable = new ConflictManager_Shapes(new MinTimeConflictSelectionStrategy());
 
 
 
@@ -111,10 +114,10 @@ public class ConflictManagerTest {
             S = Start
             G = Goal
         */
-        Agent a1 = new Agent(1,new Coordinate_2D(0,0),new Coordinate_2D(0,1));
+        Agent a1 = new LargeAgent(new Agent(1,new Coordinate_2D(0,0), new Coordinate_2D(0,1)));
         SingleAgentPlan a1_plan;
         ArrayList<Move> a1_moves = new ArrayList<>();
-        a1_moves.add(new Move(a1,1, this.mapTwoCells.getMapCell(new Coordinate_2D(0,0)), this.mapTwoCells.getMapCell(new Coordinate_2D(0,1))));
+        a1_moves.add(new Move(a1,1,  new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapTwoCells),  new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,1)),mapTwoCells)));
 
         a1_plan = new SingleAgentPlan(a1,a1_moves);
         conflictAvoidanceTable.addPlan(a1_plan);
@@ -127,10 +130,10 @@ public class ConflictManagerTest {
             S = Start
             G = Goal
         */
-        Agent a2 = new Agent(2,new Coordinate_2D(0,1),new Coordinate_2D(0,0));
+        Agent a2 = new LargeAgent(new Agent(2, new Coordinate_2D(0,1), new Coordinate_2D(0,0)));
         SingleAgentPlan a2_plan;
         ArrayList<Move> a2_moves = new ArrayList<>();
-        a2_moves.add(new Move(a2,1, this.mapTwoCells.getMapCell(new Coordinate_2D(0,1)), mapTwoCells.getMapCell(new Coordinate_2D(0,0))));
+        a2_moves.add(new Move(a2,1, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,1)),mapTwoCells), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapTwoCells)));
 
 
         a2_plan = new SingleAgentPlan(a2,a2_moves);
@@ -152,12 +155,10 @@ public class ConflictManagerTest {
     }
 
 
-
-
     @Test
     public void TwoAgentsWith4VertexConflicts_graphH() {
 
-        ConflictManager conflictAvoidanceTable = new ConflictManager(new MinTimeConflictSelectionStrategy());
+        ConflictManager_Shapes conflictAvoidanceTable = new ConflictManager_Shapes(new MinTimeConflictSelectionStrategy());
 
 
         /*  = Add a1 Plan =
@@ -170,15 +171,15 @@ public class ConflictManagerTest {
             EE = Empty cell
             WW = Wall
         */
-        Agent a1 = new Agent(1,new Coordinate_2D(0,0),new Coordinate_2D(0,3));
+        Agent a1 = new LargeAgent(new Agent(1,new Coordinate_2D(0,0),new Coordinate_2D(0,3)));
         SingleAgentPlan a1_plan;
         ArrayList<Move> a1_moves = new ArrayList<>();
 
-        a1_moves.add(new Move(a1,1, mapH.getMapCell(new Coordinate_2D(0,0)),mapH.getMapCell(new Coordinate_2D(1,0))));
-        a1_moves.add(new Move(a1,2, mapH.getMapCell(new Coordinate_2D(1,0)),mapH.getMapCell(new Coordinate_2D(1,1))));
-        a1_moves.add(new Move(a1,3, mapH.getMapCell(new Coordinate_2D(1,1)),mapH.getMapCell(new Coordinate_2D(1,2))));
-        a1_moves.add(new Move(a1,4, mapH.getMapCell(new Coordinate_2D(1,2)),mapH.getMapCell(new Coordinate_2D(1,3))));
-        a1_moves.add(new Move(a1,5, mapH.getMapCell(new Coordinate_2D(1,3)),mapH.getMapCell(new Coordinate_2D(0,3))));
+        a1_moves.add(new Move(a1,1, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapH),   new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,0)),mapH)));
+        a1_moves.add(new Move(a1,2, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,0)),mapH),   new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,1)),mapH)));
+        a1_moves.add(new Move(a1,3, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,1)),mapH),   new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,2)),mapH)));
+        a1_moves.add(new Move(a1,4, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,2)),mapH),   new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,3)),mapH)));
+        a1_moves.add(new Move(a1,5, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,3)),mapH),   new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,3)),mapH)));
 
         a1_plan = new SingleAgentPlan(a1,a1_moves);
         conflictAvoidanceTable.addPlan(a1_plan);
@@ -193,15 +194,15 @@ public class ConflictManagerTest {
             EE = Empty cell
             WW = Wall
         */
-        Agent a2 = new Agent(2,new Coordinate_2D(2,0),new Coordinate_2D(2,3));
+        Agent a2 = new LargeAgent(new Agent(2,new Coordinate_2D(2,0),new Coordinate_2D(2,3)));
         SingleAgentPlan a2_plan;
         ArrayList<Move> a2_moves = new ArrayList<>();
 
-        a2_moves.add(new Move(a2,1, mapH.getMapCell(new Coordinate_2D(2,0)), mapH.getMapCell(new Coordinate_2D(1,0))));
-        a2_moves.add(new Move(a2,2, mapH.getMapCell(new Coordinate_2D(1,0)), mapH.getMapCell(new Coordinate_2D(1,1))));
-        a2_moves.add(new Move(a2,3, mapH.getMapCell(new Coordinate_2D(1,1)), mapH.getMapCell(new Coordinate_2D(1,2))));
-        a2_moves.add(new Move(a2,4, mapH.getMapCell(new Coordinate_2D(1,2)), mapH.getMapCell(new Coordinate_2D(1,3))));
-        a2_moves.add(new Move(a2,5, mapH.getMapCell(new Coordinate_2D(1,3)), mapH.getMapCell(new Coordinate_2D(2,3))));
+        a2_moves.add(new Move(a2,1, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(2,0)),mapH),  new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,0)),mapH)));
+        a2_moves.add(new Move(a2,2, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,0)),mapH),  new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,1)),mapH)));
+        a2_moves.add(new Move(a2,3, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,1)),mapH),  new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,2)),mapH)));
+        a2_moves.add(new Move(a2,4, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,2)),mapH),  new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,3)),mapH)));
+        a2_moves.add(new Move(a2,5, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,3)),mapH),  new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(2,3)),mapH)));
 
         a2_plan = new SingleAgentPlan(a2,a2_moves);
         conflictAvoidanceTable.addPlan(a2_plan);
@@ -211,8 +212,8 @@ public class ConflictManagerTest {
 
 
         /*      = Copy constructor =      */
-        RemovableConflictManager copiedTable = new RemovableConflictManager(conflictAvoidanceTable);
-        Assert.assertTrue(ConflictManagerTest.equalsAllConflicts(conflictAvoidanceTable.getAllConflicts(), copiedTable.removableConflictAvoidance.getAllConflicts()));
+        ConflictManager_Shapes copiedTable = new ConflictManager_Shapes(conflictAvoidanceTable);
+        Assert.assertTrue(ConflictManagerTest.equalsAllConflicts(conflictAvoidanceTable.getAllConflicts(), copiedTable.getAllConflicts()));
         Assert.assertTrue(TimeLocationTables.equalsTimeLocations(conflictAvoidanceTable.timeLocationTables.timeLocation_Agents,copiedTable.timeLocationTables.timeLocation_Agents));
         System.out.println("TwoAgentsWith4VertexConflicts_graphH: Done - Copy Constructor");
 
@@ -222,7 +223,7 @@ public class ConflictManagerTest {
 
         /*      == Expected locations ==     */
 
-        Map<TimeLocation,Set<Agent>> expected_timeLocationAgents = new HashMap<>();
+        Map<TimeLocation, Set<Agent>> expected_timeLocationAgents = new HashMap<>();
         // Agent 1
         TimeLocation time0_a1 = new TimeLocation(0, mapH.getMapCell(new Coordinate_2D(0,0)));
         expected_timeLocationAgents.computeIfAbsent(time0_a1,k -> new HashSet<Agent>());
@@ -280,7 +281,7 @@ public class ConflictManagerTest {
 
         /*  = Test actual values =  */
 
-        Assert.assertTrue(ConflictManagerTest.equalsAllConflicts(expectedSet, copiedTable.removableConflictAvoidance.getAllConflicts()));
+        Assert.assertTrue(ConflictManagerTest.equalsAllConflicts(expectedSet, copiedTable.getAllConflicts()));
         Assert.assertTrue(TimeLocationTables.equalsTimeLocations(expected_timeLocationAgents,copiedTable.timeLocationTables.timeLocation_Agents));
 
 
@@ -289,34 +290,6 @@ public class ConflictManagerTest {
         /*      = Test Select conflict =     */
         A_Conflict actualConflict_time1 = copiedTable.selectConflict();
         Assert.assertEquals(expectedConflict_time1,actualConflict_time1);
-
-
-
-        /*    = Agent 1 new Plan =    */
-        // Waits at start  position for t = 1
-        SingleAgentPlan a1_newPlan;
-        ArrayList<Move> a1_newMoves = new ArrayList<>();
-
-        a1_newMoves.add(new Move(a1,1, mapH.getMapCell(new Coordinate_2D(0,0)),mapH.getMapCell(new Coordinate_2D(0,0))));
-        a1_newMoves.add(new Move(a1,2, mapH.getMapCell(new Coordinate_2D(0,0)),mapH.getMapCell(new Coordinate_2D(1,0))));
-        a1_newMoves.add(new Move(a1,3, mapH.getMapCell(new Coordinate_2D(1,0)),mapH.getMapCell(new Coordinate_2D(1,1))));
-        a1_newMoves.add(new Move(a1,4, mapH.getMapCell(new Coordinate_2D(1,1)),mapH.getMapCell(new Coordinate_2D(1,2))));
-        a1_newMoves.add(new Move(a1,5, mapH.getMapCell(new Coordinate_2D(1,2)),mapH.getMapCell(new Coordinate_2D(1,3))));
-        a1_newMoves.add(new Move(a1,6, mapH.getMapCell(new Coordinate_2D(1,3)),mapH.getMapCell(new Coordinate_2D(0,3))));
-
-        a1_newPlan = new SingleAgentPlan(a1,a1_newMoves);
-        copiedTable.addPlan(a1_newPlan);
-
-
-        System.out.println("TwoAgentsWith4VertexConflicts_graphH: Done - Add agent1 new plan");
-
-
-        /*      = Expected values =     */
-        expectedSet = new HashSet<>();
-
-
-        /*      = Test actual values =  */
-        Assert.assertTrue(ConflictManagerTest.equalsAllConflicts(expectedSet, copiedTable.removableConflictAvoidance.getAllConflicts()));
 
 
     }
@@ -328,7 +301,7 @@ public class ConflictManagerTest {
     @Test
     public void TwoAgentsWith1SwappingConflict_graphH() {
 
-        ConflictManager conflictAvoidanceTable = new ConflictManager(new MinTimeConflictSelectionStrategy());
+        ConflictManager_Shapes conflictAvoidanceTable = new ConflictManager_Shapes(new MinTimeConflictSelectionStrategy());
 
 
         /*  = Add a1 Plan =
@@ -341,15 +314,15 @@ public class ConflictManagerTest {
             EE = Empty cell
             WW = Wall
         */
-        Agent a1 = new Agent(1,new Coordinate_2D(0,0),new Coordinate_2D(0,3));
+        Agent a1 = new LargeAgent(new Agent(1,new Coordinate_2D(0,0),new Coordinate_2D(0,3)));
         SingleAgentPlan a1_plan;
         ArrayList<Move> a1_moves = new ArrayList<>();
 
-        a1_moves.add(new Move(a1,1, mapH.getMapCell(new Coordinate_2D(0,0)),mapH.getMapCell(new Coordinate_2D(1,0))));
-        a1_moves.add(new Move(a1,2, mapH.getMapCell(new Coordinate_2D(1,0)),mapH.getMapCell(new Coordinate_2D(1,1))));
-        a1_moves.add(new Move(a1,3, mapH.getMapCell(new Coordinate_2D(1,1)),mapH.getMapCell(new Coordinate_2D(1,2))));
-        a1_moves.add(new Move(a1,4, mapH.getMapCell(new Coordinate_2D(1,2)),mapH.getMapCell(new Coordinate_2D(1,3))));
-        a1_moves.add(new Move(a1,5, mapH.getMapCell(new Coordinate_2D(1,3)),mapH.getMapCell(new Coordinate_2D(0,3))));
+        a1_moves.add(new Move(a1,1, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)),mapH), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,0)), mapH)));
+        a1_moves.add(new Move(a1,2, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,0)),mapH), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,1)), mapH)));
+        a1_moves.add(new Move(a1,3, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,1)),mapH), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,2)), mapH)));
+        a1_moves.add(new Move(a1,4, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,2)),mapH), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,3)), mapH)));
+        a1_moves.add(new Move(a1,5, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,3)),mapH), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,3)), mapH)));
 
         a1_plan = new SingleAgentPlan(a1,a1_moves);
         conflictAvoidanceTable.addPlan(a1_plan);
@@ -369,11 +342,11 @@ public class ConflictManagerTest {
         SingleAgentPlan a2_plan;
         ArrayList<Move> a2_moves = new ArrayList<>();
 
-        a2_moves.add(new Move(a2,1, mapH.getMapCell(new Coordinate_2D(2,3)), mapH.getMapCell(new Coordinate_2D(1,3))));
-        a2_moves.add(new Move(a2,2, mapH.getMapCell(new Coordinate_2D(1,3)), mapH.getMapCell(new Coordinate_2D(1,2))));
-        a2_moves.add(new Move(a2,3, mapH.getMapCell(new Coordinate_2D(1,2)), mapH.getMapCell(new Coordinate_2D(1,1))));
-        a2_moves.add(new Move(a2,4, mapH.getMapCell(new Coordinate_2D(1,1)), mapH.getMapCell(new Coordinate_2D(1,0))));
-        a2_moves.add(new Move(a2,5, mapH.getMapCell(new Coordinate_2D(1,0)), mapH.getMapCell(new Coordinate_2D(2,0))));
+        a2_moves.add(new Move(a2,1, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(2,3)),mapH), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,3)),mapH)));
+        a2_moves.add(new Move(a2,2, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,3)),mapH), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,2)),mapH)));
+        a2_moves.add(new Move(a2,3, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,2)),mapH), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,1)),mapH)));
+        a2_moves.add(new Move(a2,4, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,1)),mapH), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,0)),mapH)));
+        a2_moves.add(new Move(a2,5, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,0)),mapH), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(2,0)),mapH)));
 
         a2_plan = new SingleAgentPlan(a2,a2_moves);
         conflictAvoidanceTable.addPlan(a2_plan);
@@ -383,8 +356,8 @@ public class ConflictManagerTest {
 
 
         /*      = Copy constructor =      */
-        RemovableConflictManager copiedTable = new RemovableConflictManager(conflictAvoidanceTable);
-        Assert.assertTrue(ConflictManagerTest.equalsAllConflicts(conflictAvoidanceTable.getAllConflicts(), copiedTable.removableConflictAvoidance.getAllConflicts()));
+        ConflictManager_Shapes copiedTable = new ConflictManager_Shapes(conflictAvoidanceTable);
+        Assert.assertTrue(ConflictManagerTest.equalsAllConflicts(conflictAvoidanceTable.getAllConflicts(), copiedTable.getAllConflicts()));
         Assert.assertTrue(TimeLocationTables.equalsTimeLocations(conflictAvoidanceTable.timeLocationTables.timeLocation_Agents,copiedTable.timeLocationTables.timeLocation_Agents));
         System.out.println("TwoAgentsWith1SwappingConflict_graphH: Done - Copy Constructor");
 
@@ -446,7 +419,7 @@ public class ConflictManagerTest {
 
         /*  = Test actual values =  */
 
-        Assert.assertTrue(ConflictManagerTest.equalsAllConflicts(expectedSet, copiedTable.removableConflictAvoidance.getAllConflicts()));
+        Assert.assertTrue(ConflictManagerTest.equalsAllConflicts(expectedSet, copiedTable.getAllConflicts()));
         Assert.assertTrue(TimeLocationTables.equalsTimeLocations(expected_timeLocationAgents,copiedTable.timeLocationTables.timeLocation_Agents));
 
 
@@ -455,54 +428,6 @@ public class ConflictManagerTest {
         A_Conflict actualConflict_time1 = copiedTable.selectConflict();
         Assert.assertEquals(expectedConflict_time3,actualConflict_time1);
 
-
-
-        /*    = Agent 1 new Plan =    */
-
-
-
-        SingleAgentPlan a1_newPlan;
-        ArrayList<Move> a1_newMoves = new ArrayList<>();
-
-        a1_newMoves.add(new Move(a1,1, mapH.getMapCell(new Coordinate_2D(0,0)),mapH.getMapCell(new Coordinate_2D(0,0))));
-        a1_newMoves.add(new Move(a1,2, mapH.getMapCell(new Coordinate_2D(0,0)),mapH.getMapCell(new Coordinate_2D(1,0))));
-        a1_newMoves.add(new Move(a1,3, mapH.getMapCell(new Coordinate_2D(1,0)),mapH.getMapCell(new Coordinate_2D(1,1))));
-        a1_newMoves.add(new Move(a1,4, mapH.getMapCell(new Coordinate_2D(1,1)),mapH.getMapCell(new Coordinate_2D(1,2))));
-        a1_newMoves.add(new Move(a1,5, mapH.getMapCell(new Coordinate_2D(1,2)),mapH.getMapCell(new Coordinate_2D(1,3))));
-        a1_newMoves.add(new Move(a1,6, mapH.getMapCell(new Coordinate_2D(1,3)),mapH.getMapCell(new Coordinate_2D(0,3))));
-
-        a1_newPlan = new SingleAgentPlan(a1,a1_newMoves);
-        copiedTable.addPlan(a1_newPlan);
-
-
-        System.out.println("TwoAgentsWith1SwappingConflict_graphH: Done - Add agent1 new plan");
-
-
-        /*      = Expected values =     */
-        expectedSet = new HashSet<>();
-        VertexConflict expectedVertexConflict_time3 = new VertexConflict(a1,a2,3,mapH.getMapCell(new Coordinate_2D(1,1)));
-        expectedSet.add(expectedVertexConflict_time3);
-
-
-        /*      = Test actual values =  */
-        Assert.assertTrue(ConflictManagerTest.equalsAllConflicts(expectedSet, copiedTable.removableConflictAvoidance.getAllConflicts()));
-
-
-    }
-
-
-    // todo - add method here
-    public static boolean equalsAllConflicts(Set<A_Conflict> expectedConflicts, Set<A_Conflict> actualConflicts){
-
-        if( actualConflicts.size() != expectedConflicts.size() ){
-            return false;
-        }
-        for (A_Conflict conflict: expectedConflicts){
-            if (! actualConflicts.contains(conflict)){
-                return false;
-            }
-        }
-        return true;
     }
 
 

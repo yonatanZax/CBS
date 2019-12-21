@@ -32,4 +32,7 @@ public interface I_Location {
      */
     boolean isNeighbor(I_Location other);
 
+
+    boolean intersectsWith(I_Location other);
+
 }

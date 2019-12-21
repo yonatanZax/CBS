@@ -81,11 +81,12 @@ public class Constraint {
      */
     public boolean accepts(Move move){
         if(move == null) throw new IllegalArgumentException();
-        return ! this.location.equals(move.currLocation) || this.time != move.timeNow
+        // todo - changed to intersects with
+        return ! this.location.intersectsWith(move.currLocation) || this.time != move.timeNow
                 /*the constraint is limited to a specific agent, and that agent is different*/
                 || (this.agent != null && !this.agent.equals(move.agent)
                 /*the previous location is not null, and different*/
-                || (this.prevLocation != null &&  !move.prevLocation.equals(this.prevLocation) ));
+                || (this.prevLocation != null &&  !move.prevLocation.intersectsWith(this.prevLocation) ));
     }
 
     /**
@@ -119,6 +120,16 @@ public class Constraint {
         result = 31 * result + (prevLocation != null ? prevLocation.hashCode() : 0);
         result = 31 * result + location.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Constraint{" +
+                "agent=" + agent +
+                ", time=" + time +
+                ", prevLocation=" + prevLocation +
+                ", location=" + location +
+                '}';
     }
 }
 

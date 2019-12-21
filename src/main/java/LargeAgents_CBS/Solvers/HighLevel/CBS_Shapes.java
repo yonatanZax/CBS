@@ -9,17 +9,17 @@ import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.ConstraintSet;
 import BasicCBS.Solvers.RunParameters;
 import BasicCBS.Solvers.SingleAgentPlan;
 import Environment.Metrics.S_Metrics;
-import LargeAgents_CBS.Solvers.LowLevel.AStar_LargeAgents;
 import LargeAgents_CBS.Solvers.LowLevel.AStar_Shapes;
 import LargeAgents_CBS.Solvers.LowLevel.DistanceTableHeuristic_LargeAgents;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class CBS_LargeAgents extends CBS_Solver {
+public class CBS_Shapes extends CBS_Solver {
 
-    public CBS_LargeAgents(){
-        super(new AStar_LargeAgents(),null,null,null,null);
+
+    public CBS_Shapes(){
+        super(new AStar_Shapes(),null,null,null,null);
     }
 
 
@@ -54,10 +54,11 @@ public class CBS_LargeAgents extends CBS_Solver {
     }
 
 
+
     @Override
     protected I_ConflictManager getConflictAvoidanceTableFor(CBS_Solver.CBS_Node node) {
 
-        I_ConflictManager conflictManager = new ConflictManager_LargeAgent(new MinTimeConflictSelectionStrategy());
+        I_ConflictManager conflictManager = new ConflictManager_Shapes(new MinTimeConflictSelectionStrategy());
         for (SingleAgentPlan plan :
                 node.getSolution()) {
             conflictManager.addPlan(plan);

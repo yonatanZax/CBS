@@ -17,7 +17,6 @@ import Environment.Metrics.S_Metrics;
 import GraphMapPackage.MapFactory;
 import LargeAgents_CBS.Instances.InstanceBuilder_BGU_LA;
 import LargeAgents_CBS.Instances.LargeAgent;
-import LargeAgents_CBS.Solvers.HighLevel.CBS_LargeAgents;
 import LargeAgents_CBS.Solvers.HighLevel.CBS_Shapes;
 import org.junit.jupiter.api.Test;
 
@@ -30,7 +29,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CBS_LargeAgentsTest {
+public class CBS_ShapesTest {
 
     private final Enum_MapCellType e = Enum_MapCellType.EMPTY;
     private final Enum_MapCellType w = Enum_MapCellType.WALL;
@@ -108,7 +107,7 @@ class CBS_LargeAgentsTest {
     private MAPF_Instance instanceCircle2 = new MAPF_Instance("instanceCircle1", mapCircle, new Agent[]{agent12to33, agent33to12});
     private MAPF_Instance instanceUnsolvable = new MAPF_Instance("instanceUnsolvable", mapWithPocket, new Agent[]{agent00to10, agent10to00});
 
-    I_Solver cbsSolver_lageAgents = new CBS_LargeAgents();
+    I_Solver cbsSolver_lageAgents = new CBS_Shapes();
 
 
     void validate(Solution solution, int numAgents, int optimalSOC, int optimalMakespan){
@@ -118,22 +117,6 @@ class CBS_LargeAgentsTest {
         assertEquals(optimalSOC, solution.sumIndividualCosts()); // SOC is optimal
         assertEquals(optimalMakespan, solution.makespan()); // makespan is optimal
     }
-
-
-
-    @Test
-    void twoAgentsSwapping(){
-        InstanceReport instanceReport = S_Metrics.newInstanceReport();
-        MAPF_Instance instanceSwapping = new MAPF_Instance("instanceSwapping", mapEmpty, new Agent[]{agent00to10, agent10to00});
-        Solution solved = cbsSolver_lageAgents.solve(instanceSwapping, new RunParameters(System.currentTimeMillis() + (60*60*1000), null, instanceReport, null));
-        S_Metrics.removeReport(instanceReport);
-
-        System.out.println(solved.readableToString());
-        validate(solved, 2, 4, 3);
-    }
-
-
-
 
     @Test
     void emptyMapValidityTest1() {
@@ -182,11 +165,15 @@ class CBS_LargeAgentsTest {
 
 
 
+
+
+
+
     @Test
     void TestingBenchmark(){
-        boolean useAsserts = false;
+        boolean useAsserts = true;
 
-        I_Solver solver = new CBS_LargeAgents();
+        I_Solver solver = new CBS_Shapes();
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.testResources_Directory,
                 "TestingBenchmark"});
         InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_BGU_LA());
@@ -194,7 +181,7 @@ class CBS_LargeAgentsTest {
         MAPF_Instance instance = null;
         // load the pre-made benchmark
         try {
-            long timeout = 30*4 /*seconds*/
+            long timeout = 300 /*seconds*/
                     *1000L;
             Map<String, Map<String, String>> benchmarks = CBS_SolverTest.readResultsCSV(path + "\\Results.csv");
             int numSolved = 0;
@@ -217,9 +204,7 @@ class CBS_LargeAgentsTest {
 
                 //solve
                 System.out.println("---------- solving "  + instance.name + " ----------");
-                Solution solution = new Solution();
-                solution = solver.solve(instance, runParameters);
-
+                Solution solution = solver.solve(instance, runParameters);
 
                 // validate
                 Map<String, String> benchmarkForInstance = benchmarks.get(instance.name);
@@ -296,8 +281,5 @@ class CBS_LargeAgentsTest {
         }
 
     }
-
-
-
 
 }

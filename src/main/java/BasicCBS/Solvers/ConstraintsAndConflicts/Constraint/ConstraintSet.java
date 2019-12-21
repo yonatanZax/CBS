@@ -174,7 +174,8 @@ public class ConstraintSet{
         // traverses the entire data structure. expensive.
         for (ConstraintWrapper cw : constraints.keySet()) {
             //found constraint for this location, sometime in the future. Should be rare.
-            if(cw.time > finalMove.timeNow && cw.location.equals(finalMove.currLocation)){
+            // todo - changed to intersect
+            if(cw.time > finalMove.timeNow && cw.location.intersectsWith(finalMove.currLocation)){
                 for (Constraint constraint : cw.relevantConstraints) {
                     // make an artificial "stay" move for the relevant time.
                     // In practice, this should happen very rarely, so not very expensive.

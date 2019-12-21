@@ -39,7 +39,8 @@ public class VertexConflict extends A_Conflict {
      * @return true if these moves have a vertex conflict.
      */
     public static boolean haveConflicts(Move move1, Move move2){
-        return move1.currLocation.equals(move2.currLocation);
+        // todo - changed to intersectsWith
+        return move1.currLocation.intersectsWith(move2.currLocation);
     }
 
     /**

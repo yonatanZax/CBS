@@ -12,15 +12,15 @@ import GraphMapPackage.GraphMapVertex_LargeAgents;
 
 import java.util.Set;
 
-public class ConflictManager_LargeAgents extends ConflictManager {
+public class ConflictManager_Shapes extends ConflictManager {
 
 
 
-    public ConflictManager_LargeAgents(ConflictSelectionStrategy conflictSelectionStrategy){
+    public ConflictManager_Shapes(ConflictSelectionStrategy conflictSelectionStrategy){
         super(conflictSelectionStrategy);
     }
 
-    public ConflictManager_LargeAgents(ConflictManager_LargeAgents other){
+    public ConflictManager_Shapes(ConflictManager_Shapes other){
         super(other);
     }
 
@@ -38,14 +38,13 @@ public class ConflictManager_LargeAgents extends ConflictManager {
         /*  Check for conflicts and Add timeLocations */
         for (int time = agentFirstMoveTime; time <= goalTime; time++) {
 
-            // Imp - change location to Group
 
             // Move's from location is 'prevLocation' , therefor timeLocation is time - 1
             GraphLocationGroup locationGroup = (GraphLocationGroup) singleAgentPlan.moveAt(time).prevLocation;
             for (GraphMapVertex_LargeAgents mapCellLocation: locationGroup.getAllCells()) {
                 TimeLocation timeLocation = new TimeLocation(time - 1, mapCellLocation);
-                super.checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
                 this.timeLocationTables.addTimeLocation(timeLocation, singleAgentPlan);
+                checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
             }
         }
 
@@ -53,8 +52,8 @@ public class ConflictManager_LargeAgents extends ConflictManager {
         GraphLocationGroup locationGroup = (GraphLocationGroup) singleAgentPlan.moveAt(goalTime).currLocation;
         for (GraphMapVertex_LargeAgents mapCellLocation: locationGroup.getAllCells()) {
             TimeLocation goalTimeLocation = new TimeLocation(goalTime, mapCellLocation);
-            super.checkAddConflictsByTimeLocation(goalTimeLocation, singleAgentPlan); // Checks for conflicts
             this.timeLocationTables.addTimeLocation(goalTimeLocation, singleAgentPlan);
+            checkAddConflictsByTimeLocation(goalTimeLocation, singleAgentPlan); // Checks for conflicts
         }
 
 
@@ -67,17 +66,17 @@ public class ConflictManager_LargeAgents extends ConflictManager {
     @Override
     protected void manageGoalLocationFromPlan(int goalTime, SingleAgentPlan singleAgentPlan) {
 
-        // Imp - change location to Group
         GraphLocationGroup goalGroupLocation = (GraphLocationGroup) singleAgentPlan.moveAt(goalTime).currLocation;
         for (GraphMapVertex_LargeAgents mapCellLocation: goalGroupLocation.getAllCells()) {
             TimeLocation goalCellTimeLocation = new TimeLocation(goalTime, mapCellLocation);
 
-            /*  = Check if this agentAtGoal conflicts with other agents =   */
-            super.checkAddSwappingConflicts(goalTime, singleAgentPlan);
-            super.checkAddVertexConflictsWithGoal(goalCellTimeLocation, singleAgentPlan);
-
             /*  = Add goal timeLocation =  */
             this.timeLocationTables.addGoalTimeLocation(goalCellTimeLocation, singleAgentPlan);
+
+            /*  = Check if this agentAtGoal conflicts with other agents =   */
+            checkAddSwappingConflicts(goalTime, singleAgentPlan);
+            checkAddVertexConflictsWithGoal(goalCellTimeLocation, singleAgentPlan);
+
         }
     }
 
@@ -127,11 +126,7 @@ public class ConflictManager_LargeAgents extends ConflictManager {
                         this.allConflicts.add(swappingConflict_addedAgentSecond);
                     }
                 }
-
             }
-
-
         }
     }
-
 }
