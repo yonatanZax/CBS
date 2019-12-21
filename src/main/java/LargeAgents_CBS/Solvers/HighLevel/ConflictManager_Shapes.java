@@ -38,14 +38,13 @@ public class ConflictManager_Shapes extends ConflictManager {
         /*  Check for conflicts and Add timeLocations */
         for (int time = agentFirstMoveTime; time <= goalTime; time++) {
 
-            // Imp - change location to Group
 
             // Move's from location is 'prevLocation' , therefor timeLocation is time - 1
             GraphLocationGroup locationGroup = (GraphLocationGroup) singleAgentPlan.moveAt(time).prevLocation;
             for (GraphMapVertex_LargeAgents mapCellLocation: locationGroup.getAllCells()) {
                 TimeLocation timeLocation = new TimeLocation(time - 1, mapCellLocation);
-                super.checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
                 this.timeLocationTables.addTimeLocation(timeLocation, singleAgentPlan);
+                checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
             }
         }
 
@@ -53,8 +52,8 @@ public class ConflictManager_Shapes extends ConflictManager {
         GraphLocationGroup locationGroup = (GraphLocationGroup) singleAgentPlan.moveAt(goalTime).currLocation;
         for (GraphMapVertex_LargeAgents mapCellLocation: locationGroup.getAllCells()) {
             TimeLocation goalTimeLocation = new TimeLocation(goalTime, mapCellLocation);
-            super.checkAddConflictsByTimeLocation(goalTimeLocation, singleAgentPlan); // Checks for conflicts
             this.timeLocationTables.addTimeLocation(goalTimeLocation, singleAgentPlan);
+            checkAddConflictsByTimeLocation(goalTimeLocation, singleAgentPlan); // Checks for conflicts
         }
 
 
@@ -72,12 +71,13 @@ public class ConflictManager_Shapes extends ConflictManager {
         for (GraphMapVertex_LargeAgents mapCellLocation: goalGroupLocation.getAllCells()) {
             TimeLocation goalCellTimeLocation = new TimeLocation(goalTime, mapCellLocation);
 
-            /*  = Check if this agentAtGoal conflicts with other agents =   */
-            super.checkAddSwappingConflicts(goalTime, singleAgentPlan);
-            super.checkAddVertexConflictsWithGoal(goalCellTimeLocation, singleAgentPlan);
-
             /*  = Add goal timeLocation =  */
             this.timeLocationTables.addGoalTimeLocation(goalCellTimeLocation, singleAgentPlan);
+
+            /*  = Check if this agentAtGoal conflicts with other agents =   */
+            checkAddSwappingConflicts(goalTime, singleAgentPlan);
+            checkAddVertexConflictsWithGoal(goalCellTimeLocation, singleAgentPlan);
+
         }
     }
 

@@ -88,18 +88,4 @@ public class RemovableConflictAvoidance {
     }
 
 
-
-
-    public static boolean equalsAllConflicts(Set<A_Conflict> expectedConflicts, Set<A_Conflict> actualConflicts){
-
-        if( actualConflicts.size() != expectedConflicts.size() ){
-            return false;
-        }
-        for (A_Conflict conflict: expectedConflicts){
-            if (! actualConflicts.contains(conflict)){
-                return false;
-            }
-        }
-        return true;
-    }
 }

@@ -34,4 +34,12 @@ public class TimeLocation {
         int hashcode = time * location.hashCode();
         return hashcode;
     }
+
+    @Override
+    public String toString() {
+        return "TimeLocation{" +
+                "time=" + time +
+                ", location=" + location +
+                '}';
+    }
 }

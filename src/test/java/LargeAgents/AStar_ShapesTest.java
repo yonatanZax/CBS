@@ -14,13 +14,13 @@ import GraphMapPackage.MapFactory;
 import LargeAgents_CBS.Instances.LargeAgent;
 import LargeAgents_CBS.Instances.Maps.Coordinate_2D_LargeAgent;
 import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
-import LargeAgents_CBS.Solvers.LowLevel.AStar_LargeAgents;
 import LargeAgents_CBS.Solvers.LowLevel.AStar_Shapes;
 import org.junit.jupiter.api.Test;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
-class AStar_LargeAgentsTest {
+public class AStar_ShapesTest {
 
 
     private final Enum_MapCellType e = Enum_MapCellType.EMPTY;
@@ -111,7 +111,7 @@ class AStar_LargeAgentsTest {
     private MAPF_Instance instanceCircle2 = new MAPF_Instance("instanceCircle1", mapCircle, new Agent[]{agent12to33});
     private MAPF_Instance instanceUnsolvable = new MAPF_Instance("instanceUnsolvable", mapWithPocket, new Agent[]{agent04to00});
 
-    I_Solver aStar_largeAgents = new AStar_LargeAgents();
+    I_Solver aStar_largeAgents = new AStar_Shapes();
 
 
     @Test
@@ -139,7 +139,7 @@ class AStar_LargeAgentsTest {
         Agent agent = testInstance.agents.get(0);
 
         //constraint
-        Constraint vertexConstraint = new Constraint(null, 1, null, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(3,2)), mapCircle));
+        Constraint vertexConstraint = new Constraint(null, 1, null, mapCircle.getMapCell(new Coordinate_2D(3,2)));
         ConstraintSet constraints = new ConstraintSet();
         constraints.add(vertexConstraint);
         RunParameters parameters = new RunParameters(constraints);
@@ -165,7 +165,7 @@ class AStar_LargeAgentsTest {
         Agent agent = testInstance.agents.get(0);
 
         //constraint
-        Constraint vertexConstraint = new Constraint(agent, 1, null, new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(3,2)), mapCircle));
+        Constraint vertexConstraint = new Constraint(agent, 1, null, mapCircle.getMapCell(new Coordinate_2D(3,2)));
         ConstraintSet constraints = new ConstraintSet();
         constraints.add(vertexConstraint);
         RunParameters parameters = new RunParameters(constraints);
@@ -190,7 +190,7 @@ class AStar_LargeAgentsTest {
         Agent agent = testInstance.agents.get(0);
 
         //constraint
-        Constraint swappingConstraint = new Constraint(agent, 1, new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(3,3)), mapCircle), new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(3,2)), mapCircle));
+        Constraint swappingConstraint = new Constraint(agent, 1, mapCircle.getMapCell(new Coordinate_2D(3,3)), mapCircle.getMapCell(new Coordinate_2D(3,2)));
         ConstraintSet constraints = new ConstraintSet();
         constraints.add(swappingConstraint);
         RunParameters parameters = new RunParameters(constraints);
@@ -215,9 +215,9 @@ class AStar_LargeAgentsTest {
         Agent agent = testInstance.agents.get(0);
 
         //constraint
-        Constraint swappingConstraint1 = new Constraint(null, 1, new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(3,3)), mapCircle), new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(3,2)), mapCircle));
-        Constraint swappingConstraint2 = new Constraint(null, 2, new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(3,3)), mapCircle), new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(3,2)), mapCircle));
-        Constraint swappingConstraint3 = new Constraint(null, 3, new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(3,3)), mapCircle), new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(3,2)), mapCircle));
+        Constraint swappingConstraint1 = new Constraint(null, 1, mapCircle.getMapCell(new Coordinate_2D(3,3)), mapCircle.getMapCell(new Coordinate_2D(3,2)));
+        Constraint swappingConstraint2 = new Constraint(null, 2, mapCircle.getMapCell(new Coordinate_2D(3,3)), mapCircle.getMapCell(new Coordinate_2D(3,2)));
+        Constraint swappingConstraint3 = new Constraint(null, 3, mapCircle.getMapCell(new Coordinate_2D(3,3)), mapCircle.getMapCell(new Coordinate_2D(3,2)));
         ConstraintSet constraints = new ConstraintSet();
         constraints.add(swappingConstraint1);
         constraints.add(swappingConstraint2);
@@ -297,7 +297,7 @@ class AStar_LargeAgentsTest {
     void accountsForConstraintAfterReachingGoal() {
         MAPF_Instance testInstance = instanceEmpty1;
         Agent agent = testInstance.agents.get(0);
-        I_Location location_0_5 = new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(0,5)), mapEmpty);
+        I_Location location_0_5 = mapEmpty.getMapCell(new Coordinate_2D(0,5));
         Constraint constraintAtTimeAfterReachingGoal = new Constraint(agent,9, null, location_0_5);
         ConstraintSet constraints = new ConstraintSet();
         constraints.add(constraintAtTimeAfterReachingGoal);
@@ -313,9 +313,9 @@ class AStar_LargeAgentsTest {
     void accountsForMultipleConstraintsAfterReachingGoal() {
         MAPF_Instance testInstance = instanceEmpty1;
         Agent agent = testInstance.agents.get(0);
-        Constraint constraintAtTimeAfterReachingGoal1 = new Constraint(agent,9, null, new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(0,5)),mapEmpty));
-        Constraint constraintAtTimeAfterReachingGoal2 = new Constraint(agent,13, null,new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(0,5)),mapEmpty));
-        Constraint constraintAtTimeAfterReachingGoal3 = new Constraint(agent,14, null,new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(0,5)),mapEmpty));
+        Constraint constraintAtTimeAfterReachingGoal1 = new Constraint(agent,9, null, mapEmpty.getMapCell(new Coordinate_2D(0,5)));
+        Constraint constraintAtTimeAfterReachingGoal2 = new Constraint(agent,13, null,mapEmpty.getMapCell(new Coordinate_2D(0,5)));
+        Constraint constraintAtTimeAfterReachingGoal3 = new Constraint(agent,14, null,mapEmpty.getMapCell(new Coordinate_2D(0,5)));
         ConstraintSet constraints = new ConstraintSet();
         constraints.add(constraintAtTimeAfterReachingGoal1);
         constraints.add(constraintAtTimeAfterReachingGoal2);
@@ -336,7 +336,7 @@ class AStar_LargeAgentsTest {
         MAPF_Instance testInstance = instanceCircle2;
         Agent agent = testInstance.agents.get(0);
 
-        Constraint constraintAtTimeAfterReachingGoal1 = new Constraint(agent,5, null, new GraphLocationGroup(new Coordinate_2D_LargeAgent( new Coordinate_2D(3,3)), mapCircle));
+        Constraint constraintAtTimeAfterReachingGoal1 = new Constraint(agent,5, null, mapCircle.getMapCell(new Coordinate_2D(3,3)));
         ConstraintSet constraints = new ConstraintSet();
         constraints.add(constraintAtTimeAfterReachingGoal1);
         RunParameters runParameters = new RunParameters(constraints);
@@ -395,5 +395,4 @@ class AStar_LargeAgentsTest {
         assertEquals(5, solved.getPlanFor(agent).size());
         assertEquals(expected, solved);
     }
-
 }

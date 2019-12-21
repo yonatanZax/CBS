@@ -26,4 +26,12 @@ public class LargeAgent extends Agent {
         this.height = 1;
         this.width = 1;
     }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
 }
