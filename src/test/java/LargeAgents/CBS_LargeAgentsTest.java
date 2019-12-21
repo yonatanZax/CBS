@@ -184,9 +184,9 @@ class CBS_LargeAgentsTest {
 
     @Test
     void TestingBenchmark(){
-        boolean useAsserts = true;
+        boolean useAsserts = false;
 
-        I_Solver solver = new CBS_Shapes();
+        I_Solver solver = new CBS_LargeAgents();
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.testResources_Directory,
                 "TestingBenchmark"});
         InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_BGU_LA());
@@ -194,7 +194,7 @@ class CBS_LargeAgentsTest {
         MAPF_Instance instance = null;
         // load the pre-made benchmark
         try {
-            long timeout = 300 /*seconds*/
+            long timeout = 30*4 /*seconds*/
                     *1000L;
             Map<String, Map<String, String>> benchmarks = CBS_SolverTest.readResultsCSV(path + "\\Results.csv");
             int numSolved = 0;
@@ -217,7 +217,9 @@ class CBS_LargeAgentsTest {
 
                 //solve
                 System.out.println("---------- solving "  + instance.name + " ----------");
-                Solution solution = solver.solve(instance, runParameters);
+                Solution solution = new Solution();
+                solution = solver.solve(instance, runParameters);
+
 
                 // validate
                 Map<String, String> benchmarkForInstance = benchmarks.get(instance.name);

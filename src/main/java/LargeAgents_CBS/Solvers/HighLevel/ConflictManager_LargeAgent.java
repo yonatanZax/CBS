@@ -105,7 +105,8 @@ public class ConflictManager_LargeAgent extends ConflictManager_Shapes {
             int agentEndTime = this.agent_plan.get(agent).getEndTime();
             Move currAgentMove = this.agent_plan.get(agent).moveAt(Math.min(timeLocation.time, agentEndTime));
             GraphLocationGroup currentAgentLocation = (GraphLocationGroup) currAgentMove.currLocation;
-            Move otherAgentMove = this.agent_plan.get(agentConflictsWith).moveAt(timeLocation.time);
+            agentEndTime = this.agent_plan.get(agentConflictsWith).getEndTime();
+            Move otherAgentMove = this.agent_plan.get(agentConflictsWith).moveAt(Math.min(timeLocation.time, agentEndTime));
             GraphLocationGroup otherAgentLocation = (GraphLocationGroup) otherAgentMove.currLocation;
             GraphLocationGroup intersection = GraphLocationGroup.findIntersection(currentAgentLocation, otherAgentLocation);
             VertexConflict_LargeAgent vertexConflict = new VertexConflict_LargeAgent(agent,agentConflictsWith, new TimeLocation(timeLocation.time, intersection));
