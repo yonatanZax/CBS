@@ -24,7 +24,7 @@ public class InstanceBuilder_MovingAITest {
         String expectedScenarioPath = IO_Manager.buildPath(new String[]{IO_Manager.testResources_Directory, instanceName + InstanceBuilder_MovingAI.FILE_TYPE_MAP + InstanceBuilder_MovingAI.FILE_TYPE_SCENARIO});
         InstanceManager.Moving_AI_Path expectedMovingAiPath = new InstanceManager.Moving_AI_Path(expectedMapPath,expectedScenarioPath);
 
-        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{16,16}),(float)-1, new int[]{5});
+        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{16,16}, instanceBuilder_movingAI),(float)-1, new int[]{5});
         this.instanceBuilder_movingAI.prepareInstances("Default name", expectedMovingAiPath, properties);
 
         // Check that instance was created successfully and added to the list
@@ -104,7 +104,7 @@ public class InstanceBuilder_MovingAITest {
         String expectedScenarioPath = IO_Manager.buildPath(new String[]{IO_Manager.testResources_Directory, instanceName + InstanceBuilder_MovingAI.FILE_TYPE_MAP + InstanceBuilder_MovingAI.FILE_TYPE_SCENARIO});
         InstanceManager.Moving_AI_Path expectedMovingAiPath = new InstanceManager.Moving_AI_Path(expectedMapPath,expectedScenarioPath);
 
-        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{512,512}),(float)-1, new int[]{12,2});
+        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{512,512}, instanceBuilder_movingAI),(float)-1, new int[]{12,2});
         this.instanceBuilder_movingAI.prepareInstances("8Room_map", expectedMovingAiPath,properties);
 
 
