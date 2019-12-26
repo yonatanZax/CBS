@@ -1,11 +1,13 @@
 package LargeAgents_CBS.Environment_LargeAgents;
 
+import BasicCBS.Instances.InstanceBuilders.InstanceBuilder_BGU;
 import BasicCBS.Instances.InstanceManager;
 import BasicCBS.Instances.InstanceProperties;
 import BasicCBS.Instances.Maps.MapDimensions;
 import Environment.A_RunManager;
 import Environment.Experiment;
 import Environment.IO_Package.IO_Manager;
+import GraphMapPackage.I_InstanceBuilder;
 import LargeAgents_CBS.Instances.InstanceBuilder_BGU_LA;
 import LargeAgents_CBS.Instances.InstanceBuilder_Shapes;
 import LargeAgents_CBS.Solvers.HighLevel.CBS_LargeAgents;
@@ -44,10 +46,13 @@ public class RunManager_LargeAgents extends A_RunManager {
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
                                                             "Instances\\\\LargeAgents_Instances"});
 
-        InstanceProperties properties = new InstanceProperties(new MapDimensions(8,8), -1, new int[]{3});
+        I_InstanceBuilder instanceBuilder = new InstanceBuilder_Shapes();
+
+
+        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{8,8}, instanceBuilder), -1, new int[]{3});
 
         /*  =   Set Instance Manager   =  */
-        InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_Shapes(), properties);
+        InstanceManager instanceManager = new InstanceManager(path, instanceBuilder, properties);
 
         /*  =   Add new experiment   =  */
         Experiment gridExperiment = new Experiment("Experiment All LA Instances", instanceManager);
@@ -62,8 +67,11 @@ public class RunManager_LargeAgents extends A_RunManager {
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
                                                             "Instances\\\\LargeAgents_Instances"});
 
+        I_InstanceBuilder instanceBuilder = new InstanceBuilder_Shapes();
+
+
         /*  =   Set Properties   =  */
-        InstanceProperties properties = new InstanceProperties(new MapDimensions(20,20), 0, new int[]{7});
+        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{20,20}, instanceBuilder), 0, new int[]{7});
         int numOfInstances = 1;
 
         /*  =   Set Instance Manager   =  */
@@ -86,11 +94,13 @@ public class RunManager_LargeAgents extends A_RunManager {
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
                                                             "Instances\\\\LargeAgents_J"});
 
+        I_InstanceBuilder instanceBuilder = new InstanceBuilder_Shapes();
+
         /*  =   Set Properties   =  */
-        InstanceProperties properties = new InstanceProperties(new MapDimensions(194,194), -1, new int[]{20});
+        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{194,194}, instanceBuilder), -1, new int[]{20});
 
         /*  =   Set Instance Manager   =  */
-        InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_Shapes(), properties);
+        InstanceManager instanceManager = new InstanceManager(path, instanceBuilder, properties);
 
         /*  =   Add new experiment   =  */
         Experiment gridExperiment = new Experiment("Experiment_Lak503d", instanceManager);

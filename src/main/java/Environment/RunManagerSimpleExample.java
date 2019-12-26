@@ -9,6 +9,7 @@ import BasicCBS.Instances.Maps.MapDimensions;
 import BasicCBS.Solvers.AStar.SingleAgentAStar_Solver;
 import BasicCBS.Solvers.CBS.CBS_Solver;
 import BasicCBS.Solvers.PrioritisedPlanning.PrioritisedPlanning_Solver;
+import GraphMapPackage.I_InstanceBuilder;
 
 
 public class RunManagerSimpleExample extends A_RunManager {
@@ -23,8 +24,8 @@ public class RunManagerSimpleExample extends A_RunManager {
     /*  = Set Experiments =  */
     @Override
     protected void setExperiments() {
-        addExperiment_16_7();
-        addExperimentMovingAI_8room();
+//        addExperiment_16_7();
+        addExperimentMovingAI();
     }
 
 
@@ -35,29 +36,28 @@ public class RunManagerSimpleExample extends A_RunManager {
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
                                                             "Instances\\\\BGU_Instances"});
 
+        I_InstanceBuilder instanceBuilder = new InstanceBuilder_BGU();
+
         /*  =   Set Properties   =  */
-        InstanceProperties properties = new InstanceProperties(new MapDimensions(16,16), 0, new int[]{7});
+        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{16,16}, instanceBuilder), 0, new int[]{7});
         int numOfInstances = 1;
 
         /*  =   Set Instance Manager   =  */
-        InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_BGU(),properties);
+        InstanceManager instanceManager = new InstanceManager(path, instanceBuilder, properties);
 
         /*  =   Add new experiment   =  */
         Experiment gridExperiment = new Experiment("Experiment_16_7", instanceManager,numOfInstances);
         this.experiments.add(gridExperiment);
     }
 
-    private void addExperimentMovingAI_8room(){
+    private void addExperimentMovingAI(){
         /*  =   Set Path   =*/
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
                                                             "Instances\\\\MovingAI_Instances"});
 
-        /*  =   Set Properties   =  */
-        InstanceProperties properties = new InstanceProperties(new MapDimensions(512,512), -1, new int[]{7,10,15});
-
 
         /*  =   Set Instance Manager   =  */
-        InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_MovingAI(), properties);
+        InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_MovingAI());
 
         /*  =   Add new experiment   =  */
         Experiment gridExperiment = new Experiment("Experiment_8_Room", instanceManager);

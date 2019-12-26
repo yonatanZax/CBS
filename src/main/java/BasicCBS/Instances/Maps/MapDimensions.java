@@ -1,6 +1,10 @@
 package BasicCBS.Instances.Maps;
 
+import GraphMapPackage.I_InstanceBuilder;
+
 public class MapDimensions{
+
+    // todo - change constructors
 
     public enum Enum_mapOrientation {
         /*  (X0,Y0)|(X1,Y0)
@@ -30,18 +34,9 @@ public class MapDimensions{
         this.mapOrientation = mapOrientation;
     }
 
-    public MapDimensions(int xAxis_length, int yAxis_length) {
-        this.numOfDimensions = 2;
-        this.xAxis_length = xAxis_length;
-        this.yAxis_length = yAxis_length;
-    }
 
-
-    public MapDimensions(int xAxis_length, int yAxis_length, int zAxis_length) {
-        this.numOfDimensions = 3;
-        this.xAxis_length = xAxis_length;
-        this.yAxis_length = yAxis_length;
-        this.zAxis_length = zAxis_length;
+    public MapDimensions(int[] dimensions, I_InstanceBuilder instanceBuilder){
+        this(dimensions, instanceBuilder.getMapOrientation());
     }
 
 
@@ -69,28 +64,8 @@ public class MapDimensions{
                 break;
         }
 
-
     }
 
-
-    /*  Assuming that axis lengths are equals */
-    public MapDimensions(int[] dimensions){
-
-        switch ( dimensions.length ){
-            case 2:
-                this.numOfDimensions = 2;
-                this.xAxis_length = dimensions[0];
-                this.yAxis_length = dimensions[0];
-
-                break;
-
-            case 3:
-                // nicetohave - set for 3d
-                break;
-        }
-
-
-    }
 
 
     @Override

@@ -51,7 +51,7 @@ public class InstanceBuilder_BGUTest {
 
         /*  Set properties  */
        InstanceProperties instanceProperties = new InstanceProperties(
-                                                                new MapDimensions(new int[]{16,16}),
+                                                                new MapDimensions(new int[]{16,16}, instanceBuilderBgu),
                                                                 (float)0,
                                                                 new int[]{7,10,15}
         );
@@ -171,7 +171,7 @@ public class InstanceBuilder_BGUTest {
 
         /*  Set properties  */
         InstanceProperties instanceProperties = new InstanceProperties(
-                new MapDimensions(new int[]{8,8}), (float)0.15, new int[]{7,5,15}
+                new MapDimensions(new int[]{8,8}, instanceBuilderBgu), (float)0.15, new int[]{7,5,15}
         );
 
 
