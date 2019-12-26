@@ -29,13 +29,33 @@ class GraphLocationGroupTest {
 
 
     Enum_MapCellType[][] map_twoWalls = {
-            {e, e, e, e},
-            {e, e, e, e},
-            {e, w, e, e},
-            {e, w, e, e},
+                                    {e, e, e, e},
+                                    {e, e, e, e},
+                                    {e, w, e, e},
+                                    {e, w, e, e},
     };
 
     private I_Map iMap_twoWalls = MapFactory.newSimple4Connected2D_GraphMap_LargeAgents(map_twoWalls);
+
+
+    Enum_MapCellType[][] map_oneWall = {
+                                    {e, e, e, e},
+                                    {e, e, w, e},
+                                    {e, e, e, e},
+                                    {e, e, e, e},
+    };
+
+    private I_Map iMap_OneWall = MapFactory.newSimple4Connected2D_GraphMap_LargeAgents(map_oneWall);
+
+
+    Enum_MapCellType[][] map_empty = {
+            {e, e, e, e},
+            {e, e, e, e},
+            {e, e, e, e},
+            {e, e, e, e},
+    };
+
+    private I_Map iMap_empty = MapFactory.newSimple4Connected2D_GraphMap_LargeAgents(map_empty);
 
 
 
@@ -210,6 +230,174 @@ class GraphLocationGroupTest {
     }
 
 
+//
+//    @Test
+//    public void expendGroup_2x2_intersection(){
+//
+//        // Check for one neighbor
+//        // GG - Group, EE - empty
+//        //       X0  X1  X2  X3
+//        //    Y0{EE, EE, EE, EE}
+//        //    Y1{EE, EE, EE, EE}
+//        //    Y2{EE, WW, AA, AA}
+//        //    Y3{EE, EE, AA, AA}
+//
+//
+//        /*  Expected Values */
+//        /*  Larger Expended */
+//        GraphMapVertex_LargeAgents[][] expendedCells_0_0_3_3 = new GraphMapVertex_LargeAgents[4][4];
+//        expendedCells_0_0_3_3[0][0] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(0,0));
+//        expendedCells_0_0_3_3[0][1] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(0,1));
+//        expendedCells_0_0_3_3[0][2] = null;
+//        expendedCells_0_0_3_3[0][3] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(0,3));
+//        expendedCells_0_0_3_3[1][0] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(1,0));
+//        expendedCells_0_0_3_3[1][1] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(1,1));
+//        expendedCells_0_0_3_3[1][2] = null;
+//        expendedCells_0_0_3_3[1][3] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(1,3));
+//        expendedCells_0_0_3_3[2][0] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(2,0));
+//        expendedCells_0_0_3_3[2][1] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(2,1));
+//        expendedCells_0_0_3_3[2][2] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(2,2));
+//        expendedCells_0_0_3_3[2][3] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(2,3));
+//        expendedCells_0_0_3_3[3][0] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(3,0));
+//        expendedCells_0_0_3_3[3][1] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(3,1));
+//        expendedCells_0_0_3_3[3][2] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(3,2));
+//        expendedCells_0_0_3_3[3][3] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(3,3));
+//        GraphLocationGroup expectedGroup_0_0_3_3 = new GraphLocationGroup(expendedCells_0_0_3_3);
+//
+//        /*   Smaller Expended    */
+//        GraphMapVertex_LargeAgents[][] expendedCells_1_1_3_3 = new GraphMapVertex_LargeAgents[3][3];
+//        expendedCells_1_1_3_3[0][0] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(1,1));
+//        expendedCells_1_1_3_3[0][1] = null;
+//        expendedCells_1_1_3_3[0][2] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(1,3));
+//        expendedCells_1_1_3_3[1][0] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(2,1));
+//        expendedCells_1_1_3_3[1][1] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(2,2));
+//        expendedCells_1_1_3_3[1][2] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(2,3));
+//        expendedCells_1_1_3_3[2][0] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(3,1));
+//        expendedCells_1_1_3_3[2][1] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(3,2));
+//        expendedCells_1_1_3_3[2][2] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(3,3));
+//        GraphLocationGroup expectedGroup_1_1_3_3 = new GraphLocationGroup(expendedCells_1_1_3_3);
+//
+//
+//        /*   Actual values   */
+//        GraphMapVertex_LargeAgents[][] intersection_Cells_2_2_3_3 = new GraphMapVertex_LargeAgents[2][2];
+//        intersection_Cells_2_2_3_3[0][0] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(2,2));
+//        intersection_Cells_2_2_3_3[0][1] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(2,3));
+//        intersection_Cells_2_2_3_3[1][0] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(3,2));
+//        intersection_Cells_2_2_3_3[1][1] = (GraphMapVertex_LargeAgents) iMap_OneWall.getMapCell(new Coordinate_2D(3,3));
+//
+//        GraphLocationGroup intersectionGroup_2_2_3_3 = new GraphLocationGroup(intersection_Cells_2_2_3_3);
+//
+//        GraphLocationGroup actualExpendedGroups_0_0_3_3 = GraphLocationGroup.expendByReferencePoint(intersectionGroup_2_2_3_3, 3);
+//        GraphLocationGroup actualExpendedGroups_1_1_3_3 = GraphLocationGroup.expendByReferencePoint(intersectionGroup_2_2_3_3,  2);
+//
+//        Assert.assertEquals(expectedGroup_0_0_3_3, actualExpendedGroups_0_0_3_3);
+//        Assert.assertEquals(expectedGroup_1_1_3_3, actualExpendedGroups_1_1_3_3);
+//    }
+//
+//
+//
+//    @Test
+//    public void expendGroup_1x2_intersection(){
+//
+//        // Check for one neighbor
+//        // II - Intersection, EE - empty
+//        //       X0  X1  X2  X3
+//        //    Y0{EE, EE, EE, EE}
+//        //    Y1{EE, EE, EE, EE}
+//        //    Y2{EE, EE, II, EE}
+//        //    Y3{EE, EE, II, EE}
+//
+//
+//        /*  Expected Values */
+//        /*  Larger Expended */
+//        GraphMapVertex_LargeAgents[][] expendedCells_0_0_2_3 = new GraphMapVertex_LargeAgents[3][4];
+//        expendedCells_0_0_2_3[0][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(0,0));
+//        expendedCells_0_0_2_3[0][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(0,1));
+//        expendedCells_0_0_2_3[0][2] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(0,2));
+//        expendedCells_0_0_2_3[0][3] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(0,3));
+//        expendedCells_0_0_2_3[1][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,0));
+//        expendedCells_0_0_2_3[1][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,1));
+//        expendedCells_0_0_2_3[1][2] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,2));
+//        expendedCells_0_0_2_3[1][3] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,3));
+//        expendedCells_0_0_2_3[2][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,0));
+//        expendedCells_0_0_2_3[2][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,1));
+//        expendedCells_0_0_2_3[2][2] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,2));
+//        expendedCells_0_0_2_3[2][3] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,3));
+//
+//
+//        GraphLocationGroup expectedGroup_0_0_3_3 = new GraphLocationGroup(expendedCells_0_0_2_3);
+//
+//
+//        /*   Actual values   */
+//        GraphMapVertex_LargeAgents[][] intersection_Cells_2_2_2_3 = new GraphMapVertex_LargeAgents[1][2];
+//        intersection_Cells_2_2_2_3[0][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,2));
+//        intersection_Cells_2_2_2_3[0][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,3));
+//
+//        GraphLocationGroup intersectionGroup_2_2_2_3 = new GraphLocationGroup(intersection_Cells_2_2_2_3);
+//
+//        GraphLocationGroup actualExpendedGroups_0_0_3_3 = GraphLocationGroup.expendByReferencePoint(intersectionGroup_2_2_2_3, 3);
+//
+//        Assert.assertEquals(expectedGroup_0_0_3_3, actualExpendedGroups_0_0_3_3);
+//    }
+
+
+
+    @Test
+    public void findIntersection(){
+
+        // GG - Group, EE - empty, II - Intersection
+        //          Agent 1               Agent 2               Intersection
+        //       X0  X1  X2  X3        X0  X1  X2  X3          X0  X1  X2  X3
+        //    Y0{EE, EE, EE, EE}    Y0{A2, A2, A2, EE}      Y0{EE, EE, EE, EE}
+        //    Y1{EE, A1, A1, A1}    Y1{A2, A2, A2, EE}      Y1{EE, II, II, EE}
+        //    Y2{EE, A1, A1, A1}    Y2{A2, A2, A2, EE}      Y2{EE, II, II, EE}
+        //    Y3{EE, A1, A1, A1}    Y3{EE, EE, EE, EE}      Y3{EE, EE, EE, EE}
+
+        GraphMapVertex_LargeAgents[][] intersection_Cells_1_1_2_2 = new GraphMapVertex_LargeAgents[2][2];
+        intersection_Cells_1_1_2_2[0][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,1));
+        intersection_Cells_1_1_2_2[0][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,2));
+        intersection_Cells_1_1_2_2[1][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,1));
+        intersection_Cells_1_1_2_2[1][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,2));
+
+        GraphLocationGroup expectedIntersectionGroup_1_1_2_2 = new GraphLocationGroup(intersection_Cells_1_1_2_2);
+
+
+
+
+
+        GraphMapVertex_LargeAgents[][] agent1Cells_1_1_3_3 = new GraphMapVertex_LargeAgents[3][3];
+        agent1Cells_1_1_3_3[0][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,1));
+        agent1Cells_1_1_3_3[0][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,2));
+        agent1Cells_1_1_3_3[0][2] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,3));
+        agent1Cells_1_1_3_3[1][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,1));
+        agent1Cells_1_1_3_3[1][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,2));
+        agent1Cells_1_1_3_3[1][2] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,3));
+        agent1Cells_1_1_3_3[2][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(3,1));
+        agent1Cells_1_1_3_3[2][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(3,2));
+        agent1Cells_1_1_3_3[2][2] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(3,3));
+
+        GraphLocationGroup agentGroup1_1_1_3_3 = new GraphLocationGroup(agent1Cells_1_1_3_3);
+
+
+        GraphMapVertex_LargeAgents[][] agent2Cells_0_0_2_2 = new GraphMapVertex_LargeAgents[3][3];
+        agent2Cells_0_0_2_2[0][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(0,0));
+        agent2Cells_0_0_2_2[0][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(0,1));
+        agent2Cells_0_0_2_2[0][2] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(0,2));
+        agent2Cells_0_0_2_2[1][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,0));
+        agent2Cells_0_0_2_2[1][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,1));
+        agent2Cells_0_0_2_2[1][2] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(2,2));
+        agent2Cells_0_0_2_2[2][0] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,0));
+        agent2Cells_0_0_2_2[2][1] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,1));
+        agent2Cells_0_0_2_2[2][2] = (GraphMapVertex_LargeAgents) iMap_empty.getMapCell(new Coordinate_2D(1,2));
+
+        GraphLocationGroup agentGroup2_1_1_3_3 = new GraphLocationGroup(agent2Cells_0_0_2_2);
+
+
+        GraphLocationGroup actualIntersection = GraphLocationGroup.findIntersection(agentGroup1_1_1_3_3, agentGroup2_1_1_3_3);
+
+        Assert.assertEquals(expectedIntersectionGroup_1_1_2_2, actualIntersection);
+
+    }
 
 
 }

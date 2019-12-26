@@ -4,6 +4,7 @@ import BasicCBS.Instances.Agent;
 import BasicCBS.Instances.Maps.I_Location;
 import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.Constraint;
 import BasicCBS.Solvers.ConstraintsAndConflicts.SwappingConflict;
+import GraphMapPackage.GraphMapVertex_LargeAgents;
 import LargeAgents_CBS.Instances.LargeAgent;
 import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
 
@@ -17,11 +18,11 @@ public class SwappingConflict_LargeAgents extends SwappingConflict {
     @Override
     public Constraint[] getPreventingConstraints() {
 
-        GraphLocationGroup expandedGroups_prev1 = GraphLocationGroup.expendByReferencePoint((GraphLocationGroup) agent2_destination, ((LargeAgent)agent1).getHeight());
-        GraphLocationGroup expandedGroups_dest1 = GraphLocationGroup.expendByReferencePoint((GraphLocationGroup) location, ((LargeAgent)agent1).getHeight());
+        GraphLocationGroup expandedGroups_prev1 = GraphLocationGroup.expendByReferencePoint((GraphMapVertex_LargeAgents) agent2_destination, ((LargeAgent)agent1).getHeight());
+        GraphLocationGroup expandedGroups_dest1 = GraphLocationGroup.expendByReferencePoint((GraphMapVertex_LargeAgents) location, ((LargeAgent)agent1).getHeight());
 
-        GraphLocationGroup expandedGroups_dest2 = GraphLocationGroup.expendByReferencePoint((GraphLocationGroup) agent2_destination, ((LargeAgent)agent2).getHeight());
-        GraphLocationGroup expandedGroups_prev2 = GraphLocationGroup.expendByReferencePoint((GraphLocationGroup) location, ((LargeAgent)agent2).getHeight());
+        GraphLocationGroup expandedGroups_dest2 = GraphLocationGroup.expendByReferencePoint((GraphMapVertex_LargeAgents) agent2_destination, ((LargeAgent)agent2).getHeight());
+        GraphLocationGroup expandedGroups_prev2 = GraphLocationGroup.expendByReferencePoint((GraphMapVertex_LargeAgents) location, ((LargeAgent)agent2).getHeight());
 
 
 

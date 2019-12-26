@@ -101,7 +101,7 @@ public class ConflictManager_LargeAgentTest {
 
         /*      == Expected conflicts ==     */
 
-        VertexConflict expectedGoalConflict = new VertexConflict_LargeAgent(a1, a2, 1, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)), this.mapEmpty));
+        VertexConflict expectedGoalConflict = new VertexConflict_LargeAgent(a1, a2, 1, this.mapEmpty.getMapCell(new Coordinate_2D(0,0)));
 
         HashSet<A_Conflict> expectedSet = new HashSet<>();
         expectedSet.add(expectedGoalConflict);
@@ -159,7 +159,7 @@ public class ConflictManager_LargeAgentTest {
 
         /*      == Expected conflicts ==     */
 
-        VertexConflict expectedGoalConflict = new VertexConflict_LargeAgent(a1, a2, 5, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,1)), this.mapTwoCells));
+        VertexConflict expectedGoalConflict = new VertexConflict_LargeAgent(a1, a2, 5, this.mapTwoCells.getMapCell(new Coordinate_2D(0,1)));
 
         HashSet<A_Conflict> expectedSet = new HashSet<>();
         expectedSet.add(expectedGoalConflict);
@@ -213,7 +213,7 @@ public class ConflictManager_LargeAgentTest {
 
         /*      == Expected conflicts ==     */
 
-        SwappingConflict expectedConflict_time1 = new SwappingConflict_LargeAgents(a1,a2,1,  new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,1)), this.mapTwoCells), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(0,0)), this.mapTwoCells));
+        SwappingConflict expectedConflict_time1 = new SwappingConflict_LargeAgents(a1,a2,1, this.mapTwoCells.getMapCell(new Coordinate_2D(0,1)),  this.mapTwoCells.getMapCell(new Coordinate_2D(0,0)));
 
         HashSet<A_Conflict> expectedSet = new HashSet<>();
         expectedSet.add(expectedConflict_time1);
@@ -229,7 +229,7 @@ public class ConflictManager_LargeAgentTest {
     @Test
     public void TwoAgentsWith4VertexConflicts_graphH() {
 
-        ConflictManager_Shapes conflictAvoidanceTable = new ConflictManager_LargeAgent(new MinTimeConflictSelectionStrategy());
+        ConflictManager_LargeAgent conflictAvoidanceTable = new ConflictManager_LargeAgent(new MinTimeConflictSelectionStrategy());
 
 
         /*  = Add a1 Plan =
@@ -338,10 +338,10 @@ public class ConflictManager_LargeAgentTest {
 
         /*      == Expected conflicts ==     */
 
-        VertexConflict expectedConflict_time1 = new VertexConflict_LargeAgent(a1,a2,1, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,0)), this.mapH));
-        VertexConflict expectedConflict_time2 = new VertexConflict_LargeAgent(a1,a2,2, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,1)), this.mapH));
-        VertexConflict expectedConflict_time3 = new VertexConflict_LargeAgent(a1,a2,3, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,2)), this.mapH));
-        VertexConflict expectedConflict_time4 = new VertexConflict_LargeAgent(a1,a2,4, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,3)), this.mapH));
+        VertexConflict expectedConflict_time1 = new VertexConflict_LargeAgent(a1,a2,1, this.mapH.getMapCell(new Coordinate_2D(1,0)));
+        VertexConflict expectedConflict_time2 = new VertexConflict_LargeAgent(a1,a2,2, this.mapH.getMapCell(new Coordinate_2D(1,1)));
+        VertexConflict expectedConflict_time3 = new VertexConflict_LargeAgent(a1,a2,3, this.mapH.getMapCell(new Coordinate_2D(1,2)));
+        VertexConflict expectedConflict_time4 = new VertexConflict_LargeAgent(a1,a2,4, this.mapH.getMapCell(new Coordinate_2D(1,3)));
 
         HashSet<A_Conflict> expectedSet = new HashSet<>();
         expectedSet.add(expectedConflict_time1);
@@ -482,7 +482,7 @@ public class ConflictManager_LargeAgentTest {
 
         /*      == Expected conflicts ==     */
 
-        SwappingConflict expectedConflict_time3 = new SwappingConflict_LargeAgents(a1,a2,3, new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,2)), mapH), new GraphLocationGroup(new Coordinate_2D_LargeAgent(new Coordinate_2D(1,1)), mapH));
+        SwappingConflict expectedConflict_time3 = new SwappingConflict_LargeAgents(a1,a2,3, this.mapH.getMapCell(new Coordinate_2D(1,2)), this.mapH.getMapCell(new Coordinate_2D(1,1)));
 
         HashSet<A_Conflict> expectedSet = new HashSet<>();
         expectedSet.add(expectedConflict_time3);

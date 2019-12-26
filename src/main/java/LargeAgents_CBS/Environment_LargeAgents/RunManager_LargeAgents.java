@@ -8,6 +8,7 @@ import Environment.Experiment;
 import Environment.IO_Package.IO_Manager;
 import LargeAgents_CBS.Instances.InstanceBuilder_BGU_LA;
 import LargeAgents_CBS.Instances.InstanceBuilder_Shapes;
+import LargeAgents_CBS.Solvers.HighLevel.CBS_LargeAgents;
 import LargeAgents_CBS.Solvers.HighLevel.CBS_Shapes;
 
 public class RunManager_LargeAgents extends A_RunManager {
@@ -18,24 +19,43 @@ public class RunManager_LargeAgents extends A_RunManager {
 
 
 
-
     /*  = Set BasicCBS.Solvers =  */
     @Override
     protected void setSolvers() {
-//        super.solvers.add(new CBS_Solver());
+        super.solvers.add(new CBS_LargeAgents());
         super.solvers.add(new CBS_Shapes());
     }
 
     /*  = Set Experiments =  */
     @Override
     protected void setExperiments() {
-        this.addExperiment_Lak503d();
-        this.addExperiment_CleanMap_20_20();
-//        this.addAllInstancesExperiment();
+        this.allLargeAgentInstances();
+//        this.addExperiment_Lak503d();
+//        this.addExperiment_CleanMap_20_20();
+//        this.addBenchmarkExperiment();
     }
 
 
     /* = Experiments =  */
+
+
+    private void allLargeAgentInstances(){
+        /*  =   Set Path   =*/
+        String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
+                                                            "Instances\\\\LargeAgents_Instances"});
+
+        InstanceProperties properties = new InstanceProperties(new MapDimensions(8,8), -1, new int[]{3});
+
+        /*  =   Set Instance Manager   =  */
+        InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_Shapes(), properties);
+
+        /*  =   Add new experiment   =  */
+        Experiment gridExperiment = new Experiment("Experiment All LA Instances", instanceManager);
+        this.experiments.add(gridExperiment);
+
+    }
+
+
 
     private void addExperiment_CleanMap_20_20(){
         /*  =   Set Path   =*/
@@ -55,7 +75,7 @@ public class RunManager_LargeAgents extends A_RunManager {
     }
 
 
-    private void addAllInstancesExperiment(){
+    private void addBenchmarkExperiment(){
         InstanceManager instanceManager = new InstanceManager( this.pathToBenchmark, new InstanceBuilder_BGU_LA());
         this.experiments.add(new Experiment("All Instances in Test Benchmark", instanceManager));
     }

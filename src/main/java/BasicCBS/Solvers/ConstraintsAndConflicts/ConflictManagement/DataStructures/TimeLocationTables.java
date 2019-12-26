@@ -1,6 +1,7 @@
 package BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures;
 
 import BasicCBS.Instances.Agent;
+import BasicCBS.Instances.Maps.Coordinates.Coordinate_2D;
 import BasicCBS.Instances.Maps.I_Location;
 import BasicCBS.Solvers.SingleAgentPlan;
 
@@ -72,10 +73,12 @@ public class TimeLocationTables {
         // Add to goal_agentTime, 'put' method will update it's value if already exists
         this.goal_plan.put(goalTimeLocation.location, singleAgentPlan);
 
-        this.location_timeList.computeIfAbsent(goalTimeLocation.location, k -> new HashSet<>());
+//        this.location_timeList.computeIfAbsent(goalTimeLocation.location, k -> new HashSet<>());
+
         // A Set of time that at least one agent is occupying
-        Set<Integer> timeList = this.location_timeList.get(goalTimeLocation.location);
-        timeList.add(goalTimeLocation.time); // add the plan's timeLocation at goal
+        // todo - was removed
+//        Set<Integer> timeList = this.location_timeList.get(goalTimeLocation.location);
+//        timeList.add(goalTimeLocation.time); // add the plan's timeLocation at goal
     }
 
 

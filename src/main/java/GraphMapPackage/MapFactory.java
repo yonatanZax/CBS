@@ -6,6 +6,7 @@ import BasicCBS.Instances.Maps.Enum_MapCellType;
 import BasicCBS.Instances.Maps.I_Location;
 import BasicCBS.Instances.Maps.I_Map;
 import LargeAgents_CBS.Instances.Maps.Enum_direction;
+import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -118,7 +119,14 @@ public class MapFactory {
                 }
             }
         }
+        // todo - reset dictionaries
+        resetMapsInGraphLocationGroup();
         return new GraphMap(allCells);
+    }
+
+    private static void resetMapsInGraphLocationGroup(){
+        GraphLocationGroup.expandMap = new HashMap<>();
+        GraphLocationGroup.intersectionMap = new HashMap<>();
     }
 
 
