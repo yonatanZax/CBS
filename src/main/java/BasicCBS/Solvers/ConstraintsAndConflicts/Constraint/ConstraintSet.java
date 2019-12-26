@@ -69,8 +69,7 @@ public class ConstraintSet{
      */
     public boolean addAll(Collection<? extends Constraint> constraints) {
         boolean changed = false;
-        for (Constraint cons :
-                constraints) {
+        for (Constraint cons : constraints) {
             changed |= this.add(cons);
         }
         return changed;
@@ -83,10 +82,8 @@ public class ConstraintSet{
      */
     public boolean addAll(ConstraintSet other) {
         boolean changed = false;
-        for (ConstraintWrapper cw :
-                other.constraints.keySet()) {
-            for (Constraint cons :
-                    cw.relevantConstraints) {
+        for (ConstraintWrapper cw : other.constraints.keySet()) {
+            for (Constraint cons : cw.relevantConstraints) {
                 changed |= this.add(cons);
             }
         }
@@ -124,8 +121,7 @@ public class ConstraintSet{
      */
     public boolean removeAll(Collection<? extends Constraint> constraints) {
         boolean changed = false;
-        for (Constraint cons :
-                constraints) {
+        for (Constraint cons : constraints) {
             changed |= this.remove(cons);
         }
         return changed;
@@ -211,8 +207,7 @@ public class ConstraintSet{
      */
     public boolean rejectsAll(Collection<? extends Move> moves){
         boolean result = true;
-        for (Move move :
-                moves) {
+        for (Move move : moves) {
             result &= this.rejects(move);
         }
         return result;
@@ -229,8 +224,7 @@ public class ConstraintSet{
      */
     public boolean acceptsAll(Collection<? extends Move> moves){
         boolean result = true;
-        for (Move move :
-                moves) {
+        for (Move move : moves) {
             result &= this.accepts(move);
         }
         return result;

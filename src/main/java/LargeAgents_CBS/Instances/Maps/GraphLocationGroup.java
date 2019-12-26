@@ -207,23 +207,29 @@ public class GraphLocationGroup implements I_Location {
     }
 
 
+    private boolean intersectWithRefPoint(GraphLocationGroup group){
+        GraphMapVertex_LargeAgents refPoint = this.mapCells[0][0];
+        return group.getAllCells().contains(refPoint);
+    }
 
     @Override
     public boolean intersectsWith(I_Location other) {
 
         if( !(other instanceof GraphLocationGroup)){ return true; }
+        boolean intersects = this.intersectWithRefPoint((GraphLocationGroup) other);
+        return intersects;
 
-        GraphMapVertex_LargeAgents[][] myCells = this.mapCells;
-        GraphMapVertex_LargeAgents[][] otherCells = ((GraphLocationGroup) other).mapCells;
-
-        if( myCells == null || otherCells == null){ return true; }
-
-        for (int xValue = 0; xValue < Math.min(myCells.length, otherCells.length); xValue++)
-            for (int yValue = 0; yValue < Math.min(myCells[xValue].length, otherCells[xValue].length); yValue++)
-                if( myCells[xValue][yValue] == otherCells[xValue][yValue] )
-                    return true;
-
-        return false; // No intersection
+//        GraphMapVertex_LargeAgents[][] myCells = this.mapCells;
+//        GraphMapVertex_LargeAgents[][] otherCells = ((GraphLocationGroup) other).mapCells;
+//
+//        if( myCells == null || otherCells == null){ return true; }
+//
+//        for (int xValue = 0; xValue < Math.min(myCells.length, otherCells.length); xValue++)
+//            for (int yValue = 0; yValue < Math.min(myCells[xValue].length, otherCells[xValue].length); yValue++)
+//                if( myCells[xValue][yValue] == otherCells[xValue][yValue] )
+//                    return true;
+//
+//        return false; // No intersection
     }
 
 
