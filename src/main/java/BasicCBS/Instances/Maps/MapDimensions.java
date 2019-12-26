@@ -30,6 +30,12 @@ public class MapDimensions{
         this.numOfDimensions = 0; // Indicates unknown size
     }
 
+
+    public MapDimensions(int x, int y) {
+        this.xAxis_length = x;
+        this.yAxis_length = y;
+    }
+
     public void setMapOrientation(Enum_mapOrientation mapOrientation) {
         this.mapOrientation = mapOrientation;
     }
