@@ -208,9 +208,9 @@ public class GraphLocationGroup implements I_Location {
     }
 
 
-    private boolean intersectWithRefPoint(GraphLocationGroup group){
-        GraphMapVertex_LargeAgents refPoint = this.mapCells[0][0];
-        return group.getAllCells().contains(refPoint);
+    private boolean intersectWithRefPoint(GraphLocationGroup refPointGroup){
+        GraphMapVertex_LargeAgents refPoint = refPointGroup.getReferencePoint();
+        return this.getAllCells().contains(refPoint);
     }
 
     @Override
@@ -351,6 +351,10 @@ public class GraphLocationGroup implements I_Location {
 
     public GraphLocationGroup getReferencePointAsGroup(){
         return new GraphLocationGroup(new GraphMapVertex_LargeAgents[][]{{this.mapCells[0][0]}});
+    }
+
+    public GraphMapVertex_LargeAgents getReferencePoint(){
+        return this.mapCells[0][0];
     }
 
 
