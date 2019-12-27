@@ -47,7 +47,7 @@ public class Main {
 //            runTestingBenchmarkExperiment();
             // all examples will also produce a report in CSV format, and save it to resultsOutputDir (see above)
 
-            runLargeAgentBenchmark();
+            runLargeAgentInstances();
         }
     }
 
@@ -94,7 +94,7 @@ public class Main {
         outputResults();
     }
 
-    public static void runLargeAgentBenchmark(){
+    public static void runLargeAgentInstances(){
         A_RunManager largeAgentRunManager = new RunManager_LargeAgents();
         largeAgentRunManager.runAllExperiments();
         outputResults();

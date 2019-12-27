@@ -2,275 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4accb152-2d1f-43de-b50e-d11c57caa5f8" name="Default Changelist" comment="Passing all 1x1 benchmark instances">
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/Agent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/InstanceBuilders/InstanceBuilder_BGU$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/InstanceBuilders/InstanceBuilder_BGU.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/InstanceBuilders/InstanceBuilder_MovingAI$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/InstanceBuilders/InstanceBuilder_MovingAI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/InstanceManager$InstancePath.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/InstanceManager$Moving_AI_Path.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/InstanceManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/InstanceProperties$ObstacleWrapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/InstanceProperties.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/MAPF_Instance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/Maps/Coordinates/Coordinate_2D.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/Maps/Coordinates/Coordinate_3D.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/Maps/Coordinates/I_Coordinate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/Maps/Enum_MapCellType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/Maps/I_Location.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/Maps/I_Map.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/Maps/MapDimensions$Enum_mapOrientation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Instances/Maps/MapDimensions.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/AStar/AStarHeuristic.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/AStar/DistanceTableAStarHeuristic.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/AStar/RunParameters_SAAStar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver$AStarState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver$defaultHeuristic.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/A_Solver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/CBS/CBS_Solver$CBSCostFunction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/CBS/CBS_Solver$CBS_Node.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/CBS/CBS_Solver$OpenListManagementMode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/CBS/CBS_Solver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/A_Conflict.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/ConflictManager$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/ConflictManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/ConflictSelectionStrategy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/DataStructures/AgentAtGoal.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/DataStructures/ConflictAvoidance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/DataStructures/RemovableConflictAvoidance.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/DataStructures/TimeLocation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/DataStructures/TimeLocationTables.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/I_ConflictManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/MinTimeConflictSelectionStrategy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/NaiveConflictDetection.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/RemovableConflictManager$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/RemovableConflictManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/ConstraintSet.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/I_ConstraintGroupingKey.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/TimeLocation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/SwappingConflict.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/VertexConflict.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/I_OpenList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/I_Solver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/Move.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/OpenList$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/OpenList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/PrioritisedPlanning/PrioritisedPlanning_Solver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/PrioritisedPlanning/RunParameters_PP.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/RunParameters.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/SingleAgentPlan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/BasicCBS/Solvers/Solution.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/A_RunManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/Experiment.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/IO_Package/Enum_IO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/IO_Package/IO_Manager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/IO_Package/Reader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/IO_Package/Writer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/Metrics/InstanceReport$StandardFields.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/Metrics/InstanceReport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/Metrics/S_Metrics$HeaderToString.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/Metrics/S_Metrics$InstanceReportToString.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/Metrics/S_Metrics.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/RunManagerSimpleExample.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Environment/TestingBenchmarkRunManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/GraphMapPackage/GraphMap.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/GraphMapPackage/GraphMapVertex.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/GraphMapPackage/GraphMapVertex_LargeAgents.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/GraphMapPackage/I_InstanceBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/GraphMapPackage/MapFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/BGU_Instances/Instance-16-0-7-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/BGU_Instances/den520d-10-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/BGU_Instances/den520d-2-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_Instances/CleanMap_20_20.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_Instances/CleanMap_8_8_3_0_0_opt_22.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_Instances/CleanMap_8_8_3_0_0_opt_22.map.scen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_Instances/CleanMap_8_8_3_0_1_opt_13.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_Instances/CleanMap_8_8_3_0_1_opt_13.map.scen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_Instances/CleanMap_8_8_3_0_2_opt_10.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_Instances/CleanMap_8_8_3_0_2_opt_10.map.scen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_Instances/Instance-16-0-7.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_Instances/Instance-16-0-7.map.scen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_J/lak503d.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_J/lak503d.map.scen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/MovingAI_Instances/8room_000.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/MovingAI_Instances/8room_000.map.scen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Environment_LargeAgents/RunManager_LargeAgents.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Instances/InstanceBuilder_BGU_LA.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Instances/InstanceBuilder_Shapes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Instances/LargeAgent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Instances/Maps/Coordinate_2D_LargeAgent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Instances/Maps/Enum_direction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Instances/Maps/GraphLocationGroup$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Instances/Maps/GraphLocationGroup$SizeLocation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Instances/Maps/GraphLocationGroup$TwoGroups.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/HighLevel/CBS_LargeAgents.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/HighLevel/CBS_Shapes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/HighLevel/ConflictManager_LargeAgent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/HighLevel/ConflictManager_Shapes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/HighLevel/SwappingConflict_LargeAgents.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/HighLevel/VertexConflict_LargeAgent.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/LowLevel/AStar_LargeAgents.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/LowLevel/AStar_Shapes$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/LowLevel/AStar_Shapes$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/LowLevel/AStar_Shapes$AStarState_LargeAgents.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/LowLevel/AStar_Shapes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/LargeAgents_CBS/Solvers/LowLevel/DistanceTableHeuristic_LargeAgents.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/META-INF/MSPF_CBS.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Instances/I_InstanceBuilderTest$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Instances/I_InstanceBuilderTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Instances/InstanceBuilder_BGUTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Instances/InstanceBuilder_MovingAITest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Maps/MapFactoryTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Solvers/AStar/DistanceTableAStarHeuristicTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Solvers/AStar/SingleAgentAStar_SolverTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Solvers/CBS/CBS_SolverTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Solvers/ConstraintSetTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Solvers/ConstraintTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagerTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Solvers/PrioritisedPlanning/PrioritisedPlanning_SolverTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/BasicCBS/Solvers/SingleAgentPlanTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Environment/IO_Package/IO_ManagerTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Environment/IO_Package/ReaderTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Environment/IO_Package/WriterTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Environment/Metrics/S_MetricsTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/IO_Package/test_reader_file.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/Instance-16-0-7-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/Instance-8-15-5-17 - hard one - cost 29 and some corridors" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/LargeAgents/CleanMap_20_20.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/LargeAgents/Instance-16-0-7.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/LargeAgents/Instance-16-0-7.map.scen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/MovingAI/8room_000.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/MovingAI/8room_000.map.scen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/MovingAI/Instance-16-0-7.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/MovingAI/Instance-16-0-7.map.scen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/circle -  one agent - 1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/circle -  one agent - 2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/circle -  one agent - 3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Instances/empty -  one agent" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/LargeAgents/AStar_LargeAgentsTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/LargeAgents/AStar_ShapesTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/LargeAgents/CBS_LargeAgentsTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/LargeAgents/CBS_ShapesTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/LargeAgents/ConflictManager_LargeAgentTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/LargeAgents/ConflictManager_ShapesTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/LargeAgents/DistanceTableHeuristic_LargeAgentsTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/LargeAgents/GraphLocationGroupTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/LargeAgents/InstanceBuilder_ShapesTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/META-INF/MSPF_CBS.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/Reports default directory/Dor test benckmark results.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/SampleMaps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-10-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-10-1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-10-2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-10-3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-10-4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-10-5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-10-6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-10-7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-10-9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-15-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-15-1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-15-2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-15-3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-15-4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-15-5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-15-6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-15-7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-15-8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-15-9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-20-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-20-1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-20-2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-20-3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-20-4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-20-5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-20-6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-20-7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-20-9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-5-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-5-1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-5-2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-5-3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-5-4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-5-5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-5-6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-5-7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-5-8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Instance-32-20-5-9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/Results.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-10-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-10-1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-10-2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-10-3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-10-4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-10-5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-10-6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-10-7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-10-8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-10-9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-15-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-15-1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-15-2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-15-3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-15-4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-15-5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-15-6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-15-7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-15-8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-15-9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-20-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-20-1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-20-2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-20-3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-20-4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-20-5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-20-6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-20-7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-20-8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-20-9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-5-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-5-1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-5-2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-5-3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-5-4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-5-5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-5-6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-5-7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-5-8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/brc202d-5-9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-10-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-10-1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-10-2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-10-3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-10-4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-10-5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-10-6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-10-7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-10-8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-5-0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-5-1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-5-2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-5-3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-5-4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-5-5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-5-6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-5-7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-5-8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva-5-9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/output/test/MSPF_CBS/TestingBenchmark/kiva/kiva-10-9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/CleanMap_8_8_3_0_1_opt_13.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/CleanMap_8_8_3_0_1_opt_13.map.scen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/CleanMap_8_8_3_0_2_opt_10.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/CleanMap_8_8_3_0_2_opt_10.map.scen" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/report/201912232239/mutations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LargeAgents/InstanceBuilder_ShapesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LargeAgents/InstanceBuilder_ShapesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/CleanMap_20_20.map.scen" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/MSPF_CBS/Instances/LargeAgents_Instances/CleanMap_20_20.map.scen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Instances/LargeAgents_Instances/CleanMap_20_20.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Instances/LargeAgents_Instances/CleanMap_20_20.map.scen" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/MapDimensions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/MapDimensions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/CleanMap_20_20.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/CleanMap_20_20.map.scen" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -284,109 +22,21 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="212" column="19" selection-start-line="212" selection-start-column="19" selection-end-line="212" selection-end-column="19" />
-              <folding>
-                <element signature="e#5075#5076#0" expanded="true" />
-                <element signature="e#5120#5121#0" expanded="true" />
-                <element signature="e#14170#14171#0" expanded="true" />
-                <element signature="e#14212#14213#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="44" column="46" lean-forward="true" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+            <state relative-caret-position="513">
+              <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/LargeAgents/InstanceBuilder_ShapesTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="29" column="79" selection-start-line="29" selection-start-column="79" selection-end-line="29" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/VertexConflict_LargeAgent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/LargeAgents/CBS_LargeAgentsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="188" column="60" selection-start-line="188" selection-start-column="60" selection-end-line="188" selection-end-column="60" />
+            <state relative-caret-position="219">
+              <caret line="185" column="9" selection-start-line="185" selection-start-column="9" selection-end-line="185" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="218" selection-start-line="218" selection-end-line="218" />
-              <folding>
-                <element signature="e#9191#9192#0" expanded="true" />
-                <element signature="e#9232#9233#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/CBS_LargeAgents.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/CleanMap_8_8_3_0_1_opt_13.map.scen">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/Constraints/ConstraintSet_LargeAgents.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="84" column="56" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
-              <folding>
-                <element signature="e#4531#4532#0" expanded="true" />
-                <element signature="e#4573#4574#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -470,13 +120,13 @@
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/TimeLocation.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/TimeAgent.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/ConstraintSet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/test/java/LargeAgents/CBS_ShapesTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/LowLevel/DistanceTableHeuristic_LargeAgents.java" />
         <option value="$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/Instance-16-0-7.map.scen" />
         <option value="$PROJECT_DIR$/src/test/java/LargeAgents/CBS_LargeAgentsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java" />
         <option value="$PROJECT_DIR$/src/test/java/LargeAgents/InstanceBuilder_ShapesTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
       </list>
     </option>
   </component>
@@ -491,280 +141,80 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="Instances" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="Instances" type="462c0819:PsiDirectoryNode" />
               <item name="LargeAgents_Instances" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_J" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances" type="462c0819:PsiDirectoryNode" />
-              <item name="MovingAI_Instances" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances" type="462c0819:PsiDirectoryNode" />
-              <item name="InstanceBuilders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="CBS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="ConstraintsAndConflicts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="ConstraintsAndConflicts" type="462c0819:PsiDirectoryNode" />
-              <item name="ConflictManagement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="ConstraintsAndConflicts" type="462c0819:PsiDirectoryNode" />
-              <item name="Constraint" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Environment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="GraphMapPackage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Environment_LargeAgents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances" type="462c0819:PsiDirectoryNode" />
-              <item name="Maps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="HighLevel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="LowLevel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="Instances" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
@@ -772,17 +222,16 @@
               <item name="LargeAgents" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="MSPF_CBS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="MSPF_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="TestingBenchmark" type="462c0819:PsiDirectoryNode" />
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -841,7 +290,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.InstanceBuilder_ShapesTest.prepareInstance_CleanMap_20_20">
+  <component name="RunManager" selected="JUnit.All in MSPF_CBS">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MSPF_CBS" />
@@ -907,9 +356,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.InstanceBuilder_ShapesTest.prepareInstance_CleanMap_20_20" />
         <item itemvalue="JUnit.All in MSPF_CBS" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.InstanceBuilder_ShapesTest.prepareInstance_CleanMap_20_20" />
         <item itemvalue="JUnit.CBS_LargeAgentsTest.TestLargeAgentsInstances" />
         <item itemvalue="JUnit.CBS_ShapesTest.TestLargeAgentsInstances" />
       </list>
@@ -953,6 +402,7 @@
       <workItem from="1577260545510" duration="8362000" />
       <workItem from="1577345122459" duration="26436000" />
       <workItem from="1577438621065" duration="7798000" />
+      <workItem from="1577449064780" duration="798000" />
     </task>
     <task id="LOCAL-00001" summary="Changed skip lines logic in MovingAI">
       <created>1575558837781</created>
@@ -1238,12 +688,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CBS_ShapesTest_TestLargeAgentsInstances - 2019.12.27 at 12h 40m 00s.xml">
-      <configuration name="CBS_ShapesTest.TestLargeAgentsInstances" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CBS_ShapesTest_TestLargeAgentsInstances - 2019.12.27 at 12h 40m 05s.xml">
-      <configuration name="CBS_ShapesTest.TestLargeAgentsInstances" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CBS_LargeAgentsTest_TestLargeAgentsInstances - 2019.12.27 at 12h 40m 57s.xml">
       <configuration name="CBS_LargeAgentsTest.TestLargeAgentsInstances" configurationId="JUnit" />
     </history-entry>
@@ -1268,9 +712,15 @@
     <history-entry file="InstanceBuilder_ShapesTest_prepareInstance_CleanMap_20_20 - 2019.12.27 at 13h 25m 49s.xml">
       <configuration name="InstanceBuilder_ShapesTest.prepareInstance_CleanMap_20_20" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_MSPF_CBS - 2019.12.27 at 14h 20m 13s.xml">
+      <configuration name="All in MSPF_CBS" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_MSPF_CBS - 2019.12.27 at 14h 27m 30s.xml">
+      <configuration name="All in MSPF_CBS" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247264000" />
+    <option name="totallyTimeSpent" value="248062000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1283,9 +733,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3192" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49932706" visible="true" weight="0.21162046" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49932706" visible="true" weight="0.21375267" />
       <window_info id="Structure" order="1" sideWeight="0.50067294" side_tool="true" weight="0.2786533" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1294,7 +743,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.18093175" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2567714" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25568798" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4355363" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1818,13 +1267,6 @@
     <entry file="file://$PROJECT_DIR$/src/test/resources/Instances/Instance-8-15-5-17 - hard one - cost 29 and some corridors">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/Instances/LargeAgents_Instances/CleanMap_20_20.map.scen">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GraphMapPackage/I_InstanceBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -1893,71 +1335,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/CleanMap_8_8_3_0_1_opt_13.map.scen">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/LargeAgents/CBS_LargeAgentsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="188" column="60" selection-start-line="188" selection-start-column="60" selection-end-line="188" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/CBS_LargeAgents.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/VertexConflict_LargeAgent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="218" selection-start-line="218" selection-end-line="218" />
-          <folding>
-            <element signature="e#9191#9192#0" expanded="true" />
-            <element signature="e#9232#9233#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/Constraints/ConstraintSet_LargeAgents.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="84" column="56" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
-          <folding>
-            <element signature="e#4531#4532#0" expanded="true" />
-            <element signature="e#4573#4574#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="5481">
           <caret line="212" column="19" selection-start-line="212" selection-start-column="19" selection-end-line="212" selection-end-column="19" />
           <folding>
             <element signature="e#5075#5076#0" expanded="true" />
@@ -1968,17 +1348,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/VertexConflict_LargeAgent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="44" column="46" lean-forward="true" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+        <state relative-caret-position="594">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5373">
+          <caret line="218" selection-start-line="218" selection-end-line="218" />
+          <folding>
+            <element signature="e#9191#9192#0" expanded="true" />
+            <element signature="e#9232#9233#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/CBS_LargeAgents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1674">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/CleanMap_8_8_3_0_1_opt_13.map.scen">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/Constraints/ConstraintSet_LargeAgents.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2106">
+          <caret line="84" column="56" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
+          <folding>
+            <element signature="e#4531#4532#0" expanded="true" />
+            <element signature="e#4573#4574#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/LargeAgents/InstanceBuilder_ShapesTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="29" column="79" selection-start-line="29" selection-start-column="79" selection-end-line="29" selection-end-column="79" />
+        <state relative-caret-position="27">
+          <caret line="19" selection-start-line="19" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="49" column="34" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/Instances/LargeAgents_Instances/CleanMap_20_20.map.scen">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/LargeAgents/CBS_LargeAgentsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="185" column="9" selection-start-line="185" selection-start-column="9" selection-end-line="185" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
