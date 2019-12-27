@@ -21,13 +21,13 @@ public class InstanceBuilder_ShapesTest {
     /*  Must create the instance properly   */
     public void prepareInstance_CleanMap_20_20(){
 
-        String instanceName = "Instances\\LargeAgents\\CleanMap_20_20";
+        String instanceName = "Instances\\LargeAgents\\CleanMap_8_8_3_0_2_opt_10";
         String expectedMapPath = IO_Manager.buildPath(new String[]{IO_Manager.testResources_Directory, instanceName + InstanceBuilder_MovingAI.FILE_TYPE_MAP});
         String expectedScenarioPath = IO_Manager.buildPath(new String[]{IO_Manager.testResources_Directory, instanceName + InstanceBuilder_MovingAI.FILE_TYPE_MAP + InstanceBuilder_MovingAI.FILE_TYPE_SCENARIO});
         InstanceManager.Moving_AI_Path expectedPath = new InstanceManager.Moving_AI_Path(expectedMapPath,expectedScenarioPath);
 
         InstanceProperties properties = new InstanceProperties();
-        this.instanceBuilder_shapes.prepareInstances("CleanMap_20_20", expectedPath, properties);
+        this.instanceBuilder_shapes.prepareInstances("CleanMap_8_8_3_0_2_opt_10", expectedPath, properties);
 
         // Check that instance was created successfully and added to the list
         MAPF_Instance nextInstance = this.instanceBuilder_shapes.getNextExistingInstance();
@@ -53,20 +53,20 @@ public class InstanceBuilder_ShapesTest {
     }
 
 
-    @Test
+//    @Test
     /*  Must create the instance properly   */
-    public void prepareInstance_lak503d(){
-
-        String instanceName = "Instances\\LargeAgents_J\\lak503d";
-        String expectedMapPath = IO_Manager.buildPath(new String[]{IO_Manager.testResources_Directory, instanceName + InstanceBuilder_MovingAI.FILE_TYPE_MAP});
-        String expectedScenarioPath = IO_Manager.buildPath(new String[]{IO_Manager.testResources_Directory, instanceName + InstanceBuilder_MovingAI.FILE_TYPE_MAP + InstanceBuilder_MovingAI.FILE_TYPE_SCENARIO});
-        InstanceManager.Moving_AI_Path expectedPath = new InstanceManager.Moving_AI_Path(expectedMapPath,expectedScenarioPath);
-
-        InstanceProperties properties = new InstanceProperties();
-        this.instanceBuilder_shapes.prepareInstances("lak503d", expectedPath, properties);
-
-        // Check that instance was created successfully and added to the list
-        MAPF_Instance nextInstance = this.instanceBuilder_shapes.getNextExistingInstance();
-        Assert.assertNotNull(nextInstance);
-    }
+//    public void prepareInstance_lak503d(){
+//
+//        String instanceName = "Instances\\LargeAgents_J\\lak503d";
+//        String expectedMapPath = IO_Manager.buildPath(new String[]{IO_Manager.testResources_Directory, instanceName + InstanceBuilder_MovingAI.FILE_TYPE_MAP});
+//        String expectedScenarioPath = IO_Manager.buildPath(new String[]{IO_Manager.testResources_Directory, instanceName + InstanceBuilder_MovingAI.FILE_TYPE_MAP + InstanceBuilder_MovingAI.FILE_TYPE_SCENARIO});
+//        InstanceManager.Moving_AI_Path expectedPath = new InstanceManager.Moving_AI_Path(expectedMapPath,expectedScenarioPath);
+//
+//        InstanceProperties properties = new InstanceProperties();
+//        this.instanceBuilder_shapes.prepareInstances("lak503d", expectedPath, properties);
+//
+//        // Check that instance was created successfully and added to the list
+//        MAPF_Instance nextInstance = this.instanceBuilder_shapes.getNextExistingInstance();
+//        Assert.assertNotNull(nextInstance);
+//    }
 }

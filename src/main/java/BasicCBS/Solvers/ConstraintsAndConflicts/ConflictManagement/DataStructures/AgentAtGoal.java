@@ -32,4 +32,12 @@ public class AgentAtGoal{
     public int hashCode() {
         return Objects.hash(agent, time);
     }
+
+    @Override
+    public String toString() {
+        return "AgentAtGoal{" +
+                "agent=" + agent +
+                ", time=" + time +
+                '}';
+    }
 }

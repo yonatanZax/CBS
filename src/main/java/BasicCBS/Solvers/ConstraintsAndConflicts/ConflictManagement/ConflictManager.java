@@ -234,13 +234,13 @@ public class ConflictManager implements I_ConflictManager {
             if ( this.agent_plan.get(agentMovingToPrevPosition).moveAt(time).prevLocation.intersectsWith(nextLocation)){
 
                 // Create two conflicts
-                SwappingConflict swappingConflict_addedAgentFirst = new SwappingConflict(   singleAgentPlan.agent,
+                SwappingConflict swappingConflict_addedAgentFirst = createSwappingConflict(   singleAgentPlan.agent,
                                                                                             agentMovingToPrevPosition,
                                                                                             time,
                                                                                             nextLocation,
                                                                                             previousLocation);
 
-                SwappingConflict swappingConflict_addedAgentSecond = new SwappingConflict(  agentMovingToPrevPosition,
+                SwappingConflict swappingConflict_addedAgentSecond = createSwappingConflict(  agentMovingToPrevPosition,
                                                                                             singleAgentPlan.agent,
                                                                                             time,
                                                                                             previousLocation,
@@ -252,6 +252,11 @@ public class ConflictManager implements I_ConflictManager {
                 this.allConflicts.add(swappingConflict_addedAgentSecond);
             }
         }
+    }
+
+
+    protected SwappingConflict createSwappingConflict(Agent agent1, Agent agent2, int time, I_Location agent1_destination, I_Location agent2_destination){
+        return new SwappingConflict(agent1, agent2, time, agent1_destination, agent2_destination);
     }
 
 
@@ -269,11 +274,16 @@ public class ConflictManager implements I_ConflictManager {
 
         for (Agent agentConflictsWith : agentsAtTimeLocation) {
             if( agentConflictsWith.equals(agent) ){ continue; /* Self Conflict */ }
-            VertexConflict vertexConflict = new VertexConflict(agent,agentConflictsWith,timeLocation);
+            VertexConflict vertexConflict = createVertexConflict(agent,agentConflictsWith,timeLocation);
 
             // Add conflict to both of the agents
             this.allConflicts.add(vertexConflict);
         }
+    }
+
+
+    protected VertexConflict createVertexConflict(Agent agent1, Agent agent2, TimeLocation timeLocation){
+        return new VertexConflict(agent1, agent2, timeLocation);
     }
 
 

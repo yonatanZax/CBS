@@ -11,9 +11,11 @@ import java.util.*;
 
 public class GraphLocationGroup implements I_Location {
 
-    private GraphMapVertex_LargeAgents[][] mapCells; // 2D representation of LargeAgent
-//    private GraphMapCell minNeighbors; // A cell in the group having minimal neighbors
+    public static Map<TwoGroups, GraphLocationGroup> intersectionMap;
+    public static Map<SizeLocation, GraphLocationGroup> expandMap;
 
+
+    private GraphMapVertex_LargeAgents[][] mapCells; // 2D representation of LargeAgent
     private List<GraphMapVertex_LargeAgents> innerCells = new ArrayList<>();
     private Queue<GraphMapVertex_LargeAgents> outerCells = new PriorityQueue<>(new Comparator<GraphMapVertex_LargeAgents>() {
         @Override
@@ -93,6 +95,7 @@ public class GraphLocationGroup implements I_Location {
     public List<I_Location> getNeighbors() {
 
         List<GraphMapVertex_LargeAgents> outerCellsList = new ArrayList<>(this.outerCells);
+        if( outerCellsList.size() == 0) { return null;}
         GraphMapVertex_LargeAgents minNeighborsCell = outerCellsList.remove(0); // the cell with the minNeighbors
         List<I_Location> validNeighborsWithAllCells = new ArrayList<>(); // Init GraphLocationGroup neighbors
 
@@ -205,23 +208,29 @@ public class GraphLocationGroup implements I_Location {
     }
 
 
+    private boolean intersectWithRefPoint(GraphLocationGroup refPointGroup){
+        GraphMapVertex_LargeAgents refPoint = refPointGroup.getReferencePoint();
+        return this.getAllCells().contains(refPoint);
+    }
 
     @Override
     public boolean intersectsWith(I_Location other) {
 
         if( !(other instanceof GraphLocationGroup)){ return true; }
+        boolean intersects = this.intersectWithRefPoint((GraphLocationGroup) other);
+        return intersects;
 
-        GraphMapVertex_LargeAgents[][] myCells = this.mapCells;
-        GraphMapVertex_LargeAgents[][] otherCells = ((GraphLocationGroup) other).mapCells;
-
-        if( myCells == null || otherCells == null){ return true; }
-
-        for (int xValue = 0; xValue < Math.min(myCells.length, otherCells.length); xValue++)
-            for (int yValue = 0; yValue < Math.min(myCells[xValue].length, otherCells[xValue].length); yValue++)
-                if( myCells[xValue][yValue] == otherCells[xValue][yValue] )
-                    return true;
-
-        return false; // No intersection
+//        GraphMapVertex_LargeAgents[][] myCells = this.mapCells;
+//        GraphMapVertex_LargeAgents[][] otherCells = ((GraphLocationGroup) other).mapCells;
+//
+//        if( myCells == null || otherCells == null){ return true; }
+//
+//        for (int xValue = 0; xValue < Math.min(myCells.length, otherCells.length); xValue++)
+//            for (int yValue = 0; yValue < Math.min(myCells[xValue].length, otherCells[xValue].length); yValue++)
+//                if( myCells[xValue][yValue] == otherCells[xValue][yValue] )
+//                    return true;
+//
+//        return false; // No intersection
     }
 
 
@@ -245,74 +254,53 @@ public class GraphLocationGroup implements I_Location {
 
     /*  = Large agents =  */
 
-    public static GraphLocationGroup expendByReferencePoint(GraphLocationGroup intersect, int size){
+    public static GraphLocationGroup expendByReferencePoint(GraphMapVertex_LargeAgents intersect, int size) {
 
-        if( intersect == null || size <= 0){ return null; /* Invalid input   */ }
-        if( size == 1 ){ return intersect;} /*   Agent size is one, returns it's only cell */
-        GraphMapVertex_LargeAgents westEdgeCell = intersect.mapCells[0][intersect.mapCells.length - 1];
+        if (intersect == null || size <= 0) {
+            return null; /* Invalid input   */
+        }
+        if (size == 1) {
+            return new GraphLocationGroup(new GraphMapVertex_LargeAgents[][]{{intersect}}); /*   Agent size is one, returns it's only cell */
+        }
+        SizeLocation sizeLocation = new SizeLocation(intersect, size);
+        GraphLocationGroup expandGroup = expandMap.get(sizeLocation);
+        if( expandGroup != null ){
+            return expandGroup;
+        }
+
+
+        GraphMapVertex_LargeAgents westEdgeCell = intersect;
 
         List<GraphMapVertex_LargeAgents> westEdge = new ArrayList<>();
 
-        while (  westEdgeCell != null ){
+        while (westEdgeCell != null && westEdge.size() < size) {
             westEdge.add(westEdgeCell);
             westEdgeCell = (GraphMapVertex_LargeAgents) westEdgeCell.getLocationByDirection(Enum_direction.NORTH);
         }
 
-        GraphMapVertex_LargeAgents[][] expendedGroupLarge = new GraphMapVertex_LargeAgents[intersect.mapCells.length + size - 1][intersect.mapCells[0].length + size - 1];
+        GraphMapVertex_LargeAgents[][] expendedGroupLarge = new GraphMapVertex_LargeAgents[size][size];
 
-        return new GraphLocationGroup(expendedGroupLarge);
-    }
+        for (int i = 0; i < westEdge.size(); i++) {
+            GraphMapVertex_LargeAgents currentWest = westEdge.get(i);
+            for (int j = size - 1; j >= 0 && currentWest != null; j--) {
+                expendedGroupLarge[j][westEdge.size() - i - 1] = currentWest;
+                currentWest = (GraphMapVertex_LargeAgents) currentWest.getLocationByDirection(Enum_direction.WEST);
+                if (currentWest == null) {
+                    break;
+                }
+            }
 
-//    public static GraphLocationGroup[] expendByReferencePoint(GraphLocationGroup intersect, int size1, int size2){
-//
-//        int size = Math.max(size1, size2);
-//        if( intersect == null || size <= 0){ return null; /* Invalid input   */ }
-//        if( size == 1 ){ return new GraphLocationGroup[]{intersect, intersect}; /*   Agent size is one, returns it's only cell */}
-//        GraphMapVertex_LargeAgents westEdgeCell = intersect.mapCells[0][intersect.mapCells.length - 1];
-//
-//        List<GraphMapVertex_LargeAgents> westEdge = new ArrayList<>();
-//
-//        while (  westEdgeCell != null ){
-//            westEdge.add(westEdgeCell);
-//            westEdgeCell = (GraphMapVertex_LargeAgents) westEdgeCell.getLocationByDirection(Enum_direction.NORTH);
-//        }
-//
-//        GraphMapVertex_LargeAgents[][] expendedGroupLarge = new GraphMapVertex_LargeAgents[intersect.mapCells.length + size - 1][intersect.mapCells[0].length + size - 1];
-//
-//        for (int i = 0; i < westEdge.size(); i++) {
-//            GraphMapVertex_LargeAgents currentWest = westEdge.get(i);
-//            for (int j = size - 1; j >= 0 && currentWest != null; j--) {
-//                expendedGroupLarge[j][westEdge.size() - i - 1] = currentWest;
-//                currentWest = (GraphMapVertex_LargeAgents) currentWest.getLocationByDirection(Enum_direction.WEST);
-//                if( currentWest == null ){continue;}
-//            }
-//
 //            GraphMapVertex_LargeAgents currentEast = westEdge.get(i);
-//            for (int j = size - 1; j < expendedGroupLarge[i].length && currentEast != null; j++) {
+//            for (int j = size - 1; j < expendedGroupLarge.length && currentEast != null; j++) {
 //                expendedGroupLarge[j][westEdge.size() - i - 1] = currentEast;
 //                currentEast = (GraphMapVertex_LargeAgents) currentEast.getLocationByDirection(Enum_direction.EAST);
 //            }
-//        }
-//
-//        GraphLocationGroup expendedLarge = new GraphLocationGroup(expendedGroupLarge);
-//        if(size1 == size2){
-//            return new GraphLocationGroup[]{expendedLarge, expendedLarge};
-//        }
-//
-//        int diff = Math.abs(size1 - size2);
-//        int smallSize = expendedGroupLarge.length - diff;
-//        GraphMapVertex_LargeAgents[][] expendedSmallGroup = new GraphMapVertex_LargeAgents[smallSize][smallSize];
-//        for (int i = 0; i < expendedSmallGroup.length; i++) {
-//            for (int j = 0; j < expendedSmallGroup[i].length; j++) {
-//                expendedSmallGroup[i][j] = expendedGroupLarge[i + diff][j + diff];
-//            }
-//        }
-//
-//        if( size1 > size2 ){
-//
-//        }
-//        return new GraphLocationGroup[]{expendedLarge, new GraphLocationGroup(expendedSmallGroup)};
-//    }
+        }
+
+        GraphLocationGroup expand = new GraphLocationGroup(expendedGroupLarge);
+        addExpand(sizeLocation, expand);
+        return expand;
+    }
 
 
 
@@ -320,6 +308,15 @@ public class GraphLocationGroup implements I_Location {
 
         GraphLocationGroup group1 = (GraphLocationGroup) location1;
         GraphLocationGroup group2 = (GraphLocationGroup) location2;
+
+        TwoGroups groups = new TwoGroups(group1, group2);
+        GraphLocationGroup intersection = intersectionMap.get(groups);
+        if ( intersection != null ){
+            return intersection;
+        }
+
+
+
         Map<Integer,List<GraphMapVertex_LargeAgents>> intersectedMap = new HashMap<>();
         GraphMapVertex_LargeAgents[][] smallerGroup =   group1.mapCells.length <= group2.mapCells.length ?
                                                         group1.mapCells : group2.mapCells;
@@ -338,21 +335,99 @@ public class GraphLocationGroup implements I_Location {
             }
         }
 
-        GraphMapVertex_LargeAgents[][] intersectionAsArray = new GraphMapVertex_LargeAgents[intersectedMap.size()][intersectedMap.size()];
+        GraphMapVertex_LargeAgents[][] intersectionAsArray = new GraphMapVertex_LargeAgents[intersectedMap.size()][intersectedMap.get(0).size()];
         for (int i = 0; i < intersectionAsArray.length; i++) {
             for (int j = 0; j < intersectionAsArray[i].length; j++) {
-                intersectionAsArray[i][j] = intersectedMap.get(i).get(j);
+                List<GraphMapVertex_LargeAgents> list = intersectedMap.get(i);
+                intersectionAsArray[i][j] = list.get(j);
             }
         }
 
-        return new GraphLocationGroup(intersectionAsArray);
+        GraphLocationGroup intersectionGroup = new GraphLocationGroup(intersectionAsArray);
+        addIntersection(groups, intersectionGroup);
+        return intersectionGroup;
     }
 
+
+    public GraphLocationGroup getReferencePointAsGroup(){
+        return new GraphLocationGroup(new GraphMapVertex_LargeAgents[][]{{this.mapCells[0][0]}});
+    }
 
     public GraphMapVertex_LargeAgents getReferencePoint(){
         return this.mapCells[0][0];
     }
 
+
+
+
+
+
+    public static class TwoGroups {
+        GraphLocationGroup group1;
+        GraphLocationGroup group2;
+
+        public TwoGroups(I_Location group1, I_Location group2) {
+            this.group1 = (GraphLocationGroup) group1;
+            this.group2 = (GraphLocationGroup) group2;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof TwoGroups)) return false;
+            TwoGroups twoGroups = (TwoGroups) o;
+            return  (Objects.equals(group1, twoGroups.group1) &&
+                    Objects.equals(group2, twoGroups.group2)) ||
+                    (Objects.equals(group1, twoGroups.group2) &&
+                            Objects.equals(group2, twoGroups.group1) );
+        }
+
+        @Override
+        public int hashCode() {
+            int code = group1.hashCode() * group2.hashCode();
+            return code;
+        }
+    }
+
+
+    public static class SizeLocation {
+        int size;
+        I_Location location;
+
+        public SizeLocation(I_Location intersect, int size) {
+            this.location = intersect;
+            this.size = size;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (!(o instanceof SizeLocation)) return false;
+            SizeLocation that = (SizeLocation) o;
+            return size == that.size &&
+                    Objects.equals(location, that.location);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(size, location);
+        }
+    }
+
+    // todo - check fast way to add if missing
+    static void addExpand(SizeLocation sizeLocation, GraphLocationGroup intersection){
+        if( expandMap != null ){
+            expandMap.computeIfAbsent(sizeLocation, k-> intersection);
+//            expandMap.put(sizeLocation,intersection);
+        }
+    }
+
+    static void addIntersection(TwoGroups groups, GraphLocationGroup intersection){
+        if( intersectionMap != null ){
+            intersectionMap.computeIfAbsent(groups, k-> intersection);
+//            intersectionMap.put(groups,intersection);
+        }
+    }
 
 
 

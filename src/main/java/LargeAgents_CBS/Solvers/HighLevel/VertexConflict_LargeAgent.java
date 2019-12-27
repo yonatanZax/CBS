@@ -5,6 +5,7 @@ import BasicCBS.Instances.Maps.I_Location;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.TimeLocation;
 import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.Constraint;
 import BasicCBS.Solvers.ConstraintsAndConflicts.VertexConflict;
+import GraphMapPackage.GraphMapVertex_LargeAgents;
 import LargeAgents_CBS.Instances.LargeAgent;
 import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
 
@@ -22,8 +23,8 @@ public class VertexConflict_LargeAgent extends VertexConflict {
     @Override
     public Constraint[] getPreventingConstraints() {
 
-        GraphLocationGroup expandedGroups_location1 = GraphLocationGroup.expendByReferencePoint((GraphLocationGroup) location, ((LargeAgent) agent1).getHeight());
-        GraphLocationGroup expandedGroups_location2 = GraphLocationGroup.expendByReferencePoint((GraphLocationGroup) location, ((LargeAgent) agent1).getHeight());
+        GraphLocationGroup expandedGroups_location1 = GraphLocationGroup.expendByReferencePoint((GraphMapVertex_LargeAgents) location, ((LargeAgent) agent1).getHeight());
+        GraphLocationGroup expandedGroups_location2 = GraphLocationGroup.expendByReferencePoint((GraphMapVertex_LargeAgents) location, ((LargeAgent) agent1).getHeight());
 
 
         return new Constraint[]{

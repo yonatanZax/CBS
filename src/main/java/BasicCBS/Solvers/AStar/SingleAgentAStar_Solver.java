@@ -58,9 +58,10 @@ public class SingleAgentAStar_Solver extends A_Solver {
     protected void init(MAPF_Instance instance, RunParameters runParameters){
         super.init(instance, runParameters);
 
-        this.constraints = runParameters.constraints == null ? new ConstraintSet(): runParameters.constraints;
         this.agent = instance.agents.get(0);
         this.map = instance.map;
+
+        this.initConstraintSet(runParameters);
 
         if(runParameters.existingSolution != null){
             this.existingSolution = runParameters.existingSolution;
@@ -100,6 +101,10 @@ public class SingleAgentAStar_Solver extends A_Solver {
         this.expandedNodes = 0;
         this.closed = new HashSet<>();
         this.generatedNodes = 0;
+    }
+    // todo - add this
+    protected void initConstraintSet(RunParameters runParameters){
+        this.constraints = runParameters.constraints == null ? new ConstraintSet(): runParameters.constraints;
     }
 
     /*  = A* algorithm =  */

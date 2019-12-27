@@ -43,8 +43,8 @@ public class ConflictManager_Shapes extends ConflictManager {
             GraphLocationGroup locationGroup = (GraphLocationGroup) singleAgentPlan.moveAt(time).prevLocation;
             for (GraphMapVertex_LargeAgents mapCellLocation: locationGroup.getAllCells()) {
                 TimeLocation timeLocation = new TimeLocation(time - 1, mapCellLocation);
-                this.timeLocationTables.addTimeLocation(timeLocation, singleAgentPlan);
                 checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
+                this.timeLocationTables.addTimeLocation(timeLocation, singleAgentPlan);
             }
         }
 
@@ -52,8 +52,8 @@ public class ConflictManager_Shapes extends ConflictManager {
         GraphLocationGroup locationGroup = (GraphLocationGroup) singleAgentPlan.moveAt(goalTime).currLocation;
         for (GraphMapVertex_LargeAgents mapCellLocation: locationGroup.getAllCells()) {
             TimeLocation goalTimeLocation = new TimeLocation(goalTime, mapCellLocation);
-            this.timeLocationTables.addTimeLocation(goalTimeLocation, singleAgentPlan);
             checkAddConflictsByTimeLocation(goalTimeLocation, singleAgentPlan); // Checks for conflicts
+            this.timeLocationTables.addTimeLocation(goalTimeLocation, singleAgentPlan);
         }
 
 
@@ -108,13 +108,13 @@ public class ConflictManager_Shapes extends ConflictManager {
                     if (this.agent_plan.get(agentMovingToPrevPosition).moveAt(time).prevLocation.equals(nextGroupLocation)) {
 
                         // Create two conflicts
-                        SwappingConflict swappingConflict_addedAgentFirst = new SwappingConflict(   singleAgentPlan.agent,
+                        SwappingConflict swappingConflict_addedAgentFirst = createSwappingConflict( singleAgentPlan.agent,
                                                                                                     agentMovingToPrevPosition,
                                                                                                     time,
                                                                                                     nextCellLocation,
                                                                                                     previousCellLocation);
 
-                        SwappingConflict swappingConflict_addedAgentSecond = new SwappingConflict(  agentMovingToPrevPosition,
+                        SwappingConflict swappingConflict_addedAgentSecond = createSwappingConflict(agentMovingToPrevPosition,
                                                                                                     singleAgentPlan.agent,
                                                                                                     time,
                                                                                                     previousCellLocation,
