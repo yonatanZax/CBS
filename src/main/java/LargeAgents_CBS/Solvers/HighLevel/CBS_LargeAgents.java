@@ -9,8 +9,8 @@ import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.ConstraintSet;
 import BasicCBS.Solvers.RunParameters;
 import BasicCBS.Solvers.SingleAgentPlan;
 import Environment.Metrics.S_Metrics;
+import LargeAgents_CBS.Solvers.Constraints.ConstraintSet_LargeAgents;
 import LargeAgents_CBS.Solvers.LowLevel.AStar_LargeAgents;
-import LargeAgents_CBS.Solvers.LowLevel.AStar_Shapes;
 import LargeAgents_CBS.Solvers.LowLevel.DistanceTableHeuristic_LargeAgents;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class CBS_LargeAgents extends CBS_Solver {
     protected void init(MAPF_Instance instance, RunParameters runParameters) {
         this.initLargeAgents(instance, runParameters);
         this.initialConstraints = Objects.requireNonNullElseGet(runParameters.constraints, ConstraintSet::new);
-        this.currentConstraints = new ConstraintSet();
+        this.currentConstraints = new ConstraintSet_LargeAgents();
         this.generatedNodes = 0;
         this.expandedNodes = 0;
         this.instance = instance;

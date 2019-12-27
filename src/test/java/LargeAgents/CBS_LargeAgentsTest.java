@@ -16,6 +16,7 @@ import Environment.Metrics.InstanceReport;
 import Environment.Metrics.S_Metrics;
 import GraphMapPackage.MapFactory;
 import LargeAgents_CBS.Instances.InstanceBuilder_BGU_LA;
+import LargeAgents_CBS.Instances.InstanceBuilder_Shapes;
 import LargeAgents_CBS.Instances.LargeAgent;
 import LargeAgents_CBS.Solvers.HighLevel.CBS_LargeAgents;
 import LargeAgents_CBS.Solvers.HighLevel.CBS_Shapes;
@@ -177,6 +178,31 @@ public class CBS_LargeAgentsTest {
         S_Metrics.removeReport(instanceReport);
 
         assertNull(solved);
+    }
+
+
+
+    @Test
+    void TestLargeAgentsInstances(){
+        I_Solver solver = new CBS_LargeAgents();
+        String path = IO_Manager.buildPath( new String[]{   IO_Manager.testResources_Directory,
+                                                            "Instances","LargeAgents"});
+        InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_Shapes());
+        MAPF_Instance nextInstance = instanceManager.getNextInstance();
+
+        while (nextInstance != null) {
+            System.out.println("---------- solving "  + nextInstance.name + " ----------");
+            Solution solution = solver.solve(nextInstance, new RunParameters());
+            boolean solved = solution != null;
+            System.out.println("Solved?: " + (solved ? "yes" : "no"));
+
+            if (solution != null) {
+                boolean valid = solution.isValidSolution();
+                System.out.println("Valid?: " + (valid ? "yes" : "no"));
+            }
+
+            nextInstance = instanceManager.getNextInstance();
+        }
     }
 
 

@@ -95,6 +95,7 @@ public class GraphLocationGroup implements I_Location {
     public List<I_Location> getNeighbors() {
 
         List<GraphMapVertex_LargeAgents> outerCellsList = new ArrayList<>(this.outerCells);
+        if( outerCellsList.size() == 0) { return null;}
         GraphMapVertex_LargeAgents minNeighborsCell = outerCellsList.remove(0); // the cell with the minNeighbors
         List<I_Location> validNeighborsWithAllCells = new ArrayList<>(); // Init GraphLocationGroup neighbors
 
@@ -348,8 +349,8 @@ public class GraphLocationGroup implements I_Location {
     }
 
 
-    public GraphMapVertex_LargeAgents getReferencePoint(){
-        return this.mapCells[0][0];
+    public GraphLocationGroup getReferencePointAsGroup(){
+        return new GraphLocationGroup(new GraphMapVertex_LargeAgents[][]{{this.mapCells[0][0]}});
     }
 
 

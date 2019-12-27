@@ -36,9 +36,11 @@ public class DistanceTableHeuristic_LargeAgents extends DistanceTableAStarHeuris
 
             //all the neighbors of a graphMapCell
             List<I_Location> neighbors = locationGroup.getNeighbors();
-            for (int j = 0; j < neighbors.size(); j++) {
-                queue.add(neighbors.get(j));
+            if (neighbors == null){
+                System.out.println();
             }
+            queue.addAll(neighbors);
+
 
             int distance = 1;
             int count = queue.size();

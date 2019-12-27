@@ -42,7 +42,7 @@ public class Move {
     @Override
     public String toString() {
         return "Move{" +
-//                "agent=" + agent +
+                "agent=" + agent +
                 "timeNow=" + timeNow +
                 ", prevLocation=" + prevLocation +
                 ", currLocation=" + currLocation +
