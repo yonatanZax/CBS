@@ -75,6 +75,11 @@ public  class Experiment {
         System.out.println("Elapsed time (ms): " + elapsedTime);
       }
 
+      boolean printSolution = false;
+      if( solution != null && printSolution ){
+        System.out.println(solution.readableToString());
+      }
+
     }
 
 
