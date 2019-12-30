@@ -25,8 +25,14 @@ public class CBS_LargeAgents extends CBS_Solver {
 
     @Override
     protected void init(MAPF_Instance instance, RunParameters runParameters) {
-        this.initLargeAgents(instance, runParameters);
-        this.initialConstraints = Objects.requireNonNullElseGet(runParameters.constraints, ConstraintSet::new);
+        super.init(instance, runParameters);
+    }
+
+
+    protected void initCBS(MAPF_Instance instance, RunParameters parameters){
+        if(instance == null || parameters == null){throw new IllegalArgumentException();}
+
+        this.initialConstraints = Objects.requireNonNullElseGet(parameters.constraints, ConstraintSet::new);
         this.currentConstraints = new ConstraintSet_LargeAgents();
         this.generatedNodes = 0;
         this.expandedNodes = 0;
@@ -34,23 +40,6 @@ public class CBS_LargeAgents extends CBS_Solver {
         this.aStarHeuristic = this.lowLevelSolver instanceof SingleAgentAStar_Solver ?
                 new DistanceTableHeuristic_LargeAgents(new ArrayList<>(this.instance.agents), this.instance.map) :
                 null;
-    }
-
-
-    private void initLargeAgents(MAPF_Instance instance, RunParameters parameters){
-        if(instance == null || parameters == null){throw new IllegalArgumentException();}
-
-        this.startTime = System.currentTimeMillis();
-        this.endTime = 0;
-        this.abortedForTimeout = false;
-        this.totalLowLevelStatesGenerated = 0;
-        this.totalLowLevelStatesExpanded = 0;
-        this.maximumRuntime = (parameters.timeout >= 0) ? parameters.timeout : this.DEFAULT_TIMEOUT;
-        this.instanceReport = parameters.instanceReport == null ? S_Metrics.newInstanceReport()
-                : parameters.instanceReport;
-        // if we were given a report, we should leave it be. If we created our report locally, then it is unreachable
-        // outside the class, and should therefore be committed.
-        this.commitReport = parameters.instanceReport == null;
     }
 
 
