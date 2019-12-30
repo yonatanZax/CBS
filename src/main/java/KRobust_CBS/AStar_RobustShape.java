@@ -21,7 +21,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
     protected void init(MAPF_Instance instance, RunParameters runParameters){
         super.init(instance, runParameters);
-        this.constraints = runParameters.constraints == null ? new ConstraintSet(): runParameters.constraints;
+        this.constraints = runParameters.constraints == null ? new ConstraintSet_Robust(): runParameters.constraints;
         this.openList = new OpenList<>(stateFComparator);
     }
 
@@ -32,6 +32,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
     protected boolean initOpen() {
         // if the existing plan isn't empty, we start from the last move of the existing plan.
         if(existingPlan.size() > 0){
+
             Move lastExistingMove = existingPlan.moveAt(existingPlan.getEndTime());
             // We assume that we cannot change the existing plan, so if it is rejected by constraints, we can't initialise OPEN.
 
@@ -42,7 +43,9 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
         }
         else { // the existing plan is empty (no existing plan)
 
-            I_Location sourceCell = new RobustShape(new TimeLocation(0, map.getMapCell(agent.source)), ((RobustAgent)agent).k);
+            int k = ((RobustAgent)agent).k;
+            RobustShape sourceCell = new RobustShape(new TimeLocation(0, map.getMapCell(agent.source)), k);
+
             // can move to neighboring cells or stay put
             List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(sourceCell.getNeighbors());
             neighborCellsIncludingCurrent.add(sourceCell);
@@ -113,7 +116,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
 
 
-    private class AStarState_RobustShape extends AStarState{
+    protected class AStarState_RobustShape extends AStarState{
 
         public AStarState_RobustShape(Move move, AStarState prevState, int g) {
             super(move, prevState, g);

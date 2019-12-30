@@ -1,15 +1,10 @@
 package KRobust_CBS;
 
-import BasicCBS.Instances.Agent;
 import BasicCBS.Instances.Maps.I_Location;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.ConflictManager;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.ConflictSelectionStrategy;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.TimeLocation;
-import BasicCBS.Solvers.ConstraintsAndConflicts.SwappingConflict;
 import BasicCBS.Solvers.SingleAgentPlan;
-import GraphMapPackage.GraphMapVertex_LargeAgents;
-import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
-import LargeAgents_CBS.Solvers.HighLevel.ConflictManager_Shapes;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -36,20 +31,26 @@ public class ConflictManager_RobustShape extends ConflictManager {
         int goalTime = singleAgentPlan.getEndTime();
 
 
-        Set<TimeLocation> timeLocationSet = new HashSet<>();
 
         /*  Check for conflicts and Add timeLocations */
         for (int time = agentFirstMoveTime; time <= goalTime; time++) {
 
             // Move's from location is 'prevLocation' , therefor timeLocation is time - 1
             RobustShape robustShape = (RobustShape) singleAgentPlan.moveAt(time).prevLocation;
-            timeLocationSet.addAll(robustShape.getAllTimeLocations());
+            Set<I_Location> locationSet = robustShape.getAllLocations();
+
+            for (I_Location location : locationSet) {
+                TimeLocation timeLocation = new TimeLocation(time,location);
+                checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
+                this.timeLocationTables.addTimeLocation(timeLocation, singleAgentPlan);
+            }
         }
         // final move to goalLocation
         RobustShape robustShapeAtGoal = (RobustShape) singleAgentPlan.moveAt(goalTime).currLocation;
-        timeLocationSet.addAll(robustShapeAtGoal.getAllTimeLocations());
+        Set<I_Location> locationSet = robustShapeAtGoal.getAllLocations();
 
-        for (TimeLocation timeLocation : timeLocationSet) {
+        for (I_Location location : locationSet) {
+            TimeLocation timeLocation = new TimeLocation(goalTime,location);
             checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
             this.timeLocationTables.addTimeLocation(timeLocation, singleAgentPlan);
         }
@@ -64,17 +65,14 @@ public class ConflictManager_RobustShape extends ConflictManager {
     protected void manageGoalLocationFromPlan(int goalTime, SingleAgentPlan singleAgentPlan) {
 
         RobustShape goalRobustLocation = (RobustShape) singleAgentPlan.moveAt(goalTime).currLocation;
-        for (TimeLocation goalTimeLocation: goalRobustLocation.getAllTimeLocations()) {
+        TimeLocation goalTimeLocation = goalRobustLocation.getHead();
 
-            /*  = Add goal timeLocation =  */
-            this.timeLocationTables.addGoalTimeLocation(goalTimeLocation, singleAgentPlan);
+        /*  = Add goal timeLocation =  */
+        this.timeLocationTables.addGoalTimeLocation(goalTimeLocation, singleAgentPlan);
 
-            /*  = Check if this agentAtGoal conflicts with other agents =   */
-            checkAddSwappingConflicts(goalTime, singleAgentPlan);
-            checkAddVertexConflictsWithGoal(goalTimeLocation, singleAgentPlan);
-
-        }
+        /*  = Check if this agentAtGoal conflicts with other agents =   */
+        checkAddSwappingConflicts(goalTime, singleAgentPlan);
+        checkAddVertexConflictsWithGoal(goalTimeLocation, singleAgentPlan);
     }
-
 
 }

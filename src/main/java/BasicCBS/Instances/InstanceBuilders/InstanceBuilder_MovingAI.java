@@ -104,6 +104,8 @@ public class InstanceBuilder_MovingAI implements I_InstanceBuilder {
     }
 
 
+
+
     // Returns an array of agents using the line queue
     private Agent[] getAgents(ArrayList<String> agentLinesList, int numOfAgents) {
 
