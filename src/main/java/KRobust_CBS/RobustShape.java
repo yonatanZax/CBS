@@ -4,6 +4,7 @@ import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
 import BasicCBS.Instances.Maps.Enum_MapCellType;
 import BasicCBS.Instances.Maps.I_Location;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.TimeLocation;
+import GraphMapPackage.GraphMapVertex;
 
 import java.util.*;
 
@@ -15,12 +16,14 @@ public class RobustShape implements I_Location {
 
     public RobustShape(TimeLocation head, int capacity){
         this.head = head;
-        this.locations = new RobustQueue(head.location, capacity);
+        this.locations = new RobustQueue(this, head.location, capacity);
     }
 
     public RobustShape(TimeLocation head, RobustShape prevRobustShape) {
         this.head = head;
-        this.locations = new RobustQueue<I_Location>(prevRobustShape.locations, head.location);
+//        int prevSize = prevRobustShape.locations.getSize();
+//        ArrayList<I_Location> kLastLocations = prevRobustShape.locations.subList(prevSize - c);
+        this.locations = new RobustQueue<I_Location>(this, prevRobustShape.locations, head.location);int x = 0;
     }
 
     @Override
@@ -55,6 +58,9 @@ public class RobustShape implements I_Location {
 
 
         Set<I_Location> myLocations = this.getAllLocations();
+        if( other instanceof GraphMapVertex){
+            return myLocations.contains(other);
+        }
         Set<I_Location> otherLocations = ((RobustShape) other).getAllLocations();
 
         Set<I_Location> minSizedList =    myLocations.size() <= otherLocations.size() ?
@@ -96,17 +102,20 @@ public class RobustShape implements I_Location {
 
     private class RobustQueue<I_Location> extends ArrayList<I_Location> {
         private final int capacity;
+        private final RobustShape robustShape;
 
-        public RobustQueue(I_Location location, int capacity){
+        public RobustQueue(RobustShape robustShape, I_Location headLocation, int capacity){
             this.capacity = capacity;
-            this.add(location);
+            this.robustShape = robustShape;
+            this.addHead(headLocation);
         }
 
 
-        public RobustQueue(RobustQueue prevQueue, I_Location location){
+        public RobustQueue(RobustShape robustShape, RobustQueue prevQueue, I_Location headLocation){
             this.capacity = prevQueue.capacity;
+            this.robustShape = robustShape;
             this.addAll(prevQueue);
-            this.add(location);
+            this.addHead(headLocation);
         }
 
         @Override
@@ -117,6 +126,12 @@ public class RobustShape implements I_Location {
             return false;
         }
 
+
+        private void addHead(I_Location location){
+            BasicCBS.Instances.Maps.I_Location castLocation = (BasicCBS.Instances.Maps.I_Location) location;
+            this.robustShape.setHead(new TimeLocation(this.robustShape.head.time + 1, castLocation));
+            this.add(location);
+        }
         @Override
         public boolean add(I_Location location) {
             if(size() >= capacity){

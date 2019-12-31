@@ -35,7 +35,7 @@ public class CBS_ShapesRobustTest {
                                                    new Coordinate_2D(0,3),
                                             2);
 
-        RobustAgent agent2 = new RobustAgent(2, new Coordinate_2D(1,1),
+        RobustAgent agent2 = new RobustAgent(2, new Coordinate_2D(2,0),
                                                    new Coordinate_2D(2,3),
                                             2);
 

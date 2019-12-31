@@ -208,9 +208,10 @@ public class GraphLocationGroup implements I_Location {
     }
 
 
-    private boolean intersectWithRefPoint(GraphLocationGroup refPointGroup){
-        GraphMapVertex_LargeAgents refPoint = refPointGroup.getReferencePoint();
-        return this.getAllCells().contains(refPoint);
+    private boolean intersectWithRefPoint(GraphLocationGroup group){
+        return group.getAllCells().contains(this.getReferencePoint());
+//        GraphMapVertex_LargeAgents refPoint = refPointGroup.getReferencePoint();
+//        return this.getAllCells().contains(refPoint);
     }
 
     @Override
@@ -218,19 +219,8 @@ public class GraphLocationGroup implements I_Location {
 
         if( !(other instanceof GraphLocationGroup)){ return true; }
         boolean intersects = this.intersectWithRefPoint((GraphLocationGroup) other);
+//        this.intersectWithRefPoint((GraphLocationGroup) other);
         return intersects;
-
-//        GraphMapVertex_LargeAgents[][] myCells = this.mapCells;
-//        GraphMapVertex_LargeAgents[][] otherCells = ((GraphLocationGroup) other).mapCells;
-//
-//        if( myCells == null || otherCells == null){ return true; }
-//
-//        for (int xValue = 0; xValue < Math.min(myCells.length, otherCells.length); xValue++)
-//            for (int yValue = 0; yValue < Math.min(myCells[xValue].length, otherCells[xValue].length); yValue++)
-//                if( myCells[xValue][yValue] == otherCells[xValue][yValue] )
-//                    return true;
-//
-//        return false; // No intersection
     }
 
 

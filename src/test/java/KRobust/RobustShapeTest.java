@@ -76,10 +76,15 @@ class RobustShapeTest {
 
 
         assertEquals(expected_robustShape0_0_t0_locations, robustShape0_0_t0.getAllLocations());
+        assertEquals(cell0_0, robustShape0_0_t0.getHead().location);
         assertEquals(expected_robustShape1_0_t1_locations, robustShape1_0_t1.getAllLocations());
+        assertEquals(cell1_0, robustShape1_0_t1.getHead().location);
         assertEquals(expected_robustShape1_0_t2_locations, robustShape1_0_t2.getAllLocations());
+        assertEquals(cell1_0, robustShape1_0_t2.getHead().location);
         assertEquals(expected_robustShape1_1_t3_locations, robustShape1_1_t3.getAllLocations());
+        assertEquals(cell1_1, robustShape1_1_t3.getHead().location);
         assertEquals(expected_robustShape1_2_t4_locations, robustShape1_2_t4.getAllLocations());
+        assertEquals(cell1_2, robustShape1_2_t4.getHead().location);
 
 
 

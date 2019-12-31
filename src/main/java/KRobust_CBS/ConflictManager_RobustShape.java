@@ -40,7 +40,7 @@ public class ConflictManager_RobustShape extends ConflictManager {
             Set<I_Location> locationSet = robustShape.getAllLocations();
 
             for (I_Location location : locationSet) {
-                TimeLocation timeLocation = new TimeLocation(time,location);
+                TimeLocation timeLocation = new TimeLocation(time-1,location);
                 checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
                 this.timeLocationTables.addTimeLocation(timeLocation, singleAgentPlan);
             }
