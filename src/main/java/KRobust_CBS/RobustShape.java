@@ -36,6 +36,9 @@ public class RobustShape implements I_Location {
 
     public static RobustShape stayInGoal(RobustShape prevShape){
         RobustQueue<I_Location> locations = prevShape.locations;
+        if(locations.size() == 0){
+            return null;
+        }
         locations.remove(0);
         TimeLocation timeLocation = new TimeLocation(prevShape.head.time + 1, prevShape.head.location);
         RobustShape robustShape = new RobustShape(timeLocation, locations);
@@ -165,7 +168,7 @@ public class RobustShape implements I_Location {
 
         @Override
         public boolean add(I_Location location) {
-            if(size() >= capacity){
+            if(size() > capacity){
                 remove(0);
             }
             return super.add(location);

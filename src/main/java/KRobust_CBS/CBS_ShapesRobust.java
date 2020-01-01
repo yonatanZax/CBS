@@ -17,11 +17,10 @@ import LargeAgents_CBS.Solvers.LowLevel.DistanceTableHeuristic_LargeAgents;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class CBS_ShapesRobust extends CBS_Shapes {
-
+public class CBS_ShapesRobust extends CBS_Solver {
 
     public CBS_ShapesRobust(){
-        super(new AStar_RobustShape());
+        super(new AStar_RobustShape(),null,null,null,null);
     }
 
 

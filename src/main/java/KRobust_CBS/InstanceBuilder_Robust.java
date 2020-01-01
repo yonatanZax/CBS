@@ -29,7 +29,10 @@ public class InstanceBuilder_Robust extends InstanceBuilder_BGU {
             int target_yValue = Integer.valueOf(agentLine[this.INDEX_AGENT_TARGET_YVALUE]);
             Coordinate_2D target = new Coordinate_2D(target_xValue, target_yValue);
 
-            int k = Integer.valueOf(agentLine[this.INDEX_AGENT_ROBUST_VALUE]);
+            int k = 0;
+            if(agentLine.length > this.INDEX_AGENT_ROBUST_VALUE){
+                k = Integer.valueOf(agentLine[this.INDEX_AGENT_ROBUST_VALUE]);
+            }
 
             return new RobustAgent(agentID, source, target, k);
         }

@@ -14,6 +14,11 @@ public class RobustAgent extends Agent {
         this.k = k;
     }
 
+    public RobustAgent(Agent agent){
+        super(agent.iD, agent.source, agent.target);
+        this.k = 0;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

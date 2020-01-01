@@ -49,11 +49,8 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
             // can move to neighboring cells or stay put
             List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(sourceCell.getNeighbors());
-            if( isGoalLocation(sourceCell.getHeadLocation(), agent.target)){
-                neighborCellsIncludingCurrent.add(RobustShape.stayInGoal(sourceCell));
-            }else{
-                neighborCellsIncludingCurrent.add(RobustShape.stayInPlace(sourceCell));
-            }
+            neighborCellsIncludingCurrent.add(RobustShape.stayInPlace(sourceCell));
+
 
             for (I_Location destination: neighborCellsIncludingCurrent) {
                 Move possibleMove = new Move(agent, problemStartTime + 1, sourceCell, destination);
@@ -119,11 +116,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
     protected boolean isGoalState(AStarState_RobustShape state) {
         RobustShape robustShape = (RobustShape) state.getMove().currLocation;
         if( isGoalLocation(robustShape.getHead().location, agent.target)){
-            if( robustShape.getSize() == 1){
-                return true;
-            }else {
-                return false;
-            }
+            return true;
         }
         return false;
     }
@@ -151,12 +144,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
             RobustShape location = (RobustShape) this.move.currLocation;
             List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(location.getNeighbors());
 
-            if( isGoalLocation(location.getHeadLocation(), agent.target)){
-                neighborCellsIncludingCurrent.add(RobustShape.stayInGoal(location));
-            }else{
-                neighborCellsIncludingCurrent.add(RobustShape.stayInPlace(location));
-            }
-            neighborCellsIncludingCurrent.add(RobustShape.stayInPlace((RobustShape) this.move.currLocation));
+            neighborCellsIncludingCurrent.add(RobustShape.stayInPlace(location));
 
             for (I_Location destination: neighborCellsIncludingCurrent){
                 Move possibleMove = new Move(this.move.agent, this.move.timeNow+1, this.move.currLocation, destination);
