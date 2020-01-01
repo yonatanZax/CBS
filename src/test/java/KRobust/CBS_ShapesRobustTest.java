@@ -31,13 +31,15 @@ public class CBS_ShapesRobustTest {
     @Test
     public void smallInstance(){
 
+        int k = 3;
+
         RobustAgent agent1 = new RobustAgent(1, new Coordinate_2D(0,0),
                                                    new Coordinate_2D(0,3),
-                                            2);
+                                            k);
 
         RobustAgent agent2 = new RobustAgent(2, new Coordinate_2D(2,0),
                                                    new Coordinate_2D(2,3),
-                                            2);
+                                            k);
 
         Agent[] agents = new Agent[]{agent1, agent2};
 

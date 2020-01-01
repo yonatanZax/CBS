@@ -1,6 +1,7 @@
 package KRobust_CBS;
 
 import BasicCBS.Instances.MAPF_Instance;
+import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
 import BasicCBS.Instances.Maps.I_Location;
 import BasicCBS.Solvers.AStar.SingleAgentAStar_Solver;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.TimeLocation;
@@ -48,7 +49,11 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
             // can move to neighboring cells or stay put
             List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(sourceCell.getNeighbors());
-            neighborCellsIncludingCurrent.add(sourceCell);
+            if( isGoalLocation(sourceCell.getHeadLocation(), agent.target)){
+                neighborCellsIncludingCurrent.add(RobustShape.stayInGoal(sourceCell));
+            }else{
+                neighborCellsIncludingCurrent.add(RobustShape.stayInPlace(sourceCell));
+            }
 
             for (I_Location destination: neighborCellsIncludingCurrent) {
                 Move possibleMove = new Move(agent, problemStartTime + 1, sourceCell, destination);
@@ -111,6 +116,22 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
         return null; //no goal state found (problem unsolvable)
     }
 
+    protected boolean isGoalState(AStarState_RobustShape state) {
+        RobustShape robustShape = (RobustShape) state.getMove().currLocation;
+        if( isGoalLocation(robustShape.getHead().location, agent.target)){
+            if( robustShape.getSize() == 1){
+                return true;
+            }else {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    private boolean isGoalLocation(I_Location location, I_Coordinate goalCoordinate){
+        return location.getCoordinate().equals(goalCoordinate);
+    }
+
 
 
 
@@ -127,8 +148,15 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
         public void expand() {
             expandedNodes++;
             // can move to neighboring cells or stay put
-            List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(this.move.currLocation.getNeighbors());
-            neighborCellsIncludingCurrent.add(this.move.currLocation);
+            RobustShape location = (RobustShape) this.move.currLocation;
+            List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(location.getNeighbors());
+
+            if( isGoalLocation(location.getHeadLocation(), agent.target)){
+                neighborCellsIncludingCurrent.add(RobustShape.stayInGoal(location));
+            }else{
+                neighborCellsIncludingCurrent.add(RobustShape.stayInPlace(location));
+            }
+            neighborCellsIncludingCurrent.add(RobustShape.stayInPlace((RobustShape) this.move.currLocation));
 
             for (I_Location destination: neighborCellsIncludingCurrent){
                 Move possibleMove = new Move(this.move.agent, this.move.timeNow+1, this.move.currLocation, destination);

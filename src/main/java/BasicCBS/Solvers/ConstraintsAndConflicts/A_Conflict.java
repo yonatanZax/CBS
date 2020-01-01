@@ -48,7 +48,8 @@ public abstract class A_Conflict {
         if(move1 == null || move2 == null){throw new IllegalArgumentException("can't compare null moves");}
         if(move1.timeNow == move2.timeNow){
             A_Conflict conflict = VertexConflict.conflictBetween(move1, move2);
-            if(conflict != null) return conflict;
+            if(conflict != null)
+                return conflict;
             else {
                 conflict = SwappingConflict.conflictBetween(move1, move2);
                 return conflict;

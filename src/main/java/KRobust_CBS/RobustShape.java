@@ -16,14 +16,30 @@ public class RobustShape implements I_Location {
 
     public RobustShape(TimeLocation head, int capacity){
         this.head = head;
-        this.locations = new RobustQueue(this, head.location, capacity);
+        this.locations = new RobustQueue(this, capacity);
     }
 
     public RobustShape(TimeLocation head, RobustShape prevRobustShape) {
         this.head = head;
-//        int prevSize = prevRobustShape.locations.getSize();
-//        ArrayList<I_Location> kLastLocations = prevRobustShape.locations.subList(prevSize - c);
-        this.locations = new RobustQueue<I_Location>(this, prevRobustShape.locations, head.location);int x = 0;
+        this.locations = new RobustQueue<I_Location>(this, prevRobustShape.locations, head.location);
+    }
+
+    public RobustShape(TimeLocation head, RobustQueue<I_Location> locations) {
+        this.head = head;
+        this.locations = locations;
+    }
+
+    public static RobustShape stayInPlace(RobustShape prevShape){
+        RobustShape robustShape = new RobustShape(prevShape.getHead(), prevShape);
+        return robustShape;
+    }
+
+    public static RobustShape stayInGoal(RobustShape prevShape){
+        RobustQueue<I_Location> locations = prevShape.locations;
+        locations.remove(0);
+        TimeLocation timeLocation = new TimeLocation(prevShape.head.time + 1, prevShape.head.location);
+        RobustShape robustShape = new RobustShape(timeLocation, locations);
+        return robustShape;
     }
 
     @Override
@@ -66,7 +82,7 @@ public class RobustShape implements I_Location {
         Set<I_Location> minSizedList =    myLocations.size() <= otherLocations.size() ?
                                           myLocations : otherLocations;
 
-        Set<I_Location> maxSizedList =    otherLocations == otherLocations ?
+        Set<I_Location> maxSizedList =    otherLocations.equals(minSizedList) ?
                                           myLocations : otherLocations;
 
 
@@ -86,6 +102,20 @@ public class RobustShape implements I_Location {
         return head;
     }
 
+    public int getHeadTime(){
+        return this.head.time;
+    }
+
+    public I_Location getHeadLocation(){
+        return this.head.location;
+    }
+
+    public int getSize(){
+        return this.locations.getSize();
+    }
+
+
+
 
     public Set<I_Location> getAllLocations(){
         return this.locations.getAllLocations();
@@ -104,10 +134,10 @@ public class RobustShape implements I_Location {
         private final int capacity;
         private final RobustShape robustShape;
 
-        public RobustQueue(RobustShape robustShape, I_Location headLocation, int capacity){
+        public RobustQueue(RobustShape robustShape, int capacity){
             this.capacity = capacity;
             this.robustShape = robustShape;
-            this.addHead(headLocation);
+            this.add((I_Location) robustShape.getHead().location);
         }
 
 
@@ -132,6 +162,7 @@ public class RobustShape implements I_Location {
             this.robustShape.setHead(new TimeLocation(this.robustShape.head.time + 1, castLocation));
             this.add(location);
         }
+
         @Override
         public boolean add(I_Location location) {
             if(size() >= capacity){
