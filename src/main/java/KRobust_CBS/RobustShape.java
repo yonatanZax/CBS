@@ -121,7 +121,9 @@ public class RobustShape implements I_Location {
 
 
     public Set<I_Location> getAllLocations(){
-        return this.locations.getAllLocations();
+        Set<I_Location> locations = this.locations.getAllLocations();
+        locations.add(this.getHead().location);
+        return locations;
     }
 
 
@@ -175,11 +177,11 @@ public class RobustShape implements I_Location {
         }
 
 
-        public Set<I_Location> getAllLocations(){
-            Set<I_Location> locations = new HashSet<>();
-            for (int i = 0; i < size() ; i++){
-                locations.add(this.get(i));
-            }
+            public Set<I_Location> getAllLocations(){
+            Set<I_Location> locations = new HashSet<>(this);
+//            for (int i = 0; i < size() ; i++){
+//                locations.add(this.get(i));
+//            }
             return locations;
         }
 
