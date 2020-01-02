@@ -122,6 +122,7 @@ public class RobustShape implements I_Location {
 
     public Set<I_Location> getAllLocations(){
         Set<I_Location> locations = this.locations.getAllLocations();
+//        Set<I_Location> locations = this.locations.getAllLocations();
         locations.add(this.getHead().location);
         return locations;
     }
@@ -194,6 +195,7 @@ public class RobustShape implements I_Location {
         public String toString() {
             return "RobustQueue{" +
                     "capacity=" + capacity +
+                    ", robustShape=" + robustShape +
                     '}';
         }
     }

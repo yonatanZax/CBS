@@ -205,7 +205,7 @@ public class CBS_ShapesRobustTest {
 
     @Test
     void TestingBenchmark(){
-        boolean useAsserts = true;
+        boolean useAsserts = false;
 
         I_Solver solver = new CBS_ShapesRobust();
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.testResources_Directory,
@@ -215,7 +215,7 @@ public class CBS_ShapesRobustTest {
         MAPF_Instance instance = null;
         // load the pre-made benchmark
         try {
-            long timeout = 300 /*seconds*/
+            long timeout = 30 /*seconds*/
                     *1000L;
             Map<String, Map<String, String>> benchmarks = CBS_SolverTest.readResultsCSV(path + "\\Results.csv");
             int numSolved = 0;
