@@ -10,6 +10,7 @@ import Environment.Metrics.S_Metrics;
 import BasicCBS.Solvers.CBS.CBS_Solver;
 import BasicCBS.Solvers.RunParameters;
 import BasicCBS.Solvers.Solution;
+import KRobust_CBS.RunManager_KRobust;
 import LargeAgents_CBS.Environment_LargeAgents.RunManager_LargeAgents;
 
 import java.io.File;
@@ -47,7 +48,8 @@ public class Main {
 //            runTestingBenchmarkExperiment();
             // all examples will also produce a report in CSV format, and save it to resultsOutputDir (see above)
 
-            runLargeAgentInstances();
+//            runLargeAgentInstances();
+            runRobustInstances();
         }
     }
 
@@ -100,6 +102,12 @@ public class Main {
         outputResults();
     }
 
+    public static void runRobustInstances(){
+        A_RunManager robustManager = new RunManager_KRobust();
+        robustManager.runAllExperiments();
+        outputResults();
+    }
+
     public static void runTestingBenchmarkExperiment(){
         TestingBenchmarkRunManager testingBenchmarkRunManager = new TestingBenchmarkRunManager();
         testingBenchmarkRunManager.runAllExperiments();
@@ -127,6 +135,8 @@ public class Main {
                                     InstanceReport.StandardFields.solved,
                                     InstanceReport.StandardFields.elapsedTimeMS,
                                     InstanceReport.StandardFields.solutionCost,
+                                    InstanceReport.StandardFields.generatedNodes,
+                                    InstanceReport.StandardFields.generatedNodesLowLevel,
                                     InstanceReport.StandardFields.solution});
         } catch (IOException e) {
             e.printStackTrace();

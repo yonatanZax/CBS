@@ -37,7 +37,9 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
             Move lastExistingMove = existingPlan.moveAt(existingPlan.getEndTime());
             // We assume that we cannot change the existing plan, so if it is rejected by constraints, we can't initialise OPEN.
 
-            if(constraints.rejects(lastExistingMove)) {return false;}
+            if(constraints.rejects(lastExistingMove)) {
+                return false;
+            }
 
             AStarState_RobustShape state = new AStarState_RobustShape(existingPlan.moveAt(existingPlan.getEndTime()),null, /*g=number of moves*/existingPlan.size());
             openList.add(state);
@@ -61,6 +63,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
                     generatedNodes++;
                 }
             }
+
         }
 
         // if none of the root nodes was valid, OPEN will be empty, and thus uninitialised.
@@ -71,13 +74,16 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
     @Override
     protected Solution solveAStar() {
         // if failed to init OPEN then the problem cannot be solved as defined (bad constraints? bad existing plan?)
-        if (!initOpen()) return null;
+        if (!initOpen())
+            return null;
 
         AStarState_RobustShape currentState;
         int firstRejectionAtGoalTime = -1;
 
         while ((currentState = (AStarState_RobustShape) openList.poll()) != null){ //dequeu in the if
-            if(checkTimeout()) {return null;}
+            if(checkTimeout()) {
+                return null;
+            }
             closed.add(currentState);
 
             // nicetohave -  change to early goal test

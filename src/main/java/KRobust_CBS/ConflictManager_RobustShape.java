@@ -118,27 +118,31 @@ public class ConflictManager_RobustShape extends ConflictManager {
         for (Agent agentMovingToPrevPosition : agentsMovingToPrevLocations) {
             if( agentMovingToPrevPosition.equals(singleAgentPlan.agent) ){ continue; /* Self Conflict */ }
             // todo - change to intersectWith
-            I_Location agentMovingToPrevPosition_previousLocation = ((RobustShape)this.agent_plan.get(agentMovingToPrevPosition).moveAt(time).prevLocation).getHeadLocation();
-            if ( agentMovingToPrevPosition_previousLocation.intersectsWith(nextLocation)){
+            SingleAgentPlan agentMovingToPrevLocationPlan = this.agent_plan.get(agentMovingToPrevPosition);
+            if( time <= agentMovingToPrevLocationPlan.getEndTime() ){
+                I_Location agentMovingToPrevPosition_previousLocation = ((RobustShape)this.agent_plan.get(agentMovingToPrevPosition).moveAt(time).prevLocation).getHeadLocation();
+                if ( agentMovingToPrevPosition_previousLocation.intersectsWith(nextLocation)){
 
-                // Create two conflicts
-                SwappingConflict swappingConflict_addedAgentFirst = createSwappingConflict(   singleAgentPlan.agent,
-                        agentMovingToPrevPosition,
-                        time,
-                        nextLocation,
-                        previousLocation);
+                    // Create two conflicts
+                    SwappingConflict swappingConflict_addedAgentFirst = createSwappingConflict( singleAgentPlan.agent,
+                                                                                                agentMovingToPrevPosition,
+                                                                                                time,
+                                                                                                nextLocation,
+                                                                                                previousLocation);
 
-                SwappingConflict swappingConflict_addedAgentSecond = createSwappingConflict(  agentMovingToPrevPosition,
-                        singleAgentPlan.agent,
-                        time,
-                        previousLocation,
-                        nextLocation);
+                    SwappingConflict swappingConflict_addedAgentSecond = createSwappingConflict(agentMovingToPrevPosition,
+                                                                                                singleAgentPlan.agent,
+                                                                                                time,
+                                                                                                previousLocation,
+                                                                                                nextLocation);
 
 
-                // Add conflicts to both of the agents
-                this.allConflicts.add(swappingConflict_addedAgentFirst);
-                this.allConflicts.add(swappingConflict_addedAgentSecond);
+                    // Add conflicts to both of the agents
+                    this.allConflicts.add(swappingConflict_addedAgentFirst);
+                    this.allConflicts.add(swappingConflict_addedAgentSecond);
+                }
             }
+
         }
     }
 

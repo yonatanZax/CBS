@@ -24,17 +24,15 @@ public class RunManager_LargeAgents extends A_RunManager {
     /*  = Set BasicCBS.Solvers =  */
     @Override
     protected void setSolvers() {
-        super.solvers.add(new CBS_LargeAgents());
         super.solvers.add(new CBS_Shapes());
+        super.solvers.add(new CBS_LargeAgents());
     }
 
     /*  = Set Experiments =  */
     @Override
     protected void setExperiments() {
-        this.allLargeAgentInstances();
-//        this.addExperiment_Lak503d();
-//        this.addExperiment_CleanMap_20_20();
-//        this.addBenchmarkExperiment();
+//        this.allLargeAgentInstances();
+        this.addBenchmarkExperiment();
     }
 
 
@@ -49,7 +47,8 @@ public class RunManager_LargeAgents extends A_RunManager {
         I_InstanceBuilder instanceBuilder = new InstanceBuilder_Shapes();
 
 
-        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{8,8}, instanceBuilder), -1, new int[]{3});
+        InstanceProperties properties = null;
+//        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{8,8}, instanceBuilder), -1, new int[]{3});
 
         /*  =   Set Instance Manager   =  */
         InstanceManager instanceManager = new InstanceManager(path, instanceBuilder, properties);
@@ -62,26 +61,6 @@ public class RunManager_LargeAgents extends A_RunManager {
 
 
 
-    private void addExperiment_CleanMap_20_20(){
-        /*  =   Set Path   =*/
-        String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
-                                                            "Instances\\\\LargeAgents_Instances"});
-
-        I_InstanceBuilder instanceBuilder = new InstanceBuilder_Shapes();
-
-
-        /*  =   Set Properties   =  */
-        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{20,20}, instanceBuilder), 0, new int[]{7});
-        int numOfInstances = 1;
-
-        /*  =   Set Instance Manager   =  */
-        InstanceManager instanceManager = new InstanceManager(path, new InstanceBuilder_Shapes(),properties);
-
-        /*  =   Add new experiment   =  */
-        Experiment gridExperiment = new Experiment("Experiment_CleanMap_20_20", instanceManager,numOfInstances);
-        this.experiments.add(gridExperiment);
-    }
-
 
     private void addBenchmarkExperiment(){
         InstanceManager instanceManager = new InstanceManager( this.pathToBenchmark, new InstanceBuilder_BGU_LA());
@@ -89,23 +68,6 @@ public class RunManager_LargeAgents extends A_RunManager {
     }
 
 
-    private void addExperiment_Lak503d(){
-        /*  =   Set Path   =*/
-        String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
-                                                            "Instances\\\\LargeAgents_J"});
-
-        I_InstanceBuilder instanceBuilder = new InstanceBuilder_Shapes();
-
-        /*  =   Set Properties   =  */
-        InstanceProperties properties = new InstanceProperties(new MapDimensions(new int[]{194,194}, instanceBuilder), -1, new int[]{20});
-
-        /*  =   Set Instance Manager   =  */
-        InstanceManager instanceManager = new InstanceManager(path, instanceBuilder, properties);
-
-        /*  =   Add new experiment   =  */
-        Experiment gridExperiment = new Experiment("Experiment_Lak503d", instanceManager);
-        this.experiments.add(gridExperiment);
-    }
 
 
 
