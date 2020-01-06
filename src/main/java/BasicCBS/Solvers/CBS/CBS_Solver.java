@@ -219,9 +219,9 @@ public class CBS_Solver extends A_Solver {
         node.leftChild = generateNode(node, constraints[0], true);
         node.rightChild = generateNode(node, constraints[1], false);
 
-        if(node.leftChild == null || node.rightChild == null){
-            return; //probably a timeout in the low level. should abort.
-        }
+//        if(node.leftChild == null || node.rightChild == null){
+//            return; //probably a timeout in the low level. should abort.
+//        }
         addToOpen(node.leftChild);
         addToOpen(node.rightChild);
     }
@@ -232,6 +232,7 @@ public class CBS_Solver extends A_Solver {
      * @return true if {@link #openList OPEN} changed as a result of the call.
      */
     private boolean addToOpen(CBS_Node node) {
+        if(node == null){return false;}
         return openList.add(node);
     }
 
