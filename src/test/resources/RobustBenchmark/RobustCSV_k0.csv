@@ -1,0 +1,21 @@
+IncstanceId,#Agents,Solver,Map,Obstacles,Plan Cost,Success,Planning time (ms),Constraint policy,File
+0,5,k = 0,Instance-8-0-5-0,0,15,1,35.07,Range,Instance-8-0-5-0
+1,5,k = 0,Instance-8-0-5-1,0,21,1,12.1818,Range,Instance-8-0-5-1
+2,5,k = 0,Instance-8-0-5-2,0,41,1,23.6079,Range,Instance-8-0-5-2
+3,5,k = 0,Instance-8-0-5-3,0,37,1,29.405,Range,Instance-8-0-5-3
+4,5,k = 0,Instance-8-0-5-4,0,23,1,17.5458,Range,Instance-8-0-5-4
+5,5,k = 0,Instance-8-0-5-5,0,23,1,5.0817,Range,Instance-8-0-5-5
+6,5,k = 0,Instance-8-0-5-6,0,16,1,12.9274,Range,Instance-8-0-5-6
+7,5,k = 0,Instance-8-0-5-7,0,31,1,24.9075,Range,Instance-8-0-5-7
+8,5,k = 0,Instance-8-0-5-8,0,18,1,21.0669,Range,Instance-8-0-5-8
+9,5,k = 0,Instance-8-0-5-9,0,20,1,9.7098,Range,Instance-8-0-5-9
+10,10,k = 0,Instance-8-0-10-0,0,49,1,110.4348,Range,Instance-8-0-10-0
+11,10,k = 0,Instance-8-0-10-1,0,71,1,32.88,Range,Instance-8-0-10-1
+12,10,k = 0,Instance-8-0-10-2,0,47,1,10.457,Range,Instance-8-0-10-2
+13,10,k = 0,Instance-8-0-10-3,0,57,1,12.4606,Range,Instance-8-0-10-3
+14,10,k = 0,Instance-8-0-10-4,0,51,1,15.2788,Range,Instance-8-0-10-4
+15,10,k = 0,Instance-8-0-10-5,0,41,1,15.8008,Range,Instance-8-0-10-5
+16,10,k = 0,Instance-8-0-10-6,0,49,1,6.894,Range,Instance-8-0-10-6
+17,10,k = 0,Instance-8-0-10-7,0,65,1,16.7787,Range,Instance-8-0-10-7
+18,10,k = 0,Instance-8-0-10-8,0,64,1,11.7912,Range,Instance-8-0-10-8
+19,10,k = 0,Instance-8-0-10-9,0,49,1,159.5497,Range,Instance-8-0-10-9

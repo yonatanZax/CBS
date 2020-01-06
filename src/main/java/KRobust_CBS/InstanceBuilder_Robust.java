@@ -8,6 +8,14 @@ public class InstanceBuilder_Robust extends InstanceBuilder_BGU {
 
 
     protected final int INDEX_AGENT_ROBUST_VALUE = 5;
+    private int k = 0;
+
+    public InstanceBuilder_Robust(){}
+
+    public InstanceBuilder_Robust(int k){
+        super();
+        this.k = k;
+    }
 
     @Override
     protected Agent buildSingleAgent(int dimensions, String line){
@@ -29,7 +37,7 @@ public class InstanceBuilder_Robust extends InstanceBuilder_BGU {
             int target_yValue = Integer.valueOf(agentLine[this.INDEX_AGENT_TARGET_YVALUE]);
             Coordinate_2D target = new Coordinate_2D(target_xValue, target_yValue);
 
-            int k = 2;
+//            int k = 1;
             if(agentLine.length > this.INDEX_AGENT_ROBUST_VALUE){
                 k = Integer.valueOf(agentLine[this.INDEX_AGENT_ROBUST_VALUE]);
             }
