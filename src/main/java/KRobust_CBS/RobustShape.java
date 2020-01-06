@@ -69,10 +69,24 @@ public class RobustShape implements I_Location {
         return this.head.location.isNeighbor(((RobustShape)other).getHead().location);
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof RobustShape)) return false;
+        RobustShape that = (RobustShape) o;
+        Set<I_Location> locationsThis = this.getAllLocations();
+        Set<I_Location> locationThat = that.getAllLocations();
+        return locationsThis.equals(locationThat);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(head, locations);
+    }
+
     @Override
     public boolean intersectsWith(I_Location other) {
-
-
 
         Set<I_Location> myLocations = this.getAllLocations();
         if( other instanceof GraphMapVertex){
@@ -198,7 +212,6 @@ public class RobustShape implements I_Location {
         public String toString() {
             return "RobustQueue{" +
                     "capacity=" + capacity +
-                    ", robustShape=" + robustShape +
                     '}';
         }
     }
