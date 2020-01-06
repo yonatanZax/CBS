@@ -1,4 +1,5 @@
 IncstanceId,#Agents,Solver,Map,Obstacles,Plan Cost,Success,Planning time (ms),Constraint policy,File
+0,3,k = 2,Instance-8-0-3-0,0,11,1,3.5583,Range,Instance-8-0-3-0
 0,5,k = 2,Instance-8-0-5-0,0,17,1,3.5583,Range,Instance-8-0-5-0
 1,5,k = 2,Instance-8-0-5-1,0,22,1,4.4334,Range,Instance-8-0-5-1
 2,5,k = 2,Instance-8-0-5-2,0,41,1,21.7568,Range,Instance-8-0-5-2

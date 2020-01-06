@@ -35,10 +35,8 @@ public class RobustShape implements I_Location {
     }
 
     public static RobustShape stayInGoal(RobustShape prevShape){
-        RobustQueue<I_Location> locations = prevShape.locations;
-        if(locations.size() == 0){
-            return null;
-        }
+        RobustQueue locations = new RobustQueue<I_Location>(prevShape.locations);
+        if(locations.size() == 0){ return null; }
         locations.remove(0);
         TimeLocation timeLocation = new TimeLocation(prevShape.head.time + 1, prevShape.head.location);
         RobustShape robustShape = new RobustShape(timeLocation, locations);
@@ -122,7 +120,6 @@ public class RobustShape implements I_Location {
 
     public Set<I_Location> getAllLocations(){
         Set<I_Location> locations = this.locations.getAllLocations();
-//        Set<I_Location> locations = this.locations.getAllLocations();
         locations.add(this.getHead().location);
         return locations;
     }
@@ -136,7 +133,7 @@ public class RobustShape implements I_Location {
                 '}';
     }
 
-    private class RobustQueue<I_Location> extends ArrayList<I_Location> {
+    private static class RobustQueue<I_Location> extends ArrayList<I_Location> {
         private final int capacity;
         private final RobustShape robustShape;
 
@@ -152,6 +149,12 @@ public class RobustShape implements I_Location {
             this.robustShape = robustShape;
             this.addAll(prevQueue);
             this.addHead(headLocation);
+        }
+
+        public RobustQueue(RobustQueue locations) {
+            this.capacity = locations.capacity;
+            this.robustShape = locations.robustShape;
+            this.addAll(locations);
         }
 
         @Override
@@ -178,7 +181,7 @@ public class RobustShape implements I_Location {
         }
 
 
-            public Set<I_Location> getAllLocations(){
+        public Set<I_Location> getAllLocations(){
             Set<I_Location> locations = new HashSet<>(this);
 //            for (int i = 0; i < size() ; i++){
 //                locations.add(this.get(i));

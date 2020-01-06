@@ -121,6 +121,9 @@ public class CBS_ShapeRobust_Benchmark {
                     if(optimal) numOptimal++;
                     if(valid && !optimal) numValidSuboptimal++;
                     if(!valid && optimal) numInvalidOptimal++;
+
+
+                    System.out.println(solution.readableToString());
                 }
             }
 
