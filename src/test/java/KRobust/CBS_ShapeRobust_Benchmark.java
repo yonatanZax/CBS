@@ -8,10 +8,8 @@ import BasicCBS.Instances.Maps.Coordinates.Coordinate_2D;
 import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
 import BasicCBS.Instances.Maps.Enum_MapCellType;
 import BasicCBS.Instances.Maps.I_Map;
+import BasicCBS.Solvers.*;
 import BasicCBS.Solvers.CBS.CBS_SolverTest;
-import BasicCBS.Solvers.I_Solver;
-import BasicCBS.Solvers.RunParameters;
-import BasicCBS.Solvers.Solution;
 import Environment.IO_Package.IO_Manager;
 import Environment.Metrics.InstanceReport;
 import Environment.Metrics.S_Metrics;
@@ -19,6 +17,7 @@ import GraphMapPackage.MapFactory;
 import KRobust_CBS.CBS_ShapesRobust;
 import KRobust_CBS.InstanceBuilder_Robust;
 import KRobust_CBS.RobustAgent;
+import KRobust_CBS.RobustShape;
 import LargeAgents_CBS.Solvers.HighLevel.CBS_Shapes;
 import org.junit.jupiter.api.Test;
 
@@ -102,7 +101,9 @@ public class CBS_ShapeRobust_Benchmark {
                 else numFailed++;
 
                 if(solution != null){
-                    boolean valid = solution.isValidSolution();
+                    Solution basicSolution = this.getBasicMoveSolutions(solution);
+                    boolean valid = basicSolution.isValidSolution();
+//                    boolean valid = solution.isValidSolution();
                     System.out.println("Valid?: " + (valid ? "yes" : "no"));
                     if (useAsserts) assertTrue(valid);
 
@@ -165,5 +166,20 @@ public class CBS_ShapeRobust_Benchmark {
             ex.printStackTrace();
         }
 
+    }
+
+
+
+    private Solution getBasicMoveSolutions(Solution solution){
+        Solution result = new Solution();
+        for (SingleAgentPlan plan : solution) {
+            SingleAgentPlan basicPlan = new SingleAgentPlan(plan.agent);
+            for (Move move : plan) {
+                basicPlan.addMove(new Move(move.agent, move.timeNow, ((RobustShape)move.prevLocation).getHeadLocation(),((RobustShape)move.currLocation).getHeadLocation()));
+            }
+            result.putPlan(basicPlan);
+        }
+
+        return result;
     }
 }
