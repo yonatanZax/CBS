@@ -88,7 +88,6 @@ public class ConflictManager_RobustShape extends ConflictManager {
 
 
         /*  Remove Last k moves from Plan   */
-        int k = ((RobustAgent)singleAgentPlan.agent).k;
         int extendedGoalTime = singleAgentPlan.getEndTime();
         singleAgentPlan.removeLastKMoves( extendedGoalTime - goalTime);
         goalTime = singleAgentPlan.getEndTime();

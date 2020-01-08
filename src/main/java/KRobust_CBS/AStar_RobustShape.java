@@ -51,7 +51,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
             // can move to neighboring cells or stay put
             List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(sourceCell.getNeighbors());
-            neighborCellsIncludingCurrent.add(RobustShape.stayInPlace(sourceCell));
+            neighborCellsIncludingCurrent.add(this.stayInPlace(sourceCell));
 
 
             for (I_Location destination: neighborCellsIncludingCurrent) {
@@ -133,6 +133,10 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
 
 
+    protected RobustShape stayInPlace(RobustShape shape){
+        return RobustShape.stayInPlace(shape);
+    }
+
 
 
 
@@ -150,7 +154,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
             RobustShape location = (RobustShape) this.move.currLocation;
             List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(location.getNeighbors());
 
-            neighborCellsIncludingCurrent.add(RobustShape.stayInPlace(location));
+            neighborCellsIncludingCurrent.add(stayInPlace(location));
 
             for (I_Location destination: neighborCellsIncludingCurrent){
                 Move possibleMove = new Move(this.move.agent, this.move.timeNow+1, this.move.currLocation, destination);

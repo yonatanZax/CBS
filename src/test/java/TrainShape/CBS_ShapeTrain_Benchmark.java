@@ -1,24 +1,14 @@
-package KRobust;
+package TrainShape;
 
-import BasicCBS.Instances.Agent;
-import BasicCBS.Instances.InstanceBuilders.InstanceBuilder_BGU;
 import BasicCBS.Instances.InstanceManager;
 import BasicCBS.Instances.MAPF_Instance;
-import BasicCBS.Instances.Maps.Coordinates.Coordinate_2D;
-import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
-import BasicCBS.Instances.Maps.Enum_MapCellType;
-import BasicCBS.Instances.Maps.I_Map;
-import BasicCBS.Solvers.*;
 import BasicCBS.Solvers.CBS.CBS_SolverTest;
+import BasicCBS.Solvers.*;
 import Environment.IO_Package.IO_Manager;
 import Environment.Metrics.InstanceReport;
 import Environment.Metrics.S_Metrics;
-import GraphMapPackage.MapFactory;
-import KRobust_CBS.CBS_ShapesRobust;
 import KRobust_CBS.InstanceBuilder_Robust;
-import KRobust_CBS.RobustAgent;
 import KRobust_CBS.RobustShape;
-import LargeAgents_CBS.Solvers.HighLevel.CBS_Shapes;
 import TrainsCBS.CBS_TrainShape;
 import org.junit.jupiter.api.Test;
 
@@ -30,10 +20,9 @@ import java.text.SimpleDateFormat;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CBS_ShapeRobust_Benchmark {
-    I_Solver solver = new CBS_ShapesRobust();
+public class CBS_ShapeTrain_Benchmark {
+    I_Solver solver = new CBS_TrainShape();
 
     @Test
     public void runRobust_k0(){
