@@ -3,29 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="4accb152-2d1f-43de-b50e-d11c57caa5f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapeRobust_Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapeRobust_Benchmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-1-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-1-4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-3" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-5" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-6" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-2-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-2-4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-3-0" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-3-0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-0" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-1" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-3" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-5" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-6" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-8" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-9" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/keep aside/Instance-8-0-10-0" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/keep aside/Instance-8-0-10-1" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/keep aside/Instance-8-0-10-7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/keep aside/Instance-8-0-10-9" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/DataStructures/TimeLocationTables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/DataStructures/TimeLocationTables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/AStar_RobustShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/AStar_RobustShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/CBS_ShapesRobust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/CBS_ShapesRobust.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_RobustShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_RobustShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/DistanceTableHeuristic_RobustShapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/DistanceTableHeuristic_RobustShapes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/InstanceBuilder_Robust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/InstanceBuilder_Robust.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/RobustAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/RobustAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/RobustShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/RobustShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/KRobust/RobustShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/KRobust/RobustShapeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-0" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/keep aside/Instance-8-0-10-0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-1-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-1-4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-1" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-3" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-5" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-6" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-9" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-2-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-2-4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-3-0" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-3-0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-0" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-1" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-3" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-5" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-6" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-8" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-9" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-9" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,35 +45,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapeRobust_Benchmark.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-1">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-7">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-9">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -422,16 +402,6 @@
       <recent name="KRobust" />
       <recent name="LargeAgents" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\CBS_ProjectMSPF\src\test\resources\RobustBenchmark\passing" />
-      <recent name="D:\CBS_ProjectMSPF\src\test\resources\RobustBenchmark" />
-      <recent name="D:\CBS_ProjectMSPF\src\test\resources\RobustBenchmark\keep aside" />
-      <recent name="D:\CBS_ProjectMSPF\resources\Instances\KRobust_Instances\cant solve" />
-      <recent name="D:\CBS_ProjectMSPF\resources\Instances\KRobust_Instances" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="LargeAgents_CBS.Instances" />
       <recent name="LargeAgents_CBS.Instances.Maps" />
@@ -443,6 +413,16 @@
       <recent name="D:\MSPF_CBS\resources\Instances" />
       <recent name="D:\MSPF_CBS\resources\Instances\LargeAgents_Instances" />
       <recent name="D:\MSPF_CBS\src\test\resources\Instances" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CBS_ProjectMSPF\src\test\resources\RobustBenchmark" />
+      <recent name="D:\CBS_ProjectMSPF\src\test\resources\RobustBenchmark\keep aside" />
+      <recent name="D:\CBS_ProjectMSPF\src\test\resources\RobustBenchmark\passing" />
+      <recent name="D:\CBS_ProjectMSPF\resources\Instances\KRobust_Instances\cant solve" />
+      <recent name="D:\CBS_ProjectMSPF\resources\Instances\KRobust_Instances" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -953,12 +933,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CBS_ShapeRobust_Benchmark_runRobust_k2 - 2020.01.07 at 00h 29m 44s.xml">
-      <configuration name="CBS_ShapeRobust_Benchmark.runRobust_k2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CBS_ShapeRobust_Benchmark_runRobust_k2 - 2020.01.07 at 00h 30m 22s.xml">
-      <configuration name="CBS_ShapeRobust_Benchmark.runRobust_k2" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CBS_ShapeRobust_Benchmark_runRobust_k2 - 2020.01.07 at 10h 41m 58s.xml">
       <configuration name="CBS_ShapeRobust_Benchmark.runRobust_k2" configurationId="JUnit" />
     </history-entry>
@@ -983,9 +957,15 @@
     <history-entry file="CBS_ShapeRobust_Benchmark - 2020.01.08 at 10h 38m 50s.xml">
       <configuration name="CBS_ShapeRobust_Benchmark" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CBS_ShapeRobust_Benchmark - 2020.01.08 at 12h 40m 45s.xml">
+      <configuration name="CBS_ShapeRobust_Benchmark" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CBS_ShapeRobust_Benchmark - 2020.01.08 at 12h 43m 34s.xml">
+      <configuration name="CBS_ShapeRobust_Benchmark" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327501000" />
+    <option name="totallyTimeSpent" value="327959000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1252,7 +1232,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/KRobust_CBS/InstanceBuilder_Robust.java</url>
-          <line>41</line>
+          <line>42</line>
           <properties />
           <option name="timeStamp" value="277" />
         </line-breakpoint>
@@ -1530,13 +1510,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-7">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-7">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-8">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-8">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-9">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-9">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/Move.java">
@@ -1546,31 +1526,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/RobustShape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="79" column="50" selection-start-line="79" selection-start-column="50" selection-end-line="79" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2653#2654#0" expanded="true" />
-            <element signature="e#2705#2706#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-2">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-2">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-3">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-3">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-4">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-4">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-5">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-5">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-6">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-6">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_RobustShape.java">
@@ -1605,42 +1573,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-1-4">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-2-4">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-3-0">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-0">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-1">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-2">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-3">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-4">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-5">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-5-6">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-0">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapeRobust_Benchmark.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
+        <state relative-caret-position="783">
           <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1648,13 +1583,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-1">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-1">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-7">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-7">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/passing/Instance-8-0-10-9">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-9">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/RobustShape.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="87" column="50" selection-start-line="87" selection-start-column="50" selection-end-line="87" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2492#2493#0" expanded="true" />
+            <element signature="e#2567#2568#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/keep aside/Instance-8-0-10-0">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-1-4">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-2-4">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-3-0">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-0">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-1">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-2">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-3">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-4">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-5">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-6">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>

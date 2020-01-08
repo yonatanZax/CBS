@@ -23,7 +23,7 @@ public class DistanceTableHeuristic_RobustShapes extends DistanceTableAStarHeuri
     public float getH(SingleAgentAStar_Solver.AStarState state) {
         Map<I_Location, Integer> relevantDictionary = this.distanceDictionaries.get(state.getMove().agent);
         RobustShape robustShape = (RobustShape) state.getMove().currLocation;
-        I_Location location = robustShape.getHead().location;
+        I_Location location = robustShape.getHeadLocation();
         return relevantDictionary.get(location);
     }
 }

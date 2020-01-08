@@ -8,6 +8,7 @@ import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructure
 import BasicCBS.Solvers.ConstraintsAndConflicts.SwappingConflict;
 import BasicCBS.Solvers.Move;
 import BasicCBS.Solvers.SingleAgentPlan;
+import GraphMapPackage.GraphMapVertex;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -91,7 +92,8 @@ public class ConflictManager_RobustShape extends ConflictManager {
         int extendedGoalTime = singleAgentPlan.getEndTime();
         singleAgentPlan.removeLastKMoves( extendedGoalTime - goalTime);
         goalTime = singleAgentPlan.getEndTime();
-        TimeLocation goalTimeLocation = ((RobustShape) singleAgentPlan.moveAt(goalTime).currLocation).getHead();
+        RobustShape goalLocation = (RobustShape) singleAgentPlan.moveAt(goalTime).currLocation;
+        TimeLocation goalTimeLocation = new TimeLocation (goalTime, goalLocation.getHeadLocation());
 
 
         /*  = Add goal timeLocation =  */

@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class RobustAgent extends Agent {
 
-    int k = 0;
+    public int k = 0;
 
     public RobustAgent(int iD, I_Coordinate source, I_Coordinate target, int k) {
         super(iD, source, target);
@@ -17,6 +17,11 @@ public class RobustAgent extends Agent {
     public RobustAgent(Agent agent){
         super(agent.iD, agent.source, agent.target);
         this.k = 0;
+    }
+
+    public RobustAgent(Agent agent, int k) {
+        super(agent.iD, agent.source, agent.target);
+        this.k = k;
     }
 
     @Override

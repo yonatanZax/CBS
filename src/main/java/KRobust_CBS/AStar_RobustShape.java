@@ -47,7 +47,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
         else { // the existing plan is empty (no existing plan)
 
             int k = ((RobustAgent)agent).k;
-            RobustShape sourceCell = new RobustShape(new TimeLocation(0, map.getMapCell(agent.source)), k);
+            RobustShape sourceCell = new RobustShape(map.getMapCell(agent.source), k);
 
             // can move to neighboring cells or stay put
             List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(sourceCell.getNeighbors());
@@ -121,7 +121,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
     protected boolean isGoalState(AStarState_RobustShape state) {
         RobustShape robustShape = (RobustShape) state.getMove().currLocation;
-        if( isGoalLocation(robustShape.getHead().location, agent.target)){
+        if( isGoalLocation(robustShape.getHead(), agent.target)){
             return true;
         }
         return false;
@@ -174,5 +174,6 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
             }
         }
     }
+
 
 }

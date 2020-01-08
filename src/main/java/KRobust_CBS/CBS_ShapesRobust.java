@@ -7,6 +7,7 @@ import BasicCBS.Solvers.CBS.CBS_Solver;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.I_ConflictManager;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.MinTimeConflictSelectionStrategy;
 import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.ConstraintSet;
+import BasicCBS.Solvers.I_Solver;
 import BasicCBS.Solvers.RunParameters;
 import BasicCBS.Solvers.SingleAgentPlan;
 import LargeAgents_CBS.Solvers.HighLevel.CBS_Shapes;
@@ -23,6 +24,9 @@ public class CBS_ShapesRobust extends CBS_Solver {
         super(new AStar_RobustShape(),null,null,null,null);
     }
 
+    protected CBS_ShapesRobust(I_Solver lowLevel){
+        super(lowLevel,null,null,null,null);
+    }
 
     @Override
     protected void init(MAPF_Instance instance, RunParameters runParameters) {

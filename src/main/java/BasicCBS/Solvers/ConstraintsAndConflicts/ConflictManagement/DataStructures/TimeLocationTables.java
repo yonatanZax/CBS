@@ -63,22 +63,15 @@ public class TimeLocationTables {
         this.timeLocation_Agents.get(timeLocation).add(singleAgentPlan.agent);
         this.location_timeList.computeIfAbsent(timeLocation.location, k -> new HashSet<>());
         this.location_timeList.get(timeLocation.location).add(timeLocation.time);
+
     }
 
 
     public void addGoalTimeLocation(TimeLocation goalTimeLocation, SingleAgentPlan singleAgentPlan){
 
         this.addTimeLocation(new TimeLocation(goalTimeLocation.time, goalTimeLocation.location), singleAgentPlan);
-
         // Add to goal_agentTime, 'put' method will update it's value if already exists
         this.goal_plan.put(goalTimeLocation.location, singleAgentPlan);
-
-//        this.location_timeList.computeIfAbsent(goalTimeLocation.location, k -> new HashSet<>());
-
-        // A Set of time that at least one agent is occupying
-        // todo - was removed
-//        Set<Integer> timeList = this.location_timeList.get(goalTimeLocation.location);
-//        timeList.add(goalTimeLocation.time); // add the plan's timeLocation at goal
     }
 
 
