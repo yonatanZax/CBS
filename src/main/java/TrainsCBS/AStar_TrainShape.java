@@ -1,33 +1,16 @@
-package KRobust_CBS;
+package TrainsCBS;
 
-import BasicCBS.Instances.MAPF_Instance;
-import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
 import BasicCBS.Instances.Maps.I_Location;
-import BasicCBS.Solvers.AStar.SingleAgentAStar_Solver;
-import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.TimeLocation;
-import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.ConstraintSet;
 import BasicCBS.Solvers.Move;
-import BasicCBS.Solvers.OpenList;
-import BasicCBS.Solvers.RunParameters;
 import BasicCBS.Solvers.Solution;
-import GraphMapPackage.GraphMapVertex;
-
+import KRobust_CBS.AStar_RobustShape;
+import KRobust_CBS.RobustAgent;
+import KRobust_CBS.RobustShape;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
-public class AStar_RobustShape extends SingleAgentAStar_Solver {
-
-
-    protected void init(MAPF_Instance instance, RunParameters runParameters){
-        super.init(instance, runParameters);
-        this.constraints = runParameters.constraints == null ? new ConstraintSet_Robust(): runParameters.constraints;
-        this.openList = new OpenList<>(stateFComparator);
-    }
-
-
-
+public class AStar_TrainShape extends AStar_RobustShape {
 
     @Override
     protected boolean initOpen() {
@@ -41,13 +24,13 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
                 return false;
             }
 
-            AStarState_RobustShape state = new AStarState_RobustShape(existingPlan.moveAt(existingPlan.getEndTime()),null, /*g=number of moves*/existingPlan.size());
+            AStarState_TrainShape state = new AStarState_TrainShape(existingPlan.moveAt(existingPlan.getEndTime()),null, /*g=number of moves*/existingPlan.size());
             openList.add(state);
         }
         else { // the existing plan is empty (no existing plan)
 
             int k = ((RobustAgent)agent).k;
-            RobustShape sourceCell = new RobustShape(map.getMapCell(agent.source), k);
+            TrainShape sourceCell = new TrainShape(map.getMapCell(agent.source), k);
 
             // can move to neighboring cells or stay put
             List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(sourceCell.getNeighbors());
@@ -58,7 +41,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
                 Move possibleMove = new Move(agent, problemStartTime + 1, sourceCell, destination);
 
                 if (constraints.accepts(possibleMove)) { //move not prohibited by existing constraint
-                    AStarState_RobustShape rootState = new AStarState_RobustShape(possibleMove, null, 1);
+                    AStarState_TrainShape rootState = new AStarState_TrainShape(possibleMove, null, 1);
                     openList.add(rootState);
                     generatedNodes++;
                 }
@@ -71,16 +54,20 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
     }
 
 
+
+
+
+
     @Override
     protected Solution solveAStar() {
         // if failed to init OPEN then the problem cannot be solved as defined (bad constraints? bad existing plan?)
         if (!initOpen())
             return null;
 
-        AStarState_RobustShape currentState;
+        AStarState_TrainShape currentState;
         int firstRejectionAtGoalTime = -1;
 
-        while ((currentState = (AStarState_RobustShape) openList.poll()) != null){ //dequeu in the if
+        while ((currentState = (AStarState_TrainShape) openList.poll()) != null){ //dequeu in the if
             if(checkTimeout()) {
                 return null;
             }
@@ -119,26 +106,13 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
         return null; //no goal state found (problem unsolvable)
     }
 
-    protected boolean isGoalState(AStarState_RobustShape state) {
-        RobustShape robustShape = (RobustShape) state.getMove().currLocation;
-        if( isGoalLocation(robustShape.getHead(), agent.target)){
-            return true;
-        }
-        return false;
-    }
-
-    private boolean isGoalLocation(I_Location location, I_Coordinate goalCoordinate){
-        return location.getCoordinate().equals(goalCoordinate);
-    }
 
 
 
 
+    protected class AStarState_TrainShape extends AStarState_RobustShape{
 
-
-    protected class AStarState_RobustShape extends AStarState{
-
-        public AStarState_RobustShape(Move move, AStarState prevState, int g) {
+        public AStarState_TrainShape(Move move, AStarState prevState, int g) {
             super(move, prevState, g);
         }
 
@@ -147,15 +121,15 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
         public void expand() {
             expandedNodes++;
             // can move to neighboring cells or stay put
-            RobustShape location = (RobustShape) this.move.currLocation;
+            TrainShape location = (TrainShape) this.move.currLocation;
             List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(location.getNeighbors());
 
-            neighborCellsIncludingCurrent.add(RobustShape.stayInPlace(location));
+            neighborCellsIncludingCurrent.add(TrainShape.stayInPlace(location));
 
             for (I_Location destination: neighborCellsIncludingCurrent){
                 Move possibleMove = new Move(this.move.agent, this.move.timeNow+1, this.move.currLocation, destination);
                 if(constraints.accepts(possibleMove)){ //move not prohibited by existing constraint
-                    AStarState_RobustShape child = new AStarState_RobustShape(possibleMove, this, this.g + 1);
+                    AStarState_TrainShape child = new AStarState_TrainShape(possibleMove, this, this.g + 1);
                     generatedNodes++; //field in containing class
 
                     AStarState existingState;
@@ -173,7 +147,12 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
                 }
             }
         }
+
+
+
+
+
+
+
     }
-
-
 }

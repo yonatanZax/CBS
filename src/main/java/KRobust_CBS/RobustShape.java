@@ -10,23 +10,31 @@ import java.util.*;
 
 public class RobustShape implements I_Location {
 
-    private TimeLocation head;
-    private RobustQueue locations;
+    protected I_Location head;
+    protected RobustQueue locations;
 
 
-    public RobustShape(TimeLocation head, int capacity){
+    public RobustShape(I_Location head, int capacity){
         this.head = head;
         this.locations = new RobustQueue(this, capacity);
     }
 
-    public RobustShape(TimeLocation head, RobustShape prevRobustShape) {
+    public RobustShape(I_Location head, RobustShape prevRobustShape) {
         this.head = head;
-        this.locations = new RobustQueue<I_Location>(this, prevRobustShape.locations, head.location);
+        this.locations = new RobustQueue(this,prevRobustShape.locations);
+        this.locations.addAll(prevRobustShape.locations);
+        this.locations.addHead(this.getHeadLocation());
+//        this.locations = new RobustQueue<I_Location>(this, prevRobustShape.locations, head.location);
     }
 
-    public RobustShape(TimeLocation head, RobustQueue<I_Location> locations) {
+    public RobustShape(I_Location head, RobustQueue<I_Location> locations) {
         this.head = head;
         this.locations = locations;
+    }
+
+    public RobustShape(RobustShape other){
+        this.head = other.getHead();
+        this.locations.addAll(other.locations);
     }
 
     public static RobustShape stayInPlace(RobustShape prevShape){
@@ -38,8 +46,8 @@ public class RobustShape implements I_Location {
         RobustQueue locations = new RobustQueue<I_Location>(prevShape.locations);
         if(locations.size() == 0){ return null; }
         locations.remove(0);
-        TimeLocation timeLocation = new TimeLocation(prevShape.head.time + 1, prevShape.head.location);
-        RobustShape robustShape = new RobustShape(timeLocation, locations);
+//        TimeLocation timeLocation = new TimeLocation(prevShape.head.time + 1, prevShape.head.location);
+        RobustShape robustShape = new RobustShape(prevShape.getHead(), locations);
         return robustShape;
     }
 
@@ -50,23 +58,23 @@ public class RobustShape implements I_Location {
 
     @Override
     public List<I_Location> getNeighbors() {
-        List<I_Location> headNeighbors = this.head.location.getNeighbors();
+        List<I_Location> headNeighbors = this.head.getNeighbors();
         List<I_Location> neighbors = new ArrayList<>();
 
         for (I_Location neighbor : headNeighbors) {
-            neighbors.add( new RobustShape(new TimeLocation(this.head.time,neighbor),this));
+            neighbors.add( new RobustShape(neighbor,this));
         }
         return neighbors;
     }
 
     @Override
     public I_Coordinate getCoordinate() {
-        return this.head.location.getCoordinate();
+        return this.head.getCoordinate();
     }
 
     @Override
     public boolean isNeighbor(I_Location other) {
-        return this.head.location.isNeighbor(((RobustShape)other).getHead().location);
+        return this.head.isNeighbor(((RobustShape)other).getHead());
     }
 
 
@@ -109,20 +117,20 @@ public class RobustShape implements I_Location {
     }
 
 
-    public void setHead(TimeLocation head) {
+    public void setHead(I_Location head) {
         this.head = head;
     }
 
-    public TimeLocation getHead() {
+    public I_Location getHead() {
         return head;
     }
 
-    public int getHeadTime(){
-        return this.head.time;
-    }
+//    public int getHeadTime(){
+//        return this.head.time;
+//    }
 
     public I_Location getHeadLocation(){
-        return this.head.location;
+        return this.head;
     }
 
     public int getSize(){
@@ -134,7 +142,7 @@ public class RobustShape implements I_Location {
 
     public Set<I_Location> getAllLocations(){
         Set<I_Location> locations = this.locations.getAllLocations();
-        locations.add(this.getHead().location);
+        locations.add(this.getHead());
         return locations;
     }
 
@@ -147,28 +155,27 @@ public class RobustShape implements I_Location {
                 '}';
     }
 
-    private static class RobustQueue<I_Location> extends ArrayList<I_Location> {
+    protected static class RobustQueue<I_Location> extends ArrayList<I_Location> {
         private final int capacity;
         private final RobustShape robustShape;
 
         public RobustQueue(RobustShape robustShape, int capacity){
             this.capacity = capacity;
             this.robustShape = robustShape;
-            this.add((I_Location) robustShape.getHead().location);
+            this.add((I_Location) robustShape.getHeadLocation());
         }
 
 
-        public RobustQueue(RobustShape robustShape, RobustQueue prevQueue, I_Location headLocation){
-            this.capacity = prevQueue.capacity;
-            this.robustShape = robustShape;
-            this.addAll(prevQueue);
-            this.addHead(headLocation);
-        }
 
         public RobustQueue(RobustQueue locations) {
             this.capacity = locations.capacity;
             this.robustShape = locations.robustShape;
             this.addAll(locations);
+        }
+
+        public RobustQueue(RobustShape robustShape, RobustQueue prevQueue) {
+            this.capacity = prevQueue.capacity;
+            this.robustShape = robustShape;
         }
 
         @Override
@@ -182,7 +189,7 @@ public class RobustShape implements I_Location {
 
         private void addHead(I_Location location){
             BasicCBS.Instances.Maps.I_Location castLocation = (BasicCBS.Instances.Maps.I_Location) location;
-            this.robustShape.setHead(new TimeLocation(this.robustShape.head.time + 1, castLocation));
+            this.robustShape.setHead( castLocation );
             this.add(location);
         }
 

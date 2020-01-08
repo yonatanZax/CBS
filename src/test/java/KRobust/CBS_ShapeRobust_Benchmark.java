@@ -19,6 +19,7 @@ import KRobust_CBS.InstanceBuilder_Robust;
 import KRobust_CBS.RobustAgent;
 import KRobust_CBS.RobustShape;
 import LargeAgents_CBS.Solvers.HighLevel.CBS_Shapes;
+import TrainsCBS.CBS_TrainShape;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -32,7 +33,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CBS_ShapeRobust_Benchmark {
-    I_Solver solver = new CBS_ShapesRobust();
+    I_Solver solver = new CBS_TrainShape();
+//    I_Solver solver = new CBS_ShapesRobust();
 
     @Test
     public void runRobust_k0(){

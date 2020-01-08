@@ -68,23 +68,23 @@ class RobustShapeTest {
 
 
 
-        RobustShape robustShape0_0_t0 = new RobustShape(new TimeLocation(0,cell0_0),k);
-        RobustShape robustShape1_0_t1 = new RobustShape(new TimeLocation(1, cell1_0), robustShape0_0_t0);
-        RobustShape robustShape1_0_t2 = new RobustShape(new TimeLocation(2, cell1_0), robustShape1_0_t1);
-        RobustShape robustShape1_1_t3 = new RobustShape(new TimeLocation(3, cell1_1), robustShape1_0_t2);
-        RobustShape robustShape1_2_t4 = new RobustShape(new TimeLocation(4, cell1_2), robustShape1_1_t3);
+        RobustShape robustShape0_0_t0 = new RobustShape(cell0_0,k);
+        RobustShape robustShape1_0_t1 = new RobustShape( cell1_0, robustShape0_0_t0);
+        RobustShape robustShape1_0_t2 = new RobustShape( cell1_0, robustShape1_0_t1);
+        RobustShape robustShape1_1_t3 = new RobustShape( cell1_1, robustShape1_0_t2);
+        RobustShape robustShape1_2_t4 = new RobustShape( cell1_2, robustShape1_1_t3);
 
 
         assertEquals(expected_robustShape0_0_t0_locations, robustShape0_0_t0.getAllLocations());
-        assertEquals(cell0_0, robustShape0_0_t0.getHead().location);
+        assertEquals(cell0_0, robustShape0_0_t0.getHeadLocation());
         assertEquals(expected_robustShape1_0_t1_locations, robustShape1_0_t1.getAllLocations());
-        assertEquals(cell1_0, robustShape1_0_t1.getHead().location);
+        assertEquals(cell1_0, robustShape1_0_t1.getHeadLocation());
         assertEquals(expected_robustShape1_0_t2_locations, robustShape1_0_t2.getAllLocations());
-        assertEquals(cell1_0, robustShape1_0_t2.getHead().location);
+        assertEquals(cell1_0, robustShape1_0_t2.getHeadLocation());
         assertEquals(expected_robustShape1_1_t3_locations, robustShape1_1_t3.getAllLocations());
-        assertEquals(cell1_1, robustShape1_1_t3.getHead().location);
+        assertEquals(cell1_1, robustShape1_1_t3.getHeadLocation());
         assertEquals(expected_robustShape1_2_t4_locations, robustShape1_2_t4.getAllLocations());
-        assertEquals(cell1_2, robustShape1_2_t4.getHead().location);
+        assertEquals(cell1_2, robustShape1_2_t4.getHeadLocation());
 
 
 
