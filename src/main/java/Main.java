@@ -127,6 +127,8 @@ public class Main {
                                     InstanceReport.StandardFields.solved,
                                     InstanceReport.StandardFields.elapsedTimeMS,
                                     InstanceReport.StandardFields.solutionCost,
+                                    InstanceReport.StandardFields.expandedNodes,
+                                    InstanceReport.StandardFields.expandedNodesLowLevel,
                                     InstanceReport.StandardFields.solution});
         } catch (IOException e) {
             e.printStackTrace();
