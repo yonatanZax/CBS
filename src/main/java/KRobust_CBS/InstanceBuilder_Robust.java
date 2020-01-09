@@ -10,7 +10,7 @@ public class InstanceBuilder_Robust extends InstanceBuilder_BGU {
     protected final int INDEX_AGENT_ROBUST_VALUE = 5;
     private int k = 0;
 
-    public InstanceBuilder_Robust(){}
+    public InstanceBuilder_Robust(){ }
 
     public InstanceBuilder_Robust(int k){
         super();

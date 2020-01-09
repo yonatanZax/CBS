@@ -26,20 +26,25 @@ public class RunManager_KRobust extends A_RunManager {
 
 
     private void allRobustAgentInstances(){
+        for (int i = 0; i < 3; i++) {
+            this.addRobustExperiment(i);
+        }
+    }
+
+    private void addRobustExperiment(int k){
         /*  =   Set Path   =*/
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
                 "Instances\\\\KRobust_Instances"});
 
-        I_InstanceBuilder instanceBuilder = new InstanceBuilder_Robust();
+        I_InstanceBuilder instanceBuilder = new InstanceBuilder_Robust(k);
 
 
         /*  =   Set Instance Manager   =  */
         InstanceManager instanceManager = new InstanceManager(path, instanceBuilder);
 
         /*  =   Add new experiment   =  */
-        Experiment gridExperiment = new Experiment("Experiment All Robust Instances", instanceManager);
+        Experiment gridExperiment = new Experiment("Experiment All Robust Instances with k = " + k, instanceManager);
         this.experiments.add(gridExperiment);
-
     }
 
 }
