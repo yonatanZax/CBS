@@ -174,7 +174,8 @@ public class CBS_LargeAgentsTest {
     void unsolvableShouldBeInvalid() {
         MAPF_Instance testInstance = instanceUnsolvable;
         InstanceReport instanceReport = S_Metrics.newInstanceReport();
-        Solution solved = cbsSolver_lageAgents.solve(testInstance, new RunParameters(instanceReport));
+        long defaultTimeout = 1000*10 /* 10 sec*/;
+        Solution solved = cbsSolver_lageAgents.solve(testInstance, new RunParameters(defaultTimeout));
         S_Metrics.removeReport(instanceReport);
 
         assertNull(solved);
