@@ -119,7 +119,9 @@ public class ConstraintSet{
      */
     public boolean rejects(Move move){
         I_ConstraintGroupingKey dummy = createDummy(move);
-        if(!constraints.containsKey(dummy)) {return false;}
+        if(!constraints.containsKey(dummy)) {
+            return false;
+        }
         else {
             return rejects(constraints.get(dummy), move);
         }
@@ -127,7 +129,8 @@ public class ConstraintSet{
 
     protected boolean rejects(Set<Constraint> constraints, Move move){
         for (Constraint constraint : constraints){
-            if(constraint.rejects(move)) return true;
+            if(constraint.rejects(move))
+                return true;
         }
         return false;
     }

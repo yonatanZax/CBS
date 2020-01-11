@@ -231,7 +231,8 @@ public class ConflictManager implements I_ConflictManager {
         for (Agent agentMovingToPrevPosition : agentsMovingToPrevLocations) {
             if( agentMovingToPrevPosition.equals(singleAgentPlan.agent) ){ continue; /* Self Conflict */ }
             // todo - change to intersectWith
-            if ( this.agent_plan.get(agentMovingToPrevPosition).moveAt(time).prevLocation.intersectsWith(nextLocation)){
+            SingleAgentPlan otherAgentPlan = this.agent_plan.get(agentMovingToPrevPosition);
+            if( time <= otherAgentPlan.getEndTime() && otherAgentPlan.moveAt(time).prevLocation.intersectsWith(nextLocation)){
 
                 // Create two conflicts
                 SwappingConflict swappingConflict_addedAgentFirst = createSwappingConflict(   singleAgentPlan.agent,

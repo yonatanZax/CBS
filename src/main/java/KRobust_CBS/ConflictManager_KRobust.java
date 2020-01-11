@@ -1,9 +1,11 @@
 package KRobust_CBS;
 
+import BasicCBS.Instances.Agent;
 import BasicCBS.Instances.Maps.I_Location;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.ConflictManager;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.ConflictSelectionStrategy;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.TimeLocation;
+import BasicCBS.Solvers.ConstraintsAndConflicts.VertexConflict;
 import BasicCBS.Solvers.Move;
 import BasicCBS.Solvers.SingleAgentPlan;
 
@@ -36,7 +38,7 @@ public class ConflictManager_KRobust extends ConflictManager {
         int kGoalTime = singleAgentPlan.getEndTime();
 
         /*  Check for conflicts and Add timeLocations */
-        for (int time = agentFirstMoveTime; time <= kGoalTime; time++) {
+        for (int time = agentFirstMoveTime; time < kGoalTime; time++) {
 
             I_Location location = singleAgentPlan.moveAt(time).prevLocation;
             for (int kTime = time; kTime <= time + k; kTime++) {
@@ -82,6 +84,11 @@ public class ConflictManager_KRobust extends ConflictManager {
 
         /*  = Add goal timeLocation =  */
         this.timeLocationTables.addGoalTimeLocation(goalTimeLocation, singleAgentPlan);
+    }
+
+
+    protected VertexConflict createVertexConflict(Agent agent1, Agent agent2, TimeLocation timeLocation){
+        return new VertexConflict_KRobust(agent1, agent2, timeLocation);
     }
 
 

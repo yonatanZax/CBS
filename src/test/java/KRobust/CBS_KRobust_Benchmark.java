@@ -53,7 +53,7 @@ public class CBS_KRobust_Benchmark {
         MAPF_Instance instance = null;
         // load the pre-made benchmark
         try {
-            long timeout = 300 /*seconds*/
+            long timeout = 10 /*seconds*/
                     *1000L;
             Map<String, Map<String, String>> benchmarks = CBS_SolverTest.readResultsCSV(path + "\\RobustCSV_k" + k + ".csv");
             int numSolved = 0;

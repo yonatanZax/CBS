@@ -24,7 +24,7 @@ public class VertexConflict_LargeAgent extends VertexConflict {
     public Constraint[] getPreventingConstraints() {
 
         GraphLocationGroup expandedGroups_location1 = GraphLocationGroup.expendByReferencePoint((GraphMapVertex_LargeAgents) location, ((LargeAgent) agent1).getHeight());
-        GraphLocationGroup expandedGroups_location2 = GraphLocationGroup.expendByReferencePoint((GraphMapVertex_LargeAgents) location, ((LargeAgent) agent1).getHeight());
+        GraphLocationGroup expandedGroups_location2 = GraphLocationGroup.expendByReferencePoint((GraphMapVertex_LargeAgents) location, ((LargeAgent) agent2).getHeight());
 
 
         return new Constraint[]{
