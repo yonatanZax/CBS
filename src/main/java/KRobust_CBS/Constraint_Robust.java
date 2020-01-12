@@ -25,8 +25,9 @@ public class Constraint_Robust extends Constraint {
     }
 
     private void setBounds(){
-        this.upperBound = this.time;
-        this.lowerBound = Math.max(0,this.time - ((RobustAgent)this.agent).k);
+        this.upperBound = this.time + ((RobustAgent)this.agent).k;
+        this.lowerBound = this.time;
+//        this.lowerBound = Math.max(0,this.time - ((RobustAgent)this.agent).k);
     }
 
 
@@ -72,6 +73,13 @@ public class Constraint_Robust extends Constraint {
 
         return newConstraintSet;
     }
+
+
+    public Constraint getConstraint(int time){
+        return new Constraint(this.agent, time, this.prevLocation, this.location);
+    }
+
+
 
     @Override
     public boolean equals(Object o) {

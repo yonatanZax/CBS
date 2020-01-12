@@ -14,25 +14,31 @@ import java.util.Set;
 public class ConstraintSet_Robust extends ConstraintSet {
 
 
+    public void add(Constraint constraint){
+
+        Constraint_Robust constraintRobust = (Constraint_Robust) constraint;
+
+        for (int time = constraintRobust.lowerBound; time <= constraintRobust.upperBound; time++) {
+            this.addConstraint(constraintRobust.getConstraint(time));
+        }
+
+    }
+
+    private void addConstraint(Constraint constraint){
+        I_ConstraintGroupingKey dummy = createDummy(constraint);
+        this.constraints.computeIfAbsent(dummy, k -> new HashSet<>());
+        add(this.constraints.get(dummy), constraint);
+    }
+
+
     public boolean rejects(Move move){
         I_ConstraintGroupingKey dummy = createDummy(move);
-
-        for (Map.Entry entry : this.constraints.entrySet()) {
-            Set<Constraint_Robust> set = (Set<Constraint_Robust>) entry.getValue();
-            for (Constraint_Robust constraintRobust: set) {
-                if(constraintRobust.agent == move.agent && constraintRobust.inRange(move.timeNow)){
-                    return constraintRobust.rejects(move);
-                }
-            }
-
+        if(!constraints.containsKey(dummy)) {
+            return false;
         }
-//        if(!constraints.containsKey(dummy)) {
-//            return false;
-//        }
-//        else {
-//            return rejects(constraints.get(dummy), move);
-//        }
-        return false;
+        else {
+            return rejects(constraints.get(dummy), move);
+        }
     }
 
 
@@ -48,6 +54,7 @@ public class ConstraintSet_Robust extends ConstraintSet {
     protected I_ConstraintGroupingKey createDummy(Move move){
         return new TimeAgent(move);
     }
+
 
 
 }
