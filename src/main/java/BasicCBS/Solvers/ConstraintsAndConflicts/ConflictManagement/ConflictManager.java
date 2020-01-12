@@ -218,7 +218,7 @@ public class ConflictManager implements I_ConflictManager {
      * todo - protected
      */
     protected void checkAddSwappingConflicts(int time, SingleAgentPlan singleAgentPlan) {
-        if( time < 1 ){ return;}
+        if( time < 1 || time > singleAgentPlan.getEndTime()){ return;}
         I_Location previousLocation = singleAgentPlan.moveAt(time).prevLocation;
         I_Location nextLocation = singleAgentPlan.moveAt(time).currLocation;
         Set<Agent> agentsMovingToPrevLocations = this.timeLocationTables.timeLocation_Agents.get(new TimeLocation(time,previousLocation));

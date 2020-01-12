@@ -3,6 +3,7 @@ IncstanceId,#Agents,Solver,Map,Obstacles,Plan Cost,Success,Planning time (ms),Co
 1,5,k = 0,Instance-8-0-5-1,0,21,1,12.1818,Range,Instance-8-0-5-1
 2,5,k = 0,Instance-8-0-5-2,0,41,1,23.6079,Range,Instance-8-0-5-2
 3,5,k = 0,Instance-8-0-5-3,0,37,1,29.405,Range,Instance-8-0-5-3
+4,2,k = 0,Instance-8-0-2-4,0,8,1,17.5458,Range,Instance-8-0-2-4
 4,5,k = 0,Instance-8-0-5-4,0,23,1,17.5458,Range,Instance-8-0-5-4
 5,5,k = 0,Instance-8-0-5-5,0,23,1,5.0817,Range,Instance-8-0-5-5
 6,5,k = 0,Instance-8-0-5-6,0,16,1,12.9274,Range,Instance-8-0-5-6

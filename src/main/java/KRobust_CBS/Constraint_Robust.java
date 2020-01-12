@@ -76,6 +76,7 @@ public class Constraint_Robust extends Constraint {
 
 
     public Constraint getConstraint(int time){
+//        return new Constraint_Robust(this.agent, time, this.prevLocation, this.location);
         return new Constraint(this.agent, time, this.prevLocation, this.location);
     }
 
