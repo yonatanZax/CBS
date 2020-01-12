@@ -15,10 +15,14 @@ public class ConstraintSet_Robust extends ConstraintSet {
 
 
     public void add(Constraint constraint){
+        if( !(constraint instanceof Constraint_Robust)){
+            this.addConstraint(constraint);
+            return;
+        }
 
         Constraint_Robust constraintRobust = (Constraint_Robust) constraint;
 
-        for (int time = constraintRobust.lowerBound; time <= constraintRobust.upperBound; time++) {
+        for (int time = Math.max(0,constraintRobust.lowerBound - 1); time <= constraintRobust.upperBound; time++) {
             this.addConstraint(constraintRobust.getConstraint(time));
         }
 
