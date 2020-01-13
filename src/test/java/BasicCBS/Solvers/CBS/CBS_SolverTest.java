@@ -161,7 +161,8 @@ public class CBS_SolverTest {
     void unsolvableShouldBeInvalid() {
         MAPF_Instance testInstance = instanceUnsolvable;
         InstanceReport instanceReport = S_Metrics.newInstanceReport();
-        Solution solved = cbsSolver.solve(testInstance, new RunParameters(instanceReport));
+        long defaultTimeout = 1000*10 /* 10 sec*/;
+        Solution solved = cbsSolver.solve(testInstance, new RunParameters(defaultTimeout));
         S_Metrics.removeReport(instanceReport);
 
         assertNull(solved);

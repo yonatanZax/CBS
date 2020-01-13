@@ -176,7 +176,9 @@ public class SingleAgentAStar_Solver extends A_Solver {
         if(existingPlan.size() > 0){
             Move lastExistingMove = existingPlan.moveAt(existingPlan.getEndTime());
             // We assume that we cannot change the existing plan, so if it is rejected by constraints, we can't initialise OPEN.
-            if(constraints.rejects(lastExistingMove)) {return false;}
+            if(constraints.rejects(lastExistingMove)) {
+                return false;
+            }
 
             openList.add(new AStarState(existingPlan.moveAt(existingPlan.getEndTime()),null, /*g=number of moves*/existingPlan.size()));
         }

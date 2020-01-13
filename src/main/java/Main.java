@@ -10,6 +10,7 @@ import Environment.Metrics.S_Metrics;
 import BasicCBS.Solvers.CBS.CBS_Solver;
 import BasicCBS.Solvers.RunParameters;
 import BasicCBS.Solvers.Solution;
+import KRobust_CBS.RunManager_KRobust;
 import LargeAgents_CBS.Environment_LargeAgents.RunManager_LargeAgents;
 
 import java.io.File;
@@ -48,6 +49,8 @@ public class Main {
             // all examples will also produce a report in CSV format, and save it to resultsOutputDir (see above)
 
 //            runLargeAgentInstances();
+            runRobustInstances();
+
         }
     }
 
@@ -97,6 +100,12 @@ public class Main {
     public static void runLargeAgentInstances(){
         A_RunManager largeAgentRunManager = new RunManager_LargeAgents();
         largeAgentRunManager.runAllExperiments();
+        outputResults();
+    }
+
+    public static void runRobustInstances(){
+        A_RunManager robustManager = new RunManager_KRobust();
+        robustManager.runAllExperiments();
         outputResults();
     }
 

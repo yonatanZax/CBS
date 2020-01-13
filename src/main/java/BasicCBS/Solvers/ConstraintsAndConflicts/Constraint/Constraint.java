@@ -82,11 +82,14 @@ public class Constraint {
     public boolean accepts(Move move){
         if(move == null) throw new IllegalArgumentException();
         // todo - changed to intersects with
-        return ! this.location.intersectsWith(move.currLocation) || this.time != move.timeNow
+        boolean accepts =
+                ! move.currLocation.intersectsWith(this.location)
+                || this.time != move.timeNow
                 /*the constraint is limited to a specific agent, and that agent is different*/
                 || (this.agent != null && !this.agent.equals(move.agent)
                 /*the previous location is not null, and different*/
                 || (this.prevLocation != null &&  !move.prevLocation.intersectsWith(this.prevLocation) ));
+        return accepts;
     }
 
     /**

@@ -241,6 +241,13 @@ public class SingleAgentPlan implements Iterable<Move> {
         return null;
     }
 
+    // todo - add this
+    public void removeLastKMoves(int k){
+        for (int i = 0; i < k; i++) {
+            this.moves.remove(size()-1);
+        }
+    }
+
     @Override
     public String toString() {
         return "SingleAgentPlan{" +

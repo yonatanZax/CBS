@@ -109,6 +109,12 @@ public class CBS_Solver extends A_Solver {
     @Override
     protected void init(MAPF_Instance instance, RunParameters runParameters) {
         super.init(instance, runParameters);
+        this.initCBS(instance, runParameters);
+
+    }
+
+    // todo - add method
+    protected void initCBS(MAPF_Instance instance, RunParameters runParameters){
         this.initialConstraints = Objects.requireNonNullElseGet(runParameters.constraints, ConstraintSet::new);
         this.currentConstraints = new ConstraintSet();
         this.generatedNodes = 0;
@@ -280,8 +286,9 @@ public class CBS_Solver extends A_Solver {
      * @param parentNode the new node's parent.
      * @param newConstraint the constraint that this new node adds.
      * @return a {@link ConstraintSet} of all the constraints from parentNode to the root, plus newConstraint.
+     // Todo - protected
      */
-    private ConstraintSet buildConstraintSet(CBS_Node parentNode, Constraint newConstraint) {
+    protected ConstraintSet buildConstraintSet(CBS_Node parentNode, Constraint newConstraint) {
         // clear currentConstraints. we reuse this object every time.
         this.currentConstraints.clear();
         ConstraintSet constraintSet = this.currentConstraints;
