@@ -3,41 +3,49 @@
   <component name="ChangeListManager">
     <list default="true" id="4accb152-2d1f-43de-b50e-d11c57caa5f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Environment_LargeAgents/RunManager_LargeAgents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Environment_LargeAgents/RunManager_LargeAgents.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/src/test/java/KRobust/RobustShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/KRobust/RobustShapeTest.java" afterDir="false" />
     </list>
-    <ignored path="D:\CBS_ProjectMSPF\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageViewManager">
-    <option name="myElementSize" value="240" />
-  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-
-            <state relative-caret-position="2730">
-              <caret line="131" column="77" selection-start-line="131" selection-start-column="77" selection-end-line="131" selection-end-column="77" />
-
+            <state relative-caret-position="276">
+              <caret line="100" column="62" selection-start-line="100" selection-start-column="62" selection-end-line="100" selection-end-column="62" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-
-
+        <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Environment_LargeAgents/RunManager_LargeAgents.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/KRobust/RobustShapeTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1660">
+              <caret line="84" column="67" lean-forward="true" selection-start-line="84" selection-start-column="67" selection-end-line="84" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2457">
@@ -51,31 +59,24 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2214">
               <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
-
               <folding>
                 <element signature="e#5075#5076#0" expanded="true" />
                 <element signature="e#5120#5121#0" expanded="true" />
               </folding>
-
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-
         <entry file="file://$PROJECT_DIR$/src/test/java/BasicCBS/Solvers/CBS/CBS_SolverTest.java">
           <provider selected="true" editor-type-id="text-editor">
-
-            <state relative-caret-position="425">
-              <caret line="299" column="35" selection-start-line="299" selection-start-column="35" selection-end-line="299" selection-end-column="35" />
-
-
+            <state relative-caret-position="7425">
+              <caret line="300" column="35" selection-start-line="300" selection-start-column="35" selection-end-line="300" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-
         <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="351">
@@ -87,10 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/DistanceTableAStarHeuristic.java">
           <provider selected="true" editor-type-id="text-editor">
-
             <state relative-caret-position="243">
               <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-
             </state>
           </provider>
         </entry>
@@ -113,16 +112,13 @@
       <find>fin</find>
       <find>addA</find>
       <find>get</find>
-
     </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-
-        <entry key="$PROJECT_DIR$" value="LowLevel_HighLevel" />
-
+        <entry key="$PROJECT_DIR$" value="Node_id" />
       </map>
     </option>
   </component>
@@ -134,7 +130,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/ConflictManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/ConflictManager_Shapes.java" />
         <option value="$PROJECT_DIR$/src/test/java/LargeAgents/ConflictManager_LargeAgentTest.java" />
@@ -150,30 +145,26 @@
         <option value="$PROJECT_DIR$/src/test/java/BasicCBS/Solvers/CBS/CBS_SolverTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/BasicCBS/Instances/InstanceBuilder_MovingAITest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/MapDimensions.java" />
-        <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Environment_LargeAgents/RunManager_LargeAgents.java" />
-
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/Move.java" />
         <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/Constraints/ConstraintSet_LargeAgents.java" />
         <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/LowLevel/AStar_LargeAgents.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/I_ConstraintGroupingKey.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/TimeLocation.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/TimeAgent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/ConstraintSet.java" />
+        <option value="$PROJECT_DIR$/src/test/java/LargeAgents/CBS_ShapesTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/LowLevel/DistanceTableHeuristic_LargeAgents.java" />
         <option value="$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/Instance-16-0-7.map.scen" />
-
         <option value="$PROJECT_DIR$/src/test/java/LargeAgents/CBS_LargeAgentsTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/LargeAgents/InstanceBuilder_ShapesTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Environment/Experiment.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/Coordinates/Coordinate_2D.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/Constraint_Robust.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConstraintSet_Robust.java" />
-
         <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/CBS_LargeAgents.java" />
         <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/CBS_Shapes.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/DistanceTableHeuristic_RobustShapes.java" />
-        <option value="$PROJECT_DIR$/src/test/java/KRobust/RobustShapeTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java" />
-
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/A_Conflict.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/AStar_RobustShape.java" />
@@ -186,8 +177,8 @@
         <option value="$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapesRobustTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Instances/InstanceBuilders/InstanceBuilder_MovingAI.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-
-
+        <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Environment_LargeAgents/RunManager_LargeAgents.java" />
+        <option value="$PROJECT_DIR$/src/test/java/KRobust/RobustShapeTest.java" />
       </list>
     </option>
   </component>
@@ -202,9 +193,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-
       <pane id="Scope" />
-
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,8 +225,7 @@
               <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="Instances" type="462c0819:PsiDirectoryNode" />
-              <item name="KRobust_Instances" type="462c0819:PsiDirectoryNode" />
-              <item name="cant solve" type="462c0819:PsiDirectoryNode" />
+              <item name="LargeAgents_Instances" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
@@ -282,7 +271,6 @@
               <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
               <item name="Instances" type="462c0819:PsiDirectoryNode" />
               <item name="InstanceBuilders" type="462c0819:PsiDirectoryNode" />
-
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
@@ -293,7 +281,17 @@
               <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
               <item name="Instances" type="462c0819:PsiDirectoryNode" />
               <item name="Maps" type="462c0819:PsiDirectoryNode" />
-
+            </path>
+            <path>
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
+              <item name="Instances" type="462c0819:PsiDirectoryNode" />
+              <item name="Maps" type="462c0819:PsiDirectoryNode" />
+              <item name="Coordinates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
@@ -330,173 +328,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="ConstraintsAndConflicts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="ConstraintsAndConflicts" type="462c0819:PsiDirectoryNode" />
-              <item name="ConflictManagement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="ConstraintsAndConflicts" type="462c0819:PsiDirectoryNode" />
-              <item name="ConflictManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="DataStructures" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="ConstraintsAndConflicts" type="462c0819:PsiDirectoryNode" />
-              <item name="Constraint" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Environment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Environment" type="462c0819:PsiDirectoryNode" />
-              <item name="IO_Package" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="KRobust_CBS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Environment_LargeAgents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances" type="462c0819:PsiDirectoryNode" />
-              <item name="Maps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="Constraints" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="HighLevel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="LowLevel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="CBS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -522,14 +353,12 @@
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
               <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
               <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -549,7 +378,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
               <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
@@ -560,29 +388,6 @@
               <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
               <item name="Solvers" type="462c0819:PsiDirectoryNode" />
               <item name="CBS" type="462c0819:PsiDirectoryNode" />
-
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="CBS" type="462c0819:PsiDirectoryNode" />
-
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
@@ -597,7 +402,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Reports default directory" type="462c0819:PsiDirectoryNode" />
+              <item name="Instances" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
@@ -605,16 +410,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="RobustBenchmark" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="RobustBenchmark" type="462c0819:PsiDirectoryNode" />
-              <item name="keep aside" type="462c0819:PsiDirectoryNode" />
+              <item name="Instances" type="462c0819:PsiDirectoryNode" />
+              <item name="LargeAgents" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
@@ -625,9 +422,6 @@
           <select />
         </subPane>
       </pane>
-
-      <pane id="PackagesPane" />
-
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -640,7 +434,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources/RobustBenchmark" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources/Instances/LargeAgents" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -653,18 +447,17 @@
       <recent name="KRobust" />
       <recent name="LargeAgents" />
     </key>
-
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="LargeAgents_CBS.Instances" />
       <recent name="LargeAgents_CBS.Instances.Maps" />
       <recent name="LargeAgents" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CBS_ProjectMSPF\src\test\resources\RobustBenchmark" />
       <recent name="D:\MSPF_CBS\src\test\resources\Instances\LargeAgents" />
       <recent name="D:\MSPF_CBS\resources\Instances" />
       <recent name="D:\MSPF_CBS\resources\Instances\LargeAgents_Instances" />
       <recent name="D:\MSPF_CBS\src\test\resources\Instances" />
+      <recent name="D:\MSPF_CBS\src\main\java" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -689,7 +482,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.RobustShapeTest.addingNewLocations">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MSPF_CBS" />
@@ -697,49 +490,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CBS_LargeAgentsTest.TestLargeAgentsInstances" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in MSPF_CBS" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MSPF_CBS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="KRobust.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="KRobust" />
-      <option name="MAIN_CLASS_NAME" value="KRobust.CBS_KRobust_Benchmark" />
-      <option name="METHOD_NAME" value="runRobust_k1" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CBS_KRobust_Benchmark.runRobust_k2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CBS_ShapesTest.TestLargeAgentsInstances" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MSPF_CBS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="KRobust.*" />
+          <option name="PATTERN" value="LargeAgents.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="KRobust" />
-      <option name="MAIN_CLASS_NAME" value="KRobust.CBS_KRobust_Benchmark" />
-      <option name="METHOD_NAME" value="runRobust_k2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CBS_SolverTest.TestingBenchmark" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MSPF_CBS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BasicCBS.Solvers.CBS.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BasicCBS.Solvers.CBS" />
-      <option name="MAIN_CLASS_NAME" value="BasicCBS.Solvers.CBS.CBS_SolverTest" />
-      <option name="METHOD_NAME" value="TestingBenchmark" />
+      <option name="PACKAGE_NAME" value="LargeAgents" />
+      <option name="MAIN_CLASS_NAME" value="LargeAgents.CBS_ShapesTest" />
+      <option name="METHOD_NAME" value="TestLargeAgentsInstances" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -749,31 +518,48 @@
       <module name="MSPF_CBS" />
       <extension name="coverage">
         <pattern>
+          <option name="PATTERN" value="LargeAgents.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="LargeAgents" />
+      <option name="MAIN_CLASS_NAME" value="LargeAgents.InstanceBuilder_ShapesTest" />
+      <option name="METHOD_NAME" value="prepareInstance_CleanMap_20_20" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RobustShapeTest.addingNewLocations" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MSPF_CBS" />
+      <extension name="coverage">
+        <pattern>
           <option name="PATTERN" value="KRobust.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="KRobust" />
-      <option name="MAIN_CLASS_NAME" value="KRobust.CBS_ShapeRobust_Benchmark" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="KRobust.RobustShapeTest" />
+      <option name="METHOD_NAME" value="addingNewLocations" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.CBS_LargeAgentsTest.TestLargeAgentsInstances" />
       <item itemvalue="JUnit.CBS_ShapesTest.TestLargeAgentsInstances" />
       <item itemvalue="JUnit.InstanceBuilder_ShapesTest.prepareInstance_CleanMap_20_20" />
-      <item itemvalue="JUnit.CBS_SolverTest.TestingBenchmark" />
+      <item itemvalue="JUnit.All in MSPF_CBS" />
+      <item itemvalue="JUnit.RobustShapeTest.addingNewLocations" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RobustShapeTest.addingNewLocations" />
+        <item itemvalue="JUnit.All in MSPF_CBS" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.InstanceBuilder_ShapesTest.prepareInstance_CleanMap_20_20" />
         <item itemvalue="JUnit.CBS_ShapesTest.TestLargeAgentsInstances" />
-        <item itemvalue="JUnit.CBS_LargeAgentsTest.TestLargeAgentsInstances" />
-        <item itemvalue="JUnit.All in MSPF_CBS" />
       </list>
     </recent_temporary>
   </component>
@@ -1168,139 +954,10 @@
       <option name="project" value="LOCAL" />
       <updated>1577958955337</updated>
     </task>
-    <task id="LOCAL-00050" summary="Moving Ai InstanceBuilder supports multiple scenario files for a single map">
-      <created>1578229730730</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1578229730731</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Added RobustShapes benchmark tests">
-      <created>1578325284972</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1578325284972</updated>
-    </task>
-    <task id="LOCAL-00052" summary="In progress, Issues in stayInGoal RobustShape">
-      <created>1578330979974</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1578330979974</updated>
-    </task>
-    <task id="LOCAL-00053" summary="Almost all benchmark instances passed optimal">
-      <created>1578349897399</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1578349897400</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Changed Solution validity check is RobustShape test">
-      <created>1578386777576</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1578386777582</updated>
-    </task>
-    <task id="LOCAL-00055" summary="Added node.id, problem fixed">
-      <created>1578573908669</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1578573908669</updated>
-    </task>
-    <task id="LOCAL-00056" summary="In progress">
-      <created>1578678818863</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1578678818864</updated>
-    </task>
-    <task id="LOCAL-00057" summary="In progress">
-      <created>1578780095813</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1578780095814</updated>
-    </task>
-    <task id="LOCAL-00058" summary="Some valid some optimal">
-      <created>1578862945139</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1578862945140</updated>
-    </task>
-    <task id="LOCAL-00059" summary="Not solving">
-      <created>1578871288871</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1578871288872</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Added tie breaking for higher g() in SingleAgentAStar_Solver.">
-      <created>1577606468966</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1577606468966</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Added robust classes&#10;protected void initCBS(MAPF_Instance instance, RunParameters runParameters)">
-      <created>1577725781606</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1577725781606</updated>
-    </task>
-    <task id="LOCAL-00044" summary="In progress, not working">
-      <created>1577741393499</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1577741393499</updated>
-    </task>
-    <task id="LOCAL-00045" summary="In progress, not working">
-      <created>1577809136526</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1577809136526</updated>
-    </task>
-    <task id="LOCAL-00046" summary="getting solutions&#10;Todo - check the definition of goalState">
-      <created>1577883111810</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1577883111810</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Missing test in CBS_RobustShape">
-      <created>1577902479982</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1577902479982</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Testing stage - trying to solve benchmark instances">
-      <created>1577957499668</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1577957499668</updated>
-    </task>
-    <task id="LOCAL-00049" summary="Testing stage - solving 80% optimal solutions">
-      <created>1577958955337</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1577958955337</updated>
-    </task>
     <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CBS_ShapesRobustTest_unsolvableShouldBeInvalid - 2020.01.02 at 11h 13m 26s.xml">
-      <configuration name="CBS_ShapesRobustTest.unsolvableShouldBeInvalid" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CBS_ShapesRobustTest_unsolvableShouldBeInvalid - 2020.01.02 at 11h 15m 20s.xml">
       <configuration name="CBS_ShapesRobustTest.unsolvableShouldBeInvalid" configurationId="JUnit" />
     </history-entry>
@@ -1328,10 +985,12 @@
     <history-entry file="CBS_SolverTest_TestingBenchmark - 2020.01.09 at 12h 43m 40s.xml">
       <configuration name="CBS_SolverTest.TestingBenchmark" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_MSPF_CBS - 2020.01.14 at 00h 06m 44s.xml">
+      <configuration name="All in MSPF_CBS" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-
-    <option name="totallyTimeSpent" value="303843000" />
+    <option name="totallyTimeSpent" value="305937000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1366,7 +1025,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3261105" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.2979415" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.2979415" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1495,6 +1154,18 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/BasicCBS/Instances/InstanceBuilders/InstanceBuilder_BGU.java</url>
+          <line>133</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/DistanceTableAStarHeuristic.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
           <line>50</line>
           <properties />
@@ -1511,6 +1182,12 @@
           <line>168</line>
           <properties />
           <option name="timeStamp" value="161" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Environment/Experiment.java</url>
+          <line>58</line>
+          <properties />
+          <option name="timeStamp" value="175" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/BasicCBS/Instances/InstanceBuilders/InstanceBuilder_MovingAI.java</url>
@@ -1556,141 +1233,28 @@
           <option name="timeStamp" value="213" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/CBS_LargeAgents.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java</url>
           <line>291</line>
           <properties />
           <option name="timeStamp" value="215" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapesRobustTest.java</url>
-          <line>64</line>
-          <properties />
-          <option name="timeStamp" value="217" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/KRobust/RobustShapeTest.java</url>
-          <line>70</line>
-          <properties />
-          <option name="timeStamp" value="224" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapesRobustTest.java</url>
-          <line>65</line>
-          <properties />
-          <option name="timeStamp" value="238" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java</url>
-          <line>222</line>
+          <line>256</line>
           <properties />
-          <option name="timeStamp" value="240" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java</url>
-          <line>211</line>
-          <properties />
-          <option name="timeStamp" value="241" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/A_Conflict.java</url>
-          <line>51</line>
-          <properties />
-          <option name="timeStamp" value="244" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/KRobust_CBS/InstanceBuilder_Robust.java</url>
-          <line>42</line>
-          <properties />
-          <option name="timeStamp" value="277" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapesRobustTest.java</url>
-          <line>187</line>
-          <properties />
-          <option name="timeStamp" value="278" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapesRobustTest.java</url>
-          <line>198</line>
-          <properties />
-          <option name="timeStamp" value="279" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Environment/Experiment.java</url>
-          <line>66</line>
-          <properties />
-          <option name="timeStamp" value="284" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/KRobust_CBS/AStar_RobustShape.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="295" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/KRobust_CBS/AStar_RobustShape.java</url>
-          <line>36</line>
-          <properties />
-          <option name="timeStamp" value="300" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapeRobust_Benchmark.java</url>
-          <line>104</line>
-          <properties />
-          <option name="timeStamp" value="330" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/KRobust/CBS_KRobustTest.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="338" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver.java</url>
-          <line>162</line>
-          <properties />
-          <option name="timeStamp" value="368" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java</url>
-          <line>229</line>
-          <properties />
-          <option name="timeStamp" value="396" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <condition expression="agent.iD == 3" language="JAVA" />
-          <url>file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java</url>
-          <line>91</line>
-          <properties />
-          <option name="timeStamp" value="401" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java</url>
-          <line>228</line>
-          <properties />
-          <option name="timeStamp" value="407" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java</url>
-          <line>223</line>
-          <properties />
-          <option name="timeStamp" value="413" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <condition expression="agent.iD == 0" language="JAVA" />
-          <url>file://$PROJECT_DIR$/src/main/java/KRobust_CBS/Constraint_Robust.java</url>
-          <line>38</line>
-          <properties />
-          <option name="timeStamp" value="414" />
+          <option name="timeStamp" value="216" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MSPF_CBS$Main.ic" NAME="Main Coverage Results" MODIFIED="1576961307381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/CBS_ProjectMSPF$CBS_KRobust_Benchmark_runRobust_k2.ic" NAME="CBS_KRobust_Benchmark.runRobust_k2 Coverage Results" MODIFIED="1578748897690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>KRobust.*</FILTER>
-    </SUITE>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -1775,7 +1339,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/DistanceTableHeuristic_RobustShapes.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/KRobust/RobustShapeTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/A_Solver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -1830,7 +1393,6 @@
         </state>
       </provider>
     </entry>
-
     <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/CBS_LargeAgents.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="945">
@@ -1853,7 +1415,6 @@
         </state>
       </provider>
     </entry>
-
     <entry file="file://$PROJECT_DIR$/src/main/java/GraphMapPackage/GraphMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1871,7 +1432,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/LargeAgents/CBS_ShapesTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/Move.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="413">
           <caret line="39" selection-start-line="39" selection-end-line="39" />
@@ -1960,34 +1521,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/CBS_ShapesRobust.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/DataStructures/TimeLocationTables.java">
-
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="122" column="24" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-
     <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_RobustShape.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/ConflictManager.java">
-
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1728">
           <caret line="69" column="33" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-
     <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/AStar_RobustShape.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/OpenList.java">
-
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-
     <entry file="file://$PROJECT_DIR$/src/test/resources/TestingBenchmark/brc202d-15-4">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1997,14 +1552,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4212">
           <caret line="185" column="9" selection-start-line="185" selection-start-column="9" selection-end-line="185" selection-end-column="9" />
-
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/Coordinates/Coordinate_2D.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1728">
@@ -2016,7 +1569,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="262" column="21" selection-start-line="262" selection-start-column="21" selection-end-line="262" selection-end-column="21" />
-
           <folding>
             <element signature="e#11347#11348#0" expanded="true" />
             <element signature="e#11389#11390#0" expanded="true" />
@@ -2026,21 +1578,17 @@
         </state>
       </provider>
     </entry>
-
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2457">
           <caret line="104" column="7" selection-start-line="104" selection-start-column="7" selection-end-line="104" selection-end-column="7" />
-
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-
         <state relative-caret-position="2214">
           <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
-
           <folding>
             <element signature="e#5075#5076#0" expanded="true" />
             <element signature="e#5120#5121#0" expanded="true" />
@@ -2048,35 +1596,45 @@
         </state>
       </provider>
     </entry>
-
+    <entry file="file://$PROJECT_DIR$/src/test/java/BasicCBS/Solvers/CBS/CBS_SolverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7425">
+          <caret line="300" column="35" selection-start-line="300" selection-start-column="35" selection-end-line="300" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="30" column="41" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/DistanceTableAStarHeuristic.java">
       <provider selected="true" editor-type-id="text-editor">
-
         <state relative-caret-position="243">
           <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/BasicCBS/Solvers/CBS/CBS_SolverTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="299" column="35" selection-start-line="299" selection-start-column="35" selection-end-line="299" selection-end-column="35" />
-
+        <state relative-caret-position="276">
+          <caret line="100" column="62" selection-start-line="100" selection-start-column="62" selection-end-line="100" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Environment_LargeAgents/RunManager_LargeAgents.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2730">
-          <caret line="131" column="77" selection-start-line="131" selection-start-column="77" selection-end-line="131" selection-end-column="77" />
+        <state relative-caret-position="405">
+          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/KRobust/RobustShapeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1660">
+          <caret line="84" column="67" lean-forward="true" selection-start-line="84" selection-start-column="67" selection-end-line="84" selection-end-column="67" />
         </state>
       </provider>
     </entry>
