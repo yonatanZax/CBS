@@ -55,15 +55,10 @@ public class CBS_KRobust extends CBS_Solver {
 
         CBS_Node currentNode = parentNode;
         while (currentNode.getAddedConstraint() != null){ // will skip the root (it has no constraints)
-//            ConstraintSet newConstraintSet = Constraint_Robust.getConstraints(currentNode.getAddedConstraint());
-//            constraintSet.addAll(newConstraintSet);
+
             constraintSet.add(currentNode.getAddedConstraint());
             currentNode = currentNode.getParent();
         }
-
-        /*  Build constraint set from new Constraint_Robust  */
-//        ConstraintSet newConstraintSet = Constraint_Robust.getConstraints(newConstraint);
-//        constraintSet.addAll(newConstraintSet);
 
         constraintSet.add(newConstraint);
         return constraintSet;

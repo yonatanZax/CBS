@@ -11,6 +11,7 @@ import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
 
 public class VertexConflict_KRobust extends VertexConflict {
 
+
     public VertexConflict_KRobust(Agent agent1, Agent agent2, int time, I_Location location) {
         super(agent1, agent2, time, location);
     }

@@ -13,6 +13,7 @@ public class RunManager_KRobust extends A_RunManager {
     @Override
     protected void setSolvers() {
         super.solvers.add(new CBS_ShapesRobust());
+        super.solvers.add(new CBS_KRobust());
     }
 
     /*  = Set Experiments =  */
@@ -34,7 +35,7 @@ public class RunManager_KRobust extends A_RunManager {
     private void addRobustExperiment(int k){
         /*  =   Set Path   =*/
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
-                "Instances\\\\KRobust_Instances"});
+                                                            "Instances\\\\KRobust_Instances"});
 
         I_InstanceBuilder instanceBuilder = new InstanceBuilder_Robust(k);
 

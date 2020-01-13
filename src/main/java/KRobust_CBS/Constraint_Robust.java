@@ -25,19 +25,23 @@ public class Constraint_Robust extends Constraint {
     }
 
     private void setBounds(){
-        this.upperBound = this.time + ((RobustAgent)this.agent).k;
-        this.lowerBound = this.time;
-//        this.lowerBound = Math.max(0,this.time - ((RobustAgent)this.agent).k);
+        this.upperBound = this.time;
+//        this.upperBound = this.time + ((RobustAgent)this.agent).k;
+//        this.lowerBound = this.time;
+        this.lowerBound = Math.max(0,this.time - ((RobustAgent)this.agent).k);
     }
 
 
     public boolean accepts(Move move){
         if(move == null) throw new IllegalArgumentException();
         // todo - changed to intersects with
-        boolean intersectsWithPrev = this.location.intersectsWith(move.prevLocation);
+        if( this.location.intersectsWith(move.prevLocation) && this.time == 1){
+            return false;
+        }
+//        boolean intersectsWithPrev = this.location.intersectsWith(move.prevLocation);
         boolean intersectsWithCur = this.location.intersectsWith(move.currLocation);
         boolean timeAgent = this.inRange(move.timeNow) && this.agent.equals(move.agent);
-        boolean accepts = !((intersectsWithPrev || intersectsWithCur) && timeAgent);
+        boolean accepts = !((intersectsWithCur) && timeAgent);
 
         return accepts;
     }
