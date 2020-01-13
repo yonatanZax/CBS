@@ -3,25 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4accb152-2d1f-43de-b50e-d11c57caa5f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/ConflictManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/ConflictManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_KRobust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_KRobust.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConstraintSet_Robust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConstraintSet_Robust.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/Constraint_Robust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/Constraint_Robust.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/KRobust/CBS_KRobustTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/KRobust/CBS_KRobustTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/KRobust/CBS_KRobust_Benchmark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/KRobust/CBS_KRobust_Benchmark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-3-0" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-3-0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-0" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-1" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-3" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-5" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-6" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-8" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-9" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/RobustCSV_k0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/RobustCSV_k0.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,11 +20,11 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/CBS_KRobust.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
+            <state relative-caret-position="810">
               <caret line="44" selection-start-line="44" selection-end-line="44" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -52,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/ConstraintSet_Robust.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
+            <state relative-caret-position="120">
+              <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -61,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_KRobust.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-648">
-              <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+            <state relative-caret-position="1431">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
+            <state relative-caret-position="7020">
               <caret line="285" selection-start-line="285" selection-end-line="285" />
               <folding>
                 <element signature="e#4731#4732#0" expanded="true" />
@@ -86,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/KRobust/CBS_KRobust_Benchmark.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
+            <state relative-caret-position="405">
               <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -98,7 +82,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/ConstraintSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
+            <state relative-caret-position="2673">
               <caret line="109" selection-start-line="109" selection-end-line="109" />
               <folding>
                 <element signature="e#1897#1898#0" expanded="true" />
@@ -112,7 +96,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
+            <state relative-caret-position="5670">
               <caret line="229" selection-start-line="229" selection-end-line="229" />
             </state>
           </provider>
@@ -121,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/Constraint_Robust.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1771">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="918">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -130,13 +114,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
+            <state relative-caret-position="2295">
               <caret line="91" selection-start-line="91" selection-end-line="91" />
               <folding>
                 <element signature="e#2672#2673#0" expanded="true" />
                 <element signature="e#2720#2721#0" expanded="true" />
-                <element signature="e#4622#4623#0" expanded="true" />
-                <element signature="e#4664#4665#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -227,25 +209,24 @@
         <option value="$PROJECT_DIR$/src/test/java/KRobust/CBS_KRobustTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/ConflictManager.java" />
         <option value="$PROJECT_DIR$/src/test/java/KRobust/CBS_KRobust_Benchmark.java" />
-        <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_KRobust.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/Constraint_Robust.java" />
+        <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_KRobust.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConstraintSet_Robust.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3915" />
-    <option name="y" value="-29" />
-    <option name="width" value="1146" />
-    <option name="height" value="676" />
+    <option name="x" value="3192" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -597,6 +578,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -809,14 +791,9 @@
       <workItem from="1578654189481" duration="3965000" />
       <workItem from="1578732342908" duration="27580000" />
       <workItem from="1578816347988" duration="3374000" />
-      <workItem from="1578861713167" duration="7145000" />
-    </task>
-    <task id="LOCAL-00010" summary="Relocated MapFactory">
-      <created>1575629222616</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1575629222616</updated>
+      <workItem from="1578861713167" duration="7177000" />
+      <workItem from="1578871992063" duration="375000" />
+      <workItem from="1578907533364" duration="1216000" />
     </task>
     <task id="LOCAL-00011" summary="Added BuildMap to InstanceBuilders MovingAi and Shapes">
       <created>1575629896896</created>
@@ -1154,25 +1131,17 @@
       <option name="project" value="LOCAL" />
       <updated>1578862945140</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Not solving">
+      <created>1578871288871</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1578871288872</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 09m 45s.xml">
-      <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 10m 41s.xml">
-      <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 11m 35s.xml">
-      <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 12m 08s.xml">
-      <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 14m 04s.xml">
-      <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 16m 10s.xml">
       <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
     </history-entry>
@@ -1188,9 +1157,24 @@
     <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 20m 38s.xml">
       <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 34m 31s.xml">
+      <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 35m 10s.xml">
+      <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 36m 21s.xml">
+      <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 36m 27s.xml">
+      <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CBS_KRobust_Benchmark_runRobust_k1 - 2020.01.13 at 01h 37m 19s.xml">
+      <configuration name="CBS_KRobust_Benchmark.runRobust_k1" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="374443000" />
+    <option name="totallyTimeSpent" value="376066000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1215,7 +1199,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.18526544" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.40520042" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.45287108" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.45287108" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
@@ -1317,7 +1301,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed Expand and intersect in Group" />
     <MESSAGE value="In progress: Large Agents" />
     <MESSAGE value="In progress: Large Agents&#10;* Solutions are not optimal also not valid *" />
     <MESSAGE value="New imp to LA, passing 1x1 benchmark tests" />
@@ -1342,7 +1325,8 @@
     <MESSAGE value="Added node.id, problem fixed" />
     <MESSAGE value="In progress" />
     <MESSAGE value="Some valid some optimal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some valid some optimal" />
+    <MESSAGE value="Not solving" />
+    <option name="LAST_COMMIT_MESSAGE" value="Not solving" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1524,7 +1508,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/KRobust_CBS/Constraint_Robust.java</url>
-          <line>78</line>
+          <line>72</line>
           <properties />
           <option name="timeStamp" value="398" />
         </line-breakpoint>
@@ -1551,9 +1535,15 @@
         <line-breakpoint enabled="true" type="java-line">
           <condition expression="agent.iD == 4" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/main/java/KRobust_CBS/Constraint_Robust.java</url>
-          <line>79</line>
+          <line>73</line>
           <properties />
           <option name="timeStamp" value="403" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_KRobust.java</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="404" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1851,10 +1841,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/KRobust/CBS_KRobust_Benchmark.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/CBS_KRobust.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="810">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1863,8 +1853,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_KRobust.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648">
-          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
+        <state relative-caret-position="1431">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1873,7 +1863,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
+        <state relative-caret-position="7020">
           <caret line="285" selection-start-line="285" selection-end-line="285" />
           <folding>
             <element signature="e#4731#4732#0" expanded="true" />
@@ -1882,39 +1872,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/CBS_KRobust.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/KRobust/CBS_KRobust_Benchmark.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="405">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-          <folding>
-            <element signature="e#2672#2673#0" expanded="true" />
-            <element signature="e#2720#2721#0" expanded="true" />
-            <element signature="e#4622#4623#0" expanded="true" />
-            <element signature="e#4664#4665#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="229" selection-start-line="229" selection-end-line="229" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/ConstraintSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
+        <state relative-caret-position="2673">
           <caret line="109" selection-start-line="109" selection-end-line="109" />
           <folding>
             <element signature="e#1897#1898#0" expanded="true" />
@@ -1924,17 +1894,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5670">
+          <caret line="229" selection-start-line="229" selection-end-line="229" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/Constraint_Robust.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1771">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="918">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+          <folding>
+            <element signature="e#2672#2673#0" expanded="true" />
+            <element signature="e#2720#2721#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/ConstraintSet_Robust.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
+        <state relative-caret-position="120">
+          <caret line="37" column="38" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
         </state>
       </provider>
     </entry>

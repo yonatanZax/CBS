@@ -22,7 +22,7 @@ public class ConstraintSet_Robust extends ConstraintSet {
 
         Constraint_Robust constraintRobust = (Constraint_Robust) constraint;
 
-        for (int time = Math.max(0,constraintRobust.lowerBound); time <= constraintRobust.upperBound; time++) {
+        for (int time = constraintRobust.lowerBound; time <= constraintRobust.upperBound; time++) {
             this.addConstraint(constraintRobust.getConstraint(time));
         }
 

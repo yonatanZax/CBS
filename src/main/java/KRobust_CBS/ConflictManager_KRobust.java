@@ -30,16 +30,10 @@ public class ConflictManager_KRobust extends ConflictManager {
         int goalTime = singleAgentPlan.getEndTime();
         I_Location goalLocation = singleAgentPlan.moveAt(goalTime).currLocation;
 
-        /* Add tail */
-        for (int kTime = goalTime + 1; kTime <= goalTime + k; kTime++) {
-            singleAgentPlan.addMove(new Move(singleAgentPlan.agent, kTime, goalLocation, goalLocation));
-        }
 
-
-        int kGoalTime = singleAgentPlan.getEndTime();
 
         /*  Check for conflicts and Add timeLocations */
-        for (int time = agentFirstMoveTime; time <= kGoalTime; time++) {
+        for (int time = agentFirstMoveTime; time <= goalTime; time++) {
 
             I_Location location = singleAgentPlan.moveAt(time).prevLocation;
             for (int kTime = time; kTime <= time + k; kTime++) {
@@ -49,37 +43,12 @@ public class ConflictManager_KRobust extends ConflictManager {
                 this.checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
                 this.timeLocationTables.addTimeLocation(timeLocation, singleAgentPlan);
             }
-
-        }
-
-//         Check final move to goalLocation
-        for (kGoalTime = goalTime; kGoalTime <= goalTime + k ; kGoalTime++) {
-            TimeLocation timeLocation = new TimeLocation(kGoalTime, goalLocation);
-            this.checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
-            this.timeLocationTables.addTimeLocation(timeLocation, singleAgentPlan);
         }
 
 
-
-
-
-
-//        /*  Check for conflicts and Add timeLocations */
-//        for (int time = agentFirstMoveTime; time < kGoalTime; time++) {
-//
-//            I_Location location = singleAgentPlan.moveAt(time).currLocation;
-////            I_Location location = singleAgentPlan.moveAt(time).prevLocation;
-//            for (int kTime = time; kTime < time + k; kTime++) {
-//                // Move's from location is 'prevLocation' , therefor timeLocation is time - 1
-//                TimeLocation timeLocation = new TimeLocation(kTime - 1, location);
-////                TimeLocation timeLocation = new TimeLocation(kTime - 1, location);
-//
-//                this.checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
-//                this.timeLocationTables.addTimeLocation(timeLocation, singleAgentPlan);
-//            }
-//
-//        }
-
+        TimeLocation timeLocation = new TimeLocation(goalTime, goalLocation);
+        this.checkAddConflictsByTimeLocation(timeLocation, singleAgentPlan); // Checks for conflicts
+        this.timeLocationTables.addTimeLocation(timeLocation, singleAgentPlan);
 
 
 
@@ -89,13 +58,6 @@ public class ConflictManager_KRobust extends ConflictManager {
 
 
     protected void manageGoalLocationFromPlan(int goalTime, SingleAgentPlan singleAgentPlan) {
-
-        int k = 0;
-        if( singleAgentPlan.agent instanceof  RobustAgent){
-            k = ((RobustAgent)singleAgentPlan.agent).k;
-        }
-        singleAgentPlan.removeLastKMoves(k);
-
 
         I_Location goalLocation = singleAgentPlan.moveAt(goalTime).currLocation;
         TimeLocation goalTimeLocation = new TimeLocation(goalTime, goalLocation);
