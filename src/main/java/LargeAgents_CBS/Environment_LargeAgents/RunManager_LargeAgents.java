@@ -31,12 +31,31 @@ public class RunManager_LargeAgents extends A_RunManager {
     /*  = Set Experiments =  */
     @Override
     protected void setExperiments() {
-        this.allLargeAgentInstances();
+//        this.allLargeAgentInstances();
+        this.autoGenerateExperiment();
 //        this.addBenchmarkExperiment();
     }
 
 
     /* = Experiments =  */
+
+    private void autoGenerateExperiment(){
+        /*  =   Set Path   =*/
+        String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
+                                                            "Instances\\\\AutoGenerateMaps"});
+
+        I_InstanceBuilder instanceBuilder = new InstanceBuilder_Shapes();
+
+        InstanceProperties instanceProperties = new InstanceProperties(null, -1, new int[]{10,10,10,10});
+
+        /*  =   Set Instance Manager   =  */
+        InstanceManager instanceManager = new InstanceManager(path, instanceBuilder, instanceProperties);
+
+        /*  =   Add new experiment   =  */
+        Experiment gridExperiment = new Experiment("Experiment AutoGenerate", instanceManager);
+        this.experiments.add(gridExperiment);
+
+    }
 
 
     private void allLargeAgentInstances(){

@@ -49,7 +49,7 @@ public class Main {
             // all examples will also produce a report in CSV format, and save it to resultsOutputDir (see above)
 
             runLargeAgentInstances();
-            runRobustInstances();
+//            runRobustInstances();
 
         }
     }
