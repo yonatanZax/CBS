@@ -46,7 +46,7 @@ public class RunManager_LargeAgents extends A_RunManager {
 
         I_InstanceBuilder instanceBuilder = new InstanceBuilder_Shapes();
 
-        InstanceProperties instanceProperties = new InstanceProperties(null, -1, new int[]{10,10,10,10});
+        InstanceProperties instanceProperties = new InstanceProperties(null, -1, new int[]{5,5});
 
         /*  =   Set Instance Manager   =  */
         InstanceManager instanceManager = new InstanceManager(path, instanceBuilder, instanceProperties);
