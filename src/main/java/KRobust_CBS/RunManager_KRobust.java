@@ -19,16 +19,22 @@ public class RunManager_KRobust extends A_RunManager {
     /*  = Set Experiments =  */
     @Override
     protected void setExperiments() {
-        this.allRobustAgentInstances();
+
+        this.runRobustExperimentWithDifferentKValues("Instances20x20_1x1_obs0");
+        this.runRobustExperimentWithDifferentKValues("Instances20x20_1x1_obs0.1");
+
+        this.runRobustExperimentWithDifferentKValues("Instances_lak1x1");
     }
 
 
     /* = Experiments =  */
 
 
-    private void allRobustAgentInstances(){
-        for (int i = 0; i < 3; i++) {
-            this.addRobustExperiment(i);
+    private void runRobustExperimentWithDifferentKValues(String folderName){
+        for (int i = 0; i < 4; i++) {
+//            this.addRobustExperiment(i);
+
+            this.addAutoGenerateExperimentByFolderName(folderName ,i);
         }
     }
 
@@ -37,7 +43,7 @@ public class RunManager_KRobust extends A_RunManager {
         String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
                                                             "Instances\\\\KRobust_Instances"});
 
-        I_InstanceBuilder instanceBuilder = new InstanceBuilder_Robust(k);
+        I_InstanceBuilder instanceBuilder = new InstanceBuilder_RobustShapes(k);
 
 
         /*  =   Set Instance Manager   =  */
@@ -46,6 +52,27 @@ public class RunManager_KRobust extends A_RunManager {
         /*  =   Add new experiment   =  */
         Experiment gridExperiment = new Experiment("Experiment All Robust Instances with k = " + k, instanceManager);
         this.experiments.add(gridExperiment);
+    }
+
+
+    private void addAutoGenerateExperimentByFolderName(String folderName, int k){
+        /*  =   Set Path   =*/
+        String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
+                                                            "Instances\\\\AutoGenerateMaps",
+                                                            folderName});
+
+        I_InstanceBuilder instanceBuilder = new InstanceBuilder_RobustShapes(k);
+
+        InstanceProperties instanceProperties = new InstanceProperties(null, -1, new int[]{5,5});
+
+        /*  =   Set Instance Manager   =  */
+        InstanceManager instanceManager = new InstanceManager(path, instanceBuilder, instanceProperties);
+
+        /*  =   Add new experiment   =  */
+        int numOfInstances = 10;
+        Experiment gridExperiment = new Experiment("Experiment AutoGenerate", instanceManager, numOfInstances);
+        this.experiments.add(gridExperiment);
+
     }
 
 }

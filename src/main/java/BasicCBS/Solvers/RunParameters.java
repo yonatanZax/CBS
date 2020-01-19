@@ -12,8 +12,8 @@ import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.ConstraintSet;
  */
 public class RunParameters {
     /*  =Constants=  */
-    private static final long defaultTimeout = 1000*20 /* 20 sec */;
-//    private static final long defaultTimeout = 1000*60*2 /* 2 minutes */;
+//    private static final long defaultTimeout = 1000*10 /* 10 sec */;
+    private static final long defaultTimeout = 1000*60*1 /*  1 minutes */;
     /*  =Fields=  */
     /**
      * The maximum time (milliseconds) allotted to the search. If the search exceeds this time, it is aborted.

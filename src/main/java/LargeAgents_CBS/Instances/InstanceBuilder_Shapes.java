@@ -17,20 +17,21 @@ import java.util.HashMap;
 
 public class InstanceBuilder_Shapes extends InstanceBuilder_MovingAI {
 
-    protected static final MapDimensions.Enum_mapOrientation MAP_ORIENTATION = MapDimensions.Enum_mapOrientation.Y_HORIZONTAL_X_VERTICAL;
+    protected static MapDimensions.Enum_mapOrientation MAP_ORIENTATION = MapDimensions.Enum_mapOrientation.Y_HORIZONTAL_X_VERTICAL;
 //    protected static final MapDimensions.Enum_mapOrientation MAP_ORIENTATION = MapDimensions.Enum_mapOrientation.X_HORIZONTAL_Y_VERTICAL;
 
 
-    private final int INDEX_AGENT_SOURCE_XVALUE = 1;
-    private final int INDEX_AGENT_SOURCE_YVALUE = 2;
-    private final int INDEX_AGENT_TARGET_XVALUE = 3;
-    private final int INDEX_AGENT_TARGET_YVALUE = 4;
-    private final int INDEX_AGENT_SIZE_XVALUE = 5;
-    private final int INDEX_AGENT_SIZE_YVALUE = 6;
+    protected final int INDEX_AGENT_SOURCE_XVALUE = 1;
+    protected final int INDEX_AGENT_SOURCE_YVALUE = 2;
+    protected final int INDEX_AGENT_TARGET_XVALUE = 3;
+    protected final int INDEX_AGENT_TARGET_YVALUE = 4;
+    protected final int INDEX_AGENT_SIZE_XVALUE = 5;
+    protected final int INDEX_AGENT_SIZE_YVALUE = 6;
 
     // Skip Lines
     protected final int SKIP_LINES_MAP = 1;
     protected final int SKIP_LINES_SCENARIO = 3;
+
 
 
     protected Agent buildSingleAgent(int id, String agentLine) {

@@ -8,6 +8,8 @@ import Environment.Metrics.S_Metrics;
 import BasicCBS.Solvers.I_Solver;
 import BasicCBS.Solvers.RunParameters;
 import BasicCBS.Solvers.Solution;
+import KRobust_CBS.RobustAgent;
+import LargeAgents_CBS.Instances.LargeAgent;
 
 /**
  * Experiment class lets the user to specify the instances it needs for the experiment.
@@ -40,6 +42,12 @@ public  class Experiment {
     /*  = Put values in report =  */
     instanceReport.putStringValue(InstanceReport.StandardFields.experimentName, this.experimentName);
     instanceReport.putStringValue(InstanceReport.StandardFields.mapName, instance.name);
+    if( instance.agents.get(0) instanceof LargeAgent){
+      instanceReport.putIntegerValue(InstanceReport.StandardFields.agentSize, ((LargeAgent)instance.agents.get(0)).getHeight());
+    }
+    if( instance.agents.get(0) instanceof RobustAgent){
+      instanceReport.putIntegerValue(InstanceReport.StandardFields.kRobust, ((RobustAgent)instance.agents.get(0)).k);
+    }
     instanceReport.putIntegerValue(InstanceReport.StandardFields.numAgents, instance.agents.size());
     instanceReport.putIntegerValue(InstanceReport.StandardFields.obstacleRate, instance.getObstaclePercentage());
     instanceReport.putStringValue(InstanceReport.StandardFields.solver, solver.getClass().getSimpleName());
@@ -64,7 +72,12 @@ public  class Experiment {
       RunParameters runParameters = new RunParameters(instanceReport);
 
       System.out.println("---------- solving "  + instance.name + " ---------- with solver " + solver.getClass().getSimpleName() );
-      Solution solution = solver.solve(instance, runParameters);
+      Solution solution = null;
+      try{
+        solution = solver.solve(instance, runParameters);
+      }catch (Exception e){
+        System.out.println("Exception while solving.. :(");
+      }
       System.out.println("Solved?: " + (solution != null ? "yes" : "no"));
       if(solution != null){
         System.out.println("Solution is " + (solution.isValidSolution() ? "valid!" : "invalid!!!"));

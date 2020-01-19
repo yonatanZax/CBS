@@ -2,6 +2,7 @@ package BasicCBS.Instances;
 
 import BasicCBS.Instances.Maps.I_Map;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,7 +35,13 @@ public class MAPF_Instance {
         if(name == null || map == null || agents == null){throw new IllegalArgumentException();}
         this.name = name;
         this.map = map;
-        this.agents = List.of(agents); //unmodifiable list
+        this.agents = new ArrayList<>();
+        for (Agent agent : agents) {
+            if(agent != null){
+                this.agents.add(agent);
+            }
+        }
+//        this.agents = List.of(agents); //unmodifiable list
     }
 
     MAPF_Instance(String name, I_Map map, List<Agent> agents) {

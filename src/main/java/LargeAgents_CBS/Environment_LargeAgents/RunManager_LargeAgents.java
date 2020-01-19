@@ -1,9 +1,7 @@
 package LargeAgents_CBS.Environment_LargeAgents;
 
-import BasicCBS.Instances.InstanceBuilders.InstanceBuilder_BGU;
 import BasicCBS.Instances.InstanceManager;
 import BasicCBS.Instances.InstanceProperties;
-import BasicCBS.Instances.Maps.MapDimensions;
 import Environment.A_RunManager;
 import Environment.Experiment;
 import Environment.IO_Package.IO_Manager;
@@ -32,12 +30,45 @@ public class RunManager_LargeAgents extends A_RunManager {
     @Override
     protected void setExperiments() {
 //        this.allLargeAgentInstances();
-        this.autoGenerateExperiment();
 //        this.addBenchmarkExperiment();
+
+//        this.autoGenerateExperiment();
+        this.runExpByFolders();
     }
 
 
     /* = Experiments =  */
+
+    private void runExpByFolders(){
+        addAutoGenerateExpWithFolderPath("Instances20x20_2x2_obs0");
+        addAutoGenerateExpWithFolderPath("Instances20x20_2x2_obs0.1");
+        addAutoGenerateExpWithFolderPath("Instances30x30_3x3_obs0");
+        addAutoGenerateExpWithFolderPath("Instances30x30_3x3_obs0.1");
+
+        addAutoGenerateExpWithFolderPath("Instances_lak2x2");
+        addAutoGenerateExpWithFolderPath("Instances_lak3x3");
+        addAutoGenerateExpWithFolderPath("Instances_lak4x4");
+
+    }
+
+    private void addAutoGenerateExpWithFolderPath(String folderName){
+        /*  =   Set Path   =*/
+        String path = IO_Manager.buildPath( new String[]{   IO_Manager.resources_Directory,
+                                                            "Instances\\\\AutoGenerateMaps", folderName});
+
+        I_InstanceBuilder instanceBuilder = new InstanceBuilder_Shapes();
+
+        InstanceProperties instanceProperties = new InstanceProperties(null, -1, new int[]{2,3});
+
+        /*  =   Set Instance Manager   =  */
+        InstanceManager instanceManager = new InstanceManager(path, instanceBuilder, instanceProperties);
+
+        /*  =   Add new experiment   =  */
+        int numOfInstances = 6;
+        Experiment gridExperiment = new Experiment("Experiment AutoGenerate", instanceManager, numOfInstances);
+        this.experiments.add(gridExperiment);
+    }
+
 
     private void autoGenerateExperiment(){
         /*  =   Set Path   =*/
@@ -52,7 +83,8 @@ public class RunManager_LargeAgents extends A_RunManager {
         InstanceManager instanceManager = new InstanceManager(path, instanceBuilder, instanceProperties);
 
         /*  =   Add new experiment   =  */
-        Experiment gridExperiment = new Experiment("Experiment AutoGenerate", instanceManager);
+        int numOfInstances = 10;
+        Experiment gridExperiment = new Experiment("Experiment AutoGenerate", instanceManager, numOfInstances);
         this.experiments.add(gridExperiment);
 
     }
