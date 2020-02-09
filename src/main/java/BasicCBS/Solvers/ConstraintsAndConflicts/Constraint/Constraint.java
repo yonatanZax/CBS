@@ -82,6 +82,11 @@ public class Constraint {
     public boolean accepts(Move move){
         if(move == null) throw new IllegalArgumentException();
         // todo - changed to intersects with
+        // todo - add this condition
+        if( this.location.intersectsWith(move.prevLocation) && this.time == 1){
+            return false;
+        }
+
         boolean accepts =
                 ! move.currLocation.intersectsWith(this.location)
                 || this.time != move.timeNow

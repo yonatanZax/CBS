@@ -52,9 +52,9 @@ public class RunManager_ExperimentsKRobust extends A_RunManager {
         InstanceManager instanceManager = new InstanceManager(path, instanceBuilder, instanceProperties);
 
         /*  =   Add new experiment   =  */
-        int numOfInstances = 1;
-        Experiment gridExperiment = new Experiment("Experiment AutoGenerate K-Robust", instanceManager);
-//        Experiment gridExperiment = new Experiment("Experiment AutoGenerate K-Robust", instanceManager, numOfInstances);
+        int numOfInstances = 5;
+//        Experiment gridExperiment = new Experiment("Experiment AutoGenerate K-Robust", instanceManager);
+        Experiment gridExperiment = new Experiment("Experiment AutoGenerate K-Robust", instanceManager, numOfInstances);
         this.experiments.add(gridExperiment);
     }
 }

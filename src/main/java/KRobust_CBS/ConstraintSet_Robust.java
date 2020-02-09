@@ -20,7 +20,10 @@ public class ConstraintSet_Robust extends ConstraintSet {
             return;
         }
 
+
+
         Constraint_Robust constraintRobust = (Constraint_Robust) constraint;
+//        this.addConstraint(constraintRobust);
 
         for (int time = constraintRobust.lowerBound; time <= constraintRobust.upperBound; time++) {
             this.addConstraint(constraintRobust.getConstraint(time));

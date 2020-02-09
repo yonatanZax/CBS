@@ -93,8 +93,8 @@ public class Main {
 
 
         String[] folders = new String[]{
-                "Instances20x20_2x2_obs0",
-                "Instances20x20_2x2_obs0.1",
+//                "Instances20x20_2x2_obs0",
+//                "Instances20x20_2x2_obs0.1",
                 "Instances30x30_3x3_obs0",
                 "Instances30x30_3x3_obs0.1",
         };
@@ -156,7 +156,7 @@ public class Main {
                     robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15});
                     robustRunManager.runAllExperiments();
                 }
-                String experimentName = problemType + " Exp - " + folder + " Date - ";
+                String experimentName = problemType + " K=" + k + " Exp - " + folder + " Date - ";
                 outputResults(experimentName);
             }
 
@@ -165,7 +165,7 @@ public class Main {
                     robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15, 20, 25, 30, 35, 40, 45, 50});
                     robustRunManager.runAllExperiments();
                 }
-                String experimentName = problemType + " Exp - " + folder + " Date - ";
+                String experimentName = problemType + " K=" + k + " Exp - " + folder + " Date - ";
                 outputResults(experimentName);
             }
         }

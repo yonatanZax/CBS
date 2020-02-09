@@ -41,8 +41,8 @@ public class Constraint_Robust extends Constraint {
 //        boolean intersectsWithPrev = this.location.intersectsWith(move.prevLocation);
         boolean intersectsWithCur = this.location.intersectsWith(move.currLocation);
         boolean timeAgent = this.inRange(move.timeNow) && this.agent.equals(move.agent);
-        boolean accepts = !((intersectsWithCur) && timeAgent);
 
+        boolean accepts = !((intersectsWithCur) && timeAgent);
         return accepts;
     }
 
@@ -74,8 +74,8 @@ public class Constraint_Robust extends Constraint {
 
 
     public Constraint getConstraint(int time){
-        return new Constraint_Robust(this.agent, time, this.prevLocation, this.location);
-//        return new Constraint(this.agent, time, this.prevLocation, this.location);
+//        return new Constraint_Robust(this.agent, time, this.prevLocation, this.location);
+        return new Constraint(this.agent, time, this.prevLocation, this.location);
     }
 
 

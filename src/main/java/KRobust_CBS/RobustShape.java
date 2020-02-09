@@ -46,7 +46,6 @@ public class RobustShape implements I_Location {
         RobustQueue locations = new RobustQueue<I_Location>(prevShape.locations);
         if(locations.size() == 0){ return null; }
         locations.remove(0);
-//        TimeLocation timeLocation = new TimeLocation(prevShape.head.time + 1, prevShape.head.location);
         RobustShape robustShape = new RobustShape(prevShape.getHead(), locations);
         return robustShape;
     }
@@ -83,9 +82,25 @@ public class RobustShape implements I_Location {
         if (this == o) return true;
         if (!(o instanceof RobustShape)) return false;
         RobustShape that = (RobustShape) o;
+
+//        ArrayList thisLocations = this.locations.getLocationsByOrder();
+//        ArrayList thatLocations = that.locations.getLocationsByOrder();
+//
+//
+//        if( thisLocations.size() != thatLocations.size()){return false;}
+//
+//        for (int i = 0; i < thisLocations.size(); i++) {
+//            if(thisLocations.get(i).equals(thatLocations.get(i))){
+//                return false;
+//            }
+//        }
+
+//        return this.getHead().equals(that.getHead());
+//
         Set<I_Location> locationsThis = this.getAllLocations();
         Set<I_Location> locationThat = that.getAllLocations();
-        return locationsThis.equals(locationThat);
+//        return locationsThis.equals(locationThat);
+        return locationsThis.equals(locationThat) && this.getHead().equals(that.getHead());
     }
 
     @Override
@@ -125,16 +140,14 @@ public class RobustShape implements I_Location {
         return head;
     }
 
-//    public int getHeadTime(){
-//        return this.head.time;
-//    }
 
     public I_Location getHeadLocation(){
         return this.head;
     }
 
     public int getSize(){
-        return this.locations.getSize();
+        int size = this.locations.getSize();
+        return size;
     }
 
 
@@ -202,7 +215,13 @@ public class RobustShape implements I_Location {
         }
 
 
+
+        public ArrayList<I_Location> getLocationsByOrder(){
+            return new ArrayList<>(this);
+        }
+
         public Set<I_Location> getAllLocations(){
+
             Set<I_Location> locations = new HashSet<>(this);
 //            for (int i = 0; i < size() ; i++){
 //                locations.add(this.get(i));

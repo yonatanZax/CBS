@@ -3,19 +3,14 @@ package KRobust_CBS;
 import BasicCBS.Instances.MAPF_Instance;
 import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
 import BasicCBS.Instances.Maps.I_Location;
+import BasicCBS.Solvers.*;
 import BasicCBS.Solvers.AStar.SingleAgentAStar_Solver;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.TimeLocation;
 import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.ConstraintSet;
-import BasicCBS.Solvers.Move;
-import BasicCBS.Solvers.OpenList;
-import BasicCBS.Solvers.RunParameters;
-import BasicCBS.Solvers.Solution;
 import GraphMapPackage.GraphMapVertex;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
@@ -87,6 +82,9 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
             closed.add(currentState);
 
             // nicetohave -  change to early goal test
+
+
+
             if (isGoalState(currentState)){
                 // check to see if a rejecting constraint on the goal exists at some point in the future.
 
@@ -99,6 +97,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
                 }
 
                 if(firstRejectionAtGoalTime == -1){ // no rejections
+
                     currentState.backTracePlan(); // updates this.existingPlan which is contained in this.existingSolution
                     return this.existingSolution; // the goal is good and we can return the plan.
                 }
@@ -121,8 +120,10 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
     protected boolean isGoalState(AStarState_RobustShape state) {
         RobustShape robustShape = (RobustShape) state.getMove().currLocation;
-        if( isGoalLocation(robustShape.getHead(), agent.target)){
-            return true;
+        if( isGoalLocation(robustShape.getHead(), agent.target) ){
+            if(robustShape.getSize() == 1){
+                return true;
+            }
         }
         return false;
     }
@@ -150,7 +151,14 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
             RobustShape location = (RobustShape) this.move.currLocation;
             List<I_Location> neighborCellsIncludingCurrent = new ArrayList<>(location.getNeighbors());
 
-            neighborCellsIncludingCurrent.add(RobustShape.stayInPlace(location));
+            if (isGoalLocation(location.getHead(), agent.target)) {
+                if(location.getSize() > 0){
+                    neighborCellsIncludingCurrent.add(RobustShape.stayInGoal(location));
+                }
+            }
+            else {
+                neighborCellsIncludingCurrent.add(RobustShape.stayInPlace(location));
+            }
 
             for (I_Location destination: neighborCellsIncludingCurrent){
                 Move possibleMove = new Move(this.move.agent, this.move.timeNow+1, this.move.currLocation, destination);
@@ -172,6 +180,22 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
                     }
                 }
             }
+        }
+
+
+        public SingleAgentPlan backTracePlan() {
+            List<Move> moves = new LinkedList<>();
+            AStarState_RobustShape currentState = this;
+            while (currentState != null){
+                moves.add(currentState.move);
+                currentState = (AStarState_RobustShape) currentState.prev;
+            }
+            Collections.reverse(moves); //reorder moves because they were reversed
+
+            //if there was an existing plan before solving, then we started from its last move, and don't want to duplicate it.
+            if(existingPlan.size() > 0) {moves.remove(0);}
+            /*containing class.*/ existingPlan.addMoves(moves);
+            return existingPlan;
         }
     }
 

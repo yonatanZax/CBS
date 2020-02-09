@@ -173,7 +173,8 @@ public class SingleAgentPlan implements Iterable<Move> {
      * @return the cost of the plan.
      */
     public int getCost() {
-        if(size() == 1 && moves.get(0).prevLocation.equals(moves.get(0).currLocation)){
+        // If move is 'stay in place' - cost equals 0
+        if(size() == 1 && moves.get(0).prevLocation.getCoordinate().equals(moves.get(0).currLocation.getCoordinate())){
             return 0;
         }
         else{
@@ -244,7 +245,9 @@ public class SingleAgentPlan implements Iterable<Move> {
     // todo - add this
     public void removeLastKMoves(int k){
         for (int i = 0; i < k; i++) {
-            this.moves.remove(size()-1);
+            if( size() - 1 >= 0 ){
+                this.moves.remove(size()-1);
+            }
         }
     }
 

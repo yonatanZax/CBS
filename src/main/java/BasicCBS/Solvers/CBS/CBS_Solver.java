@@ -140,7 +140,7 @@ public class CBS_Solver extends A_Solver {
         CBS_Node goal = mainLoop();
         return solutionFromGoal(goal);
     }
-
+// x
     /**
      * Initialises the {@link #openList OPEN} and inserts the root.
      * @param initialConstraints a set of initial constraints on the agents.
@@ -206,7 +206,8 @@ public class CBS_Solver extends A_Solver {
         return cat;
     }
 
-    private boolean isGoal(CBS_Node node) {
+    // todo - change to protected
+    protected boolean isGoal(CBS_Node node) {
         // no conflicts -> found goal
         return node.selectedConflict == null;
     }

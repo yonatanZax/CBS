@@ -37,7 +37,7 @@ public class CBS_KRobustTest {
     @Test
     public void smallInstance(){
 
-        int k = 0;
+        int k = 2;
 
         RobustAgent agent1 = new RobustAgent(1, new Coordinate_2D(0,0),
                 new Coordinate_2D(0,3),
