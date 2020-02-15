@@ -3,13 +3,10 @@ package KRobust_CBS;
 import BasicCBS.Instances.MAPF_Instance;
 import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
 import BasicCBS.Instances.Maps.I_Location;
+import BasicCBS.Solvers.*;
 import BasicCBS.Solvers.AStar.SingleAgentAStar_Solver;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.TimeLocation;
 import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.ConstraintSet;
-import BasicCBS.Solvers.Move;
-import BasicCBS.Solvers.OpenList;
-import BasicCBS.Solvers.RunParameters;
-import BasicCBS.Solvers.Solution;
 import GraphMapPackage.GraphMapVertex;
 
 
@@ -119,12 +116,24 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
         return null; //no goal state found (problem unsolvable)
     }
 
+
+
     protected boolean isGoalState(AStarState_RobustShape state) {
         RobustShape robustShape = (RobustShape) state.getMove().currLocation;
-        if( isGoalLocation(robustShape.getHead(), agent.target)){
-            return true;
+        Set<I_Location> locations = robustShape.getAllLocations();
+
+        for (I_Location location : locations) {
+            if(!isGoalLocation(location,agent.target)){
+                return false;
+            }
         }
-        return false;
+
+        return true;
+
+//        if( isGoalLocation(robustShape.getHead(), agent.target)){
+//            return true;
+//        }
+//        return false;
     }
 
     private boolean isGoalLocation(I_Location location, I_Coordinate goalCoordinate){
@@ -140,6 +149,21 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
         public AStarState_RobustShape(Move move, AStarState prevState, int g) {
             super(move, prevState, g);
+        }
+
+
+        protected float calcH() {
+
+            RobustAgent robustAgent = ((RobustAgent)agent);
+            int k = robustAgent.k;
+
+            Move move = getMove();
+
+            if(isGoalLocation(move.currLocation,agent.target)){
+                return 0;
+            }
+
+            return AStar_RobustShape.this.heuristicFunction.getH(this) + k;
         }
 
 

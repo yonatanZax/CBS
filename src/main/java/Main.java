@@ -61,7 +61,7 @@ public class Main {
 //            runRobustInstances();
 
 
-            runExperiments_LargeAgents();
+//            runExperiments_LargeAgents();
             runExperiments_Robust();
 
         }
@@ -88,7 +88,10 @@ public class Main {
     public static void runExperiments_LargeAgents() {
 
 
-        I_Solver[] solvers = new I_Solver[]{new CBS_Shapes(), new CBS_LargeAgents()};
+        I_Solver[] solvers = new I_Solver[]{
+                new CBS_Shapes(),
+                new CBS_LargeAgents()
+        };
         String problemType = "LargeAgents";
 
 
@@ -134,23 +137,28 @@ public class Main {
     public static void runExperiments_Robust() {
 
 
-        I_Solver[] solvers = new I_Solver[]{new CBS_KRobust(), new CBS_ShapesRobust()};
+        I_Solver[] solvers = new I_Solver[]{
+//                new CBS_KRobust(),
+                new CBS_ShapesRobust()
+        };
         String problemType = "K-Robust";
 
         String[] folders = new String[]{
-                "Instances20x20_1x1_obs0",
-                "Instances20x20_1x1_obs0.1",
+//                "Instances20x20_1x1_obs0",
+//                "Instances20x20_1x1_obs0.1",
         };
 
         String[] folders_lak503d = new String[]{
-                "Instances_lak1x1",
+//                "Instances_lak1x1",
+//                "Instances_den502d_1x1",
+                "Instances_den502d_1x1_x",
         };
 
 
         A_RunManager robustRunManager = null;
 
 
-        for (int k = 0; k < 4; k++) {
+        for (int k = 1; k < 3; k++) {
             for (String folder : folders) {
                 for (I_Solver solver : solvers) {
                     robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15});
@@ -162,7 +170,8 @@ public class Main {
 
             for (String folder : folders_lak503d) {
                 for (I_Solver solver : solvers) {
-                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15, 20, 25, 30, 35, 40, 45, 50});
+                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{15});
+//                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15, 20, 25, 30/*, 35, 40, 45, 50*/});
                     robustRunManager.runAllExperiments();
                 }
                 String experimentName = problemType + " Exp - " + folder + " Date - ";

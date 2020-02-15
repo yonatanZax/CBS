@@ -17,6 +17,9 @@ public class RobustShape implements I_Location {
     public RobustShape(I_Location head, int capacity){
         this.head = head;
         this.locations = new RobustQueue(this, capacity);
+        for (int i = 0; i < capacity; i++) {
+            this.locations.add(this.head);
+        }
     }
 
     public RobustShape(I_Location head, RobustShape prevRobustShape) {
@@ -42,14 +45,14 @@ public class RobustShape implements I_Location {
         return robustShape;
     }
 
-    public static RobustShape stayInGoal(RobustShape prevShape){
-        RobustQueue locations = new RobustQueue<I_Location>(prevShape.locations);
-        if(locations.size() == 0){ return null; }
-        locations.remove(0);
-//        TimeLocation timeLocation = new TimeLocation(prevShape.head.time + 1, prevShape.head.location);
-        RobustShape robustShape = new RobustShape(prevShape.getHead(), locations);
-        return robustShape;
-    }
+//    public static RobustShape stayInGoal(RobustShape prevShape){
+//        RobustQueue locations = new RobustQueue<I_Location>(prevShape.locations);
+//        if(locations.size() == 0){ return null; }
+//        locations.remove(0);
+////        TimeLocation timeLocation = new TimeLocation(prevShape.head.time + 1, prevShape.head.location);
+//        RobustShape robustShape = new RobustShape(prevShape.getHead(), locations);
+//        return robustShape;
+//    }
 
     @Override
     public Enum_MapCellType getType() {

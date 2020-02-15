@@ -206,7 +206,8 @@ public class CBS_Solver extends A_Solver {
         return cat;
     }
 
-    private boolean isGoal(CBS_Node node) {
+    // todo - protected
+    protected boolean isGoal(CBS_Node node) {
         // no conflicts -> found goal
         return node.selectedConflict == null;
     }

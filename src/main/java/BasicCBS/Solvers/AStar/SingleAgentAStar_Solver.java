@@ -271,7 +271,8 @@ public class SingleAgentAStar_Solver extends A_Solver {
             return g + h;
         }
 
-        private float calcH() {
+        // todo - protected
+        protected float calcH() {
             return SingleAgentAStar_Solver.this.heuristicFunction.getH(this);
         }
 
