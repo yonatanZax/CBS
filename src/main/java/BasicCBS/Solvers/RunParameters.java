@@ -14,6 +14,7 @@ public class RunParameters {
     /*  =Constants=  */
 //    private static final long defaultTimeout = 1000*10 /* 10 sec */;
     private static final long defaultTimeout = 1000*60*1 /*  1 minutes */;
+//    private static final long defaultTimeout = 1000*60*5 /*  5 minutes */;
     /*  =Fields=  */
     /**
      * The maximum time (milliseconds) allotted to the search. If the search exceeds this time, it is aborted.
