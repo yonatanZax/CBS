@@ -158,8 +158,9 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
             int k = robustAgent.k;
 
             Move move = getMove();
+            RobustShape robustLocation = (RobustShape) move.currLocation;
 
-            if(isGoalLocation(move.currLocation,agent.target)){
+            if(isGoalLocation(robustLocation.getHeadLocation(),agent.target)){
                 return 0;
             }
 

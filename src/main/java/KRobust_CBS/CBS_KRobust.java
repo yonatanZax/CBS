@@ -1,6 +1,7 @@
 package KRobust_CBS;
 
 import BasicCBS.Instances.MAPF_Instance;
+import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
 import BasicCBS.Solvers.AStar.DistanceTableAStarHeuristic;
 import BasicCBS.Solvers.AStar.SingleAgentAStar_Solver;
 import BasicCBS.Solvers.CBS.CBS_Solver;
@@ -31,6 +32,21 @@ public class CBS_KRobust extends CBS_Solver {
         this.aStarHeuristic = this.lowLevelSolver instanceof SingleAgentAStar_Solver ?
                 new DistanceTableAStarHeuristic(new ArrayList<>(this.instance.agents), this.instance.map) :
                 null;
+    }
+
+    // todo - add method
+    @Override
+    protected boolean isConstraintOnStartPosition(Constraint constraint){
+
+        I_Coordinate sourceCoordinate = constraint.agent.source;
+        I_Coordinate constraintCoordinate = constraint.location.getCoordinate();
+
+        int k = ((RobustAgent)constraint.agent).k;
+
+
+        boolean result = sourceCoordinate.equals(constraintCoordinate) && (constraint.time >= 0 && constraint.time <= k);
+
+        return result;
     }
 
 

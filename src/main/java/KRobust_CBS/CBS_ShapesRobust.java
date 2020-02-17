@@ -8,6 +8,7 @@ import BasicCBS.Solvers.AStar.SingleAgentAStar_Solver;
 import BasicCBS.Solvers.CBS.CBS_Solver;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.I_ConflictManager;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.MinTimeConflictSelectionStrategy;
+import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.Constraint;
 import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.ConstraintSet;
 import BasicCBS.Solvers.I_Solver;
 import BasicCBS.Solvers.RunParameters;
@@ -46,6 +47,22 @@ public class CBS_ShapesRobust extends CBS_Solver {
         this.aStarHeuristic = this.lowLevelSolver instanceof SingleAgentAStar_Solver ?
                 new DistanceTableHeuristic_RobustShapes(new ArrayList<>(this.instance.agents), this.instance.map) :
                 null;
+    }
+
+
+    // todo - add method
+    @Override
+    protected boolean isConstraintOnStartPosition(Constraint constraint){
+
+        I_Coordinate sourceCoordinate = constraint.agent.source;
+        I_Coordinate constraintCoordinate = constraint.location.getCoordinate();
+
+        int k = ((RobustAgent)constraint.agent).k;
+
+
+        boolean result = sourceCoordinate.equals(constraintCoordinate) && (constraint.time >= 0 && constraint.time <= k );
+
+        return result;
     }
 
     @Override

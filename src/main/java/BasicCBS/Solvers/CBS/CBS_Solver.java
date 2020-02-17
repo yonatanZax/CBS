@@ -2,6 +2,7 @@ package BasicCBS.Solvers.CBS;
 
 import BasicCBS.Instances.Agent;
 import BasicCBS.Instances.MAPF_Instance;
+import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.ConflictManager;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.I_ConflictManager;
 import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.Constraint;
@@ -221,14 +222,33 @@ public class CBS_Solver extends A_Solver {
 
         Constraint[] constraints = node.selectedConflict.getPreventingConstraints();
         // make copies of data structures for left child, while reusing the parent's data structures on the right child.
-        node.leftChild = generateNode(node, constraints[0], true);
-        node.rightChild = generateNode(node, constraints[1], false);
 
-//        if(node.leftChild == null || node.rightChild == null){
-//            return; //probably a timeout in the low level. should abort.
-//        }
+        // Todo - add check constraint on start location
+        Constraint constraintLeft = constraints[0];
+        if( !isConstraintOnStartPosition(constraintLeft)){
+            node.leftChild = generateNode(node, constraintLeft, true);
+        }
+        Constraint constraintRight = constraints[1];
+        if( !isConstraintOnStartPosition(constraintRight)){
+            node.rightChild = generateNode(node, constraintRight, true);
+        }
+
+
+//        node.leftChild = generateNode(node, constraints[0], true);
+//        node.rightChild = generateNode(node, constraints[1], false);
+
         addToOpen(node.leftChild);
         addToOpen(node.rightChild);
+    }
+
+
+    // todo - add method
+    protected boolean isConstraintOnStartPosition(Constraint constraint){
+
+        I_Coordinate sourceCoordinate = constraint.agent.source;
+        I_Coordinate constraintCoordinate = constraint.location.getCoordinate();
+
+        return sourceCoordinate.equals(constraintCoordinate) && constraint.time == 0;
     }
 
     /**
@@ -316,6 +336,11 @@ public class CBS_Solver extends A_Solver {
         InstanceReport instanceReport = S_Metrics.newInstanceReport();
         RunParameters subproblemParameters = getSubproblemParameters(currentSolution, constraints, instanceReport);
         Solution subproblemSolution = this.lowLevelSolver.solve(this.instance.getSubproblemFor(agent), subproblemParameters);
+
+        if( subproblemSolution == null){
+            System.out.println("Solution from low-level is Null :( ");
+        }
+
         digestSubproblemReport(instanceReport);
         return subproblemSolution;
     }

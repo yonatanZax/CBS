@@ -164,17 +164,17 @@ public class Main {
                     robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15});
                     robustRunManager.runAllExperiments();
                 }
-                String experimentName = problemType + " Exp - " + folder + " Date - ";
+                String experimentName = problemType + " Exp - " + folder + " K=" + k + " Date - ";
                 outputResults(experimentName);
             }
 
             for (String folder : folders_lak503d) {
                 for (I_Solver solver : solvers) {
-                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{15});
-//                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15, 20, 25, 30/*, 35, 40, 45, 50*/});
+                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5,10,15,20});
+//                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15, 20/*, 25, 30, 35, 40, 45, 50*/});
                     robustRunManager.runAllExperiments();
                 }
-                String experimentName = problemType + " Exp - " + folder + " Date - ";
+                String experimentName = problemType + " Exp - " + folder + " K=" + k + " Date - ";
                 outputResults(experimentName);
             }
         }
