@@ -101,7 +101,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
                 }
                 else{ // we are rejected from the goal at some point in the future.
                     // We clear OPEN because we have already found an optimal plan to the goal.
-                    openList.clear();
+//                    openList.clear();
                     /*
                     We then solve a smaller search problem where we make a plan from the goal at time t[x], to the goal
                     at time t[y+1], where y is the time of the future constraint.
@@ -120,9 +120,12 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
     protected boolean isGoalState(AStarState_RobustShape state) {
         RobustShape robustShape = (RobustShape) state.getMove().currLocation;
-        Set<I_Location> locations = robustShape.getAllLocations();
+        ArrayList<I_Location> locations = robustShape.getLocationsByOrder();
 
         for (I_Location location : locations) {
+            if(isGoalLocation(robustShape.getHead(), agent.target)){
+                int x = 0;
+            }
             if(!isGoalLocation(location,agent.target)){
                 return false;
             }
@@ -161,6 +164,15 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
             RobustShape robustLocation = (RobustShape) move.currLocation;
 
             if(isGoalLocation(robustLocation.getHeadLocation(),agent.target)){
+                ArrayList<I_Location> locationsByOrder = robustLocation.getLocationsByOrder();
+                int count = 0;
+                while ( !locationsByOrder.isEmpty() ){
+                    if(isGoalLocation(locationsByOrder.remove(locationsByOrder.size() - 1), agent.target)){
+                        count++;
+                    }else{
+                        return k + 1 - count;
+                    }
+                }
                 return 0;
             }
 

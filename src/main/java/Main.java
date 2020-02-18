@@ -158,7 +158,7 @@ public class Main {
         A_RunManager robustRunManager = null;
 
 
-        for (int k = 1; k < 3; k++) {
+        for (int k = 2; k < 3; k++) {
             for (String folder : folders) {
                 for (I_Solver solver : solvers) {
                     robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15});
@@ -170,7 +170,7 @@ public class Main {
 
             for (String folder : folders_lak503d) {
                 for (I_Solver solver : solvers) {
-                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5,10,15,20});
+                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{10});
 //                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15, 20/*, 25, 30, 35, 40, 45, 50*/});
                     robustRunManager.runAllExperiments();
                 }

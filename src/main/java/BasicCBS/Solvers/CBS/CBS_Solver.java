@@ -337,16 +337,19 @@ public class CBS_Solver extends A_Solver {
         RunParameters subproblemParameters = getSubproblemParameters(currentSolution, constraints, instanceReport);
         Solution subproblemSolution = this.lowLevelSolver.solve(this.instance.getSubproblemFor(agent), subproblemParameters);
 
-        if( subproblemSolution == null){
-            System.out.println("Solution from low-level is Null :( ");
-        }
+//        if( subproblemSolution == null){
+//            System.out.println("Solution from low-level is Null :( ");
+//        }
 
         digestSubproblemReport(instanceReport);
         return subproblemSolution;
     }
 
     private RunParameters getSubproblemParameters(Solution currentSolution, ConstraintSet constraints, InstanceReport instanceReport) {
-        long timeLeftToTimeout = super.maximumRuntime - (System.currentTimeMillis() - super.startTime);
+
+        // if there was already a timeout while solving a node, we will get a negative time left, which would be
+        // interpreted as "use default timeout". In such a case we should instead give the solver 0 time to solve.
+        long timeLeftToTimeout = Math.max(super.maximumRuntime - (System.currentTimeMillis() - super.startTime), 0);
         RunParameters subproblemParametes = new RunParameters(timeLeftToTimeout, constraints, instanceReport, currentSolution);
         if(this.lowLevelSolver instanceof SingleAgentAStar_Solver){ // upgrades to a better heuristic
             subproblemParametes = new RunParameters_SAAStar(subproblemParametes, this.aStarHeuristic);

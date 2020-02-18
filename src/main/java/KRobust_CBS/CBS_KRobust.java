@@ -38,14 +38,16 @@ public class CBS_KRobust extends CBS_Solver {
     @Override
     protected boolean isConstraintOnStartPosition(Constraint constraint){
 
+        if( !(constraint instanceof Constraint_Robust )){
+            return super.isConstraintOnStartPosition(constraint);
+        }
+        Constraint_Robust constraintRobust = (Constraint_Robust) constraint;
+
         I_Coordinate sourceCoordinate = constraint.agent.source;
         I_Coordinate constraintCoordinate = constraint.location.getCoordinate();
 
-        int k = ((RobustAgent)constraint.agent).k;
-
-
-        boolean result = sourceCoordinate.equals(constraintCoordinate) && (constraint.time >= 0 && constraint.time <= k);
-
+        boolean result = sourceCoordinate.equals(constraintCoordinate) ;
+        result = result && constraintRobust.lowerBound == 0;
         return result;
     }
 
