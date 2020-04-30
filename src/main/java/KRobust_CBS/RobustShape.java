@@ -17,6 +17,9 @@ public class RobustShape implements I_Location {
     public RobustShape(I_Location head, int capacity){
         this.head = head;
         this.locations = new RobustQueue(this, capacity);
+        for (int i = 0; i < capacity; i++) {
+            this.locations.add(this.head);
+        }
     }
 
     public RobustShape(I_Location head, RobustShape prevRobustShape) {
@@ -42,14 +45,14 @@ public class RobustShape implements I_Location {
         return robustShape;
     }
 
-    public static RobustShape stayInGoal(RobustShape prevShape){
-        RobustQueue locations = new RobustQueue<I_Location>(prevShape.locations);
-        if(locations.size() == 0){ return null; }
-        locations.remove(0);
-//        TimeLocation timeLocation = new TimeLocation(prevShape.head.time + 1, prevShape.head.location);
-        RobustShape robustShape = new RobustShape(prevShape.getHead(), locations);
-        return robustShape;
-    }
+//    public static RobustShape stayInGoal(RobustShape prevShape){
+//        RobustQueue locations = new RobustQueue<I_Location>(prevShape.locations);
+//        if(locations.size() == 0){ return null; }
+//        locations.remove(0);
+////        TimeLocation timeLocation = new TimeLocation(prevShape.head.time + 1, prevShape.head.location);
+//        RobustShape robustShape = new RobustShape(prevShape.getHead(), locations);
+//        return robustShape;
+//    }
 
     @Override
     public Enum_MapCellType getType() {
@@ -83,9 +86,20 @@ public class RobustShape implements I_Location {
         if (this == o) return true;
         if (!(o instanceof RobustShape)) return false;
         RobustShape that = (RobustShape) o;
-        Set<I_Location> locationsThis = this.getAllLocations();
-        Set<I_Location> locationThat = that.getAllLocations();
-        return locationsThis.equals(locationThat);
+        ArrayList<I_Location> thisLocations = this.locations.getLocationsByOrder();
+        ArrayList<I_Location> thatLocations = that.locations.getLocationsByOrder();
+
+
+        if( thisLocations.size() != thatLocations.size()){return false;}
+
+        for (int i = 0; i < thisLocations.size(); i++) {
+
+            if(! thisLocations.get(i).equals(thatLocations.get(i))){
+                return false;
+            }
+        }
+
+        return this.getHead().equals(that.getHead());
     }
 
     @Override
@@ -138,7 +152,9 @@ public class RobustShape implements I_Location {
     }
 
 
-
+    public ArrayList<I_Location> getLocationsByOrder(){
+        return this.locations.getLocationsByOrder();
+    }
 
     public Set<I_Location> getAllLocations(){
         Set<I_Location> locations = this.locations.getAllLocations();
@@ -202,11 +218,12 @@ public class RobustShape implements I_Location {
         }
 
 
+        public ArrayList<I_Location> getLocationsByOrder(){
+            return new ArrayList<>(this);
+        }
+
         public Set<I_Location> getAllLocations(){
             Set<I_Location> locations = new HashSet<>(this);
-//            for (int i = 0; i < size() ; i++){
-//                locations.add(this.get(i));
-//            }
             return locations;
         }
 

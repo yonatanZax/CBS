@@ -20,3 +20,4 @@ IncstanceId,#Agents,Solver,Map,Obstacles,Plan Cost,Success,Planning time (ms),Co
 17,10,k = 2,Instance-8-0-10-7,0,70,1,3453.1554,Range,Instance-8-0-10-7
 18,10,k = 2,Instance-8-0-10-8,0,72,1,130161.1259,Range,Instance-8-0-10-8
 19,10,k = 2,Instance-8-0-10-9,0,55,1,2206.4241,Range,Instance-8-0-10-9
+20,2,k = 2,Instance-200-0-2-0,0,634,1,2206.4241,Range,Instance-200-0-2-0

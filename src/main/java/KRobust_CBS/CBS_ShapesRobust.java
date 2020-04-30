@@ -1,21 +1,26 @@
 package KRobust_CBS;
 
 import BasicCBS.Instances.MAPF_Instance;
+import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
+import BasicCBS.Instances.Maps.I_Location;
 import BasicCBS.Solvers.AStar.DistanceTableAStarHeuristic;
 import BasicCBS.Solvers.AStar.SingleAgentAStar_Solver;
 import BasicCBS.Solvers.CBS.CBS_Solver;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.I_ConflictManager;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.MinTimeConflictSelectionStrategy;
+import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.Constraint;
 import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.ConstraintSet;
 import BasicCBS.Solvers.I_Solver;
 import BasicCBS.Solvers.RunParameters;
 import BasicCBS.Solvers.SingleAgentPlan;
+import BasicCBS.Solvers.Solution;
 import LargeAgents_CBS.Solvers.HighLevel.CBS_Shapes;
 import LargeAgents_CBS.Solvers.HighLevel.ConflictManager_Shapes;
 import LargeAgents_CBS.Solvers.LowLevel.AStar_Shapes;
 import LargeAgents_CBS.Solvers.LowLevel.DistanceTableHeuristic_LargeAgents;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Objects;
 
 public class CBS_ShapesRobust extends CBS_Solver {
@@ -44,6 +49,22 @@ public class CBS_ShapesRobust extends CBS_Solver {
                 null;
     }
 
+
+    // todo - add method
+    @Override
+    protected boolean isConstraintOnStartPosition(Constraint constraint){
+
+        I_Coordinate sourceCoordinate = constraint.agent.source;
+        I_Coordinate constraintCoordinate = constraint.location.getCoordinate();
+
+        int k = ((RobustAgent)constraint.agent).k;
+
+
+        boolean result = sourceCoordinate.equals(constraintCoordinate) && (constraint.time >= 0 && constraint.time <= k );
+
+        return result;
+    }
+
     @Override
     protected I_ConflictManager getConflictAvoidanceTableFor(CBS_Solver.CBS_Node node) {
 
@@ -52,6 +73,27 @@ public class CBS_ShapesRobust extends CBS_Solver {
             conflictManager.addPlan(plan);
         }
         return conflictManager;
+    }
+
+
+    // todo - change to protected
+    protected boolean isGoal(CBS_Node node) {
+        // no conflicts -> found goal
+        if( node.getSelectedConflict() == null ){
+            Solution solution = node.getSolution();
+            Iterator iter = solution.iterator();
+            while ( iter.hasNext()){
+                SingleAgentPlan plan = (SingleAgentPlan) iter.next();
+                I_Coordinate target = plan.agent.target;
+                I_Location prevLocation = plan.moveAt(plan.getEndTime()).prevLocation;
+                while ( prevLocation != null && prevLocation.getCoordinate().equals(target)){
+                    if(plan.getEndTime() == 1){ break;}
+                    plan.removeLastKMoves(1);
+                    prevLocation = plan.moveAt(plan.getEndTime()).prevLocation;
+                }
+            }
+        }
+        return node.getSelectedConflict() == null;
     }
 
 }

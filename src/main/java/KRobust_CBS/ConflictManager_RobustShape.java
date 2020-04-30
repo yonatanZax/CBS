@@ -40,18 +40,19 @@ public class ConflictManager_RobustShape extends ConflictManager {
 
 
         /*  Add tail locations  */
-        goalRobustLocation = RobustShape.stayInGoal(goalRobustLocation);
+//        goalRobustLocation = RobustShape.stayInGoal(goalRobustLocation);
+//        int extendedGoalTime = goalTime;
+//
+//        SingleAgentPlan extendedPlan = singleAgentPlan;
+//        while (goalRobustLocation != null){
+//            extendedGoalTime++;
+//            extendedPlan.addMove(new Move(singleAgentPlan.agent, extendedGoalTime, singleAgentPlan.moveAt(extendedGoalTime - 1).currLocation, goalRobustLocation));
+//            goalRobustLocation = RobustShape.stayInGoal(goalRobustLocation);
+//        }
+
+
+
         int extendedGoalTime = goalTime;
-
-        SingleAgentPlan extendedPlan = singleAgentPlan;
-        while (goalRobustLocation != null){
-            extendedGoalTime++;
-            extendedPlan.addMove(new Move(singleAgentPlan.agent, extendedGoalTime, singleAgentPlan.moveAt(extendedGoalTime - 1).currLocation, goalRobustLocation));
-            goalRobustLocation = RobustShape.stayInGoal(goalRobustLocation);
-        }
-
-
-
 
 
         /*  Check for conflicts and Add timeLocations */

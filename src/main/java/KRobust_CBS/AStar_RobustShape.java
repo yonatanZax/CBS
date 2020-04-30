@@ -3,13 +3,10 @@ package KRobust_CBS;
 import BasicCBS.Instances.MAPF_Instance;
 import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
 import BasicCBS.Instances.Maps.I_Location;
+import BasicCBS.Solvers.*;
 import BasicCBS.Solvers.AStar.SingleAgentAStar_Solver;
 import BasicCBS.Solvers.ConstraintsAndConflicts.ConflictManagement.DataStructures.TimeLocation;
 import BasicCBS.Solvers.ConstraintsAndConflicts.Constraint.ConstraintSet;
-import BasicCBS.Solvers.Move;
-import BasicCBS.Solvers.OpenList;
-import BasicCBS.Solvers.RunParameters;
-import BasicCBS.Solvers.Solution;
 import GraphMapPackage.GraphMapVertex;
 
 
@@ -104,7 +101,7 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
                 }
                 else{ // we are rejected from the goal at some point in the future.
                     // We clear OPEN because we have already found an optimal plan to the goal.
-                    openList.clear();
+//                    openList.clear();
                     /*
                     We then solve a smaller search problem where we make a plan from the goal at time t[x], to the goal
                     at time t[y+1], where y is the time of the future constraint.
@@ -119,12 +116,27 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
         return null; //no goal state found (problem unsolvable)
     }
 
+
+
     protected boolean isGoalState(AStarState_RobustShape state) {
         RobustShape robustShape = (RobustShape) state.getMove().currLocation;
-        if( isGoalLocation(robustShape.getHead(), agent.target)){
-            return true;
+        ArrayList<I_Location> locations = robustShape.getLocationsByOrder();
+
+        for (I_Location location : locations) {
+            if(isGoalLocation(robustShape.getHead(), agent.target)){
+                int x = 0;
+            }
+            if(!isGoalLocation(location,agent.target)){
+                return false;
+            }
         }
-        return false;
+
+        return true;
+
+//        if( isGoalLocation(robustShape.getHead(), agent.target)){
+//            return true;
+//        }
+//        return false;
     }
 
     private boolean isGoalLocation(I_Location location, I_Coordinate goalCoordinate){
@@ -140,6 +152,31 @@ public class AStar_RobustShape extends SingleAgentAStar_Solver {
 
         public AStarState_RobustShape(Move move, AStarState prevState, int g) {
             super(move, prevState, g);
+        }
+
+
+        protected float calcH() {
+
+            RobustAgent robustAgent = ((RobustAgent)agent);
+            int k = robustAgent.k;
+
+            Move move = getMove();
+            RobustShape robustLocation = (RobustShape) move.currLocation;
+
+            if(isGoalLocation(robustLocation.getHeadLocation(),agent.target)){
+                ArrayList<I_Location> locationsByOrder = robustLocation.getLocationsByOrder();
+                int count = 0;
+                while ( !locationsByOrder.isEmpty() ){
+                    if(isGoalLocation(locationsByOrder.remove(locationsByOrder.size() - 1), agent.target)){
+                        count++;
+                    }else{
+                        return k + 1 - count;
+                    }
+                }
+                return 0;
+            }
+
+            return AStar_RobustShape.this.heuristicFunction.getH(this) + k;
         }
 
 

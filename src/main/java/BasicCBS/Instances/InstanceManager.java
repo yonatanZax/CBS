@@ -48,7 +48,12 @@ public class InstanceManager {
     public MAPF_Instance getSpecificInstance(InstancePath currentPath){
 
         String regexSeparator = "\\\\"; //  this is actually: '\\'
-        String[] splitedPath = currentPath.path.split(regexSeparator);
+        String path = currentPath.path;
+        if( currentPath instanceof Moving_AI_Path){
+            path = ((Moving_AI_Path) currentPath).scenarioPath;
+        }
+        String[] splitedPath = path.split(regexSeparator);
+
         String instanceName = splitedPath[splitedPath.length-1];
 
         this.instanceBuilder.prepareInstances(instanceName, currentPath, this.instanceProperties);

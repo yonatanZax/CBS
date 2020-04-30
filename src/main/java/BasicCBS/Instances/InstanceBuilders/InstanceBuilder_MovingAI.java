@@ -39,9 +39,9 @@ public class InstanceBuilder_MovingAI implements I_InstanceBuilder {
 
 
     /*  =Default Values=    */
-    private final int defaultNumOfAgents = 10;
-    private final int defaultNumOfBatches = 5;
-    private final int defaultNumOfAgentsInSingleBatch = 10;
+    protected final int defaultNumOfAgents = 10;
+    protected final int defaultNumOfBatches = 5;
+    protected final int defaultNumOfAgentsInSingleBatch = 1;
 
     /*  =Default Index Values=    */
     // Line example: "1	maps/rooms/8room_000.map	512	512	500	366	497	371	6.24264"
@@ -296,7 +296,8 @@ public class InstanceBuilder_MovingAI implements I_InstanceBuilder {
             // Examples:
             // values[i-1] = 15 -> division = 1.5 -> ( 1.5 > 1 ) addition = 1
             // values[i-1] = 20 -> division = 2.0 -> ( 2.0 !> 2 )addition = 0
-            double division = values[i-1] / 10.0;
+            double numOfAgentsPerBatch = this.defaultNumOfAgentsInSingleBatch;
+            double division = values[i-1] / numOfAgentsPerBatch;
             int addition = (division > (int)division ? 1 : 0);
             curBatch = curBatch + (int)division + addition;
         }
