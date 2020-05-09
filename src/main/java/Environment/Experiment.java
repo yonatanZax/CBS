@@ -1,5 +1,8 @@
 package Environment;
 
+import Environment.IO_Package.Enum_IO;
+import Environment.IO_Package.IO_Manager;
+import Environment.IO_Package.Writer;
 import GraphMapPackage.I_InstanceBuilder;
 import BasicCBS.Instances.InstanceManager;
 import BasicCBS.Instances.MAPF_Instance;
@@ -88,9 +91,23 @@ public  class Experiment {
         System.out.println("Elapsed time (ms): " + elapsedTime);
       }
 
+
       boolean printSolution = false;
       if( solution != null && printSolution ){
         System.out.println(solution.readableToString());
+      }
+
+      boolean saveSolution = true;
+      if( solution != null && saveSolution ){
+        String sol = solution.visualization_solution();
+        Writer writer = new Writer();
+        Enum_IO enum_open = writer.openFileToAppend(IO_Manager.buildPath(new String[]{IO_Manager.resources_Directory,"Solutions"}),instance.name + "_" + solver.getClass().getSimpleName() + i + ".sol");
+        if(enum_open == Enum_IO.OPENED){
+          writer.writeText(String.valueOf(instance.agents.size()));
+          writer.writeText("\n");
+          writer.writeText(sol);
+          writer.closeFile();
+        }
       }
 
     }
