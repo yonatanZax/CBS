@@ -156,10 +156,11 @@ public interface I_InstanceBuilder {
 
                 Enum_MapCellType cellType = cellTypeHashMap.get(character);
 
-                if ( cellType.equals(Enum_MapCellType.WALL)){
-                    actualNumOfObstacles++; // add one wall to counter
-                }else{
+                // todo - change to not empty
+                if ( ! cellType.equals(Enum_MapCellType.EMPTY)){
                     numOfNonObstacles++; // add one to non obstacle counter
+                }else{
+                    actualNumOfObstacles++; // add one wall to counter
                 }
                 cellTypeMap[xIndex][yIndex] = cellType;
             }

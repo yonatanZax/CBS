@@ -3,56 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4accb152-2d1f-43de-b50e-d11c57caa5f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_0.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_0.map.scen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_1.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_1.map.scen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_2.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_2.map.scen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_3.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_3.map.scen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_4.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_4.map.scen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_5.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_5.map.scen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_6.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_6.map.scen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_7.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_7.map.scen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_8.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_8.map.scen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_9.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instance_20_20_9.map.scen" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/AStar/SingleAgentAStar_Solver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/ConstraintSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/ConstraintSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/AStar_RobustShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/AStar_RobustShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/CBS_KRobust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/CBS_KRobust.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/Constraint_Robust.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/Constraint_Robust.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KRobust_CBS/RobustShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KRobust_CBS/RobustShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/CBS_LargeAgents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/CBS_LargeAgents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/CBS_Shapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Solvers/HighLevel/CBS_Shapes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GraphMapPackage/I_InstanceBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GraphMapPackage/I_InstanceBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/InstanceBuilder_Shapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/InstanceBuilder_Shapes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/Coordinate_2D_LargeAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/Coordinate_2D_LargeAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BasicCBS/Solvers/CBS/CBS_SolverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BasicCBS/Solvers/CBS/CBS_SolverTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-1-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-1-4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-10-3" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-10-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-10-5" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-10-6" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-10-7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-10-9" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-10-9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-2-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-2-4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-3-0" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-3-0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-0" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-1" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-2" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-3" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-4" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-5" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-6" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-7" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-8" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/solved/Instance-8-0-5-9" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/RobustBenchmark/Instance-8-0-5-9" afterDir="false" />
     </list>
     <ignored path="D:\CBS_ProjectMSPF\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,75 +25,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="170" column="51" selection-start-line="170" selection-start-column="51" selection-end-line="170" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/AStar_RobustShape.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/CBS_ShapesRobust.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1107">
-              <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="222" selection-start-line="222" selection-end-line="222" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapeRobust_Benchmark.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1485">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/RobustShape.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="567">
+              <caret line="93" column="10" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
               <folding>
-                <element signature="e#4654#4655#0" expanded="true" />
-                <element signature="e#4713#4714#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/KRobust/AStar_RobustShapeTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/LargeAgent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+            <state relative-caret-position="378">
+              <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/RunParameters.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Environment/Experiment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+            <state relative-caret-position="1539">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/InstanceBuilder_Shapes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1388">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -168,7 +96,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Experiment_RobustInGoal" />
+        <entry key="$PROJECT_DIR$" value="Visualization_Solutiions" />
       </map>
     </option>
   </component>
@@ -180,13 +108,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/resources/Instances/LargeAgents/Instance-16-0-7.map.scen" />
-        <option value="$PROJECT_DIR$/src/test/java/LargeAgents/CBS_LargeAgentsTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/LargeAgents/InstanceBuilder_ShapesTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/Coordinates/Coordinate_2D.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConstraintSet_Robust.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/DistanceTableHeuristic_RobustShapes.java" />
-        <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/A_Conflict.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/RobustAgent.java" />
@@ -202,15 +125,12 @@
         <option value="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/lak503d.map" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Instances/InstanceBuilders/InstanceBuilder_MovingAI.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/RunManager_KRobust.java" />
-        <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/InstanceBuilder_Shapes.java" />
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Instances/InstanceManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Environment_LargeAgents/RunManager_LargeAgents.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/InstanceBuilder_RobustShapes.java" />
         <option value="$PROJECT_DIR$/src/main/java/Environment/Metrics/InstanceReport.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Environment/Experiment.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/RunManager_ExperimentsKRobust.java" />
         <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Environment_LargeAgents/RunManager_ExperimentsLA.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/Solution.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_RobustShape.java" />
         <option value="$PROJECT_DIR$/src/test/java/KRobust/AStar_RobustShapeTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/KRobust/CBS_ShapeRobust_Benchmark.java" />
@@ -228,23 +148,32 @@
         <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/RobustShape.java" />
         <option value="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instances_den502d_1x1_x/den502d.map_Size1x1_id_1.scen" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/RunParameters.java" />
         <option value="$PROJECT_DIR$/src/main/java/KRobust_CBS/AStar_RobustShape.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/Coordinates/I_Coordinate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/Coordinates/Coordinate_2D.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/Coordinates/Coordinate_3D.java" />
+        <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/Coordinate_2D_LargeAgent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/Solution.java" />
+        <option value="$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/RunParameters.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Environment/Experiment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/InstanceBuilder_Shapes.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3465" />
-    <option name="y" value="475" />
-    <option name="width" value="1548" />
-    <option name="height" value="913" />
+    <option name="x" value="3192" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,43 +195,37 @@
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
               <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
               <item name="Instances" type="462c0819:PsiDirectoryNode" />
-              <item name="AutoGenerateMaps" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances" type="462c0819:PsiDirectoryNode" />
-              <item name="AutoGenerateMaps" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances_den502d_1x1_x" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
@@ -319,40 +242,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="AStar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="CBS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="ConstraintsAndConflicts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="ConstraintsAndConflicts" type="462c0819:PsiDirectoryNode" />
-              <item name="Constraint" type="462c0819:PsiDirectoryNode" />
+              <item name="Environment" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
@@ -377,7 +267,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
+              <item name="Environment_LargeAgents" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
@@ -386,124 +276,23 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="HighLevel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="AStar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="BasicCBS" type="462c0819:PsiDirectoryNode" />
-              <item name="Solvers" type="462c0819:PsiDirectoryNode" />
-              <item name="CBS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="KRobust" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="Instances" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
               <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="LargeAgents_CBS" type="462c0819:PsiDirectoryNode" />
               <item name="Instances" type="462c0819:PsiDirectoryNode" />
-              <item name="LargeAgents" type="462c0819:PsiDirectoryNode" />
+              <item name="Maps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
               <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Instances" type="462c0819:PsiDirectoryNode" />
-              <item name="Robust" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="RobustBenchmark" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CBS_ProjectMSPF" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="RobustBenchmark" type="462c0819:PsiDirectoryNode" />
-              <item name="solved" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CBS_ProjectMSPF" type="b2602c69:ProjectViewProjectNode" />
@@ -515,7 +304,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,7 +317,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instances_den502d_1x1_x" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instances30x30_3x3_obs0_small" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -543,27 +331,27 @@
       <recent name="KRobust" />
       <recent name="LargeAgents" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="LargeAgents_CBS.Instances" />
-      <recent name="LargeAgents_CBS.Instances.Maps" />
-      <recent name="LargeAgents" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\CBS_ProjectMSPF\resources\Instances\AutoGenerateMaps\Instances_den502d_1x1_x" />
-      <recent name="D:\CBS_ProjectMSPF\src\test\java\KRobust" />
-      <recent name="D:\CBS_ProjectMSPF\src\test\resources\Instances" />
-      <recent name="D:\CBS_ProjectMSPF\resources\Instances\AutoGenerateMaps" />
-      <recent name="D:\CBS_ProjectMSPF\src\test\resources\RobustBenchmark" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\CBS_ProjectMSPF\src\test\resources\RobustBenchmark" />
       <recent name="D:\CBS_ProjectMSPF\src\test\resources\RobustBenchmark\solved" />
       <recent name="D:\CBS_ProjectMSPF\resources\Instances\Instances_20_20" />
       <recent name="D:\CBS_ProjectMSPF\src\test\resources\TestingBenchmark" />
       <recent name="D:\CBS_ProjectMSPF\src\test\resources\TestingBenchmark\brc" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="LargeAgents_CBS.Instances" />
+      <recent name="LargeAgents_CBS.Instances.Maps" />
+      <recent name="LargeAgents" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CBS_ProjectMSPF\resources\Instances\AutoGenerateMaps\Instances30x30_3x3_obs0_small" />
+      <recent name="D:\CBS_ProjectMSPF\resources\Instances\AutoGenerateMaps\Instances_den502d_1x1_x" />
+      <recent name="D:\CBS_ProjectMSPF\src\test\java\KRobust" />
+      <recent name="D:\CBS_ProjectMSPF\src\test\resources\Instances" />
+      <recent name="D:\CBS_ProjectMSPF\resources\Instances\AutoGenerateMaps" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -658,11 +446,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.AStar_RobustShapeTest" />
         <item itemvalue="JUnit.CBS_ShapeRobust_Benchmark.runRobust_k2" />
         <item itemvalue="JUnit.CBS_ShapeRobust_Benchmark.runRobust_k1" />
         <item itemvalue="JUnit.CBS_ShapeRobust_Benchmark.runRobust_k0" />
+        <item itemvalue="JUnit.AStar_RobustShapeTest" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -722,20 +510,7 @@
       <workItem from="1579441131263" duration="1531000" />
       <workItem from="1582013127803" duration="4422000" />
       <workItem from="1582030531469" duration="4136000" />
-    </task>
-    <task id="LOCAL-00007" summary="Added GraphLocationGroup with implementation and test">
-      <created>1575586237791</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1575586237791</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Changes: Some private fields are now protected&#10;Added:&#10;1. RunManager_LargeAgent&#10;2. CBS_LargeAgents&#10;3. ConflictManager_LA&#10;4. AStar_LA&#10;5. DistanceTable_LA">
-      <created>1575618691460</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1575618691460</updated>
+      <workItem from="1589011919391" duration="1248000" />
     </task>
     <task id="LOCAL-00009" summary="Changes in BasicCBS.MovingAI:&#10;1. protected&#10;2. GraphMap -&gt; I_Map&#10;&#10;Added:&#10;1. GraphLocationGroup(Coordinate_2D[][] coordinate_2D, I_Map map) &#10;2. InstanceBuilder_Shapes uses it's own getMap">
       <created>1575627597322</created>
@@ -1066,7 +841,21 @@
       <option name="project" value="LOCAL" />
       <updated>1581934200481</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Added Visualization format to .sol files">
+      <created>1588951664108</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1588951664108</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Format fixed">
+      <created>1589012078745</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1589012078746</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1102,7 +891,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388182000" />
+    <option name="totallyTimeSpent" value="393448000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1115,9 +904,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="3192" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49932706" visible="true" weight="0.17270789" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49932706" visible="true" weight="0.2510661" />
       <window_info id="Structure" order="1" sideWeight="0.50067294" side_tool="true" weight="0.2786533" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1126,8 +914,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.18093175" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.59046584" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.41495124" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.29685807" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.28169015" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.20817369" />
@@ -1137,7 +925,7 @@
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3261105" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.2979415" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="13" visible="true" weight="0.2979415" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1239,8 +1027,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merged LargeAgents branch with Shapes branch&#10;Current stage passing benchmark 1x1 instances" />
-    <MESSAGE value="Fixed Expand and intersect in Group" />
     <MESSAGE value="In progress: Large Agents" />
     <MESSAGE value="In progress: Large Agents&#10;* Solutions are not optimal also not valid *" />
     <MESSAGE value="New imp to LA, passing 1x1 benchmark tests" />
@@ -1264,7 +1050,9 @@
     <MESSAGE value="ExperimentStage" />
     <MESSAGE value="Testing Stage - Fixing robust shape" />
     <MESSAGE value="Testing Stage - Fixing robust shape before pulling CBS code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing Stage - Fixing robust shape before pulling CBS code" />
+    <MESSAGE value="Added Visualization format to .sol files" />
+    <MESSAGE value="Format fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Format fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1277,7 +1065,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java</url>
-          <line>330</line>
+          <line>335</line>
           <properties />
           <option name="timeStamp" value="160" />
         </line-breakpoint>
@@ -1314,7 +1102,7 @@
         <line-breakpoint enabled="true" type="java-line">
           <condition expression="outerCellsList.size() == 0" language="JAVA" />
           <url>file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java</url>
-          <line>98</line>
+          <line>102</line>
           <properties />
           <option name="timeStamp" value="208" />
         </line-breakpoint>
@@ -1332,13 +1120,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java</url>
-          <line>291</line>
+          <line>296</line>
           <properties />
           <option name="timeStamp" value="215" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java</url>
-          <line>256</line>
+          <line>261</line>
           <properties />
           <option name="timeStamp" value="216" />
         </line-breakpoint>
@@ -1460,81 +1248,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_RobustShape.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/TimeAgent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.6.0-M1/junit-platform-commons-1.6.0-M1.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="356" selection-start-line="356" selection-end-line="356" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/Constraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
-          <folding>
-            <element signature="e#4640#4641#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/ConflictManagement/ConflictManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="271" column="19" selection-start-line="271" selection-start-column="19" selection-end-line="271" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/ConstraintsAndConflicts/Constraint/TimeLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/RobustBenchmark/RobustCSV_k2.csv">
-      <provider editor-type-id="csv-text-editor" />
-      <provider selected="true" editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3">
-          <column index="0" width="100" />
-          <column index="1" width="100" />
-          <column index="2" width="100" />
-          <column index="3" width="100" />
-          <column index="4" width="100" />
-          <column index="5" width="100" />
-          <column index="6" width="100" />
-          <column index="7" width="100" />
-          <column index="8" width="100" />
-          <column index="9" width="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instances_den502d_1x1_x/den502d.map_Size1x1_id_5 25agents.scen" />
-    <entry file="file://$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instances_den502d_1x1_x/den502d.map_Size1x1_id_8 15agents.scen" />
-    <entry file="file://$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instances_den502d_1x1_x/den502d.map_Size1x1_id_9.scen" />
-    <entry file="file://$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instances_den502d_1x1_x/den502d.map_Size1x1_id_5.scen">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/ConflictManager_KRobust.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1107">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/VertexConflict_KRobust.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-54">
@@ -1703,13 +1416,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instances_den502d_1x1_x/den502d.map_Size1x1_id_1.scen">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instances_den502d_1x1_x/den502d.map_Size1x1_id_1.scen" />
     <entry file="file://$PROJECT_DIR$/src/main/java/KRobust_CBS/CBS_ShapesRobust.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1107">
@@ -1728,20 +1435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/RunParameters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="170" column="51" selection-start-line="170" selection-start-column="51" selection-end-line="170" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/CBS/CBS_Solver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -1753,6 +1446,115 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
           <caret line="99" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/Coordinates/Coordinate_2D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="57" column="44" lean-forward="true" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+          <folding>
+            <element signature="e#2858#2859#0" expanded="true" />
+            <element signature="e#2926#2927#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/Coordinates/Coordinate_3D.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="76" column="20" lean-forward="true" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
+          <folding>
+            <element signature="e#1652#1653#0" expanded="true" />
+            <element signature="e#1679#1680#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/Coordinate_2D_LargeAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+          <folding>
+            <element signature="e#1368#1369#0" expanded="true" />
+            <element signature="e#1479#1480#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Instances/Maps/Coordinates/I_Coordinate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/Instances/AutoGenerateMaps/Instances30x30_3x3_obs0.1_small/Instance_30_30_0.map">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3186">
+          <caret line="119" selection-start-line="119" selection-end-line="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/BasicCBS/Solvers/RunParameters.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="15" column="76" selection-start-line="15" selection-start-column="76" selection-end-line="15" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Environment_LargeAgents/RunManager_ExperimentsLA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Environment/A_RunManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="93" column="10" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Environment/Experiment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1539">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/Maps/GraphLocationGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/LargeAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/LargeAgents_CBS/Instances/InstanceBuilder_Shapes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1388">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>

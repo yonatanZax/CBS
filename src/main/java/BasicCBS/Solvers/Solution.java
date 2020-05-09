@@ -120,6 +120,9 @@ public class Solution implements Iterable<SingleAgentPlan>{
         return sb.toString();
     }
 
+
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -57,6 +57,7 @@ public class Coordinate_2D_LargeAgent implements I_Coordinate {
 
         for (int i = 0; i < this.coordinates.length; i++) {
             for (int j = 0; j < this.coordinates[i].length; j++) {
+                if(this.coordinates[i][j] == null){ continue; }
                 if( this.coordinates[i][j].x_value != other.coordinates[i][j].x_value ||
                     this.coordinates[i][j].y_value != other.coordinates[i][j].y_value){
                     return false;

@@ -40,6 +40,7 @@ public class InstanceBuilder_Shapes extends InstanceBuilder_MovingAI {
         String[] splitLine = agentLine.split(super.SEPARATOR_SCENARIO);
         // Init coordinates
         int xSize = this.getSize(splitLine, INDEX_AGENT_SIZE_XVALUE);
+//        int ySize = 2;
         int ySize = this.getSize(splitLine, INDEX_AGENT_SIZE_YVALUE);
 
         // Initiate source and target coordinates
@@ -68,11 +69,26 @@ public class InstanceBuilder_Shapes extends InstanceBuilder_MovingAI {
 
         Coordinate_2D[][] coordinates = new Coordinate_2D[xSize][ySize];
 
+        // Build Large Agent
+
         for (int xValue = 0; xValue < xSize; xValue++) {
             for (int yValue = 0; yValue < ySize; yValue++) {
                 coordinates[xValue][yValue] = new Coordinate_2D(xValue + refPoint_xValue, yValue + refPoint_yValue);
             }
         }
+
+
+        // Build R-Shape Agent
+//        for (int xValue = 0; xValue < xSize; xValue++) {
+//            coordinates[xValue][0] = new Coordinate_2D(xValue + refPoint_xValue, 0 + refPoint_yValue);
+//        }
+//
+//        for (int yValue = 0; yValue < ySize; yValue++) {
+//            coordinates[0][yValue] = new Coordinate_2D(0 + refPoint_xValue, yValue + refPoint_yValue);
+//
+//        }
+
+
         return new Coordinate_2D_LargeAgent(coordinates);
     }
 

@@ -34,10 +34,13 @@ public class GraphLocationGroup implements I_Location {
 
         for (int i = 0; i < coordinate_2D.length; i++) {
             for (int j = 0; j < coordinate_2D[i].length; j++) {
+                if(coordinate_2D[i][j] == null){continue;}
                 I_Location location = map.getMapCell(coordinate_2D[i][j]);
                 mapCells[i][j] = (GraphMapVertex_LargeAgents) location;
             }
         }
+
+
         this.mapCells = mapCells;
         this.addCellsToInnerOuter();
     }
@@ -59,6 +62,7 @@ public class GraphLocationGroup implements I_Location {
         // Change group to it's neighbor at direction
         for (int i = 0; i < this.mapCells.length; i++) {
             for (int j = 0; j < this.mapCells[i].length; j++) {
+                if(other.mapCells[i][j] == null){ continue; }
                 I_Location toAdd = other.mapCells[i][j].getLocationByDirection(direction);
                 this.mapCells[i][j] = (GraphMapVertex_LargeAgents) toAdd;
             }
@@ -135,6 +139,7 @@ public class GraphLocationGroup implements I_Location {
 
         for (int i = 0; i < coordinates.length; i++) {
             for (int j = 0; j < coordinates[i].length; j++) {
+                if(this.mapCells[i][j] == null){continue;}
                 coordinates[i][j] = (Coordinate_2D) this.mapCells[i][j].getCoordinate();
             }
         }
