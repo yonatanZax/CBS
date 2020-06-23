@@ -1,8 +1,13 @@
 package BasicCBS.Solvers;
 
 import BasicCBS.Instances.Agent;
+import BasicCBS.Instances.MAPF_Instance;
+import BasicCBS.Instances.Maps.Coordinates.I_Coordinate;
+import BasicCBS.Instances.Maps.I_Location;
 import BasicCBS.Solvers.ConstraintsAndConflicts.SwappingConflict;
 import BasicCBS.Solvers.ConstraintsAndConflicts.VertexConflict;
+import KRobust_CBS.RobustShape;
+import LargeAgents_CBS.Instances.Maps.GraphLocationGroup;
 
 import java.util.*;
 import java.util.function.Consumer;
@@ -69,6 +74,70 @@ public class Solution implements Iterable<SingleAgentPlan>{
         return true;
     }
 
+
+    /**
+     * Validates that this solution is a valid solution for the given {@link MAPF_Instance}. Where
+     * {@link #isValidSolution()} only validates that this solution is free of conflicts, {@link #solves(MAPF_Instance)}
+     * also validates that:
+     * 1. The solution covers every {@link Agent} with a {@link SingleAgentPlan}.
+     * 2. The solution doesn't cover agents not present in the instance.
+     * 3. The plan for each agent starts at its source and ends at its target.
+     * 4. The times of moves in plans are consistent - always increase by 1.
+     * 5. The locations of moves in the plans are consistent - agents always move from a vertex to its neighbor.
+     * These extra checks make this validation more expensive, but it is useful for debugging purposes.
+     * @param instance an {@link MAPF_Instance} that this solution supposedly solves.
+     * @return boolean if this solution solves the instance.
+     */
+    public boolean solves(MAPF_Instance instance){
+        // check that the solution is conflict free
+        if (!isValidSolution())
+            return false;
+        // check that the solution covers all agents and no other agents
+        if (!this.agentPlans.keySet().containsAll(instance.agents) || !instance.agents.containsAll(this.agentPlans.keySet()))
+            return false;
+        for (SingleAgentPlan plan : agentPlans.values()) {
+
+
+            // check start and end at source and target
+
+            /*  Start  */
+            I_Coordinate startInstance = instance.agents.get(instance.agents.indexOf(plan.agent)).source;
+            I_Coordinate startPlan = plan.moveAt(plan.getFirstMoveTime()).prevLocation.getCoordinate();
+
+            /* Target  */
+            I_Coordinate targetInstance = instance.agents.get(instance.agents.indexOf(plan.agent)).target;
+            I_Coordinate targetPlan = plan.moveAt(plan.getEndTime()).currLocation.getCoordinate();
+
+            if (!startInstance.equals(startPlan) || !targetInstance.equals(targetPlan)){
+                return false;
+            }
+
+            // agents always move from a vertex to its neighbor
+            Move prevMove = plan.moveAt(plan.getFirstMoveTime());
+            // check that the move is internally consistent
+            if (!(prevMove.prevLocation.isNeighbor(prevMove.currLocation) || prevMove.prevLocation.equals(prevMove.currLocation)))
+                return false;
+            for (int time = plan.getFirstMoveTime() + 1; time <= plan.getEndTime(); time++) {
+                Move currMove = plan.moveAt(time);
+                // check that the move is internally consistent
+                if (!(currMove.prevLocation.isNeighbor(currMove.currLocation) || currMove.prevLocation.equals(currMove.currLocation)))
+                    return false;
+                // check that the move is consistent with the next move
+                if (!prevMove.currLocation.equals(currMove.prevLocation))
+                    return false;
+                // check that the time of the move is consistent with the next move
+                if (currMove.timeNow-prevMove.timeNow != 1)
+                    return false;
+                prevMove = currMove;
+            }
+        }
+        return true;
+    }
+
+
+
+
+
     /**
      * The number of plans (agents) in the solution.
      * @return the number of plans (agents) in the solution.
@@ -121,7 +190,40 @@ public class Solution implements Iterable<SingleAgentPlan>{
     }
 
 
+    private String getCoordinates(I_Location location){
+        String coords = "";
+        if(location instanceof RobustShape){
+            Set<I_Location> locations = ((RobustShape)location).getAllLocations();
 
+            for (I_Location loc: locations) {
+                coords += loc.getCoordinate().getVisualizationFormat() + ";";
+            }
+            return coords.substring(0,coords.length()-1);
+        }
+
+        I_Coordinate coordinate = location.getCoordinate();
+
+        return coordinate.getVisualizationFormat();
+
+    }
+
+
+    public String visualization_solution(){
+        StringBuilder sb = new StringBuilder();
+        List<Agent> agents = new ArrayList<>(this.agentPlans.keySet());
+        Collections.sort(agents, Comparator.comparing(agent -> agent.iD));
+        for(Agent agent : agents){
+
+            I_Coordinate startLocation = agent.source;
+            sb.append(startLocation.getVisualizationFormat());
+            for(Move move : this.agentPlans.get(agent)){
+                I_Location location = move.currLocation;
+                sb.append("|" + getCoordinates(location));
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 
     @Override
     public boolean equals(Object o) {

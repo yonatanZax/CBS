@@ -16,4 +16,5 @@ public interface I_Coordinate {
      */
     float distance(I_Coordinate other);
 
+    String getVisualizationFormat();
 }

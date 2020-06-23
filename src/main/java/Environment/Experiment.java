@@ -83,7 +83,9 @@ public  class Experiment {
       }
       System.out.println("Solved?: " + (solution != null ? "yes" : "no"));
       if(solution != null){
-        System.out.println("Solution is " + (solution.isValidSolution() ? "valid!" : "invalid!!!"));
+        boolean validSolution = solution.solves(instance);
+        System.out.println("Solution is " + (validSolution ? "valid" : "invalid!!!"));
+        instanceReport.putIntegerValue(InstanceReport.StandardFields.valid, validSolution ? 1 : 0);
         System.out.println("Sum of Individual Costs: " + solution.sumIndividualCosts());
       }
       Integer elapsedTime = instanceReport.getIntegerValue(InstanceReport.StandardFields.elapsedTimeMS);
@@ -97,13 +99,13 @@ public  class Experiment {
         System.out.println(solution.readableToString());
       }
 
-      boolean saveSolution = true;
+      boolean saveSolution = false;
       if( solution != null && saveSolution ){
         String sol = solution.visualization_solution();
         Writer writer = new Writer();
         Enum_IO enum_open = writer.openFileToAppend(IO_Manager.buildPath(new String[]{IO_Manager.resources_Directory,"Solutions"}),instance.name + "_" + solver.getClass().getSimpleName() + i + ".sol");
         if(enum_open == Enum_IO.OPENED){
-          writer.writeText(String.valueOf(instance.agents.size()));
+          writer.writeText("Agents: " + String.valueOf(instance.agents.size()));
           writer.writeText("\n");
           writer.writeText(sol);
           writer.closeFile();

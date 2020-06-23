@@ -17,6 +17,7 @@ import KRobust_CBS.RunManager_ExperimentsKRobust;
 import KRobust_CBS.RunManager_KRobust;
 import LargeAgents_CBS.Environment_LargeAgents.RunManager_ExperimentsLA;
 import LargeAgents_CBS.Environment_LargeAgents.RunManager_LargeAgents;
+import LargeAgents_CBS.Instances.InstanceBuilder_Shapes;
 import LargeAgents_CBS.Solvers.HighLevel.CBS_LargeAgents;
 import LargeAgents_CBS.Solvers.HighLevel.CBS_Shapes;
 
@@ -61,8 +62,8 @@ public class Main {
 //            runRobustInstances();
 
 
-            runExperiments_LargeAgents();
-//            runExperiments_Robust();
+//            runExperiments_LargeAgents();
+            runExperiments_Robust();
 
         }
     }
@@ -96,16 +97,18 @@ public class Main {
 
 
         String[] folders = new String[]{
+//                "Instances8x8_3x3_RShape",
+//                "Instances_new",
                 "Instances20x20_2x2_obs0",
-                "Instances20x20_2x2_obs0.1",
-                "Instances30x30_3x3_obs0",
-                "Instances30x30_3x3_obs0.1",
+//                "Instances20x20_2x2_obs0.1",
+//                "Instances30x30_3x3_obs0",
+//                "Instances30x30_3x3_obs0.1",
         };
 
         String[] folders_lak503d = new String[]{
                 "Instances_lak2x2",
-                "Instances_lak3x3",
-                "Instances_lak4x4",
+//                "Instances_lak3x3",
+//                "Instances_lak4x4",
         };
 
 
@@ -114,7 +117,8 @@ public class Main {
 
         for (String folder : folders) {
             for (I_Solver solver : solvers) {
-                largeAgentRunManager = new RunManager_ExperimentsLA(folder, solver, new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
+                largeAgentRunManager = new RunManager_ExperimentsLA(folder, solver, new int[]{4});
+//                largeAgentRunManager = new RunManager_ExperimentsLA(folder, solver, new int[]{2, 3, 4, 5, 6, 7, 8, 9, 10});
                 largeAgentRunManager.runAllExperiments();
             }
             String experimentName = problemType + " Exp - " + folder + " Date - ";
@@ -123,7 +127,8 @@ public class Main {
 
         for (String folder : folders_lak503d) {
             for (I_Solver solver : solvers) {
-                largeAgentRunManager = new RunManager_ExperimentsLA(folder, solver, new int[]{5, 10, 15, 20, 25});
+                largeAgentRunManager = new RunManager_ExperimentsLA(folder, solver, new int[]{5});
+//                largeAgentRunManager = new RunManager_ExperimentsLA(folder, solver, new int[]{5, 10, 15, 20, 25});
                 largeAgentRunManager.runAllExperiments();
             }
             String experimentName = problemType + " Exp - " + folder + " Date - ";
@@ -144,24 +149,26 @@ public class Main {
         String problemType = "K-Robust";
 
         String[] folders = new String[]{
-//                "Instances20x20_1x1_obs0",
+                "Instances20x20_1x1_obs0",
+//                "Instances_new",
 //                "Instances20x20_1x1_obs0.1",
         };
 
         String[] folders_lak503d = new String[]{
 //                "Instances_lak1x1",
-//                "Instances_den502d_1x1",
-                "Instances_den502d_1x1_x",
+                "Instances_den502d_1x1",
+//                "Instances_den502d_1x1_x",
         };
 
 
         A_RunManager robustRunManager = null;
 
 
-        for (int k = 2; k < 3; k++) {
+        for (int k = 3; k < 4; k++) {
             for (String folder : folders) {
                 for (I_Solver solver : solvers) {
-                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15});
+                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{4});
+//                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15});
                     robustRunManager.runAllExperiments();
                 }
                 String experimentName = problemType + " Exp - " + folder + " K=" + k + " Date - ";
@@ -170,7 +177,7 @@ public class Main {
 
             for (String folder : folders_lak503d) {
                 for (I_Solver solver : solvers) {
-                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{10});
+                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5});
 //                    robustRunManager = new RunManager_ExperimentsKRobust(folder, solver, k, new int[]{5, 10, 15, 20/*, 25, 30, 35, 40, 45, 50*/});
                     robustRunManager.runAllExperiments();
                 }
@@ -194,12 +201,12 @@ public class Main {
 
         /*  =   Set Path   =*/
         String path = IO_Manager.buildPath(new String[]{IO_Manager.resources_Directory,
-                "Instances\\\\BGU_Instances\\\\den520d-10-0"});
+                "Instances\\\\AutoGenerateMaps\\\\Instance_30_30_new"});
         InstanceManager.InstancePath instancePath = new InstanceManager.InstancePath(path);
 
 
         /*  =   Set Instance Manager   =  */
-        InstanceManager instanceManager = new InstanceManager(null, new InstanceBuilder_BGU());
+        InstanceManager instanceManager = new InstanceManager(null, new InstanceBuilder_Shapes());
 
         MAPF_Instance instance = RunManagerSimpleExample.getInstanceFromPath(instanceManager, instancePath);
 
@@ -263,6 +270,7 @@ public class Main {
                             InstanceReport.StandardFields.obstacleRate,
                             InstanceReport.StandardFields.solver,
                             InstanceReport.StandardFields.solved,
+                            InstanceReport.StandardFields.valid,
                             InstanceReport.StandardFields.elapsedTimeMS,
                             InstanceReport.StandardFields.solutionCost,
                             InstanceReport.StandardFields.expandedNodes,

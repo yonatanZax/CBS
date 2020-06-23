@@ -71,4 +71,9 @@ public class Coordinate_3D implements I_Coordinate {
     public float distance(I_Coordinate other) {
         return 0;
     }
+
+    @Override
+    public String getVisualizationFormat() {
+        return "";
+    }
 }

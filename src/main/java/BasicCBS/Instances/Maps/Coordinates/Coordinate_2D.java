@@ -69,4 +69,9 @@ public class Coordinate_2D implements I_Coordinate {
     public float distance(I_Coordinate other) {
         return manhattanDistance(other);
     }
+
+    @Override
+    public String getVisualizationFormat() {
+        return this.x_value + "," + this.y_value;
+    }
 }

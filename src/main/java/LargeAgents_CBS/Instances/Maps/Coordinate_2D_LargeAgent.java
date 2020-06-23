@@ -33,6 +33,21 @@ public class Coordinate_2D_LargeAgent implements I_Coordinate {
         return 0;
     }
 
+    @Override
+    public String getVisualizationFormat() {
+
+        String result = "";
+        for (int i = 0; i < this.coordinates.length; i++) {
+            for (int j = 0; j < this.coordinates[i].length; j++) {
+                Coordinate_2D coordinate_2D = this.coordinates[i][j];
+                if(coordinate_2D == null) { continue; }
+                result += coordinate_2D.getVisualizationFormat() + ";";
+            }
+        }
+
+        return result.substring(0,result.length()-1);
+    }
+
     public Coordinate_2D[][] getCoordinates() {
         return coordinates;
     }

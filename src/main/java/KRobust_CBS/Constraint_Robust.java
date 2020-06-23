@@ -26,8 +26,6 @@ public class Constraint_Robust extends Constraint {
 
     private void setBounds(){
         this.upperBound = this.time;
-//        this.upperBound = this.time + ((RobustAgent)this.agent).k;
-//        this.lowerBound = this.time;
         this.lowerBound = Math.max(0,this.time - ((RobustAgent)this.agent).k);
     }
 
